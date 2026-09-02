@@ -1,4 +1,3 @@
-
 package com.sssmathematics.app;
 
 import android.app.Activity;
@@ -9,31 +8,35 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
-    private WebView webView;
+private WebView webView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        webView = new WebView(this);
+    webView = new WebView(this);
 
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDomStorageEnabled(true);
+    WebSettings settings = webView.getSettings();
+    settings.setJavaScriptEnabled(true);
+    settings.setDomStorageEnabled(true);
+    settings.setAllowFileAccess(true);
+    settings.setAllowContentAccess(true);
 
-        webView.setWebViewClient(new WebViewClient());
+    webView.setWebViewClient(new WebViewClient());
 
-        webView.loadUrl("https://mutiu23ades.github.io/SSS-Mathematics-app/");
+    // Load the local index.html from the Android app
+    webView.loadUrl("file:///android_asset/index.html");
 
-        setContentView(webView);
+    setContentView(webView);
+}
+
+@Override
+public void onBackPressed() {
+    if (webView.canGoBack()) {
+        webView.goBack();
+    } else {
+        super.onBackPressed();
     }
+}
 
-    @Override
-    public void onBackPressed() {
-        if (webView.canGoBack()) {
-            webView.goBack();
-        } else {
-            super.onBackPressed();
-        }
-    }
 }
