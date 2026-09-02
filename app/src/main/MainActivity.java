@@ -2,9 +2,8 @@ package com.sssmathematics.app;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.webkit.WebSettings;
 
 public class MainActivity extends Activity {
 
@@ -15,15 +14,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         webView = new WebView(this);
-        setContentView(webView);
 
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
+        settings.setAllowFileAccess(true);
+        settings.setAllowContentAccess(true);
 
-        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new android.webkit.WebViewClient());
 
         webView.loadUrl("file:///android_asset/index.html");
+
+        setContentView(webView);
     }
 
     @Override
