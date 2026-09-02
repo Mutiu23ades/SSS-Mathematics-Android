@@ -8,35 +8,30 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
-private WebView webView;
+    private WebView webView;
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    webView = new WebView(this);
+        webView = new WebView(this);
+        setContentView(webView);
 
-    WebSettings settings = webView.getSettings();
-    settings.setJavaScriptEnabled(true);
-    settings.setDomStorageEnabled(true);
-    settings.setAllowFileAccess(true);
-    settings.setAllowContentAccess(true);
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
 
-    webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient());
 
-    // Load the local index.html from the Android app
-    webView.loadUrl("file:///android_asset/index.html");
-
-    setContentView(webView);
-}
-
-@Override
-public void onBackPressed() {
-    if (webView.canGoBack()) {
-        webView.goBack();
-    } else {
-        super.onBackPressed();
+        webView.loadUrl("file:///android_asset/index.html");
     }
-}
 
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
