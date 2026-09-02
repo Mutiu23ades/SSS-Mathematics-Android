@@ -6,7 +6,7 @@
     <application
         android:allowBackup="true"
         android:label="SSS Mathematics"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
         <activity
             android:name=".MainActivity"
