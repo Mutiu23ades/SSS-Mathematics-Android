@@ -23,7 +23,8 @@ jobs:
           unzip -q gradle-8.7-bin.zip
 
       - name: Build Debug APK
-        run: ./gradle-8.7/bin/gradle :app:assembleDebug --no-daemon
+        run: |
+          ./gradle-8.7/bin/gradle -p . :app:assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
