@@ -14,6 +14,11 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v4
 
+      - name: Show project files
+        run: |
+          echo "===== PROJECT FILES ====="
+          find . -type f | sort
+
       - name: Set up JDK 17
         uses: actions/setup-java@v5
         with:
@@ -26,20 +31,27 @@ jobs:
           unzip -q gradle-8.7-bin.zip
           echo "$PWD/gradle-8.7/bin" >> "$GITHUB_PATH"
 
+      - name: Check app assets
+        run: |
+          echo "===== ASSETS ====="
+          if [ -d "app/src/main/assets" ]; then
+            find app/src/main/assets -type f -exec ls -lh {} \;
+          else
+            echo "WARNING: app/src/main/assets folder NOT FOUND"
+          fi
+
       - name: Build Debug APK
         run: |
           gradle :app:assembleDebug --stacktrace
 
       - name: Check generated APK
         run: |
-          echo "APK files found:"
-          find app/build/outputs -type f
-          echo ""
-          echo "APK size:"
+          echo "===== APK FILE ====="
           ls -lh app/build/outputs/apk/debug/app-debug.apk
+
           echo ""
-          echo "APK contents:"
-          unzip -l app/build/outputs/apk/debug/app-debug.apk | head -30
+          echo "===== APK CONTENTS ====="
+          unzip -l app/build/outputs/apk/debug/app-debug.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
