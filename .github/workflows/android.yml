@@ -1,15 +1,6 @@
 name: Build Android APK
-
-on:
-push:
-branches:
-- main
-workflow_dispatch:
-
-jobs:
-build:
-runs-on: ubuntu-latest
-
+on: push: branches: - main workflow_dispatch:
+jobs: build: runs-on: ubuntu-latest
 steps:
   - name: Checkout project
     uses: actions/checkout@v4
@@ -18,13 +9,13 @@ steps:
     uses: actions/setup-java@v5
     with:
       distribution: temurin
-      java-version: "17"
+      java-version: '17'
 
   - name: Download and install Gradle
     run: |
       wget https://services.gradle.org/distributions/gradle-8.10.2-bin.zip
       unzip -q gradle-8.10.2-bin.zip
-      echo "$PWD/gradle-8.10.2/bin" >> $GITHUB_PATH
+      echo "$PWD/gradle-8.10.2/bin" >> "$GITHUB_PATH"
 
   - name: Build Debug APK
     run: gradle :app:assembleDebug
