@@ -22,12 +22,24 @@ jobs:
 
       - name: Download and install Gradle
         run: |
-          wget https://services.gradle.org/distributions/gradle-8.7-bin.zip
+          wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip
           unzip -q gradle-8.7-bin.zip
           echo "$PWD/gradle-8.7/bin" >> "$GITHUB_PATH"
 
-      - name: Build APK
-        run: gradle :app:assembleDebug
+      - name: Build Debug APK
+        run: |
+          gradle :app:assembleDebug --stacktrace
+
+      - name: Check generated APK
+        run: |
+          echo "APK files found:"
+          find app/build/outputs -type f
+          echo ""
+          echo "APK size:"
+          ls -lh app/build/outputs/apk/debug/app-debug.apk
+          echo ""
+          echo "APK contents:"
+          unzip -l app/build/outputs/apk/debug/app-debug.apk | head -30
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
