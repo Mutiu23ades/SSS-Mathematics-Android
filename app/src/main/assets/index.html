@@ -1,407 +1,545 @@
-lessons["Identity Matrix"] = `
-<h2>Topic 41: Identity Matrix</h2>
+lessons["Straight Lines"] = `
+<h2>61. Straight Lines</h2>
 
 <h3>Lesson</h3>
-<p>An identity matrix is a square matrix with 1s on the main diagonal and 0s everywhere else.</p>
+<p>A straight line is a line whose direction remains constant. In coordinate geometry, a straight line can be represented by an equation.</p>
 
-<p>The 2 × 2 identity matrix is:</p>
+<p>The general equation of a straight line is:</p>
+<p><b>y = mx + c</b></p>
 
-<p><b>I = [1 0; 0 1]</b></p>
+<p>where:</p>
+<ul>
+<li><b>m</b> = gradient (slope)</li>
+<li><b>c</b> = y-intercept</li>
+</ul>
 
-<p>For a suitable matrix A:</p>
-<p><b>AI = IA = A</b></p>
+<p>The gradient of a line through two points (x₁,y₁) and (x₂,y₂) is:</p>
+<p><b>m = (y₂ - y₁)/(x₂ - x₁)</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Write the 3 × 3 identity matrix.<br><br>
-<b>[1 0 0; 0 1 0; 0 0 1]</b>
+<p><b>Example 1:</b> Find the gradient of the line joining (2,3) and (6,11).</p>
+<p>m = (11 - 3)/(6 - 2)</p>
+<p>m = 8/4 = <b>2</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-If A = [2 3; 4 5], find AI.<br><br>
-Using the identity matrix does not change A.<br>
-Therefore:<br>
-<b>AI = [2 3; 4 5]</b>
+<p><b>Example 2:</b> Find the equation of a line with gradient 3 passing through (2,5).</p>
+<p>Using y - y₁ = m(x - x₁):</p>
+<p>y - 5 = 3(x - 2)</p>
+<p>y - 5 = 3x - 6</p>
+<p><b>y = 3x - 1</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Write the 2 × 2 identity matrix.<br>
-2. If A = [7 2; 1 5], find AI.
+<ol>
+<li>Find the gradient joining (1,2) and (5,10).</li>
+<li>Find the equation of a line with gradient 2 passing through (3,7).</li>
+<li>State the gradient and y-intercept of y = 4x - 5.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. [1 0; 0 1]<br>
-2. [7 2; 1 5]
+<ol>
+<li>2</li>
+<li>y = 2x + 1</li>
+<li>Gradient = 4, y-intercept = -5</li>
+</ol>
 </div>
 `;
 
-lessons["Transformation"] = `
-<h2>Topic 42: Transformation</h2>
+lessons["Graphs of Linear Equations"] = `
+<h2>62. Graphs of Linear Equations</h2>
 
 <h3>Lesson</h3>
-<p>A transformation changes the position, size or orientation of a shape on a coordinate plane.</p>
+<p>A linear equation can be represented graphically on a coordinate plane. The graph of a linear equation is a straight line.</p>
 
-<p>Common transformations include translation, reflection, rotation and enlargement.</p>
+<p>For an equation such as <b>y = 2x + 1</b>, choose values of x and calculate the corresponding values of y.</p>
+
+<p>A table of values can then be plotted and the points joined with a straight line.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-The point (2,3) is translated by the vector (4,−1).<br><br>
-New point = (2+4, 3−1)<br>
-= <b>(6,2)</b>
+<p><b>Example:</b> Complete a table for y = 2x + 1.</p>
+<p>When x = -1:</p>
+<p>y = 2(-1) + 1 = -1</p>
+<p>When x = 0:</p>
+<p>y = 1</p>
+<p>When x = 1:</p>
+<p>y = 3</p>
+<p>When x = 2:</p>
+<p>y = 5</p>
+<p>Points are therefore (-1,-1), (0,1), (1,3) and (2,5).</p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-The point (3,2) is reflected in the x-axis.<br><br>
-Reflection in the x-axis changes (x,y) to (x,−y).<br>
-Therefore:<br>
-<b>(3,−2)</b>
+<p><b>Example:</b> Find the x-intercept of y = 3x - 6.</p>
+<p>At the x-intercept, y = 0.</p>
+<p>0 = 3x - 6</p>
+<p>3x = 6</p>
+<p><b>x = 2</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Translate (1,4) by (3,2).<br>
-2. Reflect (5,−2) in the x-axis.
+<ol>
+<li>Complete a table for y = x + 3 when x = -2, -1, 0, 1 and 2.</li>
+<li>Find the y-intercept of y = 5x + 4.</li>
+<li>Find the x-intercept of y = 2x - 8.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. (4,6)<br>
-2. (5,2)
+<ol>
+<li>1, 2, 3, 4, 5</li>
+<li>4</li>
+<li>x = 4</li>
+</ol>
 </div>
 `;
 
-lessons["Translation"] = `
-<h2>Topic 43: Translation</h2>
+lessons["Gradient of a Straight Line"] = `
+<h2>63. Gradient of a Straight Line</h2>
 
 <h3>Lesson</h3>
-<p>A translation moves every point of a shape the same distance and in the same direction.</p>
+<p>The gradient measures the steepness and direction of a straight line.</p>
 
-<p>A translation is represented by a vector:</p>
-<p><b>(a,b)</b></p>
+<p>The formula is:</p>
+<p><b>m = rise/run = (y₂-y₁)/(x₂-x₁)</b></p>
+
+<p>A positive gradient means the line rises from left to right. A negative gradient means it falls from left to right.</p>
+
+<p>Parallel lines have equal gradients.</p>
+
+<p>For two non-vertical perpendicular lines:</p>
+<p><b>m₁m₂ = -1</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Translate (2,3) by (5,4).<br><br>
-(2+5,3+4) = <b>(7,7)</b>
+<p><b>Example 1:</b> Find the gradient joining (2,4) and (8,16).</p>
+<p>m = (16 - 4)/(8 - 2)</p>
+<p>m = 12/6</p>
+<p><b>m = 2</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-Translate (6,5) by (−2,−3).<br><br>
-(6−2,5−3) = <b>(4,2)</b>
+<p><b>Example 2:</b> Find the gradient of a line perpendicular to a line with gradient 4.</p>
+<p>m₁m₂ = -1</p>
+<p>4m₂ = -1</p>
+<p><b>m₂ = -1/4</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Translate (3,1) by (2,5).<br>
-2. Translate (8,6) by (−3,−2).
+<ol>
+<li>Find the gradient joining (1,5) and (5,13).</li>
+<li>Find the gradient joining (2,8) and (6,4).</li>
+<li>Find the gradient perpendicular to 2/3.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. (5,6)<br>
-2. (5,4)
+<ol>
+<li>2</li>
+<li>-1</li>
+<li>-3/2</li>
+</ol>
 </div>
 `;
 
-lessons["Reflection"] = `
-<h2>Topic 44: Reflection</h2>
+lessons["Distance Between Two Points"] = `
+<h2>64. Distance Between Two Points</h2>
 
 <h3>Lesson</h3>
-<p>Reflection produces a mirror image of a shape in a given mirror line.</p>
+<p>The distance between two points on a coordinate plane can be found using the distance formula.</p>
 
-<p>Useful rules include:</p>
-<p>Reflection in the x-axis: (x,y) → (x,−y)</p>
-<p>Reflection in the y-axis: (x,y) → (−x,y)</p>
+<p>For points (x₁,y₁) and (x₂,y₂):</p>
+
+<p><b>d = √[(x₂-x₁)² + (y₂-y₁)²]</b></p>
+
+<p>The formula comes from Pythagoras' theorem.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Reflect (4,3) in the x-axis.<br><br>
-(x,y) → (x,−y)<br>
-Therefore:<br>
-<b>(4,−3)</b>
+<p><b>Example 1:</b> Find the distance between (1,2) and (4,6).</p>
+<p>d = √[(4-1)² + (6-2)²]</p>
+<p>= √[3² + 4²]</p>
+<p>= √25</p>
+<p><b>= 5 units</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-Reflect (−2,5) in the y-axis.<br><br>
-(x,y) → (−x,y)<br>
-Therefore:<br>
-<b>(2,5)</b>
+<p><b>Example 2:</b> Find the distance between (-2,3) and (4,11).</p>
+<p>d = √[(4+2)² + (11-3)²]</p>
+<p>= √[6² + 8²]</p>
+<p>= √100</p>
+<p><b>= 10 units</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Reflect (6,−4) in the x-axis.<br>
-2. Reflect (−3,7) in the y-axis.
+<ol>
+<li>Find the distance between (0,0) and (3,4).</li>
+<li>Find the distance between (2,1) and (8,9).</li>
+<li>Find the distance between (-1,-2) and (2,2).</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. (6,4)<br>
-2. (3,7)
+<ol>
+<li>5 units</li>
+<li>10 units</li>
+<li>5 units</li>
+</ol>
 </div>
 `;
 
-lessons["Rotation"] = `
-<h2>Topic 45: Rotation</h2>
+lessons["Variation"] = `
+<h2>65. Variation</h2>
 
 <h3>Lesson</h3>
-<p>Rotation turns a shape about a fixed point called the centre of rotation.</p>
+<p>Variation describes a relationship between quantities. One quantity may change according to another quantity.</p>
 
-<p>About the origin:</p>
-<p>90° anticlockwise: (x,y) → (−y,x)</p>
-<p>90° clockwise: (x,y) → (y,−x)</p>
-<p>180°: (x,y) → (−x,−y)</p>
+<p>The major types include:</p>
+<ul>
+<li>Direct variation</li>
+<li>Inverse variation</li>
+<li>Joint variation</li>
+<li>Partial variation</li>
+</ul>
+
+<p>In direct variation, y is proportional to x:</p>
+<p><b>y ∝ x</b></p>
+<p>Therefore:</p>
+<p><b>y = kx</b></p>
+
+<p>In inverse variation:</p>
+<p><b>y ∝ 1/x</b></p>
+<p>Therefore:</p>
+<p><b>y = k/x</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Rotate (2,3) through 90° anticlockwise about the origin.<br><br>
-(2,3) → <b>(−3,2)</b>
+<p><b>Example 1:</b> y varies directly as x. If y = 12 when x = 4, find y when x = 10.</p>
+<p>y = kx</p>
+<p>12 = 4k</p>
+<p>k = 3</p>
+<p>Therefore y = 3x.</p>
+<p>When x = 10:</p>
+<p>y = 3(10) = <b>30</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-Rotate (4,1) through 180° about the origin.<br><br>
-(4,1) → <b>(−4,−1)</b>
+<p><b>Example 2:</b> y varies inversely as x. If y = 6 when x = 5, find y when x = 15.</p>
+<p>y = k/x</p>
+<p>6 = k/5</p>
+<p>k = 30</p>
+<p>When x = 15:</p>
+<p>y = 30/15 = <b>2</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Rotate (3,2) through 90° anticlockwise about the origin.<br>
-2. Rotate (5,−1) through 180° about the origin.
+<ol>
+<li>If y varies directly as x and y = 20 when x = 5, find y when x = 8.</li>
+<li>If y varies inversely as x and y = 12 when x = 4, find y when x = 6.</li>
+<li>State the equation for direct variation.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. (−2,3)<br>
-2. (−5,1)
+<ol>
+<li>32</li>
+<li>8</li>
+<li>y = kx</li>
+</ol>
 </div>
 `;
 
-lessons["Enlargement"] = `
-<h2>Topic 46: Enlargement</h2>
+lessons["Direct Variation"] = `
+<h2>66. Direct Variation</h2>
 
 <h3>Lesson</h3>
-<p>An enlargement changes the size of a shape while maintaining its shape.</p>
+<p>Direct variation occurs when two quantities increase or decrease together in the same ratio.</p>
 
-<p>The scale factor determines how much larger or smaller the image becomes.</p>
+<p>We write:</p>
+<p><b>y ∝ x</b></p>
+
+<p>Removing the proportionality sign:</p>
+<p><b>y = kx</b></p>
+
+<p>The constant k is called the constant of proportionality.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Enlarge (2,3) by scale factor 2 about the origin.<br><br>
-(2×2,3×2) = <b>(4,6)</b>
+<p><b>Example:</b> y varies directly as x. If y = 18 when x = 6, find y when x = 14.</p>
+<p>y = kx</p>
+<p>18 = 6k</p>
+<p>k = 3</p>
+<p>Therefore y = 3x.</p>
+<p>When x = 14:</p>
+<p>y = 3 × 14 = <b>42</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-Enlarge (6,4) by scale factor 1/2 about the origin.<br><br>
-(6×1/2,4×1/2) = <b>(3,2)</b>
+<p><b>Example:</b> If distance varies directly as time and a distance of 120 km is travelled in 3 hours, find the distance travelled in 5 hours.</p>
+<p>d = kt</p>
+<p>120 = 3k</p>
+<p>k = 40</p>
+<p>d = 40(5) = <b>200 km</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Enlarge (3,5) by scale factor 3.<br>
-2. Enlarge (8,6) by scale factor 1/2.
+<ol>
+<li>y varies directly as x. If y = 15 when x = 3, find y when x = 9.</li>
+<li>p varies directly as q. If p = 28 when q = 7, find p when q = 12.</li>
+<li>If distance varies directly as time and speed is 60 km/h, find the distance travelled in 4 hours.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. (9,15)<br>
-2. (4,3)
+<ol>
+<li>45</li>
+<li>48</li>
+<li>240 km</li>
+</ol>
 </div>
 `;
 
-lessons["Combined Transformations"] = `
-<h2>Topic 47: Combined Transformations</h2>
+lessons["Inverse Variation"] = `
+<h2>67. Inverse Variation</h2>
 
 <h3>Lesson</h3>
-<p>A combined transformation occurs when two or more transformations are applied to a shape one after another.</p>
+<p>Inverse variation occurs when one quantity increases while another decreases so that their product remains constant.</p>
 
-<p>The order of transformations is important because changing the order can produce a different final image.</p>
+<p>We write:</p>
+<p><b>y ∝ 1/x</b></p>
+
+<p>Therefore:</p>
+<p><b>y = k/x</b></p>
+
+<p>or:</p>
+<p><b>xy = k</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Translate (2,1) by (3,2), then reflect the result in the x-axis.<br><br>
-Translation:<br>
-(2,1) → (5,3)<br>
-Reflection:<br>
-(5,3) → <b>(5,−3)</b>
+<p><b>Example:</b> y varies inversely as x. If y = 10 when x = 3, find y when x = 15.</p>
+<p>xy = k</p>
+<p>10 × 3 = 30</p>
+<p>Therefore k = 30.</p>
+<p>When x = 15:</p>
+<p>15y = 30</p>
+<p><b>y = 2</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-Reflect (2,4) in the x-axis, then translate by (1,2).<br><br>
-Reflection:<br>
-(2,4) → (2,−4)<br>
-Translation:<br>
-(2,−4) → <b>(3,−2)</b>
+<p><b>Example:</b> Six workers complete a job in 20 days. Assuming time varies inversely with the number of workers, how many days will 10 workers take?</p>
+<p>workers × days = constant</p>
+<p>6 × 20 = 120</p>
+<p>10d = 120</p>
+<p><b>d = 12 days</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Translate (1,2) by (2,3), then reflect in the x-axis.<br>
-2. Reflect (4,−1) in the x-axis, then translate by (2,2).
+<ol>
+<li>y varies inversely as x. If y = 8 when x = 5, find y when x = 20.</li>
+<li>If 4 workers take 15 days, how many days will 10 workers take?</li>
+<li>Write the equation for inverse variation.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. (3,−5)<br>
-2. (6,3)
+<ol>
+<li>2</li>
+<li>6 days</li>
+<li>y = k/x</li>
+</ol>
 </div>
 `;
 
-lessons["Plane Geometry"] = `
-<h2>Topic 48: Plane Geometry</h2>
+lessons["Joint Variation"] = `
+<h2>68. Joint Variation</h2>
 
 <h3>Lesson</h3>
-<p>Plane geometry deals with flat two-dimensional shapes such as triangles, quadrilaterals, circles and polygons.</p>
+<p>Joint variation occurs when one quantity varies directly as the product of two or more other quantities.</p>
 
-<p>Important ideas include points, lines, angles, shapes, symmetry and measurements.</p>
+<p>For example:</p>
+<p><b>z ∝ xy</b></p>
+
+<p>Therefore:</p>
+<p><b>z = kxy</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Find the angle on a straight line if one angle is 65°.<br><br>
-Angles on a straight line add to 180°.<br>
-Angle = 180° − 65°<br>
-= <b>115°</b>
+<p><b>Example:</b> z varies jointly as x and y. If z = 24 when x = 2 and y = 3, find z when x = 4 and y = 5.</p>
+<p>z = kxy</p>
+<p>24 = k(2)(3)</p>
+<p>24 = 6k</p>
+<p>k = 4</p>
+<p>Therefore z = 4xy.</p>
+<p>When x = 4 and y = 5:</p>
+<p>z = 4 × 4 × 5 = <b>80</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-The angles of a triangle are 50° and 60°. Find the third angle.<br><br>
-Third angle = 180° − 50° − 60°<br>
-= <b>70°</b>
+<p><b>Example:</b> If A varies jointly as b and c, write the equation.</p>
+<p>A ∝ bc</p>
+<p>Therefore:</p>
+<p><b>A = kbc</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Find the supplement of 72°.<br>
-2. Two angles of a triangle are 45° and 85°. Find the third angle.
+<ol>
+<li>z varies jointly as x and y. If z = 30 when x = 3 and y = 2, find z when x = 5 and y = 4.</li>
+<li>If A ∝ bc and A = 24 when b = 2 and c = 3, find the constant k.</li>
+<li>Write the equation for z varying jointly as x and y.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. 108°<br>
-2. 50°
+<ol>
+<li>100</li>
+<li>4</li>
+<li>z = kxy</li>
+</ol>
 </div>
 `;
 
-lessons["Angles and Lines"] = `
-<h2>Topic 49: Angles and Lines</h2>
+lessons["Partial Variation"] = `
+<h2>69. Partial Variation</h2>
 
 <h3>Lesson</h3>
-<p>Angles are formed when two lines meet.</p>
+<p>Partial variation occurs when one quantity varies directly with another quantity but also has a fixed constant.</p>
 
-<p>Angles on a straight line add to 180°.</p>
-<p>Angles around a point add to 360°.</p>
-<p>Vertically opposite angles are equal.</p>
+<p>The general form is:</p>
+<p><b>y = a + bx</b></p>
+
+<p>Here, <b>a</b> is the constant part and <b>bx</b> is the variable part.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Two angles on a straight line are x and 75°. Find x.<br><br>
-x + 75° = 180°<br>
-x = <b>105°</b>
+<p><b>Example:</b> y varies partly as x. If y = 8 when x = 2 and y = 18 when x = 5, find the equation connecting y and x.</p>
+
+<p>Let y = a + bx.</p>
+
+<p>For x = 2:</p>
+<p>8 = a + 2b</p>
+
+<p>For x = 5:</p>
+<p>18 = a + 5b</p>
+
+<p>Subtract:</p>
+<p>10 = 3b</p>
+<p>b = 10/3</p>
+
+<p>Substitute into the first equation:</p>
+<p>8 = a + 20/3</p>
+<p>a = 4/3</p>
+
+<p>Therefore:</p>
+<p><b>y = 4/3 + (10/3)x</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-Angles around a point are 90°, 80°, 70° and x.<br><br>
-90 + 80 + 70 + x = 360<br>
-240 + x = 360<br>
-x = <b>120°</b>
+<p><b>Example:</b> A taxi charges a fixed fee of ₦500 plus ₦200 per kilometre. Write an equation for the total cost C for x kilometres.</p>
+<p>Fixed cost = 500</p>
+<p>Variable cost = 200x</p>
+<p><b>C = 500 + 200x</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Find x if x + 65° = 180°.<br>
-2. Find x if angles around a point are 100°, 80°, 90° and x.
+<ol>
+<li>State the general equation for partial variation.</li>
+<li>A taxi charges ₦300 fixed fee and ₦150 per kilometre. Find the cost of 8 km.</li>
+<li>y = 5 + 3x. Find y when x = 7.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. 115°<br>
-2. 90°
+<ol>
+<li>y = a + bx</li>
+<li>₦1,500</li>
+<li>26</li>
+</ol>
 </div>
 `;
 
-lessons["Triangles"] = `
-<h2>Topic 50: Triangles</h2>
+lessons["Trigonometry"] = `
+<h2>70. Trigonometry</h2>
 
 <h3>Lesson</h3>
-<p>A triangle is a polygon with three sides and three angles.</p>
+<p>Trigonometry is the study of relationships between angles and sides of triangles.</p>
 
-<p>The sum of the interior angles of a triangle is always 180°.</p>
+<p>In a right-angled triangle, the three important sides are:</p>
+<ul>
+<li><b>Hypotenuse</b> — opposite the right angle.</li>
+<li><b>Opposite</b> — opposite the given angle.</li>
+<li><b>Adjacent</b> — next to the given angle, excluding the hypotenuse.</li>
+</ul>
 
-<p>Types include equilateral, isosceles and scalene triangles.</p>
+<p>The three basic trigonometric ratios are:</p>
+
+<p><b>sin θ = opposite/hypotenuse</b></p>
+<p><b>cos θ = adjacent/hypotenuse</b></p>
+<p><b>tan θ = opposite/adjacent</b></p>
+
+<p>A useful memory aid is <b>SOH CAH TOA</b>.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br>
-Find the third angle of a triangle whose angles are 55° and 65°.<br><br>
-Third angle = 180° − 55° − 65°<br>
-= <b>60°</b>
+<p><b>Example 1:</b> A right-angled triangle has opposite side 6 cm and hypotenuse 10 cm. Find sin θ.</p>
+<p>sin θ = opposite/hypotenuse</p>
+<p>sin θ = 6/10</p>
+<p><b>sin θ = 0.6</b></p>
 </div>
 
 <div class="example">
-<b>Example 2:</b><br>
-An isosceles triangle has equal angles of 40°. Find the third angle.<br><br>
-Third angle = 180° − 40° − 40°<br>
-= <b>100°</b>
+<p><b>Example 2:</b> A right-angled triangle has adjacent side 8 cm and opposite side 6 cm. Find θ.</p>
+<p>tan θ = 6/8</p>
+<p>tan θ = 0.75</p>
+<p>θ = tan⁻¹(0.75)</p>
+<p><b>θ ≈ 36.87°</b></p>
 </div>
 
 <h3>Practice Questions</h3>
-
 <div class="practice">
-1. Find the third angle of a triangle with angles 70° and 50°.<br>
-2. An equilateral triangle has what size for each interior angle?
+<ol>
+<li>A triangle has opposite = 5 cm and hypotenuse = 13 cm. Find sin θ.</li>
+<li>If opposite = 12 cm and adjacent = 5 cm, find tan θ.</li>
+<li>State the three basic trigonometric ratios.</li>
+</ol>
 </div>
 
 <h3>Answers</h3>
-
 <div class="answer">
-1. 60°<br>
-2. 60°
+<ol>
+<li>5/13</li>
+<li>12/5 = 2.4</li>
+<li>sin θ = O/H, cos θ = A/H, tan θ = O/A</li>
+</ol>
 </div>
 `;
