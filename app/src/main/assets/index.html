@@ -1,525 +1,308 @@
-Continue directly after Topic 100. Paste this as Topics 101–110:
-lessons["Composite Functions"] = `
-<h2>101. Composite Functions</h2>
+lessons["Indefinite Integration"] = `
+<h2>111. Indefinite Integration</h2>
 
 <h3>Lesson</h3>
-<p>A composite function is formed when one function is applied to another function.</p>
+<p>Indefinite integration is the process of finding the general antiderivative of a function.</p>
 
-<p>It is written as:</p>
-<p><b>(fg)(x) = f(g(x))</b></p>
+<p>It is called indefinite because there are no upper and lower limits.</p>
 
-<p>This means that g(x) is found first, then the result is substituted into f.</p>
+<p>The constant of integration <b>C</b> must be included because the derivative of any constant is zero.</p>
+
+<p>The basic rule is:</p>
+
+<p><b>∫xⁿ dx = xⁿ⁺¹/(n+1) + C</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> If f(x) = 2x + 1 and g(x) = x + 3, find f(g(x)).</p>
-<p>f(g(x)) = 2(x + 3) + 1</p>
-<p>= 2x + 6 + 1</p>
-<p><b>= 2x + 7</b></p>
+<p><b>Example 1:</b> Integrate 6x².</p>
+
+<p>∫6x² dx</p>
+<p>= 6 × x³/3 + C</p>
+<p><b>= 2x³ + C</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> If f(x) = x² and g(x) = x + 2, find f(g(3)).</p>
-<p>g(3) = 3 + 2 = 5</p>
-<p>f(5) = 5² = 25</p>
-<p><b>Answer = 25</b></p>
+<p><b>Example 2:</b> Integrate 4x³ - 6x + 5.</p>
+
+<p>∫(4x³ - 6x + 5)dx</p>
+<p>= x⁴ - 3x² + 5x + C</p>
+
+<p><b>Answer = x⁴ - 3x² + 5x + C</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>If f(x) = 3x + 2 and g(x) = x + 1, find f(g(x)).</li>
-<li>If f(x) = x² and g(x) = x - 2, find f(g(5)).</li>
-<li>If f(x) = 2x and g(x) = x + 4, find f(g(3)).</li>
+<li>Integrate 8x.</li>
+<li>Integrate 3x² + 4.</li>
+<li>Integrate 10x⁴ - 6x².</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>3x + 5</li>
-<li>9</li>
-<li>14</li>
+<li>4x² + C</li>
+<li>x³ + 4x + C</li>
+<li>2x⁵ - 2x³ + C</li>
 </ol>
 </div>
 `;
 
-lessons["Inverse Functions"] = `
-<h2>102. Inverse Functions</h2>
+lessons["Definite Integration"] = `
+<h2>112. Definite Integration</h2>
 
 <h3>Lesson</h3>
-<p>The inverse of a function reverses the operation of the original function.</p>
-
-<p>The inverse of f(x) is written as <b>f⁻¹(x)</b>.</p>
-
-<p>To find an inverse:</p>
-<ol>
-<li>Write y = f(x).</li>
-<li>Interchange x and y.</li>
-<li>Make y the subject.</li>
-<li>Replace y with f⁻¹(x).</li>
-</ol>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Find the inverse of f(x) = 2x + 3.</p>
-<p>y = 2x + 3</p>
-<p>Interchange x and y:</p>
-<p>x = 2y + 3</p>
-<p>x - 3 = 2y</p>
-<p>y = (x - 3)/2</p>
-<p><b>f⁻¹(x) = (x - 3)/2</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> Find the inverse of f(x) = 5x - 1.</p>
-<p>y = 5x - 1</p>
-<p>x = 5y - 1</p>
-<p>x + 1 = 5y</p>
-<p><b>f⁻¹(x) = (x + 1)/5</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Find the inverse of f(x) = 3x + 2.</li>
-<li>Find the inverse of f(x) = 4x - 5.</li>
-<li>Find the inverse of f(x) = x + 7.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>f⁻¹(x) = (x - 2)/3</li>
-<li>f⁻¹(x) = (x + 5)/4</li>
-<li>f⁻¹(x) = x - 7</li>
-</ol>
-</div>
-`;
-
-lessons["Limits"] = `
-<h2>103. Limits</h2>
-
-<h3>Lesson</h3>
-<p>A limit describes the value that a function approaches as the input approaches a particular value.</p>
+<p>Definite integration is used when the integral has specified upper and lower limits.</p>
 
 <p>It is written as:</p>
 
-<p><b>lim f(x) as x → a</b></p>
+<p><b>∫ₐᵇ f(x) dx</b></p>
 
-<p>Limits are important in calculus because they provide the foundation for differentiation and continuity.</p>
+<p>To evaluate a definite integral:</p>
+
+<ol>
+<li>Find the antiderivative.</li>
+<li>Substitute the upper limit.</li>
+<li>Substitute the lower limit.</li>
+<li>Subtract the lower result from the upper result.</li>
+</ol>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> Find lim(x + 3) as x → 2.</p>
-<p>Substitute x = 2:</p>
-<p>2 + 3 = <b>5</b></p>
+<p><b>Example 1:</b> Evaluate ∫₀² x dx.</p>
+
+<p>∫x dx = x²/2</p>
+
+<p>Apply the limits:</p>
+
+<p>[x²/2]₀²</p>
+
+<p>= 2²/2 - 0²/2</p>
+<p>= 4/2</p>
+<p><b>= 2</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Find lim(x² + 1) as x → 3.</p>
-<p>= 3² + 1</p>
-<p>= 9 + 1</p>
-<p><b>= 10</b></p>
+<p><b>Example 2:</b> Evaluate ∫₁³ 2x dx.</p>
+
+<p>∫2x dx = x²</p>
+
+<p>[x²]₁³</p>
+<p>= 3² - 1²</p>
+<p>= 9 - 1</p>
+<p><b>= 8</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Find lim(x + 5) as x → 4.</li>
-<li>Find lim(2x + 1) as x → 3.</li>
-<li>Find lim(x²) as x → 5.</li>
+<li>Evaluate ∫₀³ x dx.</li>
+<li>Evaluate ∫₁⁴ 2x dx.</li>
+<li>Evaluate ∫₀² 3x² dx.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>9</li>
-<li>7</li>
-<li>25</li>
-</ol>
-</div>
-`;
-
-lessons["Differentiation"] = `
-<h2>104. Differentiation</h2>
-
-<h3>Lesson</h3>
-<p>Differentiation is the process of finding the derivative of a function.</p>
-
-<p>The derivative represents the rate of change of one quantity with respect to another. For a curve, it can represent the gradient at a particular point.</p>
-
-<p>For a power of x:</p>
-
-<p><b>d/dx(xⁿ) = nxⁿ⁻¹</b></p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Differentiate y = x³.</p>
-<p>dy/dx = 3x²</p>
-<p><b>Answer = 3x²</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> Differentiate y = 5x² + 3x - 7.</p>
-<p>dy/dx = 10x + 3</p>
-<p><b>Answer = 10x + 3</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Differentiate y = x⁴.</li>
-<li>Differentiate y = 3x² + 2x + 1.</li>
-<li>Differentiate y = 7x³ - 4x.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>4x³</li>
-<li>6x + 2</li>
-<li>21x² - 4</li>
-</ol>
-</div>
-`;
-
-lessons["Differentiation from First Principles"] = `
-<h2>105. Differentiation from First Principles</h2>
-
-<h3>Lesson</h3>
-<p>Differentiation from first principles uses the limit definition of the derivative.</p>
-
-<p>The formula is:</p>
-
-<p><b>f'(x) = lim[h → 0] {f(x+h) - f(x)}/h</b></p>
-
-<p>This method provides the fundamental definition of differentiation.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Differentiate f(x) = x² from first principles.</p>
-
-<p>f(x+h) = (x+h)²</p>
-<p>= x² + 2xh + h²</p>
-
-<p>Therefore:</p>
-<p>[f(x+h)-f(x)]/h</p>
-<p>= [x² + 2xh + h² - x²]/h</p>
-<p>= [2xh + h²]/h</p>
-<p>= 2x + h</p>
-
-<p>As h → 0:</p>
-<p><b>f'(x) = 2x</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> Differentiate f(x) = x³ from first principles.</p>
-<p>f(x+h) = (x+h)³</p>
-<p>= x³ + 3x²h + 3xh² + h³</p>
-
-<p>Subtract x³ and divide by h:</p>
-<p>= 3x² + 3xh + h²</p>
-
-<p>As h → 0:</p>
-<p><b>f'(x) = 3x²</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Differentiate f(x) = x² from first principles.</li>
-<li>Differentiate f(x) = x³ from first principles.</li>
-<li>State the first-principles formula.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>2x</li>
-<li>3x²</li>
-<li>f'(x) = lim[h→0] [f(x+h)-f(x)]/h</li>
-</ol>
-</div>
-`;
-
-lessons["Rules of Differentiation"] = `
-<h2>106. Rules of Differentiation</h2>
-
-<h3>Lesson</h3>
-<p>Several rules make differentiation of algebraic functions easier.</p>
-
-<p><b>Power Rule:</b> d/dx(xⁿ) = nxⁿ⁻¹</p>
-
-<p><b>Constant Rule:</b> The derivative of a constant is zero.</p>
-
-<p><b>Constant Multiple Rule:</b> A constant multiplied by a function remains as a multiplier after differentiation.</p>
-
-<p><b>Sum Rule:</b> Differentiate each term separately.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Differentiate y = 6x⁴.</p>
-<p>dy/dx = 6(4x³)</p>
-<p><b>= 24x³</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> Differentiate y = 4x³ - 5x² + 2x - 8.</p>
-<p>dy/dx = 12x² - 10x + 2</p>
-<p><b>Answer = 12x² - 10x + 2</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Differentiate y = 8x³.</li>
-<li>Differentiate y = 5x⁴ - 2x² + 7.</li>
-<li>Differentiate y = 9x² - 4x + 6.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>24x²</li>
-<li>20x³ - 4x</li>
-<li>18x - 4</li>
-</ol>
-</div>
-`;
-
-lessons["Applications of Differentiation"] = `
-<h2>107. Applications of Differentiation</h2>
-
-<h3>Lesson</h3>
-<p>Differentiation has many applications. It can be used to find gradients, rates of change, stationary points and maximum or minimum values.</p>
-
-<p>For a curve y = f(x), the gradient is:</p>
-
-<p><b>dy/dx</b></p>
-
-<p>At a stationary point:</p>
-
-<p><b>dy/dx = 0</b></p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Find the gradient of y = x² + 3x at x = 2.</p>
-<p>dy/dx = 2x + 3</p>
-<p>At x = 2:</p>
-<p>= 2(2) + 3</p>
-<p><b>= 7</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> Find the stationary point of y = x² - 4x + 3.</p>
-<p>dy/dx = 2x - 4</p>
-<p>At a stationary point:</p>
-<p>2x - 4 = 0</p>
-<p>x = 2</p>
-
-<p>Substitute x = 2:</p>
-<p>y = 2² - 4(2) + 3</p>
-<p>= 4 - 8 + 3</p>
-<p><b>y = -1</b></p>
-
-<p>Stationary point = <b>(2,-1)</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Find the gradient of y = x² + 2x at x = 3.</li>
-<li>Find the stationary point of y = x² - 6x + 5.</li>
-<li>What equation is used to find stationary points?</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
+<li>9/2</li>
+<li>15</li>
 <li>8</li>
-<li>(3,-4)</li>
-<li>dy/dx = 0</li>
 </ol>
 </div>
 `;
 
-lessons["Maximum and Minimum Values"] = `
-<h2>108. Maximum and Minimum Values</h2>
+lessons["Area Under a Curve"] = `
+<h2>113. Area Under a Curve</h2>
 
 <h3>Lesson</h3>
-<p>Differentiation can be used to determine whether a stationary point is a maximum or minimum.</p>
+<p>Integration can be used to calculate the area between a curve and the x-axis over a specified interval.</p>
 
-<p>First find the stationary point using:</p>
+<p>The area between x = a and x = b is:</p>
 
-<p><b>dy/dx = 0</b></p>
+<p><b>Area = ∫ₐᵇ y dx</b></p>
 
-<p>Then use the second derivative.</p>
+<p>When the curve lies above the x-axis, the definite integral gives the area directly.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> Find the area under y = x from x = 0 to x = 2.</p>
+
+<p>Area = ∫₀² x dx</p>
+
+<p>= [x²/2]₀²</p>
+
+<p>= 4/2 - 0</p>
+
+<p><b>= 2 square units</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the area under y = x² from x = 0 to x = 2.</p>
+
+<p>Area = ∫₀² x² dx</p>
+
+<p>= [x³/3]₀²</p>
+
+<p>= 8/3</p>
+
+<p><b>= 2⅔ square units</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the area under y = x from x = 0 to x = 4.</li>
+<li>Find the area under y = x² from x = 0 to x = 3.</li>
+<li>State the formula for the area under a curve.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>8 square units</li>
+<li>9 square units</li>
+<li>Area = ∫ₐᵇ y dx</li>
+</ol>
+</div>
+`;
+
+lessons["Differential Equations"] = `
+<h2>114. Differential Equations</h2>
+
+<h3>Lesson</h3>
+<p>A differential equation is an equation involving a function and one or more of its derivatives.</p>
+
+<p>For example:</p>
+
+<p><b>dy/dx = 2x</b></p>
+
+<p>Solving a differential equation often involves integration.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> Solve dy/dx = 3x².</p>
+
+<p>Integrate both sides:</p>
+
+<p>y = ∫3x² dx</p>
+
+<p><b>y = x³ + C</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve dy/dx = 4x + 2.</p>
+
+<p>Integrate:</p>
+
+<p>y = ∫(4x + 2)dx</p>
+
+<p>y = 2x² + 2x + C</p>
+
+<p><b>Answer = 2x² + 2x + C</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Solve dy/dx = 2x.</li>
+<li>Solve dy/dx = 6x².</li>
+<li>Solve dy/dx = 4x - 3.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>y = x² + C</li>
+<li>y = 2x³ + C</li>
+<li>y = 2x² - 3x + C</li>
+</ol>
+</div>
+`;
+
+lessons["Numerical Methods"] = `
+<h2>115. Numerical Methods</h2>
+
+<h3>Lesson</h3>
+<p>Numerical methods are techniques used to obtain approximate numerical solutions to mathematical problems.</p>
+
+<p>They are particularly useful when an exact algebraic solution is difficult or impossible to obtain.</p>
+
+<p>Common numerical methods include:</p>
 
 <ul>
-<li>If d²y/dx² > 0, the point is a minimum.</li>
-<li>If d²y/dx² < 0, the point is a maximum.</li>
+<li>Trial and improvement</li>
+<li>Iteration</li>
+<li>Newton-Raphson method</li>
+<li>Bisection method</li>
 </ul>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> Determine the nature of the stationary point of y = x² - 4x + 1.</p>
+<p><b>Example 1:</b> Use trial and improvement to approximate √10.</p>
 
-<p>dy/dx = 2x - 4</p>
+<p>3² = 9</p>
+<p>4² = 16</p>
 
-<p>2x - 4 = 0</p>
-<p>x = 2</p>
+<p>Therefore √10 lies between 3 and 4.</p>
 
-<p>Second derivative:</p>
-<p>d²y/dx² = 2</p>
+<p>Try 3.16:</p>
+<p>3.16² = 9.9856</p>
 
-<p>Since 2 > 0, the stationary point is a <b>minimum</b>.</p>
+<p>Try 3.162:</p>
+<p>3.162² ≈ 9.9982</p>
+
+<p>Therefore:</p>
+<p><b>√10 ≈ 3.162</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Determine the nature of the stationary point of y = -x² + 6x.</p>
+<p><b>Example 2:</b> Use Newton-Raphson to find an approximation to a root of f(x) = x² - 2.</p>
 
-<p>dy/dx = -2x + 6</p>
-<p>-2x + 6 = 0</p>
-<p>x = 3</p>
+<p>The Newton-Raphson formula is:</p>
 
-<p>d²y/dx² = -2</p>
+<p><b>xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)</b></p>
 
-<p>Since -2 < 0, the stationary point is a <b>maximum</b>.</p>
+<p>For f(x) = x² - 2:</p>
+
+<p>f'(x) = 2x</p>
+
+<p>Starting with x₀ = 1.5:</p>
+
+<p>x₁ = 1.5 - (1.5² - 2)/(2 × 1.5)</p>
+
+<p>x₁ ≈ 1.4167</p>
+
+<p>A further iteration gives approximately:</p>
+
+<p><b>x₂ ≈ 1.4142</b></p>
+
+<p>Therefore √2 ≈ 1.4142.</p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>If the second derivative is positive at a stationary point, what type of point is it?</li>
-<li>If the second derivative is negative, what type of point is it?</li>
-<li>Determine the nature of the stationary point of y = x² - 2x.</li>
+<li>What is a numerical method?</li>
+<li>Name two numerical methods.</li>
+<li>Use trial and improvement to estimate √5 to 3 decimal places.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>Minimum.</li>
-<li>Maximum.</li>
-<li>Minimum.</li>
-</ol>
-</div>
-`;
-
-lessons["Rates of Change"] = `
-<h2>109. Rates of Change</h2>
-
-<h3>Lesson</h3>
-<p>The derivative measures the rate at which one quantity changes with respect to another.</p>
-
-<p>If distance s is a function of time t, then:</p>
-
-<p><b>Velocity = ds/dt</b></p>
-
-<p>The second derivative gives acceleration:</p>
-
-<p><b>Acceleration = d²s/dt²</b></p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> The distance travelled by a particle is s = t² + 3t. Find its velocity at t = 4.</p>
-
-<p>Velocity = ds/dt</p>
-<p>= 2t + 3</p>
-
-<p>At t = 4:</p>
-<p>= 2(4) + 3</p>
-<p><b>= 11 units per second</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> If s = 2t³, find the velocity.</p>
-<p>v = ds/dt</p>
-<p>= <b>6t²</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>If s = t² + 5t, find the velocity.</li>
-<li>If s = 3t², find the velocity at t = 2.</li>
-<li>If velocity v = 6t, find acceleration.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>v = 2t + 5</li>
-<li>12 units per second</li>
-<li>6 units per second squared</li>
-</ol>
-</div>
-`;
-
-lessons["Integration"] = `
-<h2>110. Integration</h2>
-
-<h3>Lesson</h3>
-<p>Integration is the reverse process of differentiation.</p>
-
-<p>It is used to find accumulated quantities and areas under curves.</p>
-
-<p>The basic power rule for integration is:</p>
-
-<p><b>∫xⁿ dx = xⁿ⁺¹/(n+1) + C</b></p>
-
-<p>where C is the constant of integration.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Integrate 3x².</p>
-
-<p>∫3x² dx</p>
-<p>= 3(x³/3) + C</p>
-<p><b>= x³ + C</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> Integrate 4x³ + 2x.</p>
-
-<p>∫(4x³ + 2x)dx</p>
-<p>= x⁴ + x² + C</p>
-<p><b>Answer = x⁴ + x² + C</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Integrate 2x.</li>
-<li>Integrate 5x².</li>
-<li>Integrate 6x³ + 4x.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>x² + C</li>
-<li>(5/3)x³ + C</li>
-<li>(3/2)x⁴ + 2x² + C</li>
+<li>A technique for obtaining an approximate numerical solution.</li>
+<li>For example, iteration and Newton-Raphson method.</li>
+<li>√5 ≈ 2.236.</li>
 </ol>
 </div>
 `;
