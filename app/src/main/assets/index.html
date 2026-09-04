@@ -1,545 +1,521 @@
-lessons["Straight Lines"] = `
-<h2>61. Straight Lines</h2>
+lessons["Trigonometric Ratios"] = `
+<h2>71. Trigonometric Ratios</h2>
 
 <h3>Lesson</h3>
-<p>A straight line is a line whose direction remains constant. In coordinate geometry, a straight line can be represented by an equation.</p>
+<p>In a right-angled triangle, the three basic trigonometric ratios are sine, cosine and tangent.</p>
 
-<p>The general equation of a straight line is:</p>
-<p><b>y = mx + c</b></p>
+<p><b>sin θ = opposite/hypotenuse</b></p>
+<p><b>cos θ = adjacent/hypotenuse</b></p>
+<p><b>tan θ = opposite/adjacent</b></p>
 
-<p>where:</p>
-<ul>
-<li><b>m</b> = gradient (slope)</li>
-<li><b>c</b> = y-intercept</li>
-</ul>
-
-<p>The gradient of a line through two points (x₁,y₁) and (x₂,y₂) is:</p>
-<p><b>m = (y₂ - y₁)/(x₂ - x₁)</b></p>
+<p>The relationship is remembered using <b>SOH CAH TOA</b>.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> Find the gradient of the line joining (2,3) and (6,11).</p>
-<p>m = (11 - 3)/(6 - 2)</p>
-<p>m = 8/4 = <b>2</b></p>
+<p><b>Example 1:</b> A right triangle has opposite side 8 cm and hypotenuse 10 cm. Find θ.</p>
+<p>sin θ = 8/10 = 0.8</p>
+<p>θ = sin⁻¹(0.8)</p>
+<p><b>θ ≈ 53.13°</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Find the equation of a line with gradient 3 passing through (2,5).</p>
-<p>Using y - y₁ = m(x - x₁):</p>
-<p>y - 5 = 3(x - 2)</p>
-<p>y - 5 = 3x - 6</p>
-<p><b>y = 3x - 1</b></p>
+<p><b>Example 2:</b> If adjacent = 12 cm and hypotenuse = 13 cm, find cos θ.</p>
+<p>cos θ = 12/13</p>
+<p><b>cos θ ≈ 0.923</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Find the gradient joining (1,2) and (5,10).</li>
-<li>Find the equation of a line with gradient 2 passing through (3,7).</li>
-<li>State the gradient and y-intercept of y = 4x - 5.</li>
+<li>If opposite = 7 cm and hypotenuse = 25 cm, find sin θ.</li>
+<li>If opposite = 9 cm and adjacent = 12 cm, find tan θ.</li>
+<li>If cos θ = 0.5 and θ is acute, find θ.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>2</li>
-<li>y = 2x + 1</li>
-<li>Gradient = 4, y-intercept = -5</li>
+<li>7/25 = 0.28</li>
+<li>3/4 = 0.75</li>
+<li>60°</li>
 </ol>
 </div>
 `;
 
-lessons["Graphs of Linear Equations"] = `
-<h2>62. Graphs of Linear Equations</h2>
+lessons["Special Angles"] = `
+<h2>72. Special Angles</h2>
 
 <h3>Lesson</h3>
-<p>A linear equation can be represented graphically on a coordinate plane. The graph of a linear equation is a straight line.</p>
+<p>Special angles are angles for which exact trigonometric values are commonly known.</p>
 
-<p>For an equation such as <b>y = 2x + 1</b>, choose values of x and calculate the corresponding values of y.</p>
+<p>The main special angles are <b>0°, 30°, 45°, 60° and 90°</b>.</p>
 
-<p>A table of values can then be plotted and the points joined with a straight line.</p>
+<p>Important values include:</p>
+
+<table border="1" cellpadding="8">
+<tr><th>θ</th><th>sin θ</th><th>cos θ</th><th>tan θ</th></tr>
+<tr><td>0°</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>30°</td><td>1/2</td><td>√3/2</td><td>1/√3</td></tr>
+<tr><td>45°</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+<tr><td>60°</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+<tr><td>90°</td><td>1</td><td>0</td><td>undefined</td></tr>
+</table>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example:</b> Complete a table for y = 2x + 1.</p>
-<p>When x = -1:</p>
-<p>y = 2(-1) + 1 = -1</p>
-<p>When x = 0:</p>
-<p>y = 1</p>
-<p>When x = 1:</p>
-<p>y = 3</p>
-<p>When x = 2:</p>
-<p>y = 5</p>
-<p>Points are therefore (-1,-1), (0,1), (1,3) and (2,5).</p>
+<p><b>Example 1:</b> Find sin 30°.</p>
+<p><b>sin 30° = 1/2</b></p>
 </div>
 
 <div class="example">
-<p><b>Example:</b> Find the x-intercept of y = 3x - 6.</p>
-<p>At the x-intercept, y = 0.</p>
-<p>0 = 3x - 6</p>
-<p>3x = 6</p>
-<p><b>x = 2</b></p>
+<p><b>Example 2:</b> Evaluate 2cos 60° + sin 90°.</p>
+<p>= 2(1/2) + 1</p>
+<p>= 1 + 1</p>
+<p><b>= 2</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Complete a table for y = x + 3 when x = -2, -1, 0, 1 and 2.</li>
-<li>Find the y-intercept of y = 5x + 4.</li>
-<li>Find the x-intercept of y = 2x - 8.</li>
+<li>Find cos 60°.</li>
+<li>Find tan 45°.</li>
+<li>Evaluate sin 30° + cos 60°.</li>
+<li>Evaluate 2sin 90° - cos 0°.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>1, 2, 3, 4, 5</li>
-<li>4</li>
-<li>x = 4</li>
+<li>1/2</li>
+<li>1</li>
+<li>1</li>
+<li>1</li>
 </ol>
 </div>
 `;
 
-lessons["Gradient of a Straight Line"] = `
-<h2>63. Gradient of a Straight Line</h2>
+lessons["Trigonometric Identities"] = `
+<h2>73. Trigonometric Identities</h2>
 
 <h3>Lesson</h3>
-<p>The gradient measures the steepness and direction of a straight line.</p>
+<p>A trigonometric identity is an equation that is true for all permitted values of the variable.</p>
+
+<p>The fundamental identity is:</p>
+<p><b>sin²θ + cos²θ = 1</b></p>
+
+<p>Other important identities are:</p>
+<p><b>tan θ = sin θ/cos θ</b></p>
+<p><b>1 + tan²θ = sec²θ</b></p>
+<p><b>1 + cot²θ = cosec²θ</b></p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> If sin θ = 3/5 and θ is acute, find cos θ.</p>
+<p>sin²θ + cos²θ = 1</p>
+<p>(3/5)² + cos²θ = 1</p>
+<p>9/25 + cos²θ = 1</p>
+<p>cos²θ = 16/25</p>
+<p><b>cos θ = 4/5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If sin θ = 5/13, find tan θ for an acute angle.</p>
+<p>Using the 5-12-13 triangle:</p>
+<p>cos θ = 12/13</p>
+<p>tan θ = (5/13)/(12/13)</p>
+<p><b>tan θ = 5/12</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>State the fundamental Pythagorean identity.</li>
+<li>If sin θ = 4/5 and θ is acute, find cos θ.</li>
+<li>If tan θ = 3/4, find sin θ for an acute angle.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>sin²θ + cos²θ = 1</li>
+<li>3/5</li>
+<li>3/5</li>
+</ol>
+</div>
+`;
+
+lessons["Sine Rule"] = `
+<h2>74. Sine Rule</h2>
+
+<h3>Lesson</h3>
+<p>The sine rule is used in non-right-angled triangles when sufficient sides and angles are known.</p>
 
 <p>The formula is:</p>
-<p><b>m = rise/run = (y₂-y₁)/(x₂-x₁)</b></p>
 
-<p>A positive gradient means the line rises from left to right. A negative gradient means it falls from left to right.</p>
+<p><b>a/sin A = b/sin B = c/sin C</b></p>
 
-<p>Parallel lines have equal gradients.</p>
-
-<p>For two non-vertical perpendicular lines:</p>
-<p><b>m₁m₂ = -1</b></p>
+<p>Here, each lowercase side is opposite the corresponding uppercase angle.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> Find the gradient joining (2,4) and (8,16).</p>
-<p>m = (16 - 4)/(8 - 2)</p>
-<p>m = 12/6</p>
-<p><b>m = 2</b></p>
+<p><b>Example:</b> In triangle ABC, A = 30°, B = 45° and a = 10 cm. Find b.</p>
+
+<p>a/sin A = b/sin B</p>
+
+<p>10/sin 30° = b/sin 45°</p>
+
+<p>b = 10(sin 45°)/(sin 30°)</p>
+
+<p>b = 10(√2/2)/(1/2)</p>
+
+<p><b>b = 10√2 ≈ 14.14 cm</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Find the gradient of a line perpendicular to a line with gradient 4.</p>
-<p>m₁m₂ = -1</p>
-<p>4m₂ = -1</p>
-<p><b>m₂ = -1/4</b></p>
+<p><b>Example:</b> If a = 8 cm, A = 40° and B = 70°, find b.</p>
+<p>b = 8(sin 70°)/(sin 40°)</p>
+<p><b>b ≈ 11.69 cm</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Find the gradient joining (1,5) and (5,13).</li>
-<li>Find the gradient joining (2,8) and (6,4).</li>
-<li>Find the gradient perpendicular to 2/3.</li>
+<li>In a triangle, a = 12 cm, A = 30° and B = 45°. Find b.</li>
+<li>State the sine rule.</li>
+<li>If a = 10 cm, A = 40° and B = 60°, find b.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>2</li>
-<li>-1</li>
-<li>-3/2</li>
+<li>12√2 ≈ 16.97 cm</li>
+<li>a/sin A = b/sin B = c/sin C</li>
+<li>≈ 13.48 cm</li>
 </ol>
 </div>
 `;
 
-lessons["Distance Between Two Points"] = `
-<h2>64. Distance Between Two Points</h2>
+lessons["Cosine Rule"] = `
+<h2>75. Cosine Rule</h2>
 
 <h3>Lesson</h3>
-<p>The distance between two points on a coordinate plane can be found using the distance formula.</p>
+<p>The cosine rule is used to find a missing side or angle in a non-right-angled triangle.</p>
 
-<p>For points (x₁,y₁) and (x₂,y₂):</p>
+<p>To find a side:</p>
+<p><b>a² = b² + c² - 2bc cos A</b></p>
 
-<p><b>d = √[(x₂-x₁)² + (y₂-y₁)²]</b></p>
-
-<p>The formula comes from Pythagoras' theorem.</p>
+<p>To find an angle:</p>
+<p><b>cos A = (b² + c² - a²)/(2bc)</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> Find the distance between (1,2) and (4,6).</p>
-<p>d = √[(4-1)² + (6-2)²]</p>
-<p>= √[3² + 4²]</p>
-<p>= √25</p>
-<p><b>= 5 units</b></p>
+<p><b>Example 1:</b> Two sides of a triangle are 5 cm and 7 cm and the included angle is 60°. Find the third side.</p>
+
+<p>a² = 5² + 7² - 2(5)(7)cos 60°</p>
+
+<p>= 25 + 49 - 70(1/2)</p>
+
+<p>= 74 - 35</p>
+
+<p>= 39</p>
+
+<p><b>a = √39 ≈ 6.24 cm</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Find the distance between (-2,3) and (4,11).</p>
-<p>d = √[(4+2)² + (11-3)²]</p>
-<p>= √[6² + 8²]</p>
-<p>= √100</p>
+<p><b>Example 2:</b> A triangle has sides 5 cm, 6 cm and 7 cm. Find the angle opposite the 7 cm side.</p>
+
+<p>cos A = (5² + 6² - 7²)/(2×5×6)</p>
+
+<p>= (25 + 36 - 49)/60</p>
+
+<p>= 12/60</p>
+
+<p>= 0.2</p>
+
+<p><b>A ≈ 78.46°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Two sides are 6 cm and 8 cm with included angle 60°. Find the third side.</li>
+<li>State the cosine rule.</li>
+<li>A triangle has sides 5 cm, 5 cm and 6 cm. Find the angle opposite the 6 cm side.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>√52 ≈ 7.21 cm</li>
+<li>a² = b² + c² - 2bc cos A</li>
+<li>≈ 73.74°</li>
+</ol>
+</div>
+`;
+
+lessons["Bearings"] = `
+<h2>76. Bearings</h2>
+
+<h3>Lesson</h3>
+<p>A bearing is a direction measured clockwise from North.</p>
+
+<p>Bearings are written as three-figure angles. For example:</p>
+
+<ul>
+<li>East = 090°</li>
+<li>South = 180°</li>
+<li>West = 270°</li>
+<li>North = 000° or 360°</li>
+</ul>
+
+<p>Bearings are commonly used in navigation, surveying and map problems.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> A town B is directly east of town A. What is the bearing of B from A?</p>
+<p>East is 90° clockwise from North.</p>
+<p><b>Bearing = 090°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> The bearing of B from A is 120°. Find the bearing of A from B.</p>
+<p>Reverse bearing = 120° + 180°</p>
+<p>= <b>300°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>State the bearing of West.</li>
+<li>Find the reverse bearing of 070°.</li>
+<li>Find the reverse bearing of 250°.</li>
+<li>What is the bearing of South?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>270°</li>
+<li>250°</li>
+<li>070°</li>
+<li>180°</li>
+</ol>
+</div>
+`;
+
+lessons["Distances"] = `
+<h2>77. Distances</h2>
+
+<h3>Lesson</h3>
+<p>Distance problems involve finding the length between two points or places. In coordinate geometry, the distance formula can be used.</p>
+
+<p>For navigation and bearing problems, trigonometry can also be used to calculate distances.</p>
+
+<p>For a right-angled triangle:</p>
+<p><b>Hypotenuse² = Opposite² + Adjacent²</b></p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> A person walks 6 km east and then 8 km north. Find the straight-line distance from the starting point.</p>
+<p>d² = 6² + 8²</p>
+<p>d² = 36 + 64 = 100</p>
+<p><b>d = 10 km</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Two points have coordinates (2,3) and (8,11). Find their distance.</p>
+<p>d = √[(8-2)² + (11-3)²]</p>
+<p>= √(36 + 64)</p>
 <p><b>= 10 units</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Find the distance between (0,0) and (3,4).</li>
-<li>Find the distance between (2,1) and (8,9).</li>
-<li>Find the distance between (-1,-2) and (2,2).</li>
+<li>A person walks 5 km east and 12 km north. Find the direct distance.</li>
+<li>Find the distance between (1,2) and (4,6).</li>
+<li>A right triangle has sides 9 cm and 12 cm. Find the hypotenuse.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
+<li>13 km</li>
 <li>5 units</li>
-<li>10 units</li>
-<li>5 units</li>
+<li>15 cm</li>
 </ol>
 </div>
 `;
 
-lessons["Variation"] = `
-<h2>65. Variation</h2>
+lessons["Statistics"] = `
+<h2>78. Statistics</h2>
 
 <h3>Lesson</h3>
-<p>Variation describes a relationship between quantities. One quantity may change according to another quantity.</p>
+<p>Statistics is the branch of mathematics concerned with collecting, organizing, presenting, analysing and interpreting data.</p>
 
-<p>The major types include:</p>
+<p>Data may be:</p>
 <ul>
-<li>Direct variation</li>
-<li>Inverse variation</li>
-<li>Joint variation</li>
-<li>Partial variation</li>
+<li><b>Qualitative</b> — descriptive information.</li>
+<li><b>Quantitative</b> — numerical information.</li>
 </ul>
 
-<p>In direct variation, y is proportional to x:</p>
-<p><b>y ∝ x</b></p>
-<p>Therefore:</p>
-<p><b>y = kx</b></p>
-
-<p>In inverse variation:</p>
-<p><b>y ∝ 1/x</b></p>
-<p>Therefore:</p>
-<p><b>y = k/x</b></p>
+<p>Quantitative data may be discrete or continuous.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> y varies directly as x. If y = 12 when x = 4, find y when x = 10.</p>
-<p>y = kx</p>
-<p>12 = 4k</p>
-<p>k = 3</p>
-<p>Therefore y = 3x.</p>
-<p>When x = 10:</p>
-<p>y = 3(10) = <b>30</b></p>
+<p><b>Example:</b> The scores of five students are 4, 7, 8, 6 and 10. Find the mean.</p>
+<p>Mean = Sum of values / Number of values</p>
+<p>= (4+7+8+6+10)/5</p>
+<p>= 35/5</p>
+<p><b>= 7</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> y varies inversely as x. If y = 6 when x = 5, find y when x = 15.</p>
-<p>y = k/x</p>
-<p>6 = k/5</p>
-<p>k = 30</p>
-<p>When x = 15:</p>
-<p>y = 30/15 = <b>2</b></p>
+<p><b>Example:</b> Arrange 8, 3, 5, 2 and 7 in ascending order.</p>
+<p><b>2, 3, 5, 7, 8</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>If y varies directly as x and y = 20 when x = 5, find y when x = 8.</li>
-<li>If y varies inversely as x and y = 12 when x = 4, find y when x = 6.</li>
-<li>State the equation for direct variation.</li>
+<li>Find the mean of 5, 7, 9, 11 and 13.</li>
+<li>Arrange 12, 4, 8, 2 and 10 in ascending order.</li>
+<li>State two uses of statistics.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>32</li>
-<li>8</li>
-<li>y = kx</li>
+<li>9</li>
+<li>2, 4, 8, 10, 12</li>
+<li>Planning, decision-making, research, forecasting, etc.</li>
 </ol>
 </div>
 `;
 
-lessons["Direct Variation"] = `
-<h2>66. Direct Variation</h2>
+lessons["Collection and Presentation of Data"] = `
+<h2>79. Collection and Presentation of Data</h2>
 
 <h3>Lesson</h3>
-<p>Direct variation occurs when two quantities increase or decrease together in the same ratio.</p>
+<p>Data can be collected through observation, interviews, questionnaires, experiments and surveys.</p>
 
-<p>We write:</p>
-<p><b>y ∝ x</b></p>
-
-<p>Removing the proportionality sign:</p>
-<p><b>y = kx</b></p>
-
-<p>The constant k is called the constant of proportionality.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example:</b> y varies directly as x. If y = 18 when x = 6, find y when x = 14.</p>
-<p>y = kx</p>
-<p>18 = 6k</p>
-<p>k = 3</p>
-<p>Therefore y = 3x.</p>
-<p>When x = 14:</p>
-<p>y = 3 × 14 = <b>42</b></p>
-</div>
-
-<div class="example">
-<p><b>Example:</b> If distance varies directly as time and a distance of 120 km is travelled in 3 hours, find the distance travelled in 5 hours.</p>
-<p>d = kt</p>
-<p>120 = 3k</p>
-<p>k = 40</p>
-<p>d = 40(5) = <b>200 km</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>y varies directly as x. If y = 15 when x = 3, find y when x = 9.</li>
-<li>p varies directly as q. If p = 28 when q = 7, find p when q = 12.</li>
-<li>If distance varies directly as time and speed is 60 km/h, find the distance travelled in 4 hours.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>45</li>
-<li>48</li>
-<li>240 km</li>
-</ol>
-</div>
-`;
-
-lessons["Inverse Variation"] = `
-<h2>67. Inverse Variation</h2>
-
-<h3>Lesson</h3>
-<p>Inverse variation occurs when one quantity increases while another decreases so that their product remains constant.</p>
-
-<p>We write:</p>
-<p><b>y ∝ 1/x</b></p>
-
-<p>Therefore:</p>
-<p><b>y = k/x</b></p>
-
-<p>or:</p>
-<p><b>xy = k</b></p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example:</b> y varies inversely as x. If y = 10 when x = 3, find y when x = 15.</p>
-<p>xy = k</p>
-<p>10 × 3 = 30</p>
-<p>Therefore k = 30.</p>
-<p>When x = 15:</p>
-<p>15y = 30</p>
-<p><b>y = 2</b></p>
-</div>
-
-<div class="example">
-<p><b>Example:</b> Six workers complete a job in 20 days. Assuming time varies inversely with the number of workers, how many days will 10 workers take?</p>
-<p>workers × days = constant</p>
-<p>6 × 20 = 120</p>
-<p>10d = 120</p>
-<p><b>d = 12 days</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>y varies inversely as x. If y = 8 when x = 5, find y when x = 20.</li>
-<li>If 4 workers take 15 days, how many days will 10 workers take?</li>
-<li>Write the equation for inverse variation.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>2</li>
-<li>6 days</li>
-<li>y = k/x</li>
-</ol>
-</div>
-`;
-
-lessons["Joint Variation"] = `
-<h2>68. Joint Variation</h2>
-
-<h3>Lesson</h3>
-<p>Joint variation occurs when one quantity varies directly as the product of two or more other quantities.</p>
-
-<p>For example:</p>
-<p><b>z ∝ xy</b></p>
-
-<p>Therefore:</p>
-<p><b>z = kxy</b></p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example:</b> z varies jointly as x and y. If z = 24 when x = 2 and y = 3, find z when x = 4 and y = 5.</p>
-<p>z = kxy</p>
-<p>24 = k(2)(3)</p>
-<p>24 = 6k</p>
-<p>k = 4</p>
-<p>Therefore z = 4xy.</p>
-<p>When x = 4 and y = 5:</p>
-<p>z = 4 × 4 × 5 = <b>80</b></p>
-</div>
-
-<div class="example">
-<p><b>Example:</b> If A varies jointly as b and c, write the equation.</p>
-<p>A ∝ bc</p>
-<p>Therefore:</p>
-<p><b>A = kbc</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>z varies jointly as x and y. If z = 30 when x = 3 and y = 2, find z when x = 5 and y = 4.</li>
-<li>If A ∝ bc and A = 24 when b = 2 and c = 3, find the constant k.</li>
-<li>Write the equation for z varying jointly as x and y.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>100</li>
-<li>4</li>
-<li>z = kxy</li>
-</ol>
-</div>
-`;
-
-lessons["Partial Variation"] = `
-<h2>69. Partial Variation</h2>
-
-<h3>Lesson</h3>
-<p>Partial variation occurs when one quantity varies directly with another quantity but also has a fixed constant.</p>
-
-<p>The general form is:</p>
-<p><b>y = a + bx</b></p>
-
-<p>Here, <b>a</b> is the constant part and <b>bx</b> is the variable part.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example:</b> y varies partly as x. If y = 8 when x = 2 and y = 18 when x = 5, find the equation connecting y and x.</p>
-
-<p>Let y = a + bx.</p>
-
-<p>For x = 2:</p>
-<p>8 = a + 2b</p>
-
-<p>For x = 5:</p>
-<p>18 = a + 5b</p>
-
-<p>Subtract:</p>
-<p>10 = 3b</p>
-<p>b = 10/3</p>
-
-<p>Substitute into the first equation:</p>
-<p>8 = a + 20/3</p>
-<p>a = 4/3</p>
-
-<p>Therefore:</p>
-<p><b>y = 4/3 + (10/3)x</b></p>
-</div>
-
-<div class="example">
-<p><b>Example:</b> A taxi charges a fixed fee of ₦500 plus ₦200 per kilometre. Write an equation for the total cost C for x kilometres.</p>
-<p>Fixed cost = 500</p>
-<p>Variable cost = 200x</p>
-<p><b>C = 500 + 200x</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>State the general equation for partial variation.</li>
-<li>A taxi charges ₦300 fixed fee and ₦150 per kilometre. Find the cost of 8 km.</li>
-<li>y = 5 + 3x. Find y when x = 7.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>y = a + bx</li>
-<li>₦1,500</li>
-<li>26</li>
-</ol>
-</div>
-`;
-
-lessons["Trigonometry"] = `
-<h2>70. Trigonometry</h2>
-
-<h3>Lesson</h3>
-<p>Trigonometry is the study of relationships between angles and sides of triangles.</p>
-
-<p>In a right-angled triangle, the three important sides are:</p>
+<p>Data may be presented using:</p>
 <ul>
-<li><b>Hypotenuse</b> — opposite the right angle.</li>
-<li><b>Opposite</b> — opposite the given angle.</li>
-<li><b>Adjacent</b> — next to the given angle, excluding the hypotenuse.</li>
+<li>Tables</li>
+<li>Bar charts</li>
+<li>Pie charts</li>
+<li>Line graphs</li>
+<li>Histograms</li>
+<li>Frequency polygons</li>
+<li>Ogives</li>
 </ul>
 
-<p>The three basic trigonometric ratios are:</p>
-
-<p><b>sin θ = opposite/hypotenuse</b></p>
-<p><b>cos θ = adjacent/hypotenuse</b></p>
-<p><b>tan θ = opposite/adjacent</b></p>
-
-<p>A useful memory aid is <b>SOH CAH TOA</b>.</p>
-
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> A right-angled triangle has opposite side 6 cm and hypotenuse 10 cm. Find sin θ.</p>
-<p>sin θ = opposite/hypotenuse</p>
-<p>sin θ = 6/10</p>
-<p><b>sin θ = 0.6</b></p>
+<p><b>Example:</b> The number of books read by students is:</p>
+
+<table border="1" cellpadding="8">
+<tr><th>Books</th><th>Frequency</th></tr>
+<tr><td>0</td><td>3</td></tr>
+<tr><td>1</td><td>5</td></tr>
+<tr><td>2</td><td>7</td></tr>
+<tr><td>3</td><td>5</td></tr>
+</table>
+
+<p>The table is a frequency table because it shows each value together with how often it occurs.</p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> A right-angled triangle has adjacent side 8 cm and opposite side 6 cm. Find θ.</p>
-<p>tan θ = 6/8</p>
-<p>tan θ = 0.75</p>
-<p>θ = tan⁻¹(0.75)</p>
-<p><b>θ ≈ 36.87°</b></p>
+<p><b>Example:</b> A class has 40 students. 10 prefer football. The angle for football in a pie chart is:</p>
+<p>Angle = (10/40) × 360°</p>
+<p><b>= 90°</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>A triangle has opposite = 5 cm and hypotenuse = 13 cm. Find sin θ.</li>
-<li>If opposite = 12 cm and adjacent = 5 cm, find tan θ.</li>
-<li>State the three basic trigonometric ratios.</li>
+<li>Name three methods of collecting data.</li>
+<li>Name three methods of presenting data.</li>
+<li>In a pie chart, 15 out of 60 students prefer Mathematics. Find the angle.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>5/13</li>
-<li>12/5 = 2.4</li>
-<li>sin θ = O/H, cos θ = A/H, tan θ = O/A</li>
+<li>Questionnaire, interview, observation.</li>
+<li>Tables, bar charts, pie charts.</li>
+<li>90°</li>
+</ol>
+</div>
+`;
+
+lessons["Frequency Distribution"] = `
+<h2>80. Frequency Distribution</h2>
+
+<h3>Lesson</h3>
+<p>A frequency distribution is a table that shows values or classes together with the number of observations in each.</p>
+
+<p>The frequency of a value tells us how many times that value occurs.</p>
+
+<p>For grouped data, observations are placed into class intervals such as 0–9, 10–19 and 20–29.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example:</b> Consider the data:</p>
+<p>2, 3, 3, 4, 4, 4, 5, 5</p>
+
+<table border="1" cellpadding="8">
+<tr><th>Value</th><th>Frequency</th></tr>
+<tr><td>2</td><td>1</td></tr>
+<tr><td>3</td><td>2</td></tr>
+<tr><td>4</td><td>3</td></tr>
+<tr><td>5</td><td>2</td></tr>
+</table>
+
+<p>Total frequency = 1 + 2 + 3 + 2 = <b>8</b>.</p>
+</div>
+
+<div class="example">
+<p><b>Example:</b> Find the total frequency for frequencies 4, 7, 9 and 5.</p>
+<p>Total = 4 + 7 + 9 + 5</p>
+<p><b>= 25</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the frequency of 5 in 2,5,3,5,4,5,6.</li>
+<li>Find the total frequency of 6, 8, 4 and 7.</li>
+<li>What is a frequency distribution?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3</li>
+<li>25</li>
+<li>A table showing values or classes and their frequencies.</li>
 </ol>
 </div>
 `;
