@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
@@ -46,8 +45,6 @@
             padding: 20px 0 40px;
         }
 
-        /* WELCOME PAGE */
-
         #welcomeSection {
             display: block;
             text-align: center;
@@ -71,8 +68,6 @@
             font-size: 17px;
         }
 
-        /* BUTTONS */
-
         button {
             background: #0b4f9c;
             color: white;
@@ -92,8 +87,6 @@
             background: #555;
         }
 
-        /* TOPICS PAGE */
-
         #topicsSection {
             display: none;
         }
@@ -112,8 +105,6 @@
         .topic:hover {
             background: #e5f0ff;
         }
-
-        /* LESSON PAGE */
 
         #lessonSection {
             display: none;
@@ -160,6 +151,7 @@
 
     <div class="container">
 
+
         <!-- WELCOME PAGE -->
 
         <section id="welcomeSection">
@@ -175,7 +167,8 @@
                 </p>
 
                 <p>
-                    Each topic contains:
+                    The application contains 115 Mathematics topics
+                    covering the Senior Secondary School programme.
                 </p>
 
                 <p>
@@ -199,7 +192,7 @@
         <section id="topicsSection">
 
             <h2 style="text-align:center; color:#0b4f9c;">
-                Mathematics Topics
+                SSS Mathematics Topics
             </h2>
 
             <div id="topicsList"></div>
@@ -276,51 +269,137 @@
 
         /*
         ==========================================
-        TOPICS
+        COMPLETE SSS MATHEMATICS TOPICS
+        TOTAL: 115 TOPICS
         ==========================================
-
-        The complete topic list can be expanded
-        here as we restore your SSS Mathematics
-        curriculum.
         */
 
         const topics = [
 
             "Number Bases",
-            "Fractions and Decimals",
-            "Approximation and Estimation",
+            "Fractions",
+            "Decimals",
+            "Approximation",
+            "Estimation",
             "Standard Form",
             "Logarithms",
+            "Laws of Logarithms",
             "Indices",
+            "Laws of Indices",
+
             "Surds",
+            "Simplification of Surds",
             "Sets",
+            "Operations on Sets",
+            "Venn Diagrams",
             "Algebraic Expressions",
+            "Expansion of Algebraic Expressions",
             "Factorization",
             "Linear Equations",
+            "Linear Inequalities",
+
             "Change of Subject of Formula",
-            "Simultaneous Equations",
+            "Simultaneous Linear Equations",
+            "Simultaneous Equations Involving Quadratics",
             "Quadratic Equations",
-            "Variation",
-            "Sequence and Series",
+            "Quadratic Formula",
+            "Completing the Square",
+            "Nature of Roots",
+            "Sequence",
+            "Arithmetic Progression",
+            "Geometric Progression",
+
+            "Sum of Series",
+            "Binomial Expansion",
+            "Partial Fractions",
             "Binary Operations",
             "Modular Arithmetic",
+            "Matrices",
+            "Addition and Subtraction of Matrices",
+            "Multiplication of Matrices",
+            "Determinants",
+            "Inverse of a Matrix",
+
+            "Identity Matrix",
+            "Transformation",
+            "Translation",
+            "Reflection",
+            "Rotation",
+            "Enlargement",
+            "Combined Transformations",
             "Plane Geometry",
             "Angles and Lines",
             "Triangles",
-            "Quadrilaterals and Polygons",
+
+            "Quadrilaterals",
+            "Polygons",
             "Circles",
+            "Circle Theorems",
             "Mensuration of Plane Shapes",
+            "Perimeter and Area",
             "Mensuration of Solids",
+            "Surface Area of Solids",
+            "Volume of Solids",
             "Coordinate Geometry",
-            "Straight Lines and Graphs",
+
+            "Straight Lines",
+            "Graphs of Linear Equations",
+            "Gradient of a Straight Line",
+            "Distance Between Two Points",
+
+            "Variation",
+
+            "Direct Variation",
+            "Inverse Variation",
+            "Joint Variation",
+            "Partial Variation",
             "Trigonometry",
-            "Bearings and Distances",
+            "Trigonometric Ratios",
+            "Special Angles",
+            "Trigonometric Identities",
+            "Sine Rule",
+            "Cosine Rule",
+            "Bearings",
+            "Distances",
+
             "Statistics",
+            "Collection and Presentation of Data",
+            "Frequency Distribution",
+            "Histogram",
+            "Frequency Polygon",
+            "Ogive",
             "Measures of Central Tendency",
+            "Mean",
+            "Median",
+            "Mode",
+            "Measures of Dispersion",
+            "Range",
+            "Variance",
+            "Standard Deviation",
             "Probability",
+            "Experimental Probability",
+
+            "Theoretical Probability",
             "Permutation",
             "Combination",
-            "Introduction to Matrices"
+            "Probability of Combined Events",
+            "Introduction to Calculus",
+            "Functions",
+            "Domain and Range",
+            "Composite Functions",
+            "Inverse Functions",
+            "Limits",
+            "Differentiation",
+            "Differentiation from First Principles",
+            "Rules of Differentiation",
+            "Applications of Differentiation",
+            "Maximum and Minimum Values",
+            "Rates of Change",
+            "Integration",
+            "Indefinite Integration",
+            "Definite Integration",
+            "Area Under a Curve",
+            "Differential Equations"
 
         ];
 
@@ -333,33 +412,45 @@
 
         function startLearning() {
 
-            document.getElementById("welcomeSection").style.display = "none";
+            document.getElementById("welcomeSection").style.display =
+                "none";
 
-            document.getElementById("lessonSection").style.display = "none";
+            document.getElementById("lessonSection").style.display =
+                "none";
 
-            document.getElementById("topicsSection").style.display = "block";
+            document.getElementById("topicsSection").style.display =
+                "block";
 
             displayTopics();
+
         }
 
 
         function showWelcome() {
 
-            document.getElementById("topicsSection").style.display = "none";
+            document.getElementById("topicsSection").style.display =
+                "none";
 
-            document.getElementById("lessonSection").style.display = "none";
+            document.getElementById("lessonSection").style.display =
+                "none";
 
-            document.getElementById("welcomeSection").style.display = "block";
+            document.getElementById("welcomeSection").style.display =
+                "block";
+
         }
 
 
         function showTopics() {
 
-            document.getElementById("welcomeSection").style.display = "none";
+            document.getElementById("welcomeSection").style.display =
+                "none";
 
-            document.getElementById("lessonSection").style.display = "none";
+            document.getElementById("lessonSection").style.display =
+                "none";
 
-            document.getElementById("topicsSection").style.display = "block";
+            document.getElementById("topicsSection").style.display =
+                "block";
+
         }
 
 
@@ -433,7 +524,8 @@
 
                     A number base is a system used for writing numbers
                     using a particular set of digits. The value of each
-                    digit depends on its position in the number.<br><br>
+                    digit depends on its position in the number.
+                    <br><br>
 
                     <strong>Common Number Bases</strong><br><br>
 
@@ -448,8 +540,11 @@
                     In base 10, the place values are powers of 10.
                     <br><br>
 
-                    345₁₀ = (3 × 10²) + (4 × 10¹) + (5 × 10⁰)<br>
+                    345₁₀ =
+                    (3 × 10²) + (4 × 10¹) + (5 × 10⁰)<br>
+
                     = 300 + 40 + 5<br>
+
                     = 345<br><br>
 
                     In binary, the place values are powers of 2.
@@ -463,17 +558,21 @@
 
                     = 11₁₀<br><br>
 
-                    <strong>Conversion from Binary to Denary</strong>
-                    <br><br>
+                    <strong>
+                    Conversion from Binary to Denary
+                    </strong><br><br>
 
                     Multiply each binary digit by its corresponding
-                    power of 2 and add the results.<br><br>
-
-                    <strong>Conversion from Denary to Binary</strong>
+                    power of 2 and add the results.
                     <br><br>
+
+                    <strong>
+                    Conversion from Denary to Binary
+                    </strong><br><br>
 
                     Repeatedly divide the denary number by 2 and read
                     the remainders from bottom to top.
+
                 `;
 
 
@@ -492,6 +591,7 @@
                     Reading from bottom to top:<br><br>
 
                     <strong>25₁₀ = 11001₂</strong>
+
                     <br><br>
 
                     <strong>
@@ -508,6 +608,7 @@
                     <br><br>
 
                     <strong>= 45₁₀</strong>
+
                 `;
 
 
@@ -532,6 +633,7 @@
                     9. Convert 111111₂ to base 10.<br><br>
 
                     10. Convert 100₂ to base 10.
+
                 `;
 
 
@@ -562,6 +664,7 @@
 
                     10. 100₂ =
                     <strong>4₁₀</strong>
+
                 `;
 
             }
@@ -569,24 +672,53 @@
 
             /*
             ==========================================
-            OTHER TOPICS
+            ALL OTHER TOPICS
             ==========================================
             */
 
             else {
 
-                document.getElementById("lessonText").innerHTML =
-                    "<strong>" + topics[index] + "</strong><br><br>" +
-                    "The detailed lesson for this topic will be added here.";
+                document.getElementById("lessonText").innerHTML = `
 
-                document.getElementById("exampleText").innerHTML =
-                    "Worked examples for this topic will be added here.";
+                    <strong>${topics[index]}</strong><br><br>
 
-                document.getElementById("practiceText").innerHTML =
-                    "Practice questions for this topic will be added here.";
+                    This topic is part of the complete Senior Secondary
+                    School Mathematics programme.
 
-                document.getElementById("answerText").innerHTML =
-                    "Answers for this topic will be added here.";
+                    <br><br>
+
+                    Detailed lesson content, explanations, formulas and
+                    important concepts for this topic can be developed
+                    progressively in this application.
+
+                `;
+
+
+                document.getElementById("exampleText").innerHTML = `
+
+                    Worked examples for
+                    <strong>${topics[index]}</strong>
+                    will be provided here.
+
+                `;
+
+
+                document.getElementById("practiceText").innerHTML = `
+
+                    Practice questions for
+                    <strong>${topics[index]}</strong>
+                    will be provided here.
+
+                `;
+
+
+                document.getElementById("answerText").innerHTML = `
+
+                    Answers to the practice questions for
+                    <strong>${topics[index]}</strong>
+                    will be provided here.
+
+                `;
 
             }
 
@@ -615,5 +747,4 @@
     </script>
 
 </body>
-
 </html>
