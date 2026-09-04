@@ -1,164 +1,4954 @@
-lessons["Indefinite Integration"] = `
-<h2>111. Indefinite Integration</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>SSS Mathematics</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f2f7ff;
+    color:#123;
+    line-height:1.6;
+}
+
+header{
+    background:#0757a6;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:5px 0 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:15px;
+}
+
+.welcome-card,
+.lesson-card,
+.topic{
+    background:white;
+    border-radius:14px;
+    box-shadow:0 2px 8px #0002;
+}
+
+.welcome-card{
+    padding:30px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.topic{
+    padding:16px;
+    margin:10px 0;
+    cursor:pointer;
+    border-left:5px solid #0757a6;
+}
+
+.topic:hover{
+    background:#eaf3ff;
+}
+
+.lesson-card{
+    padding:20px;
+    margin-top:15px;
+}
+
+.lesson-card h2{
+    color:#0757a6;
+}
+
+.lesson-card h3{
+    color:#0757a6;
+    margin-top:25px;
+}
+
+.example{
+    background:#eef6ff;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+}
+
+.practice{
+    background:#f8fbff;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+    border-left:4px solid #0757a6;
+}
+
+.answer{
+    background:#edf9ed;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+    border-left:4px solid green;
+}
+
+button{
+    border:0;
+    border-radius:10px;
+    padding:13px 20px;
+    background:#0757a6;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#064985;
+}
+
+.back{
+    background:#555;
+    margin-top:20px;
+}
+
+.hidden{
+    display:none;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SSS MATHEMATICS</h1>
+    <p>Complete Mathematics Learning App — Topics 1–115</p>
+</header>
+
+<div class="container">
+
+<section id="welcomeSection">
+
+    <div class="welcome-card">
+
+        <h2>Welcome to SSS Mathematics</h2>
+
+        <p>
+            Learn Mathematics through detailed lessons,
+            worked examples, practice questions and answers.
+        </p>
+
+        <button onclick="startLearning()">
+            START LEARNING
+        </button>
+
+    </div>
+
+</section>
+
+<section id="topicsSection" class="hidden">
+
+    <h2>Mathematics Topics 1–115</h2>
+
+    <div id="topicsList"></div>
+
+</section>
+
+<section id="lessonSection" class="hidden">
+
+    <div id="lessonContent" class="lesson-card"></div>
+
+    <button class="back" onclick="showTopics()">
+        ← Back to Topics
+    </button>
+
+</section>
+
+</div>
+
+<div class="footer">
+    <p>SSS Mathematics Learning App</p>
+    <p>Topics 1–115</p>
+</div>
+
+<script>
+
+const topics = [
+
+"Number Bases",
+"Fractions",
+"Decimals",
+"Approximation",
+"Estimation",
+"Standard Form",
+"Logarithms",
+"Laws of Logarithms",
+"Indices",
+"Laws of Indices",
+
+"Surds",
+"Simplification of Surds",
+"Sets",
+"Operations on Sets",
+"Venn Diagrams",
+"Algebraic Expressions",
+"Expansion of Algebraic Expressions",
+"Factorization",
+"Linear Equations",
+"Linear Inequalities",
+
+"Change of Subject of Formula",
+"Simultaneous Linear Equations",
+"Simultaneous Equations Involving Quadratics",
+"Quadratic Equations",
+"Quadratic Formula",
+"Completing the Square",
+"Nature of Roots",
+"Sequence",
+"Arithmetic Progression",
+"Geometric Progression",
+
+"Sum of Series",
+"Binomial Expansion",
+"Partial Fractions",
+"Binary Operations",
+"Modular Arithmetic",
+"Matrices",
+"Addition and Subtraction of Matrices",
+"Multiplication of Matrices",
+"Determinants",
+"Inverse of a Matrix",
+
+"Identity Matrix",
+"Transformation",
+"Translation",
+"Reflection",
+"Rotation",
+"Enlargement",
+"Combined Transformations",
+"Plane Geometry",
+"Angles and Lines",
+"Triangles",
+
+"Quadrilaterals",
+"Polygons",
+"Circles",
+"Circle Theorems",
+"Mensuration of Plane Shapes",
+"Perimeter and Area",
+"Mensuration of Solids",
+"Surface Area of Solids",
+"Volume of Solids",
+"Coordinate Geometry",
+
+"Straight Lines",
+"Graphs of Linear Equations",
+"Gradient of a Straight Line",
+"Distance Between Two Points",
+"Variation",
+"Direct Variation",
+"Inverse Variation",
+"Joint Variation",
+"Partial Variation",
+"Trigonometry",
+
+"Trigonometric Ratios",
+"Special Angles",
+"Trigonometric Identities",
+"Sine Rule",
+"Cosine Rule",
+"Bearings",
+"Distances",
+"Statistics",
+"Collection and Presentation of Data",
+"Frequency Distribution",
+
+"Histogram",
+"Frequency Polygon",
+"Ogive",
+"Measures of Central Tendency",
+"Mean",
+"Median",
+"Mode",
+"Measures of Dispersion",
+"Range",
+"Variance",
+
+"Standard Deviation",
+"Probability",
+"Experimental Probability",
+"Theoretical Probability",
+"Permutation",
+"Combination",
+"Probability of Combined Events",
+"Introduction to Calculus",
+"Functions",
+"Domain and Range",
+
+"Composite Functions",
+"Inverse Functions",
+"Limits",
+"Differentiation",
+"Differentiation from First Principles",
+"Rules of Differentiation",
+"Applications of Differentiation",
+"Maximum and Minimum Values",
+"Rates of Change",
+"Integration",
+
+"Indefinite Integration",
+"Definite Integration",
+"Area Under a Curve",
+"Differential Equations",
+"Numerical Methods"
+
+];
+
+const lessons = {};lessons["Number Bases"] = `
+<h2>1. Number Bases</h2>
 <h3>Lesson</h3>
-<p>Indefinite integration is the process of finding the general antiderivative of a function.</p>
+<p>A number base tells us how many digits are used in a number system. Decimal has base 10, binary has base 2, octal has base 8 and hexadecimal has base 16.</p>
 
-<p>It is called indefinite because there are no upper and lower limits.</p>
-
-<p>The constant of integration <b>C</b> must be included because the derivative of any constant is zero.</p>
-
-<p>The basic rule is:</p>
-
-<p><b>∫xⁿ dx = xⁿ⁺¹/(n+1) + C</b></p>
+<p>In base 10, the place values are powers of 10. In base 2, the place values are powers of 2.</p>
 
 <h3>Worked Examples</h3>
-
 <div class="example">
-<p><b>Example 1:</b> Integrate 6x².</p>
-
-<p>∫6x² dx</p>
-<p>= 6 × x³/3 + C</p>
-<p><b>= 2x³ + C</b></p>
+<p><b>Example 1:</b> Convert 1011₂ to base 10.</p>
+<p>1011₂ = 1(2³) + 0(2²) + 1(2¹) + 1(2⁰)</p>
+<p>= 8 + 0 + 2 + 1</p>
+<p><b>= 11₁₀</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Integrate 4x³ - 6x + 5.</p>
-
-<p>∫(4x³ - 6x + 5)dx</p>
-<p>= x⁴ - 3x² + 5x + C</p>
-
-<p><b>Answer = x⁴ - 3x² + 5x + C</b></p>
+<p><b>Example 2:</b> Convert 13₁₀ to base 2.</p>
+<p>13 ÷ 2 = 6 remainder 1</p>
+<p>6 ÷ 2 = 3 remainder 0</p>
+<p>3 ÷ 2 = 1 remainder 1</p>
+<p>1 ÷ 2 = 0 remainder 1</p>
+<p>Reading the remainders from bottom to top:</p>
+<p><b>13₁₀ = 1101₂</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Integrate 8x.</li>
-<li>Integrate 3x² + 4.</li>
-<li>Integrate 10x⁴ - 6x².</li>
+<li>Convert 10101₂ to base 10.</li>
+<li>Convert 15₁₀ to base 2.</li>
+<li>Convert 24₁₀ to base 2.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>4x² + C</li>
-<li>x³ + 4x + C</li>
-<li>2x⁵ - 2x³ + C</li>
+<li>21₁₀</li>
+<li>1111₂</li>
+<li>11000₂</li>
+</ol>
+</div>
+`;
+
+lessons["Fractions"] = `
+<h2>2. Fractions</h2>
+<h3>Lesson</h3>
+<p>A fraction represents part of a whole. The top number is the numerator and the bottom number is the denominator.</p>
+
+<p>Fractions may be proper, improper or mixed numbers.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Add 2/3 + 1/6.</p>
+<p>LCM of 3 and 6 = 6</p>
+<p>2/3 = 4/6</p>
+<p>Therefore:</p>
+<p>4/6 + 1/6 = <b>5/6</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Multiply 3/4 × 2/5.</p>
+<p>= 6/20</p>
+<p>= <b>3/10</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Calculate 1/2 + 1/4.</li>
+<li>Calculate 5/6 - 1/3.</li>
+<li>Calculate 2/3 × 3/4.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3/4</li>
+<li>1/2</li>
+<li>1/2</li>
+</ol>
+</div>
+`;
+
+lessons["Decimals"] = `
+<h2>3. Decimals</h2>
+<h3>Lesson</h3>
+<p>Decimals are numbers expressed using a decimal point. The digits after the decimal point represent tenths, hundredths, thousandths and so on.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Add 4.35 and 2.7.</p>
+<p>Write 2.7 as 2.70.</p>
+<p>4.35 + 2.70 = <b>7.05</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Convert 0.75 to a fraction.</p>
+<p>0.75 = 75/100</p>
+<p>= <b>3/4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Calculate 5.6 + 3.25.</li>
+<li>Calculate 8.4 - 2.75.</li>
+<li>Convert 0.625 to a fraction.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>8.85</li>
+<li>5.65</li>
+<li>5/8</li>
+</ol>
+</div>
+`;
+
+lessons["Approximation"] = `
+<h2>4. Approximation</h2>
+<h3>Lesson</h3>
+<p>Approximation is the process of replacing a number with a nearby value that is easier to use.</p>
+
+<p>Numbers can be approximated to a specified number of decimal places or significant figures.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Round 7.846 to 2 decimal places.</p>
+<p>The third decimal digit is 6, so increase the second decimal digit.</p>
+<p><b>7.846 ≈ 7.85</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Round 0.004768 to 2 significant figures.</p>
+<p>The first two significant figures are 4 and 7. The next digit is 6.</p>
+<p><b>0.004768 ≈ 0.0048</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Round 12.567 to 2 decimal places.</li>
+<li>Round 8.943 to 1 decimal place.</li>
+<li>Round 4567 to 2 significant figures.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>12.57</li>
+<li>8.9</li>
+<li>4600</li>
+</ol>
+</div>
+`;
+
+lessons["Estimation"] = `
+<h2>5. Estimation</h2>
+<h3>Lesson</h3>
+<p>Estimation involves finding an approximate answer by rounding numbers before performing a calculation.</p>
+
+<p>It is useful for checking whether an exact answer is reasonable.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Estimate 49.8 × 20.3.</p>
+<p>49.8 ≈ 50</p>
+<p>20.3 ≈ 20</p>
+<p>Therefore:</p>
+<p>50 × 20 = <b>1000</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Estimate 398 ÷ 19.7.</p>
+<p>398 ≈ 400</p>
+<p>19.7 ≈ 20</p>
+<p>400 ÷ 20 = <b>20</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Estimate 48.6 × 9.8.</li>
+<li>Estimate 503 ÷ 25.2.</li>
+<li>Estimate 19.7 + 31.2.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>500</li>
+<li>20</li>
+<li>50</li>
+</ol>
+</div>
+`;
+
+lessons["Standard Form"] = `
+<h2>6. Standard Form</h2>
+<h3>Lesson</h3>
+<p>Standard form is used to write very large or very small numbers conveniently.</p>
+
+<p>A number in standard form is written as:</p>
+<p><b>a × 10ⁿ</b></p>
+<p>where 1 ≤ a &lt; 10 and n is an integer.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Express 450000 in standard form.</p>
+<p>450000 = <b>4.5 × 10⁵</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Express 0.00072 in standard form.</p>
+<p>0.00072 = <b>7.2 × 10⁻⁴</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Write 7200000 in standard form.</li>
+<li>Write 0.00056 in standard form.</li>
+<li>Convert 3.2 × 10⁴ to ordinary form.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>7.2 × 10⁶</li>
+<li>5.6 × 10⁻⁴</li>
+<li>32000</li>
+</ol>
+</div>
+`;
+
+lessons["Logarithms"] = `
+<h2>7. Logarithms</h2>
+<h3>Lesson</h3>
+<p>A logarithm is another way of expressing an index.</p>
+
+<p>If <b>aˣ = N</b>, then:</p>
+<p><b>logₐN = x</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Evaluate log₂8.</p>
+<p>Since 2³ = 8:</p>
+<p><b>log₂8 = 3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve log₁₀x = 2.</p>
+<p>Convert to index form:</p>
+<p>x = 10²</p>
+<p><b>x = 100</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Evaluate log₂16.</li>
+<li>Evaluate log₁₀1000.</li>
+<li>Solve log₃x = 4.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>4</li>
+<li>3</li>
+<li>x = 81</li>
+</ol>
+</div>
+`;
+
+lessons["Laws of Logarithms"] = `
+<h2>8. Laws of Logarithms</h2>
+<h3>Lesson</h3>
+<p>The laws of logarithms allow logarithmic expressions to be simplified.</p>
+
+<p><b>Product law:</b> logₐ(MN) = logₐM + logₐN</p>
+<p><b>Quotient law:</b> logₐ(M/N) = logₐM - logₐN</p>
+<p><b>Power law:</b> logₐ(Mⁿ) = n logₐM</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Simplify log₂4 + log₂8.</p>
+<p>= log₂(4 × 8)</p>
+<p>= log₂32</p>
+<p><b>= 5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Simplify log₃81 - log₃9.</p>
+<p>= log₃(81/9)</p>
+<p>= log₃9</p>
+<p><b>= 2</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Simplify log₂8 + log₂4.</li>
+<li>Simplify log₅25 - log₅5.</li>
+<li>Expand log₂(x³).</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5</li>
+<li>1</li>
+<li>3log₂x</li>
+</ol>
+</div>
+`;
+
+lessons["Indices"] = `
+<h2>9. Indices</h2>
+<h3>Lesson</h3>
+<p>An index or exponent tells us how many times a number is multiplied by itself.</p>
+
+<p>For example, a³ = a × a × a.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Simplify 2³ × 2².</p>
+<p>When multiplying powers with the same base, add the indices.</p>
+<p>2³ × 2² = 2⁵</p>
+<p><b>= 32</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve 2ˣ = 16.</p>
+<p>Since 16 = 2⁴:</p>
+<p>2ˣ = 2⁴</p>
+<p><b>x = 4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Simplify 3² × 3³.</li>
+<li>Simplify 5⁴ ÷ 5².</li>
+<li>Solve 3ˣ = 27.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3⁵ = 243</li>
+<li>5² = 25</li>
+<li>x = 3</li>
+</ol>
+</div>
+`;
+
+lessons["Laws of Indices"] = `
+<h2>10. Laws of Indices</h2>
+<h3>Lesson</h3>
+
+<p>The main laws of indices are:</p>
+
+<p><b>aᵐ × aⁿ = aᵐ⁺ⁿ</b></p>
+<p><b>aᵐ ÷ aⁿ = aᵐ⁻ⁿ</b></p>
+<p><b>(aᵐ)ⁿ = aᵐⁿ</b></p>
+<p><b>a⁰ = 1</b></p>
+<p><b>a⁻ⁿ = 1/aⁿ</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Simplify x³ × x⁴.</p>
+<p>= x³⁺⁴</p>
+<p><b>= x⁷</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Simplify (2³)².</p>
+<p>= 2⁶</p>
+<p><b>= 64</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Simplify a² × a⁵.</li>
+<li>Simplify x⁸ ÷ x³.</li>
+<li>Simplify (y²)³.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>a⁷</li>
+<li>x⁵</li>
+<li>y⁶</li>
+</ol>
+</div>
+`;
+
+lessons["Surds"] = `
+<h2>11. Surds</h2>
+<h3>Lesson</h3>
+<p>A surd is an irrational root that cannot be expressed exactly as a rational number.</p>
+
+<p>Examples include √2, √3 and √5.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Simplify √12.</p>
+<p>√12 = √(4 × 3)</p>
+<p>= 2√3</p>
+<p><b>Answer = 2√3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Simplify √8 + √18.</p>
+<p>√8 = 2√2</p>
+<p>√18 = 3√2</p>
+<p>Therefore:</p>
+<p>2√2 + 3√2 = <b>5√2</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Simplify √20.</li>
+<li>Simplify √27.</li>
+<li>Simplify √12 + √27.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2√5</li>
+<li>3√3</li>
+<li>5√3</li>
+</ol>
+</div>
+`;
+
+lessons["Simplification of Surds"] = `
+<h2>12. Simplification of Surds</h2>
+<h3>Lesson</h3>
+<p>Surds can be simplified by taking perfect-square factors outside the square root.</p>
+
+<p>Rationalising the denominator removes a surd from the denominator of a fraction.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Simplify 1/√2.</p>
+<p>Multiply numerator and denominator by √2:</p>
+<p>1/√2 × √2/√2 = √2/2</p>
+<p><b>Answer = √2/2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Simplify 3/√5.</p>
+<p>= 3√5/5</p>
+<p><b>Answer = 3√5/5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Rationalise 1/√3.</li>
+<li>Rationalise 2/√5.</li>
+<li>Simplify √45.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>√3/3</li>
+<li>2√5/5</li>
+<li>3√5</li>
+</ol>
+</div>
+`;
+
+lessons["Sets"] = `
+<h2>13. Sets</h2>
+<h3>Lesson</h3>
+<p>A set is a well-defined collection of objects. The objects in a set are called elements or members.</p>
+
+<p>Sets are commonly represented using braces.</p>
+
+<p>For example:</p>
+<p>A = {1,2,3,4}</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If A = {2,4,6,8}, state the number of elements in A.</p>
+<p>There are four elements.</p>
+<p><b>n(A) = 4</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If B = {a,e,i,o,u}, is e a member of B?</p>
+<p>Yes.</p>
+<p><b>e ∈ B</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If A = {1,3,5,7}, find n(A).</li>
+<li>State whether 4 belongs to {2,4,6,8}.</li>
+<li>Write the set of the first five positive integers.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>4</li>
+<li>Yes.</li>
+<li>{1,2,3,4,5}</li>
+</ol>
+</div>
+`;
+
+lessons["Operations on Sets"] = `
+<h2>14. Operations on Sets</h2>
+<h3>Lesson</h3>
+<p>The main operations on sets are union, intersection and complement.</p>
+
+<p><b>Union:</b> A ∪ B contains elements in A or B or both.</p>
+<p><b>Intersection:</b> A ∩ B contains elements common to A and B.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If A = {1,2,3} and B = {3,4,5}, find A ∪ B.</p>
+<p>A ∪ B = <b>{1,2,3,4,5}</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find A ∩ B for the same sets.</p>
+<p>The common element is 3.</p>
+<p><b>A ∩ B = {3}</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If A = {1,2,4} and B = {2,3,4}, find A ∪ B.</li>
+<li>Find A ∩ B.</li>
+<li>What does A ∪ B mean?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>{1,2,3,4}</li>
+<li>{2,4}</li>
+<li>The set containing elements in A or B or both.</li>
+</ol>
+</div>
+`;
+
+lessons["Venn Diagrams"] = `
+<h2>15. Venn Diagrams</h2>
+<h3>Lesson</h3>
+<p>A Venn diagram represents relationships between sets using circles inside a universal set.</p>
+
+<p>The overlapping part represents the intersection of sets.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> In a class of 40 students, 25 study Mathematics, 18 study Physics and 10 study both. Find the number who study at least one of the subjects.</p>
+
+<p>n(M ∪ P) = n(M) + n(P) - n(M ∩ P)</p>
+<p>= 25 + 18 - 10</p>
+<p><b>= 33</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Using the information above, find the number who study neither.</p>
+<p>Neither = 40 - 33</p>
+<p><b>= 7</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>In a group of 50 students, 30 like football, 20 like basketball and 8 like both. Find how many like at least one.</li>
+<li>Find how many like neither.</li>
+<li>State the formula for two sets.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>42</li>
+<li>8</li>
+<li>n(A ∪ B) = n(A) + n(B) - n(A ∩ B)</li>
+</ol>
+</div>
+`;
+
+lessons["Algebraic Expressions"] = `
+<h2>16. Algebraic Expressions</h2>
+<h3>Lesson</h3>
+<p>An algebraic expression consists of numbers, variables and mathematical operations.</p>
+
+<p>Terms with the same variables and powers are called like terms.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Simplify 3x + 5x - 2.</p>
+<p>3x + 5x = 8x</p>
+<p><b>Answer = 8x - 2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Simplify 4a + 3b - 2a + b.</p>
+<p>= 2a + 4b</p>
+<p><b>Answer = 2a + 4b</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Simplify 5x + 2x - 3.</li>
+<li>Simplify 7a - 3a + 2b.</li>
+<li>Simplify 4p + 5q - p + 2q.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>7x - 3</li>
+<li>4a + 2b</li>
+<li>3p + 7q</li>
+</ol>
+</div>
+`;
+
+lessons["Expansion of Algebraic Expressions"] = `
+<h2>17. Expansion of Algebraic Expressions</h2>
+<h3>Lesson</h3>
+<p>Expansion removes brackets by multiplying each term inside the bracket by the term outside.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Expand 3(x + 4).</p>
+<p>= 3x + 12</p>
+<p><b>Answer = 3x + 12</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Expand (x + 2)(x + 3).</p>
+<p>= x² + 3x + 2x + 6</p>
+<p><b>= x² + 5x + 6</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Expand 4(x + 5).</li>
+<li>Expand 2(3x - 4).</li>
+<li>Expand (x + 4)(x + 2).</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>4x + 20</li>
+<li>6x - 8</li>
+<li>x² + 6x + 8</li>
+</ol>
+</div>
+`;
+
+lessons["Factorization"] = `
+<h2>18. Factorization</h2>
+<h3>Lesson</h3>
+<p>Factorization is the process of expressing an algebraic expression as a product of factors.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Factorize 6x + 12.</p>
+<p>The highest common factor is 6.</p>
+<p><b>6x + 12 = 6(x + 2)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Factorize x² + 5x + 6.</p>
+<p>We need two numbers whose product is 6 and sum is 5.</p>
+<p>They are 2 and 3.</p>
+<p><b>x² + 5x + 6 = (x + 2)(x + 3)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Factorize 8x + 16.</li>
+<li>Factorize x² + 7x + 12.</li>
+<li>Factorize x² - 9.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>8(x + 2)</li>
+<li>(x + 3)(x + 4)</li>
+<li>(x - 3)(x + 3)</li>
+</ol>
+</div>
+`;
+
+lessons["Linear Equations"] = `
+<h2>19. Linear Equations</h2>
+<h3>Lesson</h3>
+<p>A linear equation is an equation in which the highest power of the variable is 1.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Solve 3x + 5 = 20.</p>
+<p>3x = 15</p>
+<p><b>x = 5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve 5x - 7 = 18.</p>
+<p>5x = 25</p>
+<p><b>x = 5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Solve 2x + 6 = 16.</li>
+<li>Solve 4x - 8 = 20.</li>
+<li>Solve 7x + 3 = 31.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x = 5</li>
+<li>x = 7</li>
+<li>x = 4</li>
+</ol>
+</div>
+`;
+
+lessons["Linear Inequalities"] = `
+<h2>20. Linear Inequalities</h2>
+<h3>Lesson</h3>
+<p>An inequality compares two quantities using symbols such as &lt;, &gt;, ≤ and ≥.</p>
+
+<p>When multiplying or dividing an inequality by a negative number, the inequality sign must be reversed.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Solve 2x + 3 &lt; 11.</p>
+<p>2x &lt; 8</p>
+<p><b>x &lt; 4</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve -3x &gt; 12.</p>
+<p>Divide by -3 and reverse the sign:</p>
+<p><b>x &lt; -4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Solve x + 4 &gt; 9.</li>
+<li>Solve 3x - 2 ≤ 10.</li>
+<li>Solve -2x ≥ 8.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x &gt; 5</li>
+<li>x ≤ 4</li>
+<li>x ≤ -4</li>
+</ol>
+</div>
+`;lessons["Change of Subject of Formula"] = `
+<h2>21. Change of Subject of Formula</h2>
+<h3>Lesson</h3>
+<p>Changing the subject of a formula means rearranging an equation so that a different variable is isolated on one side.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Make x the subject of y = 3x + 5.</p>
+<p>y - 5 = 3x</p>
+<p><b>x = (y - 5)/3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Make r the subject of A = πr².</p>
+<p>Divide by π:</p>
+<p>r² = A/π</p>
+<p>Take the positive square root:</p>
+<p><b>r = √(A/π)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Make x the subject of y = 2x + 7.</li>
+<li>Make a the subject of v = u + at.</li>
+<li>Make r the subject of C = 2πr.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x = (y - 7)/2</li>
+<li>a = (v - u)/t</li>
+<li>r = C/(2π)</li>
+</ol>
+</div>
+`;
+
+lessons["Simultaneous Linear Equations"] = `
+<h2>22. Simultaneous Linear Equations</h2>
+<h3>Lesson</h3>
+<p>Simultaneous equations are equations involving two or more unknowns that must be solved together.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Solve:</p>
+<p>x + y = 7</p>
+<p>x - y = 1</p>
+
+<p>Add the equations:</p>
+<p>2x = 8</p>
+<p><b>x = 4</b></p>
+
+<p>Substitute into x + y = 7:</p>
+<p>4 + y = 7</p>
+<p><b>y = 3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve:</p>
+<p>2x + y = 9</p>
+<p>x - y = 3</p>
+
+<p>Add the equations:</p>
+<p>3x = 12</p>
+<p><b>x = 4</b></p>
+
+<p>4 - y = 3</p>
+<p><b>y = 1</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Solve x + y = 10 and x - y = 2.</li>
+<li>Solve 2x + y = 8 and x - y = 1.</li>
+<li>Solve 3x + y = 11 and x + y = 7.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x = 6, y = 4</li>
+<li>x = 3, y = 2</li>
+<li>x = 2, y = 5</li>
+</ol>
+</div>
+`;
+
+lessons["Simultaneous Equations Involving Quadratics"] = `
+<h2>23. Simultaneous Equations Involving Quadratics</h2>
+<h3>Lesson</h3>
+<p>Some simultaneous equations contain a quadratic expression. One equation can be used to substitute for a variable in the other equation, producing a quadratic equation.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Solve:</p>
+<p>y = x + 1</p>
+<p>x² + y = 7</p>
+
+<p>Substitute y = x + 1:</p>
+<p>x² + x + 1 = 7</p>
+<p>x² + x - 6 = 0</p>
+<p>(x + 3)(x - 2) = 0</p>
+
+<p>Therefore:</p>
+<p>x = -3 or x = 2.</p>
+
+<p>When x = -3, y = -2.</p>
+<p>When x = 2, y = 3.</p>
+
+<p><b>Solutions: (-3,-2) and (2,3)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve:</p>
+<p>y = 2x</p>
+<p>x² + y = 15</p>
+
+<p>x² + 2x = 15</p>
+<p>x² + 2x - 15 = 0</p>
+<p>(x + 5)(x - 3) = 0</p>
+
+<p>x = -5 or x = 3.</p>
+
+<p>Therefore:</p>
+<p>x = -5 gives y = -10.</p>
+<p>x = 3 gives y = 6.</p>
+
+<p><b>Solutions: (-5,-10) and (3,6)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Solve y = x + 2 and x² + y = 6.</li>
+<li>Solve y = x and x² + y = 2.</li>
+<li>Solve y = 2x and x² + y = 8.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(-3,-1) and (1,3)</li>
+<li>(-2,-2) and (1,1)</li>
+<li>(-4,-8) and (2,4)</li>
+</ol>
+</div>
+`;
+
+lessons["Quadratic Equations"] = `
+<h2>24. Quadratic Equations</h2>
+<h3>Lesson</h3>
+<p>A quadratic equation is an equation of the form:</p>
+<p><b>ax² + bx + c = 0</b></p>
+<p>where a ≠ 0.</p>
+
+<p>Quadratic equations can be solved by factorization, completing the square or the quadratic formula.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Solve x² + 5x + 6 = 0.</p>
+<p>Factorize:</p>
+<p>(x + 2)(x + 3) = 0</p>
+<p><b>x = -2 or x = -3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve x² - 9 = 0.</p>
+<p>(x - 3)(x + 3) = 0</p>
+<p><b>x = 3 or x = -3</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Solve x² + 7x + 12 = 0.</li>
+<li>Solve x² - 5x + 6 = 0.</li>
+<li>Solve x² - 16 = 0.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x = -3 or -4</li>
+<li>x = 2 or 3</li>
+<li>x = ±4</li>
+</ol>
+</div>
+`;
+
+lessons["Quadratic Formula"] = `
+<h2>25. Quadratic Formula</h2>
+<h3>Lesson</h3>
+<p>The quadratic formula can be used to solve any quadratic equation written in the form ax² + bx + c = 0.</p>
+
+<p><b>x = (-b ± √(b² - 4ac))/(2a)</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Solve x² - 5x + 6 = 0.</p>
+
+<p>a = 1, b = -5, c = 6</p>
+
+<p>x = [5 ± √(25 - 24)]/2</p>
+<p>= [5 ± 1]/2</p>
+
+<p><b>x = 3 or x = 2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve 2x² + x - 3 = 0.</p>
+
+<p>a = 2, b = 1, c = -3</p>
+
+<p>x = [-1 ± √(1 + 24)]/4</p>
+<p>= [-1 ± 5]/4</p>
+
+<p><b>x = 1 or x = -3/2</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Solve x² - 7x + 12 = 0 using the quadratic formula.</li>
+<li>Solve x² + 2x - 8 = 0.</li>
+<li>Solve 2x² - 5x + 2 = 0.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x = 3 or 4</li>
+<li>x = 2 or -4</li>
+<li>x = 2 or 1/2</li>
+</ol>
+</div>
+`;
+
+lessons["Completing the Square"] = `
+<h2>26. Completing the Square</h2>
+<h3>Lesson</h3>
+<p>Completing the square is a method of solving quadratic equations and expressing a quadratic in vertex form.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Complete the square for x² + 6x + 5.</p>
+
+<p>Take half of 6 and square it:</p>
+<p>(6/2)² = 9</p>
+
+<p>x² + 6x + 5</p>
+<p>= (x + 3)² - 9 + 5</p>
+<p><b>= (x + 3)² - 4</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Solve x² + 4x - 5 = 0.</p>
+
+<p>x² + 4x = 5</p>
+<p>x² + 4x + 4 = 9</p>
+<p>(x + 2)² = 9</p>
+<p>x + 2 = ±3</p>
+<p><b>x = 1 or x = -5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Complete the square for x² + 8x + 3.</li>
+<li>Complete the square for x² - 6x + 2.</li>
+<li>Solve x² + 2x - 8 = 0 by completing the square.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(x + 4)² - 13</li>
+<li>(x - 3)² - 7</li>
+<li>x = 2 or -4</li>
+</ol>
+</div>
+`;
+
+lessons["Nature of Roots"] = `
+<h2>27. Nature of Roots</h2>
+<h3>Lesson</h3>
+<p>The nature of the roots of a quadratic equation can be determined using the discriminant.</p>
+
+<p>For ax² + bx + c = 0:</p>
+<p><b>Discriminant = b² - 4ac</b></p>
+
+<ul>
+<li>If b² - 4ac &gt; 0, there are two distinct real roots.</li>
+<li>If b² - 4ac = 0, there are two equal real roots.</li>
+<li>If b² - 4ac &lt; 0, there are no real roots.</li>
+</ul>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Determine the nature of the roots of x² - 5x + 6 = 0.</p>
+<p>D = (-5)² - 4(1)(6)</p>
+<p>= 25 - 24</p>
+<p><b>= 1</b></p>
+<p>Since D &gt; 0, there are two distinct real roots.</p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Determine the nature of the roots of x² + 4x + 4 = 0.</p>
+<p>D = 4² - 4(1)(4)</p>
+<p>= 16 - 16</p>
+<p><b>= 0</b></p>
+<p>Therefore the roots are equal.</p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the discriminant of x² + 3x + 2 = 0.</li>
+<li>State the nature of the roots when D = -5.</li>
+<li>State the nature of the roots when D = 25.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>1</li>
+<li>No real roots.</li>
+<li>Two distinct real roots.</li>
+</ol>
+</div>
+`;
+
+lessons["Sequence"] = `
+<h2>28. Sequence</h2>
+<h3>Lesson</h3>
+<p>A sequence is an ordered list of numbers following a particular pattern or rule.</p>
+
+<p>The numbers in a sequence are called terms.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the next two terms of 2, 5, 8, 11, ...</p>
+<p>The common difference is 3.</p>
+<p>11 + 3 = 14</p>
+<p>14 + 3 = 17</p>
+<p><b>Next terms: 14, 17</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the nth term of 4, 7, 10, 13, ...</p>
+<p>a = 4 and d = 3.</p>
+<p>Tₙ = a + (n - 1)d</p>
+<p>= 4 + 3(n - 1)</p>
+<p><b>Tₙ = 3n + 1</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the next two terms: 5, 10, 15, 20, ...</li>
+<li>Find the next term: 3, 6, 12, 24, ...</li>
+<li>Find the nth term of 2, 5, 8, 11, ...</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>25, 30</li>
+<li>48</li>
+<li>3n - 1</li>
+</ol>
+</div>
+`;
+
+lessons["Arithmetic Progression"] = `
+<h2>29. Arithmetic Progression</h2>
+<h3>Lesson</h3>
+<p>An arithmetic progression (AP) is a sequence in which the difference between consecutive terms is constant.</p>
+
+<p>The nth term is:</p>
+<p><b>Tₙ = a + (n - 1)d</b></p>
+
+<p>where a is the first term and d is the common difference.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the 10th term of 3, 7, 11, 15, ...</p>
+<p>a = 3, d = 4</p>
+<p>T₁₀ = 3 + (10 - 1)4</p>
+<p>= 3 + 36</p>
+<p><b>= 39</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the common difference of 20, 17, 14, 11, ...</p>
+<p>d = 17 - 20</p>
+<p><b>d = -3</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the 8th term of 2, 5, 8, ...</li>
+<li>Find the common difference of 12, 9, 6, 3, ...</li>
+<li>Find the 15th term of 5, 9, 13, ...</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>23</li>
+<li>-3</li>
+<li>61</li>
+</ol>
+</div>
+`;
+
+lessons["Geometric Progression"] = `
+<h2>30. Geometric Progression</h2>
+<h3>Lesson</h3>
+<p>A geometric progression (GP) is a sequence in which each term is obtained by multiplying the previous term by a constant ratio.</p>
+
+<p>The nth term is:</p>
+<p><b>Tₙ = arⁿ⁻¹</b></p>
+
+<p>where a is the first term and r is the common ratio.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the 5th term of 2, 6, 18, 54, ...</p>
+<p>a = 2, r = 3</p>
+<p>T₅ = 2(3⁴)</p>
+<p>= 2 × 81</p>
+<p><b>= 162</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the common ratio of 5, 15, 45, 135, ...</p>
+<p>r = 15/5</p>
+<p><b>r = 3</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the next term of 3, 6, 12, 24, ...</li>
+<li>Find the common ratio of 4, 12, 36, ...</li>
+<li>Find the 4th term of 2, 10, 50, ...</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>48</li>
+<li>3</li>
+<li>250</li>
+</ol>
+</div>
+`;
+
+lessons["Sum of Series"] = `
+<h2>31. Sum of Series</h2>
+<h3>Lesson</h3>
+<p>A series is formed by adding the terms of a sequence.</p>
+
+<p>For an arithmetic progression:</p>
+<p><b>Sₙ = n/2[2a + (n - 1)d]</b></p>
+
+<p>It can also be written as:</p>
+<p><b>Sₙ = n/2(a + l)</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the sum of the first 15 positive integers.</p>
+<p>S = 15/2(1 + 15)</p>
+<p>= 15/2 × 16</p>
+<p><b>= 120</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the sum of the first 10 terms of 3, 6, 9, ...</p>
+<p>a = 3, d = 3, n = 10</p>
+<p>S₁₀ = 10/2[2(3) + 9(3)]</p>
+<p>= 5(33)</p>
+<p><b>= 165</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the sum of the first 20 positive integers.</li>
+<li>Find the sum of 2 + 5 + 8 + ... + 29.</li>
+<li>Find the sum of the first 10 terms of 4, 8, 12, ...</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>210</li>
+<li>155</li>
+<li>220</li>
+</ol>
+</div>
+`;
+
+lessons["Binomial Expansion"] = `
+<h2>32. Binomial Expansion</h2>
+<h3>Lesson</h3>
+<p>A binomial is an algebraic expression containing two terms. Binomial expansion expresses a power of a binomial as a sum of terms.</p>
+
+<p>For example:</p>
+<p><b>(a + b)² = a² + 2ab + b²</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Expand (x + 2)².</p>
+<p>= x² + 4x + 4</p>
+<p><b>Answer = x² + 4x + 4</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Expand (x + 1)³.</p>
+<p>= x³ + 3x² + 3x + 1</p>
+<p><b>Answer = x³ + 3x² + 3x + 1</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Expand (x + 3)².</li>
+<li>Expand (x - 2)².</li>
+<li>Expand (x + 2)³.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x² + 6x + 9</li>
+<li>x² - 4x + 4</li>
+<li>x³ + 6x² + 12x + 8</li>
+</ol>
+</div>
+`;
+
+lessons["Partial Fractions"] = `
+<h2>33. Partial Fractions</h2>
+<h3>Lesson</h3>
+<p>Partial fractions involve expressing a rational algebraic expression as a sum of simpler fractions.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Express:</p>
+<p>5/[(x+1)(x+2)]</p>
+<p>as A/(x+1) + B/(x+2).</p>
+
+<p>5 = A(x+2) + B(x+1)</p>
+
+<p>Putting x = -1:</p>
+<p>5 = A</p>
+
+<p>Putting x = -2:</p>
+<p>5 = -B, so B = -5.</p>
+
+<p><b>Therefore 5/[(x+1)(x+2)] = 5/(x+1) - 5/(x+2)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Express:</p>
+<p>3/[(x+1)(x+3)]</p>
+
+<p>Let:</p>
+<p>3/(x+1)(x+3) = A/(x+1) + B/(x+3)</p>
+
+<p>3 = A(x+3) + B(x+1)</p>
+
+<p>x = -1 gives A = 3/2.</p>
+<p>x = -3 gives B = -3/2.</p>
+
+<p><b>Answer = 3/[2(x+1)] - 3/[2(x+3)]</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Express 1/[(x+1)(x+2)] in partial fractions.</li>
+<li>Express 4/[(x+2)(x+4)] in partial fractions.</li>
+<li>Why are partial fractions useful?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>1/(x+1) - 1/(x+2)</li>
+<li>2/(x+2) - 2/(x+4)</li>
+<li>They break complicated rational expressions into simpler fractions.</li>
+</ol>
+</div>
+`;
+
+lessons["Binary Operations"] = `
+<h2>34. Binary Operations</h2>
+<h3>Lesson</h3>
+<p>A binary operation combines two elements of a set to produce another element according to a specified rule.</p>
+
+<p>A binary operation may be represented by a symbol such as *.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If a * b = a + b + 1, find 2 * 3.</p>
+<p>2 * 3 = 2 + 3 + 1</p>
+<p><b>= 6</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If a * b = 2a - b, find 5 * 3.</p>
+<p>5 * 3 = 2(5) - 3</p>
+<p><b>= 7</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If a*b = a+b, find 4*7.</li>
+<li>If a*b = ab+1, find 2*3.</li>
+<li>If a*b = 3a-b, find 5*2.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>11</li>
+<li>7</li>
+<li>13</li>
+</ol>
+</div>
+`;
+
+lessons["Modular Arithmetic"] = `
+<h2>35. Modular Arithmetic</h2>
+<h3>Lesson</h3>
+<p>Modular arithmetic deals with remainders after division.</p>
+
+<p>The notation:</p>
+<p><b>a mod n</b></p>
+<p>means the remainder when a is divided by n.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find 17 mod 5.</p>
+<p>17 = 5(3) + 2</p>
+<p><b>17 mod 5 = 2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find 29 mod 6.</p>
+<p>29 = 6(4) + 5</p>
+<p><b>29 mod 6 = 5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find 20 mod 3.</li>
+<li>Find 35 mod 7.</li>
+<li>Find 43 mod 8.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2</li>
+<li>0</li>
+<li>3</li>
+</ol>
+</div>
+`;
+
+lessons["Matrices"] = `
+<h2>36. Matrices</h2>
+<h3>Lesson</h3>
+<p>A matrix is a rectangular arrangement of numbers or mathematical expressions in rows and columns.</p>
+
+<p>The order of a matrix is given as rows × columns.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Consider:</p>
+<p>[ 2  4 ]</p>
+<p>[ 1  3 ]</p>
+
+<p>There are 2 rows and 2 columns.</p>
+<p><b>Order = 2 × 2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Consider:</p>
+<p>[ 1  2  3 ]</p>
+<p>[ 4  5  6 ]</p>
+
+<p>This matrix has 2 rows and 3 columns.</p>
+<p><b>Order = 2 × 3</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>State the order of a matrix with 3 rows and 2 columns.</li>
+<li>How many elements are in a 2 × 3 matrix?</li>
+<li>What is a matrix?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3 × 2</li>
+<li>6</li>
+<li>A rectangular arrangement of numbers in rows and columns.</li>
+</ol>
+</div>
+`;
+
+lessons["Addition and Subtraction of Matrices"] = `
+<h2>37. Addition and Subtraction of Matrices</h2>
+<h3>Lesson</h3>
+<p>Matrices of the same order can be added or subtracted by combining corresponding elements.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b></p>
+<p>A = [1  2]</p>
+<p>    [3  4]</p>
+
+<p>B = [5  6]</p>
+<p>    [7  8]</p>
+
+<p>A + B = [6  8]</p>
+<p>        [10 12]</p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b></p>
+<p>A - B = [-4 -4]</p>
+<p>        [-4 -4]</p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Add [1 2; 3 4] and [2 3; 4 5].</li>
+<li>Subtract [5 6; 7 8] from [9 10; 11 12].</li>
+<li>Can matrices of different orders be directly added?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>[3 5; 7 9]</li>
+<li>[4 4; 4 4]</li>
+<li>No.</li>
+</ol>
+</div>
+`;
+
+lessons["Multiplication of Matrices"] = `
+<h2>38. Multiplication of Matrices</h2>
+<h3>Lesson</h3>
+<p>Matrix multiplication is performed by multiplying rows of the first matrix by columns of the second matrix and adding the products.</p>
+
+<p>If A is m × n and B is n × p, then AB is m × p.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b></p>
+<p>A = [1 2]</p>
+<p>B = [3]</p>
+<p>    [4]</p>
+
+<p>AB = 1(3) + 2(4)</p>
+<p><b>= 11</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b></p>
+<p>A = [1 2; 3 4]</p>
+<p>B = [5 6; 7 8]</p>
+
+<p>AB = [1(5)+2(7)   1(6)+2(8)]</p>
+<p>     [3(5)+4(7)   3(6)+4(8)]</p>
+
+<p><b>AB = [19 22; 43 50]</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Multiply [2 3] by [4; 5].</li>
+<li>Multiply [1 0; 0 1] by [5 6; 7 8].</li>
+<li>What condition must be satisfied before two matrices can be multiplied?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>23</li>
+<li>[5 6; 7 8]</li>
+<li>The number of columns in the first matrix must equal the number of rows in the second.</li>
+</ol>
+</div>
+`;
+
+lessons["Determinants"] = `
+<h2>39. Determinants</h2>
+<h3>Lesson</h3>
+<p>The determinant is a number associated with a square matrix. For a 2 × 2 matrix:</p>
+
+<p>[a b]</p>
+<p>[c d]</p>
+
+<p><b>det(A) = ad - bc</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the determinant of:</p>
+<p>[2 3]</p>
+<p>[1 4]</p>
+
+<p>det = (2)(4) - (3)(1)</p>
+<p>= 8 - 3</p>
+<p><b>= 5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the determinant of:</p>
+<p>[5 2]</p>
+<p>[3 1]</p>
+
+<p>det = 5(1) - 2(3)</p>
+<p>= 5 - 6</p>
+<p><b>= -1</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find det[3 4; 2 5].</li>
+<li>Find det[1 2; 3 4].</li>
+<li>Find det[6 1; 2 3].</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>7</li>
+<li>-2</li>
+<li>16</li>
+</ol>
+</div>
+`;
+
+lessons["Inverse of a Matrix"] = `
+<h2>40. Inverse of a Matrix</h2>
+<h3>Lesson</h3>
+<p>The inverse of a square matrix A is written as A⁻¹. It satisfies:</p>
+
+<p><b>AA⁻¹ = A⁻¹A = I</b></p>
+
+<p>For:</p>
+
+<p>A = [a b]</p>
+<p>    [c d]</p>
+
+<p>the inverse is:</p>
+
+<p><b>A⁻¹ = 1/(ad-bc) [d -b; -c a]</b></p>
+
+<p>The determinant must not be zero.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the inverse of:</p>
+<p>A = [2 1]</p>
+<p>    [1 1]</p>
+
+<p>det(A) = 2(1) - 1(1) = 1</p>
+
+<p>A⁻¹ = [1 -1]</p>
+<p>      [-1 2]</p>
+
+<p><b>Answer: [1 -1; -1 2]</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the inverse of:</p>
+<p>A = [3 1]</p>
+<p>    [2 1]</p>
+
+<p>det(A) = 3(1) - 1(2) = 1</p>
+
+<p>A⁻¹ = [1 -1]</p>
+<p>      [-2 3]</p>
+
+<p><b>Answer: [1 -1; -2 3]</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the determinant of [4 1; 2 1].</li>
+<li>Find the inverse of [2 1; 1 1].</li>
+<li>When does a matrix have no inverse?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2</li>
+<li>[1 -1; -1 2]</li>
+<li>When its determinant is zero.</li>
+</ol>
+</div>
+`lessons["Identity Matrix"] = `
+<h2>41. Identity Matrix</h2>
+<h3>Lesson</h3>
+<p>An identity matrix is a square matrix with 1s on the main diagonal and 0s everywhere else.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> The 2 × 2 identity matrix is:</p>
+<p>I = [1 0]</p>
+<p>    [0 1]</p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Multiply:</p>
+<p>A = [2 3; 4 5]</p>
+<p>I = [1 0; 0 1]</p>
+<p>AI = [2 3; 4 5] = A</p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Write the 3 × 3 identity matrix.</li>
+<li>What is the diagonal of a 2 × 2 identity matrix?</li>
+<li>What is the result of multiplying a matrix by the identity matrix?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>[1 0 0; 0 1 0; 0 0 1]</li>
+<li>1 and 1</li>
+<li>The original matrix.</li>
+</ol>
+</div>
+`;
+
+lessons["Transformation"] = `
+<h2>42. Transformation</h2>
+<h3>Lesson</h3>
+<p>A transformation changes the position, size or orientation of a shape on a coordinate plane.</p>
+
+<p>Common transformations include translation, reflection, rotation and enlargement.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> The point (2,3) is translated 4 units right.</p>
+<p>x increases by 4:</p>
+<p>(2 + 4, 3)</p>
+<p><b>= (6,3)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> The point (3,2) is reflected in the x-axis.</p>
+<p>The x-coordinate remains unchanged while the y-coordinate changes sign.</p>
+<p><b>(3,2) → (3,-2)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>What does a transformation do to a geometric figure?</li>
+<li>Translate (1,4) by 3 units right.</li>
+<li>Reflect (2,5) in the x-axis.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>It changes its position, size or orientation according to a rule.</li>
+<li>(4,4)</li>
+<li>(2,-5)</li>
+</ol>
+</div>
+`;
+
+lessons["Translation"] = `
+<h2>43. Translation</h2>
+<h3>Lesson</h3>
+<p>Translation moves every point of a figure the same distance in the same direction.</p>
+
+<p>A translation can be represented by a column vector:</p>
+<p>[a]</p>
+<p>[b]</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Translate (2,3) by the vector [4; -2].</p>
+<p>(2 + 4, 3 - 2)</p>
+<p><b>= (6,1)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Translate (-1,5) by [3; 4].</p>
+<p>(-1 + 3, 5 + 4)</p>
+<p><b>= (2,9)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Translate (3,2) by [2; 5].</li>
+<li>Translate (-2,4) by [5; -3].</li>
+<li>Translate (1,-1) by [-2; 4].</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(5,7)</li>
+<li>(3,1)</li>
+<li>(-1,3)</li>
+</ol>
+</div>
+`;
+
+lessons["Reflection"] = `
+<h2>44. Reflection</h2>
+<h3>Lesson</h3>
+<p>Reflection produces a mirror image of a figure across a line called the mirror line.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Reflect (3,4) in the x-axis.</p>
+<p><b>(3,4) → (3,-4)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Reflect (2,5) in the y-axis.</p>
+<p><b>(2,5) → (-2,5)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Reflect (4,3) in the x-axis.</li>
+<li>Reflect (-2,5) in the y-axis.</li>
+<li>Reflect (6,-1) in the x-axis.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(4,-3)</li>
+<li>(2,5)</li>
+<li>(6,1)</li>
+</ol>
+</div>
+`;
+
+lessons["Rotation"] = `
+<h2>45. Rotation</h2>
+<h3>Lesson</h3>
+<p>Rotation turns a figure through a specified angle about a fixed point called the centre of rotation.</p>
+
+<p>For rotation about the origin:</p>
+<ul>
+<li>90° anticlockwise: (x,y) → (-y,x)</li>
+<li>90° clockwise: (x,y) → (y,-x)</li>
+<li>180°: (x,y) → (-x,-y)</li>
+</ul>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Rotate (2,3) through 90° anticlockwise about the origin.</p>
+<p>(x,y) → (-y,x)</p>
+<p><b>(2,3) → (-3,2)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Rotate (4,-2) through 180° about the origin.</p>
+<p>(x,y) → (-x,-y)</p>
+<p><b>(4,-2) → (-4,2)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Rotate (3,1) 90° anticlockwise about the origin.</li>
+<li>Rotate (2,5) 90° clockwise about the origin.</li>
+<li>Rotate (-4,3) through 180° about the origin.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(-1,3)</li>
+<li>(5,-2)</li>
+<li>(4,-3)</li>
+</ol>
+</div>
+`;
+
+lessons["Enlargement"] = `
+<h2>46. Enlargement</h2>
+<h3>Lesson</h3>
+<p>Enlargement changes the size of a figure while preserving its shape.</p>
+
+<p>The scale factor determines how much the figure is enlarged or reduced.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Enlarge (2,3) about the origin by scale factor 2.</p>
+<p>(2×2, 3×2)</p>
+<p><b>= (4,6)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Enlarge (6,4) about the origin by scale factor 1/2.</p>
+<p>(6×1/2, 4×1/2)</p>
+<p><b>= (3,2)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Enlarge (3,4) by scale factor 2 about the origin.</li>
+<li>Enlarge (8,6) by scale factor 1/2.</li>
+<li>What happens when the scale factor is greater than 1?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(6,8)</li>
+<li>(4,3)</li>
+<li>The figure becomes larger.</li>
+</ol>
+</div>
+`;
+
+lessons["Combined Transformations"] = `
+<h2>47. Combined Transformations</h2>
+<h3>Lesson</h3>
+<p>A combined transformation occurs when two or more transformations are applied successively to a figure.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Translate (2,1) by [3;2], then reflect the result in the x-axis.</p>
+<p>Translation:</p>
+<p>(2,1) → (5,3)</p>
+<p>Reflection:</p>
+<p>(5,3) → <b>(5,-3)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Reflect (3,2) in the y-axis, then translate by [2;-1].</p>
+<p>Reflection:</p>
+<p>(3,2) → (-3,2)</p>
+<p>Translation:</p>
+<p>(-3+2, 2-1)</p>
+<p><b>= (-1,1)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Translate (1,2) by [2;3], then reflect in the x-axis.</li>
+<li>Reflect (4,1) in the y-axis, then translate by [3;2].</li>
+<li>Why must the order of combined transformations be followed carefully?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(3,-5)</li>
+<li>(-1,3)</li>
+<li>Because changing the order can produce a different final position.</li>
+</ol>
+</div>
+`;
+
+lessons["Plane Geometry"] = `
+<h2>48. Plane Geometry</h2>
+<h3>Lesson</h3>
+<p>Plane geometry deals with shapes and figures that lie on a flat surface.</p>
+
+<p>It includes points, lines, angles, triangles, quadrilaterals, circles and polygons.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the sum of the interior angles of a triangle.</p>
+<p>For every triangle:</p>
+<p><b>Sum = 180°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the sum of the interior angles of a quadrilateral.</p>
+<p>Sum = (4 - 2) × 180°</p>
+<p><b>= 360°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>What is plane geometry?</li>
+<li>What is the sum of angles in a triangle?</li>
+<li>What is the sum of angles in a quadrilateral?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>Geometry dealing with figures on a flat surface.</li>
+<li>180°</li>
+<li>360°</li>
+</ol>
+</div>
+`;
+
+lessons["Angles and Lines"] = `
+<h2>49. Angles and Lines</h2>
+<h3>Lesson</h3>
+<p>Angles are formed when two lines or rays meet. Important relationships include complementary angles, supplementary angles, vertically opposite angles and angles on a straight line.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the complement of 35°.</p>
+<p>Complementary angles add to 90°.</p>
+<p>90° - 35° = <b>55°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the supplement of 120°.</p>
+<p>Supplementary angles add to 180°.</p>
+<p>180° - 120° = <b>60°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the complement of 42°.</li>
+<li>Find the supplement of 75°.</li>
+<li>Angles on a straight line add up to what angle?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>48°</li>
+<li>105°</li>
+<li>180°</li>
+</ol>
+</div>
+`;
+
+lessons["Triangles"] = `
+<h2>50. Triangles</h2>
+<h3>Lesson</h3>
+<p>A triangle is a three-sided polygon. The sum of its interior angles is always 180°.</p>
+
+<p>Triangles may be classified by their sides as equilateral, isosceles or scalene.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Two angles of a triangle are 50° and 60°. Find the third angle.</p>
+<p>Third angle = 180° - 50° - 60°</p>
+<p><b>= 70°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> An isosceles triangle has equal angles of 40°. Find the third angle.</p>
+<p>Third angle = 180° - 40° - 40°</p>
+<p><b>= 100°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the third angle of a triangle with angles 45° and 65°.</li>
+<li>Find each base angle of an isosceles triangle whose vertex angle is 40°.</li>
+<li>What is the sum of the interior angles of a triangle?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>70°</li>
+<li>70° each</li>
+<li>180°</li>
+</ol>
+</div>
+`;
+
+lessons["Quadrilaterals"] = `
+<h2>51. Quadrilaterals</h2>
+<h3>Lesson</h3>
+<p>A quadrilateral is a four-sided polygon. The sum of its interior angles is 360°.</p>
+
+<p>Common quadrilaterals include squares, rectangles, parallelograms, rhombuses, trapeziums and kites.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Three angles of a quadrilateral are 80°, 90° and 100°. Find the fourth angle.</p>
+<p>Fourth angle = 360° - (80° + 90° + 100°)</p>
+<p><b>= 90°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A square has side 6 cm. Find its perimeter.</p>
+<p>Perimeter = 4 × 6</p>
+<p><b>= 24 cm</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the fourth angle if the other three are 70°, 80° and 100°.</li>
+<li>Find the perimeter of a rectangle measuring 8 cm by 5 cm.</li>
+<li>What is the sum of the interior angles of a quadrilateral?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>110°</li>
+<li>26 cm</li>
+<li>360°</li>
+</ol>
+</div>
+`;
+
+lessons["Polygons"] = `
+<h2>52. Polygons</h2>
+<h3>Lesson</h3>
+<p>A polygon is a closed plane figure made up of straight line segments.</p>
+
+<p>The sum of the interior angles of an n-sided polygon is:</p>
+<p><b>(n - 2) × 180°</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the sum of the interior angles of a pentagon.</p>
+<p>n = 5</p>
+<p>Sum = (5 - 2) × 180°</p>
+<p><b>= 540°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find each interior angle of a regular hexagon.</p>
+<p>Sum = (6 - 2) × 180° = 720°</p>
+<p>Each angle = 720° ÷ 6</p>
+<p><b>= 120°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the sum of the interior angles of a hexagon.</li>
+<li>Find each interior angle of a regular pentagon.</li>
+<li>How many sides does a polygon have if its interior angle sum is 900°?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>720°</li>
+<li>108°</li>
+<li>7 sides</li>
+</ol>
+</div>
+`;
+
+lessons["Circles"] = `
+<h2>53. Circles</h2>
+<h3>Lesson</h3>
+<p>A circle is a set of points that are all the same distance from a fixed point called the centre.</p>
+
+<p>The distance from the centre to the circumference is the radius. The diameter is twice the radius.</p>
+
+<p><b>d = 2r</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the diameter of a circle with radius 7 cm.</p>
+<p>d = 2r</p>
+<p>d = 2 × 7</p>
+<p><b>d = 14 cm</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the circumference of a circle with radius 5 cm.</p>
+<p>C = 2πr</p>
+<p>C = 2π(5)</p>
+<p><b>C = 10π cm</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the diameter of a circle with radius 9 cm.</li>
+<li>Find the radius of a circle with diameter 20 cm.</li>
+<li>Write the formula for the circumference of a circle.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>18 cm</li>
+<li>10 cm</li>
+<li>C = 2πr</li>
+</ol>
+</div>
+`;
+
+lessons["Circle Theorems"] = `
+<h2>54. Circle Theorems</h2>
+<h3>Lesson</h3>
+<p>Circle theorems describe relationships between angles, chords, arcs and the centre of a circle.</p>
+
+<p>Important theorems include:</p>
+<ul>
+<li>The angle at the centre is twice the angle at the circumference standing on the same arc.</li>
+<li>Angles in the same segment are equal.</li>
+<li>The angle in a semicircle is 90°.</li>
+<li>Opposite angles of a cyclic quadrilateral add to 180°.</li>
+</ul>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> An angle at the circumference is 35°. Find the angle at the centre standing on the same arc.</p>
+<p>Centre angle = 2 × 35°</p>
+<p><b>= 70°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> One angle of a cyclic quadrilateral is 110°. Find the opposite angle.</p>
+<p>Opposite angles add to 180°.</p>
+<p>180° - 110° = <b>70°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>An angle at the circumference is 40°. Find the angle at the centre on the same arc.</li>
+<li>What is the angle in a semicircle?</li>
+<li>A cyclic quadrilateral has one angle of 85°. Find the opposite angle.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>80°</li>
+<li>90°</li>
+<li>95°</li>
+</ol>
+</div>
+`;
+
+lessons["Mensuration of Plane Shapes"] = `
+<h2>55. Mensuration of Plane Shapes</h2>
+<h3>Lesson</h3>
+<p>Mensuration deals with measuring geometric figures. For plane shapes, common measurements include perimeter and area.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the area of a rectangle measuring 8 cm by 5 cm.</p>
+<p>Area = length × width</p>
+<p>= 8 × 5</p>
+<p><b>= 40 cm²</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the area of a triangle with base 10 cm and height 6 cm.</p>
+<p>Area = 1/2 × base × height</p>
+<p>= 1/2 × 10 × 6</p>
+<p><b>= 30 cm²</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the area of a rectangle 12 cm by 7 cm.</li>
+<li>Find the area of a triangle with base 8 cm and height 5 cm.</li>
+<li>Find the perimeter of a square of side 9 cm.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>84 cm²</li>
+<li>20 cm²</li>
+<li>36 cm</li>
+</ol>
+</div>
+`;
+
+lessons["Perimeter and Area"] = `
+<h2>56. Perimeter and Area</h2>
+<h3>Lesson</h3>
+<p>Perimeter is the total distance around a plane figure. Area is the amount of surface enclosed by the figure.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the perimeter of a rectangle measuring 10 cm by 6 cm.</p>
+<p>P = 2(l + w)</p>
+<p>= 2(10 + 6)</p>
+<p><b>= 32 cm</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the area of a circle with radius 7 cm.</p>
+<p>A = πr²</p>
+<p>= π × 7²</p>
+<p><b>= 49π cm²</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the perimeter of a square with side 12 cm.</li>
+<li>Find the area of a rectangle measuring 15 cm by 4 cm.</li>
+<li>Find the area of a circle of radius 5 cm.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>48 cm</li>
+<li>60 cm²</li>
+<li>25π cm²</li>
+</ol>
+</div>
+`;
+
+lessons["Mensuration of Solids"] = `
+<h2>57. Mensuration of Solids</h2>
+<h3>Lesson</h3>
+<p>Mensuration of solids involves finding measurements such as surface area and volume of three-dimensional objects.</p>
+
+<p>Common solids include cubes, cuboids, cylinders, prisms, cones and spheres.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the volume of a cuboid measuring 5 cm × 4 cm × 3 cm.</p>
+<p>V = lwh</p>
+<p>= 5 × 4 × 3</p>
+<p><b>= 60 cm³</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the volume of a cube with side 4 cm.</p>
+<p>V = a³</p>
+<p>= 4³</p>
+<p><b>= 64 cm³</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the volume of a cuboid 8 cm × 5 cm × 2 cm.</li>
+<li>Find the volume of a cube with side 6 cm.</li>
+<li>What is the unit normally used for volume?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>80 cm³</li>
+<li>216 cm³</li>
+<li>Cubic units, such as cm³ or m³.</li>
+</ol>
+</div>
+`;
+
+lessons["Surface Area of Solids"] = `
+<h2>58. Surface Area of Solids</h2>
+<h3>Lesson</h3>
+<p>Surface area is the total area of all the surfaces of a three-dimensional object.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the total surface area of a cube of side 5 cm.</p>
+<p>Surface area = 6a²</p>
+<p>= 6 × 5²</p>
+<p><b>= 150 cm²</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the total surface area of a cuboid 4 cm × 3 cm × 2 cm.</p>
+<p>SA = 2(lw + lh + wh)</p>
+<p>= 2(12 + 8 + 6)</p>
+<p><b>= 52 cm²</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the surface area of a cube with side 4 cm.</li>
+<li>Find the total surface area of a cuboid 5 cm × 3 cm × 2 cm.</li>
+<li>What does surface area measure?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>96 cm²</li>
+<li>62 cm²</li>
+<li>The total area of all external surfaces of a solid.</li>
+</ol>
+</div>
+`;
+
+lessons["Volume of Solids"] = `
+<h2>59. Volume of Solids</h2>
+<h3>Lesson</h3>
+<p>Volume is the amount of space occupied by a three-dimensional object.</p>
+
+<p>Common formulas include:</p>
+<ul>
+<li>Cuboid: V = lwh</li>
+<li>Cube: V = a³</li>
+<li>Cylinder: V = πr²h</li>
+<li>Sphere: V = 4/3πr³</li>
+</ul>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the volume of a cylinder with radius 3 cm and height 5 cm.</p>
+<p>V = πr²h</p>
+<p>= π × 3² × 5</p>
+<p><b>= 45π cm³</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the volume of a sphere with radius 3 cm.</p>
+<p>V = 4/3πr³</p>
+<p>= 4/3 × π × 27</p>
+<p><b>= 36π cm³</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the volume of a cuboid 10 cm × 4 cm × 2 cm.</li>
+<li>Find the volume of a cylinder of radius 2 cm and height 7 cm.</li>
+<li>Find the volume of a cube of side 5 cm.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>80 cm³</li>
+<li>28π cm³</li>
+<li>125 cm³</li>
+</ol>
+</div>
+`;
+
+lessons["Coordinate Geometry"] = `
+<h2>60. Coordinate Geometry</h2>
+<h3>Lesson</h3>
+<p>Coordinate geometry uses algebra to study points, lines and shapes on the Cartesian plane.</p>
+
+<p>A point is represented by an ordered pair (x,y).</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Identify the coordinates of a point 4 units right and 3 units up from the origin.</p>
+<p><b>(4,3)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the midpoint of A(2,4) and B(6,8).</p>
+<p>Midpoint = ((2+6)/2, (4+8)/2)</p>
+<p><b>= (4,6)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>What are the coordinates of the origin?</li>
+<li>Find the midpoint of (1,3) and (5,7).</li>
+<li>In which quadrant is (-3,4)?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(0,0)</li>
+<li>(3,5)</li>
+<li>Quadrant II</li>
+</ol>
+</div>
+`lessons["Straight Lines"] = `
+<h2>61. Straight Lines</h2>
+<h3>Lesson</h3>
+<p>A straight-line equation describes the relationship between x and y on a coordinate plane.</p>
+<p>The common form is <b>y = mx + c</b>, where m is the gradient and c is the y-intercept.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the gradient of the line y = 3x + 2.</p>
+<p>Comparing with y = mx + c:</p>
+<p><b>m = 3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the y-intercept of y = -2x + 5.</p>
+<p>Comparing with y = mx + c:</p>
+<p><b>c = 5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the gradient of y = 4x + 7.</li>
+<li>Find the y-intercept of y = 5x - 3.</li>
+<li>Write the equation of a line with gradient 2 and y-intercept 4.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>4</li>
+<li>-3</li>
+<li>y = 2x + 4</li>
+</ol>
+</div>
+`;
+
+lessons["Graphs of Linear Equations"] = `
+<h2>62. Graphs of Linear Equations</h2>
+<h3>Lesson</h3>
+<p>A linear equation can be represented graphically by a straight line.</p>
+<p>To draw the graph, choose values of x, calculate the corresponding y-values and plot the points.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Complete a table for y = 2x + 1 when x = 0, 1 and 2.</p>
+<p>x = 0: y = 1</p>
+<p>x = 1: y = 3</p>
+<p>x = 2: y = 5</p>
+<p><b>Points: (0,1), (1,3), (2,5)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the x-intercept of y = x - 4.</p>
+<p>At the x-intercept, y = 0.</p>
+<p>0 = x - 4</p>
+<p><b>x = 4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>For y = x + 2, find y when x = 3.</li>
+<li>For y = 3x - 1, find y when x = 2.</li>
+<li>Find the x-intercept of y = x - 6.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5</li>
+<li>5</li>
+<li>(6,0)</li>
+</ol>
+</div>
+`;
+
+lessons["Gradient of a Straight Line"] = `
+<h2>63. Gradient of a Straight Line</h2>
+<h3>Lesson</h3>
+<p>The gradient measures the steepness of a straight line.</p>
+<p>For two points (x₁,y₁) and (x₂,y₂):</p>
+<p><b>m = (y₂ - y₁)/(x₂ - x₁)</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the gradient through (1,2) and (3,8).</p>
+<p>m = (8 - 2)/(3 - 1)</p>
+<p>= 6/2</p>
+<p><b>= 3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the gradient through (2,5) and (6,5).</p>
+<p>m = (5 - 5)/(6 - 2)</p>
+<p><b>= 0</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the gradient through (1,3) and (4,9).</li>
+<li>Find the gradient through (2,7) and (5,13).</li>
+<li>What is the gradient of a horizontal line?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2</li>
+<li>2</li>
+<li>0</li>
+</ol>
+</div>
+`;
+
+lessons["Distance Between Two Points"] = `
+<h2>64. Distance Between Two Points</h2>
+<h3>Lesson</h3>
+<p>The distance between two points can be found using the distance formula:</p>
+<p><b>d = √[(x₂-x₁)² + (y₂-y₁)²]</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the distance between (1,2) and (4,6).</p>
+<p>d = √[(4-1)² + (6-2)²]</p>
+<p>= √(9 + 16)</p>
+<p><b>= 5 units</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the distance between (0,0) and (6,8).</p>
+<p>d = √(6² + 8²)</p>
+<p>= √100</p>
+<p><b>= 10 units</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the distance between (0,0) and (3,4).</li>
+<li>Find the distance between (1,1) and (4,5).</li>
+<li>Find the distance between (2,3) and (2,8).</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5 units</li>
+<li>5 units</li>
+<li>5 units</li>
+</ol>
+</div>
+`;
+
+lessons["Variation"] = `
+<h2>65. Variation</h2>
+<h3>Lesson</h3>
+<p>Variation describes how one quantity changes in relation to another quantity.</p>
+<p>The main types are direct, inverse, joint and partial variation.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If y varies directly as x and y = 12 when x = 3, find y when x = 5.</p>
+<p>y = kx</p>
+<p>12 = 3k</p>
+<p>k = 4</p>
+<p>Therefore y = 4x.</p>
+<p>When x = 5:</p>
+<p><b>y = 20</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If y varies inversely as x and y = 6 when x = 2, find y when x = 3.</p>
+<p>y = k/x</p>
+<p>6 = k/2</p>
+<p>k = 12</p>
+<p>When x = 3:</p>
+<p><b>y = 4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If y varies directly as x and y = 15 when x = 5, find y when x = 8.</li>
+<li>If y varies inversely as x and y = 10 when x = 2, find y when x = 5.</li>
+<li>Name two types of variation.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>24</li>
+<li>4</li>
+<li>Direct variation and inverse variation.</li>
+</ol>
+</div>
+`;
+
+lessons["Direct Variation"] = `
+<h2>66. Direct Variation</h2>
+<h3>Lesson</h3>
+<p>In direct variation, one quantity is directly proportional to another.</p>
+<p>It is written as:</p>
+<p><b>y = kx</b></p>
+<p>where k is the constant of proportionality.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> y varies directly as x. If y = 18 when x = 6, find y when x = 10.</p>
+<p>18 = 6k</p>
+<p>k = 3</p>
+<p>y = 3x</p>
+<p>When x = 10:</p>
+<p><b>y = 30</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If y = 5x, find y when x = 7.</p>
+<p>y = 5(7)</p>
+<p><b>y = 35</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If y varies directly as x and y = 20 when x = 4, find the constant k.</li>
+<li>If y = 7x, find y when x = 9.</li>
+<li>If y = 24 when x = 8 under direct variation, find y when x = 12.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5</li>
+<li>63</li>
+<li>36</li>
+</ol>
+</div>
+`;
+
+lessons["Inverse Variation"] = `
+<h2>67. Inverse Variation</h2>
+<h3>Lesson</h3>
+<p>In inverse variation, one quantity increases as the other decreases.</p>
+<p>The relationship is:</p>
+<p><b>y = k/x</b></p>
+<p>or <b>xy = k</b>.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> y varies inversely as x. If y = 12 when x = 2, find y when x = 8.</p>
+<p>xy = k</p>
+<p>2 × 12 = 24</p>
+<p>Therefore k = 24.</p>
+<p>y = 24/8</p>
+<p><b>y = 3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If xy = 30 and x = 5, find y.</p>
+<p>5y = 30</p>
+<p><b>y = 6</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If y varies inversely as x and y = 8 when x = 3, find k.</li>
+<li>If xy = 40 and x = 8, find y.</li>
+<li>If xy = 60 and x = 12, find y.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>24</li>
+<li>5</li>
+<li>5</li>
+</ol>
+</div>
+`;
+
+lessons["Joint Variation"] = `
+<h2>68. Joint Variation</h2>
+<h3>Lesson</h3>
+<p>Joint variation occurs when one quantity varies directly as the product of two or more other quantities.</p>
+
+<p>For example:</p>
+<p><b>z = kxy</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> z varies jointly as x and y. If z = 24 when x = 2 and y = 3, find z when x = 4 and y = 5.</p>
+<p>z = kxy</p>
+<p>24 = k(2)(3)</p>
+<p>k = 4</p>
+<p>Therefore z = 4xy.</p>
+<p>When x = 4 and y = 5:</p>
+<p>z = 4 × 4 × 5</p>
+<p><b>z = 80</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If z = 3xy, find z when x = 2 and y = 7.</p>
+<p>z = 3 × 2 × 7</p>
+<p><b>z = 42</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If z varies jointly as x and y, and z = 30 when x = 2 and y = 5, find k.</li>
+<li>If z = 4xy, find z when x = 3 and y = 5.</li>
+<li>If z = 2xy, find z when x = 4 and y = 6.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3</li>
+<li>60</li>
+<li>48</li>
+</ol>
+</div>
+`;
+
+lessons["Partial Variation"] = `
+<h2>69. Partial Variation</h2>
+<h3>Lesson</h3>
+<p>Partial variation occurs when one quantity varies directly with another quantity but also has a constant part.</p>
+
+<p>It is commonly written as:</p>
+<p><b>y = a + bx</b></p>
+
+<p>Here, a is the constant part and bx is the variable part.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> y = 5 + 2x. Find y when x = 4.</p>
+<p>y = 5 + 2(4)</p>
+<p>= 5 + 8</p>
+<p><b>= 13</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A taxi fare is ₦500 plus ₦200 per kilometre. Find the fare for 6 km.</p>
+<p>Fare = 500 + 200(6)</p>
+<p><b>= ₦1,700</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find y when y = 7 + 3x and x = 5.</li>
+<li>If y = 10 + 4x, find y when x = 6.</li>
+<li>In y = a + bx, which term represents the constant part?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>22</li>
+<li>34</li>
+<li>a</li>
+</ol>
+</div>
+`;
+
+lessons["Trigonometry"] = `
+<h2>70. Trigonometry</h2>
+<h3>Lesson</h3>
+<p>Trigonometry is the study of relationships between the angles and sides of triangles.</p>
+
+<p>For right-angled triangles, the main trigonometric ratios are sine, cosine and tangent.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A right triangle has opposite side 3 cm and hypotenuse 5 cm. Find sin θ.</p>
+<p>sin θ = opposite/hypotenuse</p>
+<p><b>sin θ = 3/5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A right triangle has adjacent side 4 cm and hypotenuse 5 cm. Find cos θ.</p>
+<p>cos θ = adjacent/hypotenuse</p>
+<p><b>cos θ = 4/5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Write the formula for sin θ.</li>
+<li>Write the formula for cos θ.</li>
+<li>Write the formula for tan θ.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>opposite/hypotenuse</li>
+<li>adjacent/hypotenuse</li>
+<li>opposite/adjacent</li>
+</ol>
+</div>
+`;
+
+lessons["Trigonometric Ratios"] = `
+<h2>71. Trigonometric Ratios</h2>
+<h3>Lesson</h3>
+<p>For a right-angled triangle:</p>
+<p><b>sin θ = opposite/hypotenuse</b></p>
+<p><b>cos θ = adjacent/hypotenuse</b></p>
+<p><b>tan θ = opposite/adjacent</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If opposite = 6 and hypotenuse = 10, find sin θ.</p>
+<p>sin θ = 6/10</p>
+<p><b>= 3/5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If opposite = 8 and adjacent = 6, find tan θ.</p>
+<p>tan θ = 8/6</p>
+<p><b>= 4/3</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If opposite = 5 and hypotenuse = 13, find sin θ.</li>
+<li>If adjacent = 12 and hypotenuse = 13, find cos θ.</li>
+<li>If opposite = 7 and adjacent = 24, find tan θ.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5/13</li>
+<li>12/13</li>
+<li>7/24</li>
+</ol>
+</div>
+`;
+
+lessons["Special Angles"] = `
+<h2>72. Special Angles</h2>
+<h3>Lesson</h3>
+<p>Some trigonometric values are commonly known for angles such as 0°, 30°, 45°, 60° and 90°.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find sin 30°.</p>
+<p><b>sin 30° = 1/2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find cos 60°.</p>
+<p><b>cos 60° = 1/2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 3:</b> Find tan 45°.</p>
+<p><b>tan 45° = 1</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find sin 90°.</li>
+<li>Find cos 0°.</li>
+<li>Find tan 45°.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>1</li>
+<li>1</li>
+<li>1</li>
+</ol>
+</div>
+`;
+
+lessons["Trigonometric Identities"] = `
+<h2>73. Trigonometric Identities</h2>
+<h3>Lesson</h3>
+<p>A trigonometric identity is an equation involving trigonometric functions that is true for all values for which both sides are defined.</p>
+
+<p>Important identities include:</p>
+<p><b>sin²θ + cos²θ = 1</b></p>
+<p><b>tan θ = sin θ/cos θ</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If sin θ = 3/5 and θ is acute, find cos θ.</p>
+<p>sin²θ + cos²θ = 1</p>
+<p>9/25 + cos²θ = 1</p>
+<p>cos²θ = 16/25</p>
+<p><b>cos θ = 4/5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If sin θ = 3/5 and cos θ = 4/5, find tan θ.</p>
+<p>tan θ = sin θ/cos θ</p>
+<p>= (3/5)/(4/5)</p>
+<p><b>= 3/4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Complete: sin²θ + cos²θ = □.</li>
+<li>If sin θ = 5/13 and θ is acute, find cos θ.</li>
+<li>If sin θ = 3/4 and cos θ = 1/2, find tan θ.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>1</li>
+<li>12/13</li>
+<li>3/2</li>
+</ol>
+</div>
+`;
+
+lessons["Sine Rule"] = `
+<h2>74. Sine Rule</h2>
+<h3>Lesson</h3>
+<p>The sine rule is used in non-right-angled triangles when suitable pairs of sides and opposite angles are known.</p>
+
+<p><b>a/sin A = b/sin B = c/sin C</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> In a triangle, a = 8 cm, A = 30° and B = 45°. Find b.</p>
+<p>8/sin 30° = b/sin 45°</p>
+<p>b = 8(sin 45°)/(sin 30°)</p>
+<p><b>b = 8√2 cm</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If a = 10 cm, A = 30° and B = 60°, find b.</p>
+<p>b = 10(sin 60°)/(sin 30°)</p>
+<p><b>b = 10√3 cm</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If a = 6 cm, A = 30° and B = 90°, find b.</li>
+<li>If a = 5 cm, A = 30° and B = 60°, find b.</li>
+<li>Write the sine rule.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>12 cm</li>
+<li>5√3 cm</li>
+<li>a/sin A = b/sin B = c/sin C</li>
+</ol>
+</div>
+`;
+
+lessons["Cosine Rule"] = `
+<h2>75. Cosine Rule</h2>
+<h3>Lesson</h3>
+<p>The cosine rule can be used to find an unknown side or angle in a non-right-angled triangle.</p>
+
+<p><b>a² = b² + c² - 2bc cos A</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find a when b = 5 cm, c = 6 cm and A = 60°.</p>
+<p>a² = 5² + 6² - 2(5)(6)cos60°</p>
+<p>= 25 + 36 - 60(1/2)</p>
+<p>= 31</p>
+<p><b>a = √31 cm</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the angle A when a = 5, b = 3 and c = 4.</p>
+<p>5² = 3² + 4² - 2(3)(4)cos A</p>
+<p>25 = 25 - 24cos A</p>
+<p>cos A = 0</p>
+<p><b>A = 90°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find a when b = 3, c = 4 and A = 90°.</li>
+<li>Find a when b = 5, c = 5 and A = 60°.</li>
+<li>Write the cosine rule for side a.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5</li>
+<li>5</li>
+<li>a² = b² + c² - 2bc cos A</li>
+</ol>
+</div>
+`;
+
+lessons["Bearings"] = `
+<h2>76. Bearings</h2>
+<h3>Lesson</h3>
+<p>A bearing is a direction measured clockwise from North. Bearings are written as three-figure angles.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A point is directly east of another point. Find its bearing.</p>
+<p>East is 90° clockwise from North.</p>
+<p><b>Bearing = 090°</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A point is directly south. Find its bearing.</p>
+<p>South is 180° clockwise from North.</p>
+<p><b>Bearing = 180°</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>What is the bearing of North-East?</li>
+<li>What is the bearing of West?</li>
+<li>What is the bearing of South?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>045°</li>
+<li>270°</li>
+<li>180°</li>
+</ol>
+</div>
+`;
+
+lessons["Distances"] = `
+<h2>77. Distances</h2>
+<h3>Lesson</h3>
+<p>Distance problems often involve geometry, trigonometry, maps, scale drawings and bearings.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A person walks 3 km east and then 4 km north. Find the straight-line distance from the starting point.</p>
+<p>d = √(3² + 4²)</p>
+<p><b>d = 5 km</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A map has a scale of 1 cm representing 5 km. What distance does 7 cm represent?</p>
+<p>Distance = 7 × 5</p>
+<p><b>= 35 km</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>A person travels 6 km east and 8 km north. Find the direct distance.</li>
+<li>On a map, 1 cm represents 10 km. What does 4 cm represent?</li>
+<li>What formula can be used for the straight-line distance of perpendicular movements?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>10 km</li>
+<li>40 km</li>
+<li>d = √(a² + b²)</li>
+</ol>
+</div>
+`;
+
+lessons["Statistics"] = `
+<h2>78. Statistics</h2>
+<h3>Lesson</h3>
+<p>Statistics is the branch of mathematics concerned with collecting, organising, presenting, analysing and interpreting data.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Consider the data 2, 4, 4, 5, 7.</p>
+<p>The data contains five observations.</p>
+<p>The smallest value is 2 and the largest value is 7.</p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Arrange 8, 3, 6, 2, 5 in ascending order.</p>
+<p><b>2, 3, 5, 6, 8</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Arrange 9, 2, 7, 4, 5 in ascending order.</li>
+<li>What is the largest value in 3, 8, 2, 9, 6?</li>
+<li>What is statistics?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2, 4, 5, 7, 9</li>
+<li>9</li>
+<li>The study of collecting, organising, presenting, analysing and interpreting data.</li>
+</ol>
+</div>
+`;
+
+lessons["Collection and Presentation of Data"] = `
+<h2>79. Collection and Presentation of Data</h2>
+<h3>Lesson</h3>
+<p>Data can be collected through observation, interviews, questionnaires, experiments and surveys.</p>
+<p>It can be presented using tables, charts, graphs and diagrams.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A teacher records the number of books read by five students: 2, 4, 3, 5, 1.</p>
+<p>A frequency table can be used to organise the data.</p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Which presentation is suitable for showing parts of a whole?</p>
+<p><b>A pie chart</b> is suitable because it shows proportions of a total.</p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Name one method of collecting data.</li>
+<li>Name one method of presenting data.</li>
+<li>Which chart is useful for showing parts of a whole?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>Questionnaire.</li>
+<li>Bar chart.</li>
+<li>Pie chart.</li>
+</ol>
+</div>
+`;
+
+lessons["Frequency Distribution"] = `
+<h2>80. Frequency Distribution</h2>
+<h3>Lesson</h3>
+<p>A frequency distribution shows how often each value or class of values occurs in a data set.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> For the data 2, 2, 3, 3, 3, 4, the frequency of 3 is:</p>
+<p>3 occurs three times.</p>
+<p><b>Frequency = 3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> The values 1, 2 and 3 have frequencies 4, 5 and 2 respectively. Find the total frequency.</p>
+<p>Total = 4 + 5 + 2</p>
+<p><b>= 11</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the frequency of 5 in 2, 5, 3, 5, 4, 5.</li>
+<li>Find the total frequency when frequencies are 3, 7 and 5.</li>
+<li>What does frequency mean?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3</li>
+<li>15</li>
+<li>The number of times a value occurs.</li>
+</ol>
+</div>
+`;lessons["Histogram"] = `
+<h2>81. Histogram</h2>
+<h3>Lesson</h3>
+<p>A histogram is a graph used to represent grouped continuous data. The class intervals are placed on the horizontal axis and frequency density is represented by the height of each bar.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A class interval has frequency 20 and width 5.</p>
+<p>Frequency density = frequency ÷ class width.</p>
+<p>= 20 ÷ 5</p>
+<p><b>= 4</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A class has frequency 30 and class width 10.</p>
+<p>Frequency density = 30 ÷ 10</p>
+<p><b>= 3</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the frequency density when frequency = 24 and class width = 6.</li>
+<li>Find the frequency density when frequency = 40 and class width = 8.</li>
+<li>What type of data is commonly represented by a histogram?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>4</li>
+<li>5</li>
+<li>Grouped continuous data.</li>
+</ol>
+</div>
+`;
+
+lessons["Frequency Polygon"] = `
+<h2>82. Frequency Polygon</h2>
+<h3>Lesson</h3>
+<p>A frequency polygon is a graph formed by plotting class midpoints against their frequencies and joining the points with straight lines.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the midpoint of the class interval 10–20.</p>
+<p>Midpoint = (10 + 20) ÷ 2</p>
+<p><b>= 15</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the midpoint of 30–40.</p>
+<p>Midpoint = (30 + 40) ÷ 2</p>
+<p><b>= 35</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the midpoint of 20–30.</li>
+<li>Find the midpoint of 40–50.</li>
+<li>What is plotted against frequency in a frequency polygon?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>25</li>
+<li>45</li>
+<li>Class midpoint.</li>
+</ol>
+</div>
+`;
+
+lessons["Ogive"] = `
+<h2>83. Ogive</h2>
+<h3>Lesson</h3>
+<p>An ogive is a cumulative frequency graph. It can be used to estimate the median, quartiles and percentiles of grouped data.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Frequencies are 5, 7 and 8. Find the cumulative frequencies.</p>
+<p>First cumulative frequency = 5</p>
+<p>Second = 5 + 7 = 12</p>
+<p>Third = 12 + 8 = <b>20</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If frequencies are 4, 6 and 10, find the final cumulative frequency.</p>
+<p>4 + 6 + 10 = <b>20</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the cumulative frequencies of 3, 5 and 7.</li>
+<li>Find the final cumulative frequency of 8, 4 and 6.</li>
+<li>What does an ogive represent?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3, 8, 15</li>
+<li>18</li>
+<li>Cumulative frequency.</li>
+</ol>
+</div>
+`;
+
+lessons["Measures of Central Tendency"] = `
+<h2>84. Measures of Central Tendency</h2>
+<h3>Lesson</h3>
+<p>Measures of central tendency describe the central or typical value of a data set.</p>
+<p>The main measures are <b>mean, median and mode</b>.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the mean of 2, 4 and 6.</p>
+<p>Mean = (2 + 4 + 6) ÷ 3</p>
+<p><b>= 4</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the mode of 2, 3, 3, 4, 5.</p>
+<p>The value occurring most often is 3.</p>
+<p><b>Mode = 3</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Name the three main measures of central tendency.</li>
+<li>Find the mean of 5, 7 and 9.</li>
+<li>Find the mode of 1, 2, 2, 3, 4.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>Mean, median and mode.</li>
+<li>7</li>
+<li>2</li>
+</ol>
+</div>
+`;
+
+lessons["Mean"] = `
+<h2>85. Mean</h2>
+<h3>Lesson</h3>
+<p>The arithmetic mean is found by dividing the sum of all observations by the number of observations.</p>
+<p><b>Mean = Sum of observations ÷ Number of observations</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the mean of 4, 6, 8 and 10.</p>
+<p>Mean = (4 + 6 + 8 + 10) ÷ 4</p>
+<p>= 28 ÷ 4</p>
+<p><b>= 7</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the mean of 5, 10, 15, 20 and 25.</p>
+<p>Mean = 75 ÷ 5</p>
+<p><b>= 15</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the mean of 2, 4, 6, 8.</li>
+<li>Find the mean of 10, 20 and 30.</li>
+<li>Find the mean of 3, 5, 7, 9 and 11.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5</li>
+<li>20</li>
+<li>7</li>
+</ol>
+</div>
+`;
+
+lessons["Median"] = `
+<h2>86. Median</h2>
+<h3>Lesson</h3>
+<p>The median is the middle value of an ordered data set.</p>
+<p>For an odd number of observations, there is one middle value. For an even number, the median is the average of the two middle values.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the median of 2, 5, 7, 9, 11.</p>
+<p>The middle value is 7.</p>
+<p><b>Median = 7</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the median of 2, 4, 6, 8.</p>
+<p>The two middle values are 4 and 6.</p>
+<p>Median = (4 + 6) ÷ 2</p>
+<p><b>= 5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the median of 1, 3, 5, 7, 9.</li>
+<li>Find the median of 2, 4, 6, 8.</li>
+<li>Find the median of 3, 5, 7, 9, 11, 13.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>5</li>
+<li>5</li>
+<li>8</li>
+</ol>
+</div>
+`;
+
+lessons["Mode"] = `
+<h2>87. Mode</h2>
+<h3>Lesson</h3>
+<p>The mode is the value that occurs most frequently in a data set.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the mode of 2, 3, 3, 4, 5.</p>
+<p>3 occurs twice while the other values occur once.</p>
+<p><b>Mode = 3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the mode of 4, 5, 5, 6, 6, 6, 7.</p>
+<p>6 occurs most frequently.</p>
+<p><b>Mode = 6</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the mode of 1, 2, 2, 3, 4.</li>
+<li>Find the mode of 5, 5, 6, 7, 7, 7.</li>
+<li>Find the mode of 2, 3, 4, 5.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2</li>
+<li>7</li>
+<li>No mode.</li>
+</ol>
+</div>
+`;
+
+lessons["Measures of Dispersion"] = `
+<h2>88. Measures of Dispersion</h2>
+<h3>Lesson</h3>
+<p>Measures of dispersion describe how spread out the values in a data set are.</p>
+<p>Important measures include range, variance and standard deviation.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the range of 2, 5, 8, 10.</p>
+<p>Range = largest value - smallest value</p>
+<p>= 10 - 2</p>
+<p><b>= 8</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Which measure of dispersion is obtained by taking the square root of variance?</p>
+<p><b>Standard deviation.</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Name three measures of dispersion.</li>
+<li>Find the range of 3, 7, 10, 15.</li>
+<li>What is the square root of variance called?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>Range, variance and standard deviation.</li>
+<li>12</li>
+<li>Standard deviation.</li>
+</ol>
+</div>
+`;
+
+lessons["Range"] = `
+<h2>89. Range</h2>
+<h3>Lesson</h3>
+<p>The range is the difference between the largest and smallest values in a data set.</p>
+<p><b>Range = Maximum - Minimum</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the range of 4, 8, 10, 15.</p>
+<p>Range = 15 - 4</p>
+<p><b>= 11</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the range of 12, 20, 25 and 30.</p>
+<p>Range = 30 - 12</p>
+<p><b>= 18</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the range of 2, 5, 9, 12.</li>
+<li>Find the range of 10, 15, 20, 25.</li>
+<li>Find the range of 4, 7, 13, 18.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>10</li>
+<li>15</li>
+<li>14</li>
+</ol>
+</div>
+`;
+
+lessons["Variance"] = `
+<h2>90. Variance</h2>
+<h3>Lesson</h3>
+<p>Variance measures how far observations are spread around their mean.</p>
+<p>For a population, variance can be calculated using:</p>
+<p><b>Variance = Σ(x - mean)² ÷ n</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the variance of 2, 4, 6.</p>
+<p>Mean = 4.</p>
+<p>Squared deviations:</p>
+<p>(2-4)² = 4</p>
+<p>(4-4)² = 0</p>
+<p>(6-4)² = 4</p>
+<p>Variance = (4 + 0 + 4) ÷ 3</p>
+<p><b>= 8/3</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the variance of 5, 5, 5.</p>
+<p>Mean = 5.</p>
+<p>Every deviation from the mean is zero.</p>
+<p><b>Variance = 0</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the variance of 3, 3, 3.</li>
+<li>Find the variance of 1, 2, 3 using the population formula.</li>
+<li>What does variance measure?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>0</li>
+<li>2/3</li>
+<li>The spread of observations around their mean.</li>
+</ol>
+</div>
+`;
+
+lessons["Standard Deviation"] = `
+<h2>91. Standard Deviation</h2>
+<h3>Lesson</h3>
+<p>Standard deviation measures the spread of data and is the positive square root of variance.</p>
+
+<p><b>Standard deviation = √Variance</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If the variance is 25, find the standard deviation.</p>
+<p>Standard deviation = √25</p>
+<p><b>= 5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If the variance is 16, find the standard deviation.</p>
+<p>Standard deviation = √16</p>
+<p><b>= 4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If variance = 9, find the standard deviation.</li>
+<li>If variance = 36, find the standard deviation.</li>
+<li>If variance = 49, find the standard deviation.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3</li>
+<li>6</li>
+<li>7</li>
+</ol>
+</div>
+`;
+
+lessons["Probability"] = `
+<h2>92. Probability</h2>
+<h3>Lesson</h3>
+<p>Probability measures the likelihood of an event occurring.</p>
+<p>For equally likely outcomes:</p>
+<p><b>P(E) = Number of favourable outcomes ÷ Total number of outcomes</b></p>
+<p>Probability ranges from 0 to 1.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A fair die is thrown. Find the probability of getting a 4.</p>
+<p>There is one favourable outcome out of six.</p>
+<p><b>P(4) = 1/6</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A bag contains 3 red balls and 2 blue balls. Find the probability of selecting a red ball.</p>
+<p>Total balls = 5.</p>
+<p>Red balls = 3.</p>
+<p><b>P(red) = 3/5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the probability of getting a head when a fair coin is tossed.</li>
+<li>Find the probability of getting an even number on a fair die.</li>
+<li>What is the probability of an impossible event?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>1/2</li>
+<li>1/2</li>
+<li>0</li>
+</ol>
+</div>
+`;
+
+lessons["Experimental Probability"] = `
+<h2>93. Experimental Probability</h2>
+<h3>Lesson</h3>
+<p>Experimental probability is based on results obtained from an actual experiment.</p>
+<p><b>Experimental probability = Number of times event occurs ÷ Total number of trials</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A coin is tossed 50 times and heads occur 28 times.</p>
+<p>P(heads) = 28/50</p>
+<p><b>= 14/25</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A die is thrown 60 times and a 6 occurs 12 times.</p>
+<p>P(6) = 12/60</p>
+<p><b>= 1/5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>A coin is tossed 40 times and heads occur 18 times. Find the experimental probability of heads.</li>
+<li>A die is thrown 50 times and a 5 occurs 10 times. Find the experimental probability.</li>
+<li>What is experimental probability based on?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>9/20</li>
+<li>1/5</li>
+<li>Results from an actual experiment.</li>
+</ol>
+</div>
+`;
+
+lessons["Theoretical Probability"] = `
+<h2>94. Theoretical Probability</h2>
+<h3>Lesson</h3>
+<p>Theoretical probability is calculated using the possible outcomes of an experiment without carrying out the experiment.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the probability of rolling a 6 on a fair die.</p>
+<p>There are 6 equally likely outcomes and one favourable outcome.</p>
+<p><b>P(6) = 1/6</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the probability of drawing a heart from a standard deck of 52 cards.</p>
+<p>There are 13 hearts.</p>
+<p>P(heart) = 13/52</p>
+<p><b>= 1/4</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the probability of rolling an odd number on a fair die.</li>
+<li>Find the probability of drawing an ace from a standard deck of 52 cards.</li>
+<li>Find the probability of getting tails from a fair coin.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>1/2</li>
+<li>1/13</li>
+<li>1/2</li>
+</ol>
+</div>
+`;
+
+lessons["Permutation"] = `
+<h2>95. Permutation</h2>
+<h3>Lesson</h3>
+<p>A permutation is an arrangement of objects where order matters.</p>
+<p>The number of arrangements of n distinct objects is:</p>
+<p><b>n! = n × (n-1) × ... × 2 × 1</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find 4!.</p>
+<p>4! = 4 × 3 × 2 × 1</p>
+<p><b>= 24</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> In how many ways can 3 different books be arranged on a shelf?</p>
+<p>3! = 3 × 2 × 1</p>
+<p><b>= 6 ways</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find 5!.</li>
+<li>In how many ways can 4 different books be arranged?</li>
+<li>Does order matter in a permutation?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>120</li>
+<li>24 ways</li>
+<li>Yes.</li>
+</ol>
+</div>
+`;
+
+lessons["Combination"] = `
+<h2>96. Combination</h2>
+<h3>Lesson</h3>
+<p>A combination is a selection of objects where order does not matter.</p>
+<p>The formula is:</p>
+<p><b>nCr = n! ÷ [r!(n-r)!]</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find 5C2.</p>
+<p>5C2 = 5! ÷ (2!3!)</p>
+<p>= 10</p>
+<p><b>Answer = 10</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find 6C3.</p>
+<p>6C3 = 6! ÷ (3!3!)</p>
+<p><b>= 20</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find 4C2.</li>
+<li>Find 5C3.</li>
+<li>Does order matter in a combination?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>6</li>
+<li>10</li>
+<li>No.</li>
+</ol>
+</div>
+`;
+
+lessons["Probability of Combined Events"] = `
+<h2>97. Probability of Combined Events</h2>
+<h3>Lesson</h3>
+<p>Combined events involve two or more events. For independent events, the probability that both occur is found by multiplying their probabilities.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> A fair coin is tossed twice. Find the probability of getting two heads.</p>
+<p>P(H) = 1/2.</p>
+<p>P(two heads) = 1/2 × 1/2</p>
+<p><b>= 1/4</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> A fair die is thrown twice. Find the probability of getting a 6 on both throws.</p>
+<p>P(6) = 1/6.</p>
+<p>P(two sixes) = 1/6 × 1/6</p>
+<p><b>= 1/36</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>A fair coin is tossed twice. Find the probability of two tails.</li>
+<li>A fair die is thrown twice. Find the probability of getting two 5s.</li>
+<li>What operation is used to find the probability of independent events both occurring?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>1/4</li>
+<li>1/36</li>
+<li>Multiplication.</li>
+</ol>
+</div>
+`;
+
+lessons["Introduction to Calculus"] = `
+<h2>98. Introduction to Calculus</h2>
+<h3>Lesson</h3>
+<p>Calculus is a branch of mathematics concerned mainly with change and accumulation.</p>
+<p>The two major areas are <b>differentiation</b> and <b>integration</b>.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If y = x², differentiation gives:</p>
+<p>dy/dx = 2x.</p>
+<p><b>Therefore dy/dx = 2x.</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> The integral of x is:</p>
+<p>∫x dx = x²/2 + C</p>
+<p><b>Answer = x²/2 + C</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Name the two major areas of calculus.</li>
+<li>Differentiate y = x³.</li>
+<li>Find ∫x² dx.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>Differentiation and integration.</li>
+<li>3x²</li>
+<li>x³/3 + C</li>
+</ol>
+</div>
+`;
+
+lessons["Functions"] = `
+<h2>99. Functions</h2>
+<h3>Lesson</h3>
+<p>A function is a rule that assigns each input exactly one output.</p>
+<p>It is often written as <b>f(x)</b>.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If f(x) = 2x + 3, find f(4).</p>
+<p>f(4) = 2(4) + 3</p>
+<p><b>= 11</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If f(x) = x² - 1, find f(5).</p>
+<p>f(5) = 25 - 1</p>
+<p><b>= 24</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If f(x) = 3x + 2, find f(5).</li>
+<li>If f(x) = x² + 1, find f(4).</li>
+<li>If f(x) = 2x - 7, find f(6).</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>17</li>
+<li>17</li>
+<li>5</li>
+</ol>
+</div>
+`;
+
+lessons["Domain and Range"] = `
+<h2>100. Domain and Range</h2>
+<h3>Lesson</h3>
+<p>The <b>domain</b> of a function is the set of permitted input values.</p>
+<p>The <b>range</b> is the set of resulting output values.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> For f(x) = x + 2 with domain {1,2,3}, find the range.</p>
+<p>f(1) = 3</p>
+<p>f(2) = 4</p>
+<p>f(3) = 5</p>
+<p><b>Range = {3,4,5}</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> For f(x) = 2x with domain {1,2,4}, find the range.</p>
+<p>Outputs are 2, 4 and 8.</p>
+<p><b>Range = {2,4,8}</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>For f(x)=x+1 and domain {1,2,3}, find the range.</li>
+<li>For f(x)=3x and domain {1,2}, find the range.</li>
+<li>What is the domain of a function?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>{2,3,4}</li>
+<li>{3,6}</li>
+<li>The set of permitted input values.</li>
+</ol>
+</div>
+`;lessons["Composite Functions"] = `
+<h2>101. Composite Functions</h2>
+<h3>Lesson</h3>
+<p>A composite function is formed when one function is applied after another.</p>
+<p>It is written as <b>(fg)(x) = f(g(x))</b>.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If f(x) = 2x + 1 and g(x) = x + 3, find f(g(x)).</p>
+<p>f(g(x)) = 2(x + 3) + 1</p>
+<p>= 2x + 6 + 1</p>
+<p><b>= 2x + 7</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If f(x) = x² and g(x) = x + 1, find f(g(2)).</p>
+<p>g(2) = 3</p>
+<p>f(3) = 9</p>
+<p><b>f(g(2)) = 9</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If f(x)=3x and g(x)=x+2, find f(g(x)).</li>
+<li>If f(x)=x+4 and g(x)=2x, find f(g(x)).</li>
+<li>If f(x)=x² and g(x)=x+2, find f(g(1)).</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>3x + 6</li>
+<li>2x + 4</li>
+<li>9</li>
+</ol>
+</div>
+`;
+
+lessons["Inverse Functions"] = `
+<h2>102. Inverse Functions</h2>
+<h3>Lesson</h3>
+<p>An inverse function reverses the operation of the original function.</p>
+<p>The inverse of f(x) is written as <b>f⁻¹(x)</b>.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the inverse of f(x)=2x+3.</p>
+<p>Let y = 2x + 3.</p>
+<p>Swap x and y:</p>
+<p>x = 2y + 3</p>
+<p>x - 3 = 2y</p>
+<p><b>f⁻¹(x) = (x - 3)/2</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the inverse of f(x)=x+5.</p>
+<p>y = x + 5</p>
+<p>x = y + 5</p>
+<p><b>f⁻¹(x) = x - 5</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the inverse of f(x)=x+4.</li>
+<li>Find the inverse of f(x)=3x.</li>
+<li>Find the inverse of f(x)=2x-6.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>f⁻¹(x)=x-4</li>
+<li>f⁻¹(x)=x/3</li>
+<li>f⁻¹(x)=(x+6)/2</li>
+</ol>
+</div>
+`;
+
+lessons["Limits"] = `
+<h2>103. Limits</h2>
+<h3>Lesson</h3>
+<p>A limit describes the value that a function approaches as the input approaches a particular value.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the limit of x + 2 as x approaches 3.</p>
+<p>Substitute x = 3:</p>
+<p>3 + 2 = <b>5</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the limit of x² as x approaches 4.</p>
+<p>4² = <b>16</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the limit of x+5 as x approaches 2.</li>
+<li>Find the limit of x² as x approaches 3.</li>
+<li>Find the limit of 2x+1 as x approaches 4.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>7</li>
+<li>9</li>
+<li>9</li>
+</ol>
+</div>
+`;
+
+lessons["Differentiation"] = `
+<h2>104. Differentiation</h2>
+<h3>Lesson</h3>
+<p>Differentiation is the process of finding the derivative of a function.</p>
+<p>The derivative describes the rate at which a quantity changes.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Differentiate y=x².</p>
+<p>dy/dx = <b>2x</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Differentiate y=x³.</p>
+<p>dy/dx = <b>3x²</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Differentiate y=x⁴.</li>
+<li>Differentiate y=5x².</li>
+<li>Differentiate y=7x.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>4x³</li>
+<li>10x</li>
+<li>7</li>
+</ol>
+</div>
+`;
+
+lessons["Differentiation from First Principles"] = `
+<h2>105. Differentiation from First Principles</h2>
+<h3>Lesson</h3>
+<p>The derivative from first principles is defined by:</p>
+<p><b>f'(x) = lim[h→0] [f(x+h)-f(x)]/h</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Use first principles to differentiate f(x)=x².</p>
+<p>f(x+h) = (x+h)²</p>
+<p>= x² + 2xh + h²</p>
+<p>Therefore:</p>
+<p>[f(x+h)-f(x)]/h = 2x + h</p>
+<p>As h approaches 0:</p>
+<p><b>f'(x)=2x</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Use first principles for f(x)=x³.</p>
+<p>Expanding (x+h)³ and simplifying gives:</p>
+<p>3x² + 3xh + h².</p>
+<p>As h approaches 0:</p>
+<p><b>f'(x)=3x²</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Using first principles, find the derivative of x².</li>
+<li>Using first principles, find the derivative of x³.</li>
+<li>What value does h approach in the first-principles definition?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2x</li>
+<li>3x²</li>
+<li>0</li>
+</ol>
+</div>
+`;
+
+lessons["Rules of Differentiation"] = `
+<h2>106. Rules of Differentiation</h2>
+<h3>Lesson</h3>
+<p>Rules of differentiation make it easier to differentiate functions.</p>
+<p>For the power rule:</p>
+<p><b>d/dx(xⁿ) = nxⁿ⁻¹</b></p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Differentiate y=x⁵.</p>
+<p>dy/dx = 5x⁴.</p>
+<p><b>Answer = 5x⁴</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Differentiate y=4x³+2x.</p>
+<p>dy/dx = 12x² + 2.</p>
+<p><b>Answer = 12x² + 2</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Differentiate y=x⁶.</li>
+<li>Differentiate y=3x⁴.</li>
+<li>Differentiate y=5x²+4x.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>6x⁵</li>
+<li>12x³</li>
+<li>10x + 4</li>
+</ol>
+</div>
+`;
+
+lessons["Applications of Differentiation"] = `
+<h2>107. Applications of Differentiation</h2>
+<h3>Lesson</h3>
+<p>Differentiation can be used to find gradients, rates of change, stationary points and maximum or minimum values.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the gradient of y=x² at x=3.</p>
+<p>dy/dx = 2x</p>
+<p>At x=3:</p>
+<p><b>gradient = 6</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If s=t²+3t, find the rate of change of s when t=2.</p>
+<p>ds/dt = 2t + 3</p>
+<p>At t=2:</p>
+<p>ds/dt = 4 + 3</p>
+<p><b>= 7</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the gradient of y=x² at x=4.</li>
+<li>Find dy/dx for y=3x².</li>
+<li>Find the rate of change of s=t³ at t=2.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>8</li>
+<li>6x</li>
+<li>12</li>
+</ol>
+</div>
+`;
+
+lessons["Maximum and Minimum Values"] = `
+<h2>108. Maximum and Minimum Values</h2>
+<h3>Lesson</h3>
+<p>Stationary points occur where the first derivative is zero.</p>
+<p>They may represent maximum or minimum values.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find the stationary point of y=x²-4x+3.</p>
+<p>dy/dx = 2x - 4</p>
+<p>Set dy/dx = 0:</p>
+<p>2x - 4 = 0</p>
+<p>x = 2</p>
+<p>y = 2² - 4(2) + 3 = -1</p>
+<p><b>Stationary point = (2,-1)</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the stationary point of y=-x²+6x.</p>
+<p>dy/dx = -2x + 6</p>
+<p>-2x + 6 = 0</p>
+<p>x = 3</p>
+<p>y = -9 + 18 = 9</p>
+<p><b>Stationary point = (3,9)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the stationary point of y=x²-2x.</li>
+<li>Find the stationary point of y=-x²+4x.</li>
+<li>What equation is solved to find the x-coordinate of a stationary point?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>(1,-1)</li>
+<li>(2,4)</li>
+<li>dy/dx = 0</li>
+</ol>
+</div>
+`;
+
+lessons["Rates of Change"] = `
+<h2>109. Rates of Change</h2>
+<h3>Lesson</h3>
+<p>The derivative represents the instantaneous rate of change of one variable with respect to another.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> If distance s=t²+2t, find the velocity at t=3.</p>
+<p>Velocity = ds/dt.</p>
+<p>ds/dt = 2t + 2.</p>
+<p>At t=3:</p>
+<p><b>Velocity = 8</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> If y=3x², find the rate of change when x=2.</p>
+<p>dy/dx = 6x.</p>
+<p>At x=2:</p>
+<p><b>Rate of change = 12</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>If s=t², find ds/dt.</li>
+<li>If y=4x², find dy/dx.</li>
+<li>If s=2t²+3t, find ds/dt at t=2.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2t</li>
+<li>8x</li>
+<li>11</li>
+</ol>
+</div>
+`;
+
+lessons["Integration"] = `
+<h2>110. Integration</h2>
+<h3>Lesson</h3>
+<p>Integration is the reverse process of differentiation. It is also used to find accumulated quantities and areas.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Integrate x².</p>
+<p>∫x² dx = <b>x³/3 + C</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Integrate 4x³.</p>
+<p>∫4x³ dx = 4(x⁴/4) + C</p>
+<p><b>= x⁴ + C</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Integrate x³.</li>
+<li>Integrate 5x².</li>
+<li>Integrate 6x.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>x⁴/4 + C</li>
+<li>5x³/3 + C</li>
+<li>3x² + C</li>
+</ol>
+</div>
+`;
+
+lessons["Indefinite Integration"] = `
+<h2>111. Indefinite Integration</h2>
+<h3>Lesson</h3>
+<p>An indefinite integral represents a family of antiderivatives and therefore includes an arbitrary constant C.</p>
+
+<h3>Worked Examples</h3>
+<div class="example">
+<p><b>Example 1:</b> Find ∫2x dx.</p>
+<p>∫2x dx = <b>x² + C</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find ∫(3x²+4) dx.</p>
+<p>∫3x² dx + ∫4 dx</p>
+<p><b>= x³ + 4x + C</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find ∫4x dx.</li>
+<li>Find ∫x⁴ dx.</li>
+<li>Find ∫(2x+3) dx.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2x² + C</li>
+<li>x⁵/5 + C</li>
+<li>x² + 3x + C</li>
 </ol>
 </div>
 `;
 
 lessons["Definite Integration"] = `
 <h2>112. Definite Integration</h2>
-
 <h3>Lesson</h3>
-<p>Definite integration is used when the integral has specified upper and lower limits.</p>
-
-<p>It is written as:</p>
-
-<p><b>∫ₐᵇ f(x) dx</b></p>
-
-<p>To evaluate a definite integral:</p>
-
-<ol>
-<li>Find the antiderivative.</li>
-<li>Substitute the upper limit.</li>
-<li>Substitute the lower limit.</li>
-<li>Subtract the lower result from the upper result.</li>
-</ol>
+<p>A definite integral has specified upper and lower limits.</p>
+<p>The result is a numerical value rather than a family of functions.</p>
 
 <h3>Worked Examples</h3>
-
 <div class="example">
 <p><b>Example 1:</b> Evaluate ∫₀² x dx.</p>
-
-<p>∫x dx = x²/2</p>
-
-<p>Apply the limits:</p>
-
-<p>[x²/2]₀²</p>
-
-<p>= 2²/2 - 0²/2</p>
-<p>= 4/2</p>
-<p><b>= 2</b></p>
+<p>∫x dx = x²/2.</p>
+<p>At 2: 4/2 = 2.</p>
+<p>At 0: 0.</p>
+<p><b>Answer = 2</b></p>
 </div>
 
 <div class="example">
 <p><b>Example 2:</b> Evaluate ∫₁³ 2x dx.</p>
-
-<p>∫2x dx = x²</p>
-
-<p>[x²]₁³</p>
-<p>= 3² - 1²</p>
-<p>= 9 - 1</p>
-<p><b>= 8</b></p>
+<p>∫2x dx = x².</p>
+<p>At 3: 9.</p>
+<p>At 1: 1.</p>
+<p>9 - 1 = <b>8</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Evaluate ∫₀³ x dx.</li>
-<li>Evaluate ∫₁⁴ 2x dx.</li>
-<li>Evaluate ∫₀² 3x² dx.</li>
+<li>Evaluate ∫₀¹ x dx.</li>
+<li>Evaluate ∫₀² 2x dx.</li>
+<li>Evaluate ∫₁² 3x² dx.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>9/2</li>
-<li>15</li>
-<li>8</li>
+<li>1/2</li>
+<li>4</li>
+<li>7</li>
 </ol>
 </div>
 `;
 
 lessons["Area Under a Curve"] = `
 <h2>113. Area Under a Curve</h2>
-
 <h3>Lesson</h3>
-<p>Integration can be used to calculate the area between a curve and the x-axis over a specified interval.</p>
-
-<p>The area between x = a and x = b is:</p>
-
-<p><b>Area = ∫ₐᵇ y dx</b></p>
-
-<p>When the curve lies above the x-axis, the definite integral gives the area directly.</p>
+<p>The area under a curve between two x-values can be found using definite integration.</p>
 
 <h3>Worked Examples</h3>
-
 <div class="example">
-<p><b>Example 1:</b> Find the area under y = x from x = 0 to x = 2.</p>
-
+<p><b>Example 1:</b> Find the area under y=x from x=0 to x=2.</p>
 <p>Area = ∫₀² x dx</p>
-
 <p>= [x²/2]₀²</p>
-
-<p>= 4/2 - 0</p>
-
 <p><b>= 2 square units</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Find the area under y = x² from x = 0 to x = 2.</p>
-
-<p>Area = ∫₀² x² dx</p>
-
-<p>= [x³/3]₀²</p>
-
-<p>= 8/3</p>
-
-<p><b>= 2⅔ square units</b></p>
+<p><b>Example 2:</b> Find the area under y=2x from x=0 to x=3.</p>
+<p>Area = ∫₀³ 2x dx</p>
+<p>= [x²]₀³</p>
+<p><b>= 9 square units</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Find the area under y = x from x = 0 to x = 4.</li>
-<li>Find the area under y = x² from x = 0 to x = 3.</li>
-<li>State the formula for the area under a curve.</li>
+<li>Find the area under y=x from x=0 to x=4.</li>
+<li>Find the area under y=2x from x=0 to x=2.</li>
+<li>Which mathematical process is used to find area under a curve?</li>
 </ol>
 </div>
 
@@ -166,143 +4956,152 @@ lessons["Area Under a Curve"] = `
 <div class="answer">
 <ol>
 <li>8 square units</li>
-<li>9 square units</li>
-<li>Area = ∫ₐᵇ y dx</li>
+<li>4 square units</li>
+<li>Definite integration.</li>
 </ol>
 </div>
 `;
 
 lessons["Differential Equations"] = `
 <h2>114. Differential Equations</h2>
-
 <h3>Lesson</h3>
-<p>A differential equation is an equation involving a function and one or more of its derivatives.</p>
-
-<p>For example:</p>
-
-<p><b>dy/dx = 2x</b></p>
-
-<p>Solving a differential equation often involves integration.</p>
+<p>A differential equation is an equation involving an unknown function and one or more of its derivatives.</p>
 
 <h3>Worked Examples</h3>
-
 <div class="example">
-<p><b>Example 1:</b> Solve dy/dx = 3x².</p>
-
+<p><b>Example 1:</b> Solve dy/dx = 2x.</p>
 <p>Integrate both sides:</p>
-
-<p>y = ∫3x² dx</p>
-
-<p><b>y = x³ + C</b></p>
+<p>y = ∫2x dx</p>
+<p><b>y = x² + C</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Solve dy/dx = 4x + 2.</p>
-
+<p><b>Example 2:</b> Solve dy/dx = 3x².</p>
 <p>Integrate:</p>
-
-<p>y = ∫(4x + 2)dx</p>
-
-<p>y = 2x² + 2x + C</p>
-
-<p><b>Answer = 2x² + 2x + C</b></p>
+<p>y = ∫3x² dx</p>
+<p><b>y = x³ + C</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Solve dy/dx = 2x.</li>
-<li>Solve dy/dx = 6x².</li>
-<li>Solve dy/dx = 4x - 3.</li>
+<li>Solve dy/dx = 4x.</li>
+<li>Solve dy/dx = 5x⁴.</li>
+<li>What mathematical process is commonly used to solve a simple first-order differential equation of this type?</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>y = x² + C</li>
-<li>y = 2x³ + C</li>
-<li>y = 2x² - 3x + C</li>
+<li>y = 2x² + C</li>
+<li>y = x⁵ + C</li>
+<li>Integration.</li>
 </ol>
 </div>
 `;
 
 lessons["Numerical Methods"] = `
 <h2>115. Numerical Methods</h2>
-
 <h3>Lesson</h3>
 <p>Numerical methods are techniques used to obtain approximate numerical solutions to mathematical problems.</p>
-
-<p>They are particularly useful when an exact algebraic solution is difficult or impossible to obtain.</p>
-
-<p>Common numerical methods include:</p>
-
-<ul>
-<li>Trial and improvement</li>
-<li>Iteration</li>
-<li>Newton-Raphson method</li>
-<li>Bisection method</li>
-</ul>
+<p>Common methods include iteration, the bisection method and Newton-Raphson method.</p>
 
 <h3>Worked Examples</h3>
-
 <div class="example">
-<p><b>Example 1:</b> Use trial and improvement to approximate √10.</p>
-
-<p>3² = 9</p>
-<p>4² = 16</p>
-
-<p>Therefore √10 lies between 3 and 4.</p>
-
-<p>Try 3.16:</p>
-<p>3.16² = 9.9856</p>
-
-<p>Try 3.162:</p>
-<p>3.162² ≈ 9.9982</p>
-
-<p>Therefore:</p>
-<p><b>√10 ≈ 3.162</b></p>
+<p><b>Example 1:</b> Use one iteration of x = (x + 2)/2 starting with x = 4.</p>
+<p>New x = (4 + 2)/2</p>
+<p><b>= 3</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Use Newton-Raphson to find an approximation to a root of f(x) = x² - 2.</p>
-
-<p>The Newton-Raphson formula is:</p>
-
-<p><b>xₙ₊₁ = xₙ - f(xₙ)/f'(xₙ)</b></p>
-
-<p>For f(x) = x² - 2:</p>
-
-<p>f'(x) = 2x</p>
-
-<p>Starting with x₀ = 1.5:</p>
-
-<p>x₁ = 1.5 - (1.5² - 2)/(2 × 1.5)</p>
-
-<p>x₁ ≈ 1.4167</p>
-
-<p>A further iteration gives approximately:</p>
-
-<p><b>x₂ ≈ 1.4142</b></p>
-
-<p>Therefore √2 ≈ 1.4142.</p>
+<p><b>Example 2:</b> The bisection method starts with an interval containing a root and repeatedly divides the interval into two parts.</p>
+<p>If the interval is [2,6], its midpoint is:</p>
+<p>(2 + 6) ÷ 2</p>
+<p><b>= 4</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>What is a numerical method?</li>
-<li>Name two numerical methods.</li>
-<li>Use trial and improvement to estimate √5 to 3 decimal places.</li>
+<li>Find the midpoint of the interval [2,8].</li>
+<li>Find the midpoint of the interval [4,10].</li>
+<li>Name one numerical method for solving equations.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>A technique for obtaining an approximate numerical solution.</li>
-<li>For example, iteration and Newton-Raphson method.</li>
-<li>√5 ≈ 2.236.</li>
+<li>5</li>
+<li>7</li>
+<li>Bisection method.</li>
 </ol>
 </div>
-`;
+`;function startLearning(){
+    document.getElementById("welcomeSection").classList.add("hidden");
+    showTopics();
+}
+
+function showTopics(){
+    document.getElementById("welcomeSection").classList.add("hidden");
+    document.getElementById("lessonSection").classList.add("hidden");
+    document.getElementById("topicsSection").classList.remove("hidden");
+
+    displayTopics();
+}
+
+function displayTopics(){
+
+    const list = document.getElementById("topicsList");
+
+    list.innerHTML = "";
+
+    topics.forEach(function(topic,index){
+
+        const div = document.createElement("div");
+
+        div.className = "topic";
+
+        div.textContent = (index + 1) + ". " + topic;
+
+        div.onclick = function(){
+            openLesson(index);
+        };
+
+        list.appendChild(div);
+
+    });
+}
+
+function openLesson(index){
+
+    const topic = topics[index];
+
+    document.getElementById("welcomeSection").classList.add("hidden");
+
+    document.getElementById("topicsSection").classList.add("hidden");
+
+    document.getElementById("lessonSection").classList.remove("hidden");
+
+    document.getElementById("lessonContent").innerHTML =
+        lessons[topic] || "<h2>Lesson not found.</h2>";
+
+    window.scrollTo(0,0);
+}
+
+function showWelcome(){
+
+    document.getElementById("topicsSection").classList.add("hidden");
+
+    document.getElementById("lessonSection").classList.add("hidden");
+
+    document.getElementById("welcomeSection").classList.remove("hidden");
+}
+
+window.onload = function(){
+
+    </script>
+
+</body>
+</html>
