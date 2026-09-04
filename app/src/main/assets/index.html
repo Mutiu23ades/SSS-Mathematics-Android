@@ -1,356 +1,129 @@
-<!DOCTYPE html><html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SSS Mathematics</title>
+function openLesson(index) {
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+    document.getElementById("topicsSection").style.display = "none";
+    document.getElementById("lessonSection").style.display = "block";
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f2f7ff;
-        color: #123;
-    }
+    document.getElementById("lessonTitle").innerText =
+        "Topic " + (index + 1) + ": " + topics[index];
 
-    header {
-        background: #1976D2;
-        color: white;
-        text-align: center;
-        padding: 25px 15px;
-    }
+    if (index === 0) {
 
-    header h1 {
-        margin: 0;
-        font-size: 28px;
-    }
+        document.getElementById("lessonText").innerHTML = `
+            <strong>Meaning of Number Bases</strong><br><br>
 
-    header p {
-        margin: 8px 0 0;
-    }
+            A number base is a system used for writing numbers using a
+            particular set of digits. The value of each digit depends on
+            its position in the number.<br><br>
 
-    main {
-        padding: 20px;
-        max-width: 800px;
-        margin: auto;
-    }
+            <strong>Common Number Bases</strong><br><br>
 
-    .card {
-        background: white;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    }
+            Base 2 (Binary): Uses only 0 and 1.<br>
+            Base 8 (Octal): Uses digits 0 to 7.<br>
+            Base 10 (Denary): Uses digits 0 to 9.<br>
+            Base 16 (Hexadecimal): Uses digits 0 to 9 and A to F.<br><br>
 
-    h2 {
-        color: #1976D2;
-    }
+            <strong>Place Value</strong><br><br>
 
-    button {
-        width: 100%;
-        padding: 15px;
-        margin-top: 10px;
-        border: none;
-        border-radius: 8px;
-        background: #1976D2;
-        color: white;
-        font-size: 18px;
-        cursor: pointer;
-    }
+            In base 10, the place values are powers of 10.<br><br>
 
-    button:active {
-        opacity: 0.8;
-    }
+            345₁₀ = (3 × 10²) + (4 × 10¹) + (5 × 10⁰)<br>
+            = 300 + 40 + 5<br>
+            = 345<br><br>
 
-    #topicsSection {
-        display: none;
-    }
+            In binary, the place values are powers of 2.<br><br>
 
-    .topic {
-        background: #e3f2fd;
-        margin: 10px 0;
-        padding: 15px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 17px;
-    }
+            1011₂ = (1 × 2³) + (0 × 2²) + (1 × 2¹) + (1 × 2⁰)<br>
+            = 8 + 0 + 2 + 1<br>
+            = 11₁₀<br><br>
 
-    .topic:hover {
-        background: #bbdefb;
-    }
+            <strong>Conversion from Binary to Denary</strong><br><br>
 
-    #lessonSection {
-        display: none;
-    }
+            Multiply each binary digit by its corresponding power of 2
+            and add the results.<br><br>
 
-    .backButton {
-        background: #555;
-    }
+            <strong>Conversion from Denary to Binary</strong><br><br>
 
-    .contentBox {
-        margin-top: 15px;
-        padding: 15px;
-        background: #f5f5f5;
-        border-radius: 8px;
-        line-height: 1.6;
-    }
-</style>
+            Repeatedly divide the denary number by 2 and read the
+            remainders from bottom to top.
+        `;
 
-</head><body><header>
-    <h1>SSS Mathematics</h1>
-    <p>Senior Secondary School Mathematics Learning App</p>
-</header><main><!-- WELCOME PAGE -->
-<div class="card" id="welcomeSection">
+        document.getElementById("exampleText").innerHTML = `
+            <strong>Example 1: Convert 25₁₀ to binary.</strong><br><br>
 
-    <h2>Welcome</h2>
+            25 ÷ 2 = 12 remainder 1<br>
+            12 ÷ 2 = 6 remainder 0<br>
+            6 ÷ 2 = 3 remainder 0<br>
+            3 ÷ 2 = 1 remainder 1<br>
+            1 ÷ 2 = 0 remainder 1<br><br>
 
-    <p>
-        Welcome to SSS Mathematics. This app provides comprehensive
-        mathematics lessons, worked examples, practice questions and answers.
-    </p>
+            Reading from bottom to top:<br><br>
 
-    <button onclick="startLearning()">Start Learning</button>
+            <strong>25₁₀ = 11001₂</strong><br><br>
 
-</div>
+            <strong>Example 2: Convert 101101₂ to denary.</strong><br><br>
 
+            101101₂ = (1 × 2⁵) + (0 × 2⁴) +
+            (1 × 2³) + (1 × 2²) +
+            (0 × 2¹) + (1 × 2⁰)<br><br>
 
-<!-- TOPICS PAGE -->
-<div class="card" id="topicsSection">
+            = 32 + 0 + 8 + 4 + 0 + 1<br><br>
 
-    <h2>SSS Mathematics Topics</h2>
+            <strong>= 45₁₀</strong>
+        `;
 
-    <p>Select a topic to begin learning.</p>
+        document.getElementById("practiceText").innerHTML = `
+            1. Convert 1010₂ to base 10.<br><br>
+            2. Convert 11001₂ to base 10.<br><br>
+            3. Convert 15₁₀ to base 2.<br><br>
+            4. Convert 32₁₀ to base 2.<br><br>
+            5. Add 101₂ and 11₂.<br><br>
+            6. Add 1101₂ and 101₂.<br><br>
+            7. Subtract 101₂ from 1000₂.<br><br>
+            8. Convert 45₁₀ to base 2.<br><br>
+            9. Convert 111111₂ to base 10.<br><br>
+            10. Convert 100₂ to base 10.
+        `;
 
-    <div id="topicList"></div>
+        document.getElementById("answerText").innerHTML = `
+            1. 1010₂ = <strong>10₁₀</strong><br><br>
 
-    <button class="backButton" onclick="showWelcome()">Back to Welcome</button>
+            2. 11001₂ = <strong>25₁₀</strong><br><br>
 
-</div>
+            3. 15₁₀ = <strong>1111₂</strong><br><br>
 
+            4. 32₁₀ = <strong>100000₂</strong><br><br>
 
-<!-- LESSON PAGE -->
-<div class="card" id="lessonSection">
+            5. 101₂ + 11₂ = <strong>1000₂</strong><br><br>
 
-    <h2 id="lessonTitle"></h2>
+            6. 1101₂ + 101₂ = <strong>10010₂</strong><br><br>
 
-    <div class="contentBox">
-        <h3>Lesson</h3>
-        <p id="lessonText"></p>
-    </div>
+            7. 1000₂ − 101₂ = <strong>11₂</strong><br><br>
 
-    <div class="contentBox">
-        <h3>Worked Examples</h3>
-        <p id="exampleText"></p>
-    </div>
+            8. 45₁₀ = <strong>101101₂</strong><br><br>
 
-    <div class="contentBox">
-        <h3>Practice Questions</h3>
-        <p id="practiceText"></p>
-    </div>
+            9. 111111₂ = <strong>63₁₀</strong><br><br>
 
-    <div class="contentBox">
-        <h3>Answers</h3>
-        <p id="answerText"></p>
-    </div>
+            10. 100₂ = <strong>4₁₀</strong>
+        `;
 
-    <button class="backButton" onclick="showTopics()">Back to Topics</button>
-
-</div>
-
-</main><script>
-
-    const topics = [
-
-        "Number Bases",
-        "Fractions and Decimals",
-        "Approximation and Estimation",
-        "Standard Form",
-        "Logarithms",
-        "Indices",
-        "Surds",
-        "Sets",
-        "Algebraic Expressions",
-        "Factorization",
-        "Linear Equations",
-        "Change of Subject of Formula",
-        "Simultaneous Equations",
-        "Quadratic Equations",
-        "Variation",
-        "Sequence and Series",
-        "Binary Operations",
-        "Modular Arithmetic",
-        "Plane Geometry",
-        "Angles and Lines",
-        "Triangles",
-        "Quadrilaterals and Polygons",
-        "Circles",
-        "Mensuration of Plane Shapes",
-        "Mensuration of Solids",
-        "Coordinate Geometry",
-        "Straight Lines and Graphs",
-        "Trigonometry",
-        "Bearings and Distances",
-        "Statistics",
-        "Measures of Central Tendency",
-        "Probability",
-        "Permutation",
-        "Combination",
-        "Introduction to Matrices",
-
-        "Algebraic Fractions",
-        "Linear Inequalities",
-        "Graphs of Linear Functions",
-        "Graphs of Quadratic Functions",
-        "Functions",
-        "Relations",
-        "Polynomial Expressions",
-        "Remainder Theorem",
-        "Factor Theorem",
-        "Partial Fractions",
-        "Binomial Expansion",
-        "Arithmetic Progression",
-        "Geometric Progression",
-        "Sum of Series",
-        "Mathematical Induction",
-        "Exponential Equations",
-        "Logarithmic Equations",
-        "Compound Interest",
-        "Simple Interest",
-        "Depreciation",
-        "Matrices and Determinants",
-        "Matrix Transformations",
-        "Vectors",
-        "Vector Geometry",
-        "Transformation Geometry",
-        "Reflection",
-        "Rotation",
-        "Translation",
-        "Enlargement",
-        "Loci",
-
-        "Trigonometric Ratios",
-        "Trigonometric Identities",
-        "Trigonometric Equations",
-        "Sine Rule",
-        "Cosine Rule",
-        "Area of a Triangle",
-        "Three-Dimensional Geometry",
-        "Elevation and Depression",
-        "Navigation",
-        "Scale Drawing",
-        "Pythagoras Theorem",
-        "Circle Theorems",
-        "Geometrical Construction",
-        "Mensuration Applications",
-        "Surface Area",
-        "Volume",
-
-        "Data Collection",
-        "Frequency Distribution",
-        "Grouped Data",
-        "Cumulative Frequency",
-        "Histograms",
-        "Frequency Polygons",
-        "Ogives",
-        "Quartiles",
-        "Percentiles",
-        "Variance",
-        "Standard Deviation",
-        "Probability Experiments",
-        "Conditional Probability",
-        "Independent Events",
-        "Dependent Events",
-        "Tree Diagrams",
-        "Counting Principles",
-        "Factorials",
-        "Applications of Permutation",
-        "Applications of Combination",
-        "Matrices Applications",
-        "Mathematical Modelling",
-        "Revision and Examination Practice"
-
-    ];
-
-
-    function startLearning() {
-        document.getElementById("welcomeSection").style.display = "none";
-        document.getElementById("lessonSection").style.display = "none";
-        document.getElementById("topicsSection").style.display = "block";
-
-        displayTopics();
-    }
-
-
-    function displayTopics() {
-
-        const list = document.getElementById("topicList");
-
-        list.innerHTML = "";
-
-        topics.forEach(function(topic, index) {
-
-            const topicDiv = document.createElement("div");
-
-            topicDiv.className = "topic";
-
-            topicDiv.innerHTML =
-                "<strong>Topic " + (index + 1) + ":</strong> " + topic;
-
-            topicDiv.onclick = function() {
-                openLesson(index);
-            };
-
-            list.appendChild(topicDiv);
-
-        });
-
-    }
-
-
-    function openLesson(index) {
-
-        document.getElementById("topicsSection").style.display = "none";
-        document.getElementById("lessonSection").style.display = "block";
-
-        document.getElementById("lessonTitle").innerText =
-            "Topic " + (index + 1) + ": " + topics[index];
+    } else {
 
         document.getElementById("lessonText").innerText =
-            "This is the lesson section for " + topics[index] +
-            ". The detailed lesson content will be added here.";
+            "The detailed lesson for " + topics[index] +
+            " will be added here.";
 
         document.getElementById("exampleText").innerText =
             "Worked examples for " + topics[index] +
-            " will be provided here.";
+            " will be added here.";
 
         document.getElementById("practiceText").innerText =
             "Practice questions for " + topics[index] +
-            " will be provided here.";
+            " will be added here.";
 
         document.getElementById("answerText").innerText =
-            "Answers to the practice questions will be provided here.";
+            "Answers for " + topics[index] +
+            " will be added here.";
 
     }
 
-
-    function showTopics() {
-
-        document.getElementById("lessonSection").style.display = "none";
-        document.getElementById("topicsSection").style.display = "block";
-
-    }
-
-
-    function showWelcome() {
-
-        document.getElementById("topicsSection").style.display = "none";
-        document.getElementById("lessonSection").style.display = "none";
-        document.getElementById("welcomeSection").style.display = "block";
-
-    }
-
-</script></body>
-</html>
+}
