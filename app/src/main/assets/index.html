@@ -1,313 +1,426 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+lessons["Number Bases"] = `
+<h2>Topic 1: Number Bases</h2>
 
-<title>SSS Mathematics</title>
+<h3>Lesson</h3>
+<p>A number base tells us how many different digits are used in a number system.</p>
 
-<style>
-*{
-    box-sizing:border-box;
-}
+<p>In base 10, the digits are 0–9. In base 2, the digits are 0 and 1.</p>
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f2f7ff;
-    color:#123;
-    line-height:1.6;
-}
+<p>The value of each digit depends on its position.</p>
 
-header{
-    background:#0757a6;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
+<p>For example:</p>
+<p>1011<sub>2</sub> = 1(2³) + 0(2²) + 1(2¹) + 1(2⁰)</p>
+<p>= 8 + 0 + 2 + 1 = 11<sub>10</sub></p>
 
-header h1{
-    margin:0;
-    font-size:28px;
-}
+<h3>Worked Examples</h3>
 
-header p{
-    margin:5px 0 0;
-}
-
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:15px;
-}
-
-.welcome-card,
-.lesson-card,
-.topic{
-    background:white;
-    border-radius:14px;
-    box-shadow:0 2px 8px #0002;
-}
-
-.welcome-card{
-    padding:30px;
-    text-align:center;
-    margin-top:20px;
-}
-
-.topic{
-    padding:16px;
-    margin:10px 0;
-    cursor:pointer;
-    border-left:5px solid #0757a6;
-}
-
-.topic:hover{
-    background:#eaf3ff;
-}
-
-.lesson-card{
-    padding:20px;
-    margin-top:15px;
-}
-
-.lesson-card h2{
-    color:#0757a6;
-}
-
-.lesson-card h3{
-    color:#0757a6;
-    margin-top:25px;
-}
-
-.example{
-    background:#eef6ff;
-    padding:15px;
-    margin:12px 0;
-    border-radius:10px;
-}
-
-.practice{
-    background:#f8fbff;
-    padding:15px;
-    margin:12px 0;
-    border-radius:10px;
-    border-left:4px solid #0757a6;
-}
-
-.answer{
-    background:#edf9ed;
-    padding:15px;
-    margin:12px 0;
-    border-radius:10px;
-    border-left:4px solid green;
-}
-
-button{
-    border:0;
-    border-radius:10px;
-    padding:13px 20px;
-    background:#0757a6;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#064985;
-}
-
-.back{
-    background:#555;
-    margin-top:20px;
-}
-
-.hidden{
-    display:none;
-}
-
-.number{
-    font-weight:bold;
-    color:#0757a6;
-}
-
-.footer{
-    text-align:center;
-    padding:25px;
-    color:#555;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>SSS MATHEMATICS</h1>
-    <p>Complete Mathematics Learning App — Topics 1–115</p>
-</header>
-
-<div class="container">
-
-<section id="welcomeSection">
-    <div class="welcome-card">
-        <h2>Welcome to SSS Mathematics</h2>
-
-        <p>
-            Learn Mathematics through detailed lessons,
-            worked examples, practice questions and answers.
-        </p>
-
-        <button onclick="startLearning()">
-            START LEARNING
-        </button>
-    </div>
-</section>
-
-<section id="topicsSection" class="hidden">
-
-    <h2>Mathematics Topics</h2>
-
-    <div id="topicsList"></div>
-
-</section>
-
-<section id="lessonSection" class="hidden">
-
-    <div id="lessonContent" class="lesson-card"></div>
-
-    <button class="back" onclick="showTopics()">
-        ← Back to Topics
-    </button>
-
-</section>
-
+<div class="example">
+<b>Example 1:</b><br>
+Convert 10101<sub>2</sub> to base 10.<br><br>
+10101<sub>2</sub> = 1(16) + 0(8) + 1(4) + 0(2) + 1(1)<br>
+= 16 + 4 + 1<br>
+= <b>21<sub>10</sub></b>
 </div>
 
-<div class="footer">
-    <p>SSS Mathematics Learning App</p>
-    <p>Topics 1–115</p>
+<div class="example">
+<b>Example 2:</b><br>
+Convert 25<sub>10</sub> to base 2.<br><br>
+25 ÷ 2 = 12 remainder 1<br>
+12 ÷ 2 = 6 remainder 0<br>
+6 ÷ 2 = 3 remainder 0<br>
+3 ÷ 2 = 1 remainder 1<br>
+1 ÷ 2 = 0 remainder 1<br><br>
+Reading the remainders upwards:<br>
+<b>11001<sub>2</sub></b>
 </div>
 
-<script>
+<h3>Practice Questions</h3>
 
-const topics = [
+<div class="practice">
+1. Convert 11010<sub>2</sub> to base 10.<br>
+2. Convert 18<sub>10</sub> to base 2.
+</div>
 
-"Number Bases",
-"Fractions",
-"Decimals",
-"Approximation",
-"Estimation",
-"Standard Form",
-"Logarithms",
-"Laws of Logarithms",
-"Indices",
-"Laws of Indices",
-"Surds",
-"Simplification of Surds",
-"Sets",
-"Operations on Sets",
-"Venn Diagrams",
-"Algebraic Expressions",
-"Expansion of Algebraic Expressions",
-"Factorization",
-"Linear Equations",
-"Linear Inequalities",
-"Change of Subject of Formula",
-"Simultaneous Linear Equations",
-"Simultaneous Equations Involving Quadratics",
-"Quadratic Equations",
-"Quadratic Formula",
-"Completing the Square",
-"Nature of Roots",
-"Sequence",
-"Arithmetic Progression",
-"Geometric Progression",
-"Sum of Series",
-"Binomial Expansion",
-"Partial Fractions",
-"Binary Operations",
-"Modular Arithmetic",
-"Matrices",
-"Addition and Subtraction of Matrices",
-"Multiplication of Matrices",
-"Determinants",
-"Inverse of a Matrix",
-"Identity Matrix",
-"Transformation",
-"Translation",
-"Reflection",
-"Rotation",
-"Enlargement",
-"Combined Transformations",
-"Plane Geometry",
-"Angles and Lines",
-"Triangles",
-"Quadrilaterals",
-"Polygons",
-"Circles",
-"Circle Theorems",
-"Mensuration of Plane Shapes",
-"Perimeter and Area",
-"Mensuration of Solids",
-"Surface Area of Solids",
-"Volume of Solids",
-"Coordinate Geometry",
-"Straight Lines",
-"Graphs of Linear Equations",
-"Gradient of a Straight Line",
-"Distance Between Two Points",
-"Variation",
-"Direct Variation",
-"Inverse Variation",
-"Joint Variation",
-"Partial Variation",
-"Trigonometry",
-"Trigonometric Ratios",
-"Special Angles",
-"Trigonometric Identities",
-"Sine Rule",
-"Cosine Rule",
-"Bearings",
-"Distances",
-"Statistics",
-"Collection and Presentation of Data",
-"Frequency Distribution",
-"Histogram",
-"Frequency Polygon",
-"Ogive",
-"Measures of Central Tendency",
-"Mean",
-"Median",
-"Mode",
-"Measures of Dispersion",
-"Range",
-"Variance",
-"Standard Deviation",
-"Probability",
-"Experimental Probability",
-"Theoretical Probability",
-"Permutation",
-"Combination",
-"Probability of Combined Events",
-"Introduction to Calculus",
-"Functions",
-"Domain and Range",
-"Composite Functions",
-"Inverse Functions",
-"Limits",
-"Differentiation",
-"Differentiation from First Principles",
-"Rules of Differentiation",
-"Applications of Differentiation",
-"Maximum and Minimum Values",
-"Rates of Change",
-"Integration",
-"Indefinite Integration",
-"Definite Integration",
-"Area Under a Curve",
-"Differential Equations",
-"Numerical Methods"
+<h3>Answers</h3>
 
-];
+<div class="answer">
+1. 26<sub>10</sub><br>
+2. 10010<sub>2</sub>
+</div>
+`;
 
-const lessons = {};
+lessons["Fractions"] = `
+<h2>Topic 2: Fractions</h2>
+
+<h3>Lesson</h3>
+<p>A fraction represents part of a whole. It has a numerator and denominator.</p>
+
+<p>For example, in 3/5, 3 is the numerator and 5 is the denominator.</p>
+
+<p>Fractions may be proper, improper or mixed numbers.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Calculate 1/3 + 1/6.<br><br>
+LCM of 3 and 6 = 6<br>
+1/3 = 2/6<br>
+Therefore:<br>
+2/6 + 1/6 = <b>3/6 = 1/2</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Calculate 3/4 ÷ 2/5.<br><br>
+Change division to multiplication by the reciprocal:<br>
+3/4 × 5/2 = 15/8<br>
+= <b>1 7/8</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Calculate 2/5 + 1/10.<br>
+2. Calculate 3/7 × 14/9.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 1/2<br>
+2. 2/3
+</div>
+`;
+
+lessons["Decimals"] = `
+<h2>Topic 3: Decimals</h2>
+
+<h3>Lesson</h3>
+<p>Decimals represent parts of a whole using place values such as tenths, hundredths and thousandths.</p>
+
+<p>Examples include 0.5, 0.25 and 3.125.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Calculate 3.45 + 2.7.<br><br>
+3.45<br>
++2.70<br>
+= <b>6.15</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Convert 0.75 to a fraction.<br><br>
+0.75 = 75/100<br>
+= 3/4<br>
+Therefore, <b>0.75 = 3/4</b>.
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Calculate 7.25 + 3.6.<br>
+2. Convert 0.4 to a fraction.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 10.85<br>
+2. 2/5
+</div>
+`;
+
+lessons["Approximation"] = `
+<h2>Topic 4: Approximation</h2>
+
+<h3>Lesson</h3>
+<p>Approximation means replacing a number with a nearby value that is easier to use.</p>
+
+<p>Numbers may be rounded to decimal places or significant figures.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Round 7.846 to 2 decimal places.<br><br>
+The third decimal digit is 6, so increase the second decimal digit.<br>
+Answer: <b>7.85</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Round 5,763 to 2 significant figures.<br><br>
+The first two significant figures are 5 and 7.<br>
+The next digit is 6, so 57 becomes 58.<br>
+Answer: <b>5,800</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Round 12.678 to 2 decimal places.<br>
+2. Round 8,456 to 2 significant figures.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 12.68<br>
+2. 8,500
+</div>
+`;
+
+lessons["Estimation"] = `
+<h2>Topic 5: Estimation</h2>
+
+<h3>Lesson</h3>
+<p>Estimation involves finding an approximate answer by using rounded values.</p>
+
+<p>It is useful for checking whether an exact answer is reasonable.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Estimate 49 × 21.<br><br>
+49 ≈ 50<br>
+21 ≈ 20<br>
+50 × 20 = <b>1,000</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Estimate 398 ÷ 19.<br><br>
+398 ≈ 400<br>
+19 ≈ 20<br>
+400 ÷ 20 = <b>20</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Estimate 62 × 29.<br>
+2. Estimate 597 ÷ 21.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. About 1,800<br>
+2. About 30
+</div>
+`;
+
+lessons["Standard Form"] = `
+<h2>Topic 6: Standard Form</h2>
+
+<h3>Lesson</h3>
+<p>Standard form is used to write very large or very small numbers as:</p>
+
+<p><b>a × 10<sup>n</sup></b></p>
+
+<p>where 1 ≤ a &lt; 10 and n is an integer.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Write 450000 in standard form.<br><br>
+450000 = <b>4.5 × 10<sup>5</sup></b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Write 0.00072 in standard form.<br><br>
+0.00072 = <b>7.2 × 10<sup>-4</sup></b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Write 6,300,000 in standard form.<br>
+2. Write 0.000045 in standard form.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 6.3 × 10<sup>6</sup><br>
+2. 4.5 × 10<sup>-5</sup>
+</div>
+`;
+
+lessons["Logarithms"] = `
+<h2>Topic 7: Logarithms</h2>
+
+<h3>Lesson</h3>
+<p>A logarithm is another way of expressing an index.</p>
+
+<p>If a<sup>x</sup> = N, then:</p>
+
+<p><b>log<sub>a</sub>N = x</b></p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Evaluate log<sub>2</sub> 8.<br><br>
+Since 2³ = 8,<br>
+log<sub>2</sub> 8 = <b>3</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Solve log<sub>10</sub>x = 3.<br><br>
+Convert to index form:<br>
+x = 10³<br>
+Therefore, <b>x = 1000</b>.
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Evaluate log<sub>3</sub> 27.<br>
+2. Solve log<sub>10</sub>x = 2.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 3<br>
+2. 100
+</div>
+`;
+
+lessons["Laws of Logarithms"] = `
+<h2>Topic 8: Laws of Logarithms</h2>
+
+<h3>Lesson</h3>
+<p>The main laws are:</p>
+
+<p>log(ab) = log a + log b</p>
+<p>log(a/b) = log a − log b</p>
+<p>log(a<sup>n</sup>) = n log a</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Simplify log 5 + log 2.<br><br>
+Using the product law:<br>
+log(5 × 2) = <b>log 10 = 1</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Simplify 3 log x.<br><br>
+Using the power law:<br>
+3 log x = <b>log(x³)</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Simplify log 4 + log 25.<br>
+2. Write 2 log x as one logarithm.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. log 100 = 2<br>
+2. log(x²)
+</div>
+`;
+
+lessons["Indices"] = `
+<h2>Topic 9: Indices</h2>
+
+<h3>Lesson</h3>
+<p>An index shows how many times a number is multiplied by itself.</p>
+
+<p>For example, 2³ = 2 × 2 × 2 = 8.</p>
+
+<p>Important laws include:</p>
+
+<p>a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></p>
+<p>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m-n</sup></p>
+<p>(a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup></p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Simplify 2³ × 2⁴.<br><br>
+2³ × 2⁴ = 2<sup>3+4</sup><br>
+= <b>2⁷ = 128</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Solve 2<sup>x</sup> = 32.<br><br>
+32 = 2⁵<br>
+Therefore:<br>
+x = <b>5</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Simplify 3² × 3³.<br>
+2. Solve 5<sup>x</sup> = 125.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 3⁵ = 243<br>
+2. x = 3
+</div>
+`;
+
+lessons["Laws of Indices"] = `
+<h2>Topic 10: Laws of Indices</h2>
+
+<h3>Lesson</h3>
+<p>The laws of indices help us simplify expressions involving powers.</p>
+
+<p>For multiplication with the same base, add the powers.</p>
+
+<p>For division with the same base, subtract the powers.</p>
+
+<p>For a power raised to another power, multiply the powers.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Simplify x⁵ × x².<br><br>
+x⁵ × x² = <b>x⁷</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Simplify (a³)².<br><br>
+(a³)² = a<sup>3×2</sup><br>
+= <b>a⁶</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Simplify y⁴ × y³.<br>
+2. Simplify (x²)⁴.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. y⁷<br>
+2. x⁸
+</div>
+`;
