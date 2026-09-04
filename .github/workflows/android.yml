@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout project
         uses: actions/checkout@v4
 
@@ -25,6 +26,9 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Download and install Gradle
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip
@@ -34,11 +38,16 @@ jobs:
       - name: Check app assets
         run: |
           echo "===== ASSETS ====="
+
           if [ -d "app/src/main/assets" ]; then
             find app/src/main/assets -type f -exec ls -lh {} \;
           else
             echo "WARNING: app/src/main/assets folder NOT FOUND"
           fi
+
+      - name: Clean project
+        run: |
+          gradle clean
 
       - name: Build Debug APK
         run: |
@@ -47,11 +56,39 @@ jobs:
       - name: Check generated APK
         run: |
           echo "===== APK FILE ====="
-          ls -lh app/build/outputs/apk/debug/app-debug.apk
+
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+
+          if [ ! -f "$APK" ]; then
+            echo "ERROR: APK was not generated!"
+            exit 1
+          fi
+
+          ls -lh "$APK"
+
+          echo ""
+          echo "===== FILE TYPE ====="
+          file "$APK"
 
           echo ""
           echo "===== APK CONTENTS ====="
-          unzip -l app/build/outputs/apk/debug/app-debug.apk
+          unzip -t "$APK"
+
+      - name: Verify APK signature
+        run: |
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+
+          BUILD_TOOLS=$(find "$ANDROID_HOME/build-tools" -maxdepth 1 -type d | sort -V | tail -n 1)
+
+          "$BUILD_TOOLS/apksigner" verify --verbose "$APK"
+
+      - name: Show APK package information
+        run: |
+          APK="app/build/outputs/apk/debug/app-debug.apk"
+
+          BUILD_TOOLS=$(find "$ANDROID_HOME/build-tools" -maxdepth 1 -type d | sort -V | tail -n 1)
+
+          "$BUILD_TOOLS/aapt" dump badging "$APK"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
