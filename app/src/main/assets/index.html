@@ -1,452 +1,425 @@
-lessons["Change of Subject of Formula"] = `
-<h2>Topic 21: Change of Subject of Formula</h2>
+lessons["Sum of Series"] = `
+<h2>Topic 31: Sum of Series</h2>
 
 <h3>Lesson</h3>
-<p>Changing the subject of a formula means rearranging the formula so that a different variable is alone on one side.</p>
+<p>A series is formed by adding the terms of a sequence.</p>
+
+<p>For an arithmetic progression:</p>
+<p><b>S<sub>n</sub> = n/2 [2a + (n − 1)d]</b></p>
+
+<p>Also:</p>
+<p><b>S<sub>n</sub> = n/2(a + l)</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
-Make r the subject of A = πr².<br><br>
-Divide by π:<br>
-r² = A/π<br>
-Take the square root:<br>
-<b>r = √(A/π)</b>
+Find the sum of the first 10 terms of 2, 5, 8, 11, ...<br><br>
+a = 2, d = 3, n = 10<br>
+S<sub>10</sub> = 10/2 [2(2) + 9(3)]<br>
+= 5(4 + 27)<br>
+= <b>155</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-Make t the subject of s = (u + v)t/2.<br><br>
-2s = (u + v)t<br>
+Find the sum of the first 20 positive integers.<br><br>
+S = 20(21)/2<br>
+= <b>210</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Find the sum of the first 10 terms of 3, 6, 9, 12, ...<br>
+2. Find the sum of the first 15 positive integers.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 165<br>
+2. 120
+</div>
+`;
+
+lessons["Binomial Expansion"] = `
+<h2>Topic 32: Binomial Expansion</h2>
+
+<h3>Lesson</h3>
+<p>The binomial theorem is used to expand expressions involving two terms raised to a positive integer power.</p>
+
+<p>For example:</p>
+<p><b>(a+b)² = a² + 2ab + b²</b></p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Expand (x + 2)².<br><br>
+(x + 2)² = x² + 4x + 4<br>
+Therefore, <b>x² + 4x + 4</b>.
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Expand (x + 1)³.<br><br>
+(x + 1)³ = x³ + 3x² + 3x + 1<br>
+Therefore, <b>x³ + 3x² + 3x + 1</b>.
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Expand (x + 3)².<br>
+2. Expand (x + 2)³.
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. x² + 6x + 9<br>
+2. x³ + 6x² + 12x + 8
+</div>
+`;
+
+lessons["Partial Fractions"] = `
+<h2>Topic 33: Partial Fractions</h2>
+
+<h3>Lesson</h3>
+<p>Partial fractions involve expressing a rational algebraic expression as a sum of simpler fractions.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Express 5/[(x+1)(x+2)] as partial fractions.<br><br>
+Let:<br>
+5/[(x+1)(x+2)] = A/(x+1) + B/(x+2)<br><br>
+5 = A(x+2) + B(x+1)<br>
+Putting x = −1 gives A = 5.<br>
+Putting x = −2 gives B = −5.<br><br>
 Therefore:<br>
-<b>t = 2s/(u + v)</b>
+<b>5/(x+1) − 5/(x+2)</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+Express 3/[(x−1)(x+1)] as partial fractions.<br><br>
+Let:<br>
+3/[(x−1)(x+1)] = A/(x−1) + B/(x+1)<br><br>
+Putting x = 1 gives A = 3/2.<br>
+Putting x = −1 gives B = −3/2.<br><br>
+Answer:<br>
+<b>3/[2(x−1)] − 3/[2(x+1)]</b>
 </div>
 
 <h3>Practice Questions</h3>
 
 <div class="practice">
-1. Make x the subject of y = 3x + 5.<br>
-2. Make r the subject of C = 2πr.
+1. Express 4/[(x+1)(x+3)] as partial fractions.<br>
+2. Express 6/[(x−2)(x+1)] as partial fractions.
 </div>
 
 <h3>Answers</h3>
 
 <div class="answer">
-1. x = (y − 5)/3<br>
-2. r = C/(2π)
+1. 2/(x+1) − 2/(x+3)<br>
+2. 2/(x−2) − 2/(x+1)
 </div>
 `;
 
-lessons["Simultaneous Linear Equations"] = `
-<h2>Topic 22: Simultaneous Linear Equations</h2>
+lessons["Binary Operations"] = `
+<h2>Topic 34: Binary Operations</h2>
 
 <h3>Lesson</h3>
-<p>Simultaneous equations are two or more equations solved together to find the unknown variables.</p>
+<p>A binary operation combines two elements of a set to produce another element.</p>
 
-<p>The main methods are substitution and elimination.</p>
+<p>A binary operation may be represented by symbols such as *, ⊙ or △.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
-Solve:<br>
-x + y = 7<br>
-x − y = 1<br><br>
-Add the equations:<br>
-2x = 8<br>
-x = 4<br>
-Substitute into x + y = 7:<br>
-y = 3<br>
-Therefore, <b>x = 4, y = 3</b>.
+If a * b = a + b + 2, find 3 * 4.<br><br>
+3 * 4 = 3 + 4 + 2<br>
+= <b>9</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-Solve:<br>
-2x + y = 9<br>
-x + y = 6<br><br>
-Subtract the second equation from the first:<br>
-x = 3<br>
-Then y = 3.<br>
-Therefore, <b>x = 3, y = 3</b>.
+If a ⊙ b = ab − 1, find 5 ⊙ 3.<br><br>
+5 ⊙ 3 = (5)(3) − 1<br>
+= <b>14</b>
 </div>
 
 <h3>Practice Questions</h3>
 
 <div class="practice">
-1. Solve x + y = 10 and x − y = 2.<br>
-2. Solve 2x + y = 11 and x + y = 7.
+1. If a*b = a+b−1, find 4*6.<br>
+2. If a⊙b = ab+2, find 3⊙5.
 </div>
 
 <h3>Answers</h3>
 
 <div class="answer">
-1. x = 6, y = 4<br>
-2. x = 4, y = 3
+1. 9<br>
+2. 17
 </div>
 `;
 
-lessons["Simultaneous Equations Involving Quadratics"] = `
-<h2>Topic 23: Simultaneous Equations Involving Quadratics</h2>
+lessons["Modular Arithmetic"] = `
+<h2>Topic 35: Modular Arithmetic</h2>
 
 <h3>Lesson</h3>
-<p>When one simultaneous equation contains a quadratic term, substitution can produce a quadratic equation.</p>
+<p>Modular arithmetic deals with remainders after division.</p>
+
+<p>For example:</p>
+<p><b>17 mod 5 = 2</b></p>
+
+<p>because 17 divided by 5 leaves a remainder of 2.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
-Solve:<br>
-y = x + 1<br>
-x² + y = 7<br><br>
-Substitute y = x + 1:<br>
-x² + x + 1 = 7<br>
-x² + x − 6 = 0<br>
-(x + 3)(x − 2) = 0<br>
-x = −3 or x = 2.<br><br>
-If x = −3, y = −2.<br>
-If x = 2, y = 3.<br><br>
-Solutions: <b>(−3,−2) and (2,3)</b>
+Find 29 mod 6.<br><br>
+29 = 6(4) + 5<br>
+Therefore, <b>29 mod 6 = 5</b>.
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-Solve:<br>
-y = 2x<br>
-x² + y = 15<br><br>
-x² + 2x = 15<br>
-x² + 2x − 15 = 0<br>
-(x + 5)(x − 3) = 0<br>
-x = −5 or 3.<br><br>
-Solutions are:<br>
-<b>(−5,−10) and (3,6)</b>
+Find (8 + 7) mod 5.<br><br>
+8 + 7 = 15<br>
+15 mod 5 = <b>0</b>
 </div>
 
 <h3>Practice Questions</h3>
 
 <div class="practice">
-1. Solve y = x + 2 and x² + y = 8.<br>
-2. Solve y = 3x and x² + y = 10.
+1. Find 23 mod 4.<br>
+2. Find 18 mod 7.
 </div>
 
 <h3>Answers</h3>
 
 <div class="answer">
-1. (−3,−1) and (1,3)<br>
-2. (−5,−15) and (2,6)
+1. 3<br>
+2. 4
 </div>
 `;
 
-lessons["Quadratic Equations"] = `
-<h2>Topic 24: Quadratic Equations</h2>
+lessons["Matrices"] = `
+<h2>Topic 36: Matrices</h2>
 
 <h3>Lesson</h3>
-<p>A quadratic equation is an equation of the form:</p>
+<p>A matrix is a rectangular arrangement of numbers in rows and columns.</p>
 
-<p><b>ax² + bx + c = 0</b>, where a ≠ 0.</p>
-
-<p>Quadratic equations can be solved by factorization, completing the square or the quadratic formula.</p>
+<p>The order of a matrix is written as rows × columns.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
-Solve x² − 5x + 6 = 0.<br><br>
-(x − 2)(x − 3) = 0<br>
-Therefore:<br>
-<b>x = 2 or x = 3</b>
+Consider:<br><br>
+A = [ 2  4 ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[ 1  3 ]<br><br>
+Matrix A has 2 rows and 2 columns.<br>
+Therefore its order is <b>2 × 2</b>.
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-Solve x² = 25.<br><br>
-x = ±√25<br>
-Therefore:<br>
-<b>x = 5 or x = −5</b>
+Find the element in row 2, column 1 of:<br><br>
+[ 5  7 ]<br>
+[ 3  9 ]<br><br>
+The element is <b>3</b>.
 </div>
 
 <h3>Practice Questions</h3>
 
 <div class="practice">
-1. Solve x² − 7x + 12 = 0.<br>
-2. Solve x² − 16 = 0.
+1. State the order of a matrix with 3 rows and 2 columns.<br>
+2. Find the element in row 1, column 2 of [4 8; 2 6].
 </div>
 
 <h3>Answers</h3>
 
 <div class="answer">
-1. x = 3 or 4<br>
-2. x = 4 or −4
+1. 3 × 2<br>
+2. 8
 </div>
 `;
 
-lessons["Quadratic Formula"] = `
-<h2>Topic 25: Quadratic Formula</h2>
+lessons["Addition and Subtraction of Matrices"] = `
+<h2>Topic 37: Addition and Subtraction of Matrices</h2>
 
 <h3>Lesson</h3>
+<p>Matrices can be added or subtracted only when they have the same order.</p>
 
-<p>For a quadratic equation:</p>
-
-<p><b>ax² + bx + c = 0</b></p>
-
-<p>the quadratic formula is:</p>
-
-<p><b>x = [−b ± √(b² − 4ac)] / 2a</b></p>
-
-<p>The expression b² − 4ac is called the discriminant.</p>
+<p>Corresponding elements are added or subtracted.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
-Solve x² − 5x + 6 = 0 using the formula.<br><br>
-a = 1, b = −5, c = 6<br><br>
-x = [5 ± √(25 − 24)]/2<br>
-x = [5 ± 1]/2<br>
-Therefore:<br>
-<b>x = 3 or x = 2</b>
+A = [1  2] and B = [3  4]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[5  6] &nbsp;&nbsp;&nbsp;&nbsp;[7  8]<br><br>
+A + B = [4  6]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12 14]
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-Solve x² + 2x − 8 = 0.<br><br>
-a = 1, b = 2, c = −8<br>
-x = [−2 ± √(4 + 32)]/2<br>
-x = [−2 ± 6]/2<br>
-Therefore:<br>
-<b>x = 2 or x = −4</b>
+A = [8  6] and B = [3  2]<br><br>
+A − B = <b>[5  4]</b>
 </div>
 
 <h3>Practice Questions</h3>
 
 <div class="practice">
-1. Solve x² − 3x − 4 = 0 using the quadratic formula.<br>
-2. Solve x² + 5x + 6 = 0.
+1. Add [2 3] and [4 5].<br>
+2. Subtract [1 2] from [7 9].
 </div>
 
 <h3>Answers</h3>
 
 <div class="answer">
-1. x = 4 or −1<br>
-2. x = −2 or −3
+1. [6 8]<br>
+2. [6 7]
 </div>
 `;
 
-lessons["Completing the Square"] = `
-<h2>Topic 26: Completing the Square</h2>
+lessons["Multiplication of Matrices"] = `
+<h2>Topic 38: Multiplication of Matrices</h2>
 
 <h3>Lesson</h3>
-<p>Completing the square changes a quadratic expression into the form:</p>
+<p>Matrix multiplication involves multiplying rows of the first matrix by columns of the second matrix.</p>
 
-<p><b>(x + a)² + b</b></p>
-
-<p>This method is useful for solving quadratic equations and finding the turning point of a parabola.</p>
+<p>The number of columns in the first matrix must equal the number of rows in the second matrix.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
-Complete the square for x² + 6x + 5.<br><br>
-Half of 6 is 3:<br>
-x² + 6x + 5 = (x + 3)² − 9 + 5<br>
-= <b>(x + 3)² − 4</b>
+[1 2] × [3] = [1(3) + 2(4)]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]<br>
+= <b>[11]</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-Solve x² + 4x − 5 = 0.<br><br>
-(x + 2)² − 9 = 0<br>
-(x + 2)² = 9<br>
-x + 2 = ±3<br>
-Therefore:<br>
-<b>x = 1 or x = −5</b>
+[2 1] × [3 4] =<br>
+[2(3) + 1(4)]<br>
+[2(4) + 1(5)] when multiplied by the corresponding 2×2 matrix.
 </div>
 
 <h3>Practice Questions</h3>
 
 <div class="practice">
-1. Complete the square for x² + 8x + 3.<br>
-2. Solve x² + 6x + 5 = 0 by completing the square.
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">
-1. (x + 4)² − 13<br>
-2. x = −1 or −5
-</div>
-`;
-
-lessons["Nature of Roots"] = `
-<h2>Topic 27: Nature of Roots</h2>
-
-<h3>Lesson</h3>
-<p>The nature of the roots of a quadratic equation is determined by its discriminant:</p>
-
-<p><b>D = b² − 4ac</b></p>
-
-<p>If D &gt; 0, there are two distinct real roots.</p>
-<p>If D = 0, there is one repeated real root.</p>
-<p>If D &lt; 0, there are no real roots.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<b>Example 1:</b><br>
-Determine the nature of the roots of x² − 5x + 6 = 0.<br><br>
-D = (−5)² − 4(1)(6)<br>
-= 25 − 24<br>
-= 1<br>
-Since D &gt; 0, there are <b>two distinct real roots</b>.
-</div>
-
-<div class="example">
-<b>Example 2:</b><br>
-Determine the nature of the roots of x² + 4x + 4 = 0.<br><br>
-D = 4² − 4(1)(4)<br>
-= 16 − 16<br>
-= 0<br>
-Therefore, there is <b>one repeated real root</b>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="practice">
-1. Find the nature of the roots of x² + 2x + 5 = 0.<br>
-2. Find the nature of the roots of x² − 6x + 9 = 0.
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">
-1. No real roots.<br>
-2. One repeated real root.
-</div>
-`;
-
-lessons["Sequence"] = `
-<h2>Topic 28: Sequence</h2>
-
-<h3>Lesson</h3>
-<p>A sequence is an ordered list of numbers that follows a particular rule or pattern.</p>
-
-<p>The terms of a sequence are usually denoted by T₁, T₂, T₃ and so on.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<b>Example 1:</b><br>
-Find the next two terms: 2, 4, 6, 8, ...<br><br>
-The common difference is 2.<br>
-Next terms: <b>10, 12</b>
-</div>
-
-<div class="example">
-<b>Example 2:</b><br>
-Find the nth term of 3, 6, 9, 12, ...<br><br>
-The common difference is 3.<br>
-T<sub>n</sub> = 3n<br>
-Therefore, <b>T<sub>n</sub> = 3n</b>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="practice">
-1. Find the next two terms: 5, 10, 15, 20, ...<br>
-2. Find the nth term of 4, 8, 12, 16, ...
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">
-1. 25, 30<br>
-2. T<sub>n</sub> = 4n
-</div>
-`;
-
-lessons["Arithmetic Progression"] = `
-<h2>Topic 29: Arithmetic Progression</h2>
-
-<h3>Lesson</h3>
-<p>An arithmetic progression (AP) is a sequence in which the difference between consecutive terms is constant.</p>
-
-<p>The nth term is:</p>
-
-<p><b>T<sub>n</sub> = a + (n − 1)d</b></p>
-
-<p>where a is the first term and d is the common difference.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<b>Example 1:</b><br>
-Find the 10th term of 3, 7, 11, 15, ...<br><br>
-a = 3, d = 4<br>
-T<sub>10</sub> = 3 + 9(4)<br>
-= <b>39</b>
-</div>
-
-<div class="example">
-<b>Example 2:</b><br>
-Find the common difference of 12, 17, 22, 27, ...<br><br>
-17 − 12 = <b>5</b>
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="practice">
-1. Find the 8th term of 2, 5, 8, 11, ...<br>
-2. Find the common difference of 20, 16, 12, 8, ...
+1. Find [2 3] × [4; 5].<br>
+2. State whether a 2×3 matrix can multiply a 2×2 matrix.
 </div>
 
 <h3>Answers</h3>
 
 <div class="answer">
 1. 23<br>
-2. −4
+2. No. The inner dimensions are different.
 </div>
 `;
 
-lessons["Geometric Progression"] = `
-<h2>Topic 30: Geometric Progression</h2>
+lessons["Determinants"] = `
+<h2>Topic 39: Determinants</h2>
 
 <h3>Lesson</h3>
-<p>A geometric progression (GP) is a sequence in which each term is obtained by multiplying the previous term by a constant ratio.</p>
+<p>For a 2 × 2 matrix:</p>
 
-<p>The nth term is:</p>
+<p><b>A = [a b; c d]</b></p>
 
-<p><b>T<sub>n</sub> = ar<sup>n−1</sup></b></p>
+<p>the determinant is:</p>
+
+<p><b>|A| = ad − bc</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
-Find the 5th term of 2, 6, 18, 54, ...<br><br>
-a = 2, r = 3<br>
-T<sub>5</sub> = 2(3⁴)<br>
-= 2 × 81<br>
-= <b>162</b>
+Find the determinant of [2 3; 4 5].<br><br>
+|A| = (2)(5) − (3)(4)<br>
+= 10 − 12<br>
+= <b>−2</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-Find the common ratio of 5, 15, 45, 135, ...<br><br>
-r = 15 ÷ 5<br>
-= <b>3</b>
+Find the determinant of [6 2; 1 4].<br><br>
+|A| = (6)(4) − (2)(1)<br>
+= 24 − 2<br>
+= <b>22</b>
 </div>
 
 <h3>Practice Questions</h3>
 
 <div class="practice">
-1. Find the 4th term of 3, 6, 12, 24, ...<br>
-2. Find the common ratio of 4, 12, 36, 108, ...
+1. Find |3 2; 1 5|.<br>
+2. Find |4 1; 2 3|.
 </div>
 
 <h3>Answers</h3>
 
 <div class="answer">
-1. 24<br>
-2. 3
+1. 13<br>
+2. 10
+</div>
+`;
+
+lessons["Inverse of a Matrix"] = `
+<h2>Topic 40: Inverse of a Matrix</h2>
+
+<h3>Lesson</h3>
+<p>The inverse of a matrix A is written as A<sup>−1</sup>.</p>
+
+<p>For:</p>
+
+<p>A = [a b; c d]</p>
+
+<p>the inverse is:</p>
+
+<p><b>A<sup>−1</sup> = 1/(ad−bc) [d −b; −c a]</b></p>
+
+<p>The determinant must not be zero.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+Find the inverse of [2 1; 1 1].<br><br>
+Determinant = 2(1) − 1(1) = 1.<br><br>
+Therefore:<br>
+A<sup>−1</sup> = [1 −1; −1 2]
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+For A = [3 1; 2 1], find the determinant first.<br><br>
+|A| = 3(1) − 1(2)<br>
+= <b>1</b><br>
+Since the determinant is non-zero, the matrix has an inverse.
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="practice">
+1. Find the determinant of [4 1; 2 3].<br>
+2. Does [2 4; 1 2] have an inverse?
+</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 10<br>
+2. No. Its determinant is 2(2)−4(1)=0.
 </div>
 `;
