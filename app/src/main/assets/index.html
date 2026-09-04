@@ -99,6 +99,7 @@ button:hover{
     padding:15px;
     margin:12px 0;
     border-radius:7px;
+    line-height:1.7;
 }
 
 .question{
@@ -106,6 +107,7 @@ button:hover{
     padding:12px;
     margin:8px 0;
     border-radius:7px;
+    line-height:1.6;
 }
 
 .answer{
@@ -114,6 +116,7 @@ button:hover{
     padding:12px;
     margin:8px 0;
     border-radius:7px;
+    line-height:1.7;
 }
 
 .formula{
@@ -122,6 +125,7 @@ button:hover{
     border-radius:7px;
     font-weight:bold;
     margin:12px 0;
+    line-height:1.8;
 }
 
 .hidden{
@@ -133,7 +137,7 @@ button:hover{
 }
 
 ul,ol{
-    line-height:1.7;
+    line-height:1.8;
 }
 
 p{
@@ -163,7 +167,7 @@ p{
 <section id="topicsSection" class="hidden">
     <div class="welcome-card">
         <h2>Select a Topic</h2>
-        <p>Topics 1–15</p>
+        <p>Topics 1–20</p>
     </div>
     <div id="topicsList"></div>
 </section>
@@ -192,31 +196,32 @@ const topics = [
 "Simplification of Surds",
 "Sets",
 "Operations on Sets",
-"Venn Diagrams"
+"Venn Diagrams",
+"Algebraic Expressions",
+"Expansion of Algebraic Expressions",
+"Factorization",
+"Linear Equations",
+"Linear Inequalities"
 ];
 
 const lessons = {
 
-/* ================= TOPIC 1 ================= */
+/* =====================================================
+TOPICS 1–15
+===================================================== */
 
 "Number Bases":`
 <h2>Topic 1: Number Bases</h2>
 
 <h3>Lesson</h3>
 <p>
-A number base tells us how many digits are available in a number system.
-Our ordinary counting system is called the decimal system or base 10.
-It uses the digits 0 to 9.
-</p>
-
-<p>
-Other important number systems include binary (base 2), ternary (base 3),
-quinary (base 5), octal (base 8) and hexadecimal (base 16).
+A number base tells us how many digits are used in a number system.
+The decimal system is base 10 and uses the digits 0–9.
+Binary is base 2 and uses only 0 and 1.
 </p>
 
 <div class="formula">
-In base n, the place values are:
-n⁰, n¹, n², n³, ...
+In base n, place values are n⁰, n¹, n², n³, ...
 </div>
 
 <h3>Worked Examples</h3>
@@ -224,72 +229,59 @@ n⁰, n¹, n², n³, ...
 <div class="example">
 <b>Example 1:</b> Convert 1011₂ to base 10.<br><br>
 1011₂ = (1×2³)+(0×2²)+(1×2¹)+(1×2⁰)<br>
-= 8+0+2+1<br>
+= 8 + 0 + 2 + 1<br>
 = <b>11₁₀</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b> Convert 25₁₀ to base 2.<br><br>
-25 ÷ 2 = 12 remainder 1<br>
-12 ÷ 2 = 6 remainder 0<br>
-6 ÷ 2 = 3 remainder 0<br>
-3 ÷ 2 = 1 remainder 1<br>
-1 ÷ 2 = 0 remainder 1<br><br>
-Read the remainders from bottom to top:<br>
+25÷2 = 12 remainder 1<br>
+12÷2 = 6 remainder 0<br>
+6÷2 = 3 remainder 0<br>
+3÷2 = 1 remainder 1<br>
+1÷2 = 0 remainder 1<br><br>
+Read from bottom to top:<br>
 <b>25₁₀ = 11001₂</b>
-</div>
-
-<div class="example">
-<b>Example 3:</b> Add 1011₂ and 110₂.<br><br>
-&nbsp;&nbsp;1011<br>
-+&nbsp;0110<br>
-= 10001₂<br><br>
-Therefore, <b>1011₂ + 110₂ = 10001₂</b>.
 </div>
 
 <h3>Practice Questions</h3>
 <div class="question">1. Convert 1101₂ to base 10.</div>
 <div class="question">2. Convert 18₁₀ to base 2.</div>
 <div class="question">3. Convert 123₄ to base 10.</div>
-<div class="question">4. Add 101₂ + 11₂.</div>
 
 <h3>Answers</h3>
 <div class="answer">
 1. 13₁₀<br>
 2. 10010₂<br>
-3. 27₁₀<br>
-4. 1000₂
+3. 27₁₀
 </div>
 `,
-
-/* ================= TOPIC 2 ================= */
 
 "Fractions":`
 <h2>Topic 2: Fractions</h2>
 
 <h3>Lesson</h3>
 <p>
-A fraction represents part of a whole. The top number is the numerator
-and the bottom number is the denominator.
+A fraction represents part of a whole. The numerator is the top number
+and the denominator is the bottom number.
 </p>
 
 <div class="formula">
-Fraction = Numerator / Denominator
+Fraction = Numerator ÷ Denominator
 </div>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b> Add 2/3 + 1/6.<br><br>
-LCM of 3 and 6 = 6.<br>
+LCM = 6<br>
 2/3 = 4/6<br>
-Therefore:<br>
 4/6 + 1/6 = <b>5/6</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b> Subtract 5/6 − 1/4.<br><br>
-LCM = 12.<br>
+LCM = 12<br>
 5/6 = 10/12<br>
 1/4 = 3/12<br>
 10/12 − 3/12 = <b>7/12</b>
@@ -297,40 +289,29 @@ LCM = 12.<br>
 
 <div class="example">
 <b>Example 3:</b> Multiply 3/5 × 10/9.<br><br>
-(3×10)/(5×9) = 30/45<br>
+= 30/45<br>
 = <b>2/3</b>
-</div>
-
-<div class="example">
-<b>Example 4:</b> Divide 3/4 by 2/5.<br><br>
-3/4 ÷ 2/5 = 3/4 × 5/2<br>
-= 15/8<br>
-= <b>1 7/8</b>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="question">1. 1/2 + 1/4</div>
 <div class="question">2. 7/8 − 1/4</div>
 <div class="question">3. 2/3 × 9/4</div>
-<div class="question">4. 5/6 ÷ 10/9</div>
 
 <h3>Answers</h3>
 <div class="answer">
 1. 3/4<br>
 2. 5/8<br>
-3. 3/2 = 1 1/2<br>
-4. 3/4
+3. 3/2 = 1½
 </div>
 `,
-
-/* ================= TOPIC 3 ================= */
 
 "Decimals":`
 <h2>Topic 3: Decimals</h2>
 
 <h3>Lesson</h3>
 <p>
-Decimals are numbers expressed using a decimal point. The digits after
+Decimals are numbers written using a decimal point. The positions after
 the decimal point represent tenths, hundredths, thousandths and so on.
 </p>
 
@@ -338,21 +319,18 @@ the decimal point represent tenths, hundredths, thousandths and so on.
 
 <div class="example">
 <b>Example 1:</b> Add 12.45 + 3.7.<br><br>
-12.45<br>
-+3.70<br>
-= <b>16.15</b>
+12.45 + 3.70 = <b>16.15</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b> Multiply 2.4 × 0.5.<br><br>
 24 × 5 = 120.<br>
 There are two decimal places altogether.<br>
-Therefore = <b>1.20 = 1.2</b>
+Answer = <b>1.20 = 1.2</b>
 </div>
 
 <div class="example">
 <b>Example 3:</b> Divide 6.4 by 0.8.<br><br>
-Multiply both numbers by 10:<br>
 64 ÷ 8 = <b>8</b>
 </div>
 
@@ -360,51 +338,43 @@ Multiply both numbers by 10:<br>
 <div class="question">1. 4.25 + 2.7</div>
 <div class="question">2. 9.6 − 3.85</div>
 <div class="question">3. 1.2 × 0.4</div>
-<div class="question">4. 7.5 ÷ 0.5</div>
 
 <h3>Answers</h3>
 <div class="answer">
 1. 6.95<br>
 2. 5.75<br>
-3. 0.48<br>
-4. 15
+3. 0.48
 </div>
 `,
-
-/* ================= TOPIC 4 ================= */
 
 "Approximation":`
 <h2>Topic 4: Approximation</h2>
 
 <h3>Lesson</h3>
 <p>
-Approximation means giving a number in a simpler form while keeping it
-close to its original value.
-</p>
-
-<p>
-Common forms are rounding to the nearest whole number, decimal place
-and significant figure.
+Approximation means replacing a number with a nearby value that is
+easier to use.
 </p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b> Round 47.63 to the nearest whole number.<br><br>
-The decimal digit is 6. Since 6 ≥ 5, increase 47 by 1.<br>
+The first decimal digit is 6.<br>
+Since 6 is greater than 5, round upward.<br>
 Answer = <b>48</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b> Round 3.746 to 2 decimal places.<br><br>
-The first two decimal places are 74.<br>
+The first two decimal digits are 74.<br>
 The next digit is 6, so 74 becomes 75.<br>
 Answer = <b>3.75</b>
 </div>
 
 <div class="example">
 <b>Example 3:</b> Round 0.006784 to 2 significant figures.<br><br>
-The first two significant figures are 6 and 7.<br>
+First two significant digits are 6 and 7.<br>
 The next digit is 8, so 67 becomes 68.<br>
 Answer = <b>0.0068</b>
 </div>
@@ -422,15 +392,13 @@ Answer = <b>0.0068</b>
 </div>
 `,
 
-/* ================= TOPIC 5 ================= */
-
 "Estimation":`
 <h2>Topic 5: Estimation</h2>
 
 <h3>Lesson</h3>
 <p>
-Estimation involves replacing numbers by convenient approximate values
-so that calculations can be done quickly.
+Estimation involves replacing numbers with convenient approximate
+values before carrying out a calculation.
 </p>
 
 <h3>Worked Examples</h3>
@@ -439,7 +407,6 @@ so that calculations can be done quickly.
 <b>Example 1:</b> Estimate 49.8 × 20.2.<br><br>
 49.8 ≈ 50<br>
 20.2 ≈ 20<br>
-Therefore:<br>
 50 × 20 = <b>1000</b>
 </div>
 
@@ -448,12 +415,6 @@ Therefore:<br>
 398 ≈ 400<br>
 19.7 ≈ 20<br>
 400 ÷ 20 = <b>20</b>
-</div>
-
-<div class="example">
-<b>Example 3:</b> Estimate 19.7 + 31.2 + 48.9.<br><br>
-≈ 20 + 30 + 50<br>
-= <b>100</b>
 </div>
 
 <h3>Practice Questions</h3>
@@ -469,38 +430,31 @@ Therefore:<br>
 </div>
 `,
 
-/* ================= TOPIC 6 ================= */
-
 "Standard Form":`
 <h2>Topic 6: Standard Form</h2>
 
 <h3>Lesson</h3>
-<p>
-Standard form expresses a number as:
-</p>
 
 <div class="formula">
-a × 10ⁿ, where 1 ≤ a &lt; 10
+Standard form = a × 10ⁿ, where 1 ≤ a &lt; 10
 </div>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b> Write 450000 in standard form.<br><br>
-Move the decimal point 5 places left:<br>
 450000 = <b>4.5 × 10⁵</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b> Write 0.00072 in standard form.<br><br>
-Move the decimal point 4 places right:<br>
 0.00072 = <b>7.2 × 10⁻⁴</b>
 </div>
 
 <div class="example">
-<b>Example 3:</b> Calculate (3 × 10⁴)(2 × 10³).<br><br>
-= 6 × 10⁷<br>
-Answer = <b>6 × 10⁷</b>
+<b>Example 3:</b> Calculate (3×10⁴)(2×10³).<br><br>
+= 6×10⁷<br>
+Answer = <b>6×10⁷</b>
 </div>
 
 <h3>Practice Questions</h3>
@@ -510,21 +464,16 @@ Answer = <b>6 × 10⁷</b>
 
 <h3>Answers</h3>
 <div class="answer">
-1. 7.2 × 10⁴<br>
-2. 5.6 × 10⁻³<br>
-3. 2 × 10⁶
+1. 7.2×10⁴<br>
+2. 5.6×10⁻³<br>
+3. 2×10⁶
 </div>
 `,
-
-/* ================= TOPIC 7 ================= */
 
 "Logarithms":`
 <h2>Topic 7: Logarithms</h2>
 
 <h3>Lesson</h3>
-<p>
-A logarithm is another way of expressing an index.
-</p>
 
 <div class="formula">
 If aˣ = N, then logₐN = x
@@ -533,20 +482,19 @@ If aˣ = N, then logₐN = x
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b> Evaluate log₂8.<br><br>
+<b>Example 1:</b> Find log₂8.<br><br>
 2³ = 8<br>
 Therefore log₂8 = <b>3</b>
 </div>
 
 <div class="example">
-<b>Example 2:</b> Evaluate log₁₀1000.<br><br>
+<b>Example 2:</b> Find log₁₀1000.<br><br>
 10³ = 1000<br>
 Therefore log₁₀1000 = <b>3</b>
 </div>
 
 <div class="example">
 <b>Example 3:</b> Solve log₂x = 5.<br><br>
-Convert to index form:<br>
 x = 2⁵<br>
 x = <b>32</b>
 </div>
@@ -564,18 +512,12 @@ x = <b>32</b>
 </div>
 `,
 
-/* ================= TOPIC 8 ================= */
-
 "Laws of Logarithms":`
 <h2>Topic 8: Laws of Logarithms</h2>
 
-<h3>Lesson</h3>
-
 <div class="formula">
-logₐ(MN) = logₐM + logₐN
-<br><br>
-logₐ(M/N) = logₐM − logₐN
-<br><br>
+logₐ(MN) = logₐM + logₐN<br>
+logₐ(M/N) = logₐM − logₐN<br>
 logₐ(Mⁿ) = n logₐM
 </div>
 
@@ -583,7 +525,7 @@ logₐ(Mⁿ) = n logₐM
 
 <div class="example">
 <b>Example 1:</b><br>
-log₂8 + log₂4<br><br>
+log₂8 + log₂4<br>
 = log₂(8×4)<br>
 = log₂32<br>
 = <b>5</b>
@@ -591,7 +533,7 @@ log₂8 + log₂4<br><br>
 
 <div class="example">
 <b>Example 2:</b><br>
-log₃27 − log₃9<br><br>
+log₃27 − log₃9<br>
 = log₃(27/9)<br>
 = log₃3<br>
 = <b>1</b>
@@ -600,7 +542,7 @@ log₃27 − log₃9<br><br>
 <div class="example">
 <b>Example 3:</b><br>
 2log₁₀5 = log₁₀(5²)<br>
-= log₁₀25
+= <b>log₁₀25</b>
 </div>
 
 <h3>Practice Questions</h3>
@@ -616,14 +558,12 @@ log₃27 − log₃9<br><br>
 </div>
 `,
 
-/* ================= TOPIC 9 ================= */
-
 "Indices":`
 <h2>Topic 9: Indices</h2>
 
 <h3>Lesson</h3>
 <p>
-An index shows how many times a number is multiplied by itself.
+An index indicates how many times a number is multiplied by itself.
 </p>
 
 <h3>Worked Examples</h3>
@@ -658,45 +598,32 @@ Therefore x = <b>4</b>
 </div>
 `,
 
-/* ================= TOPIC 10 ================= */
-
 "Laws of Indices":`
 <h2>Topic 10: Laws of Indices</h2>
 
-<h3>Lesson</h3>
-
 <div class="formula">
-aᵐ × aⁿ = aᵐ⁺ⁿ
-<br><br>
-aᵐ ÷ aⁿ = aᵐ⁻ⁿ
-<br><br>
-(aᵐ)ⁿ = aᵐⁿ
-<br><br>
-a⁰ = 1
-<br><br>
+aᵐ × aⁿ = aᵐ⁺ⁿ<br>
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ<br>
+(aᵐ)ⁿ = aᵐⁿ<br>
+a⁰ = 1<br>
 a⁻ⁿ = 1/aⁿ
 </div>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b> Simplify 2³ × 2⁴.<br><br>
-= 2³⁺⁴<br>
-= 2⁷<br>
-= <b>128</b>
+<b>Example 1:</b><br>
+2³ × 2⁴ = 2⁷ = <b>128</b>
 </div>
 
 <div class="example">
-<b>Example 2:</b> Simplify 5⁷ ÷ 5³.<br><br>
-= 5⁷⁻³<br>
-= 5⁴<br>
-= <b>625</b>
+<b>Example 2:</b><br>
+5⁷ ÷ 5³ = 5⁴ = <b>625</b>
 </div>
 
 <div class="example">
-<b>Example 3:</b> Simplify (3²)³.<br><br>
-= 3⁶<br>
-= <b>729</b>
+<b>Example 3:</b><br>
+(3²)³ = 3⁶ = <b>729</b>
 </div>
 
 <h3>Practice Questions</h3>
@@ -712,49 +639,34 @@ a⁻ⁿ = 1/aⁿ
 </div>
 `,
 
-/* ================= TOPIC 11 ================= */
-
 "Surds":`
 <h2>Topic 11: Surds</h2>
 
 <h3>Lesson</h3>
 <p>
-A surd is an irrational root which cannot be simplified to a whole
-number or terminating decimal.
-Examples include √2, √3 and √5.
-</p>
-
-<p>
-Surds are useful because exact values can be retained instead of using
-rounded decimal answers.
+A surd is an irrational root that cannot be expressed exactly as a
+rational number.
+Examples include √2, √3, √5 and √7.
 </p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b> Is √2 a surd?<br><br>
-√2 cannot be expressed exactly as a rational number.<br>
-Therefore <b>√2 is a surd.</b>
-</div>
-
-<div class="example">
-<b>Example 2:</b> Simplify √50.<br><br>
-50 = 25 × 2<br>
+<b>Example 1:</b> Simplify √50.<br><br>
+50 = 25×2<br>
 √50 = √25 × √2<br>
-= 5√2<br>
-Therefore <b>√50 = 5√2</b>
+= <b>5√2</b>
 </div>
 
 <div class="example">
-<b>Example 3:</b> Simplify √12.<br><br>
-12 = 4 × 3<br>
-√12 = √4 × √3<br>
-= <b>2√3</b>
+<b>Example 2:</b> Simplify √12.<br><br>
+12 = 4×3<br>
+√12 = 2√3<br>
+Therefore <b>√12 = 2√3</b>
 </div>
 
 <div class="example">
-<b>Example 4:</b> Simplify 3√2 + 5√2.<br><br>
-They are like surds.<br>
+<b>Example 3:</b> Simplify 3√2 + 5√2.<br><br>
 = (3+5)√2<br>
 = <b>8√2</b>
 </div>
@@ -763,42 +675,37 @@ They are like surds.<br>
 <div class="question">1. Simplify √18.</div>
 <div class="question">2. Simplify √75.</div>
 <div class="question">3. Simplify 4√3 + 2√3.</div>
-<div class="question">4. Simplify 7√5 − 3√5.</div>
 
 <h3>Answers</h3>
 <div class="answer">
 1. 3√2<br>
 2. 5√3<br>
-3. 6√3<br>
-4. 4√5
+3. 6√3
 </div>
 `,
-
-/* ================= TOPIC 12 ================= */
 
 "Simplification of Surds":`
 <h2>Topic 12: Simplification of Surds</h2>
 
 <h3>Lesson</h3>
 <p>
-To simplify a surd, factor the number inside the square root and look
-for the largest perfect-square factor.
+To simplify a surd, identify the largest perfect-square factor inside
+the square root.
 </p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b> Simplify √72.<br><br>
-72 = 36 × 2<br>
-√72 = √36 × √2<br>
+72 = 36×2<br>
+√72 = √36×√2<br>
 = <b>6√2</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b> Simplify √108.<br><br>
-108 = 36 × 3<br>
-√108 = 6√3<br>
-Therefore <b>√108 = 6√3</b>
+108 = 36×3<br>
+√108 = <b>6√3</b>
 </div>
 
 <div class="example">
@@ -811,15 +718,9 @@ Therefore:<br>
 
 <div class="example">
 <b>Example 4:</b> Rationalize 1/√3.<br><br>
-Multiply numerator and denominator by √3:<br>
-(1×√3)/(√3×√3)<br>
-= <b>√3/3</b>
-</div>
-
-<div class="example">
-<b>Example 5:</b> Simplify √2 × √8.<br><br>
-= √16<br>
-= <b>4</b>
+Multiply top and bottom by √3:<br>
+√3/3<br>
+Therefore <b>1/√3 = √3/3</b>
 </div>
 
 <h3>Practice Questions</h3>
@@ -827,31 +728,23 @@ Multiply numerator and denominator by √3:<br>
 <div class="question">2. Simplify √200.</div>
 <div class="question">3. Simplify √12 + √27.</div>
 <div class="question">4. Rationalize 1/√5.</div>
-<div class="question">5. Simplify √3 × √12.</div>
 
 <h3>Answers</h3>
 <div class="answer">
 1. 4√3<br>
 2. 10√2<br>
 3. 5√3<br>
-4. √5/5<br>
-5. 6
+4. √5/5
 </div>
 `,
-
-/* ================= TOPIC 13 ================= */
 
 "Sets":`
 <h2>Topic 13: Sets</h2>
 
 <h3>Lesson</h3>
 <p>
-A set is a well-defined collection of objects. The objects in a set are
-called elements or members.
-</p>
-
-<p>
-Sets are usually represented using capital letters such as A, B and C.
+A set is a well-defined collection of objects called elements or
+members.
 </p>
 
 <div class="formula">
@@ -859,46 +752,38 @@ Example: A = {2,4,6,8,10}
 </div>
 
 <p>
-Here, 2, 4, 6, 8 and 10 are members of set A.
+Common types include empty sets, finite sets, infinite sets, universal
+sets and subsets.
 </p>
-
-<h3>Types of Sets</h3>
-<ul>
-<li><b>Empty set:</b> A set containing no element.</li>
-<li><b>Finite set:</b> A set with a limited number of elements.</li>
-<li><b>Infinite set:</b> A set that continues indefinitely.</li>
-<li><b>Universal set:</b> The set containing all objects under consideration.</li>
-<li><b>Subset:</b> A set whose elements are all contained in another set.</li>
-</ul>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
 <b>Example 1:</b><br>
 A = {1,2,3,4,5}.<br>
-Is 3 a member of A?<br><br>
-Yes. Therefore <b>3 ∈ A</b>.
+Since 3 is contained in A:<br>
+<b>3 ∈ A</b>
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-A = {1,2,3} and B = {1,2,3,4,5}.<br><br>
-Every element of A is in B.<br>
-Therefore <b>A is a subset of B</b>.
+A={1,2,3}<br>
+B={1,2,3,4,5}<br><br>
+Every element of A occurs in B.<br>
+Therefore <b>A ⊂ B</b>.
 </div>
 
 <div class="example">
 <b>Example 3:</b><br>
-Let U = {1,2,3,4,5,6,7,8,9,10}.<br>
-A = {2,4,6,8,10}.<br><br>
-The complement of A is:<br>
-A' = <b>{1,3,5,7,9}</b>
+U={1,2,3,4,5,6,7,8,9,10}<br>
+A={2,4,6,8,10}<br><br>
+A'={1,3,5,7,9}
 </div>
 
 <h3>Practice Questions</h3>
-<div class="question">1. Write the set of even numbers less than 10.</div>
+<div class="question">1. Write the even numbers less than 10 as a set.</div>
 <div class="question">2. If A={1,2,3}, is 4 ∈ A?</div>
-<div class="question">3. If U={1,2,3,4,5} and A={2,4}, find A'. </div>
+<div class="question">3. If U={1,2,3,4,5} and A={2,4}, find A'.</div>
 
 <h3>Answers</h3>
 <div class="answer">
@@ -908,21 +793,13 @@ A' = <b>{1,3,5,7,9}</b>
 </div>
 `,
 
-/* ================= TOPIC 14 ================= */
-
 "Operations on Sets":`
 <h2>Topic 14: Operations on Sets</h2>
 
 <h3>Lesson</h3>
 
-<p>
-The main operations on sets are union, intersection, difference and
-complement.
-</p>
-
 <div class="formula">
-A ∪ B = elements in A or B or both
-<br><br>
+A ∪ B = elements in A or B or both<br>
 A ∩ B = elements common to A and B
 </div>
 
@@ -930,61 +807,31 @@ A ∩ B = elements common to A and B
 
 <div class="example">
 <b>Example 1:</b><br>
-A = {1,2,3,4}<br>
-B = {3,4,5,6}<br><br>
+A={1,2,3,4}<br>
+B={3,4,5,6}<br><br>
 
-A ∪ B = <b>{1,2,3,4,5,6}</b><br>
-A ∩ B = <b>{3,4}</b>
+A∪B={1,2,3,4,5,6}<br>
+A∩B={3,4}
 </div>
 
 <div class="example">
 <b>Example 2:</b><br>
-A = {2,4,6,8}<br>
-B = {2,3,5,7}<br><br>
-
-A ∩ B = <b>{2}</b>
+A={2,4,6,8}<br>
+B={2,3,5,7}<br><br>
+A∩B=<b>{2}</b>
 </div>
 
 <div class="example">
 <b>Example 3:</b><br>
-Using the same sets:<br><br>
-A − B = elements in A but not B.<br>
-Therefore:<br>
-A − B = <b>{4,6,8}</b>
-</div>
-
-<div class="example">
-<b>Example 4:</b><br>
-U = {1,2,3,4,5,6,7,8,9,10}<br>
-A = {2,4,6,8,10}<br><br>
-
-A' = <b>{1,3,5,7,9}</b>
-</div>
-
-<h3>Cardinality</h3>
-<p>
-The number of elements in a set is called its cardinality.
-It is written as n(A).
-</p>
-
-<div class="example">
-If A = {2,4,6,8,10}, then:<br>
-n(A) = <b>5</b>
+A−B means elements in A but not B.<br><br>
+A−B=<b>{4,6,8}</b>
 </div>
 
 <h3>Practice Questions</h3>
-<div class="question">
-1. A={1,2,3,4}, B={3,4,5,6}. Find A∪B.
-</div>
-<div class="question">
-2. Find A∩B for the sets above.
-</div>
-<div class="question">
-3. Find A−B.
-</div>
-<div class="question">
-4. Find n({2,4,6,8,10,12}).
-</div>
+<div class="question">1. A={1,2,3,4}, B={3,4,5,6}. Find A∪B.</div>
+<div class="question">2. Find A∩B.</div>
+<div class="question">3. Find A−B.</div>
+<div class="question">4. Find n({2,4,6,8,10,12}).</div>
 
 <h3>Answers</h3>
 <div class="answer">
@@ -995,122 +842,520 @@ n(A) = <b>5</b>
 </div>
 `,
 
-/* ================= TOPIC 15 ================= */
-
 "Venn Diagrams":`
 <h2>Topic 15: Venn Diagrams</h2>
 
 <h3>Lesson</h3>
-
 <p>
-A Venn diagram is a diagram used to represent sets and relationships
-between sets.
-</p>
-
-<p>
-A rectangle normally represents the universal set while circles
-represent individual sets.
+A Venn diagram represents sets using circles inside a rectangle.
+The rectangle normally represents the universal set.
 </p>
 
 <div class="formula">
-n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
+n(A∪B)=n(A)+n(B)−n(A∩B)
 </div>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<b>Example 1:</b><br><br>
+<b>Example 1:</b><br>
 In a class of 40 students, 25 like Mathematics,
-18 like Physics and 10 like both subjects.
-Find the number who like at least one subject.
-<br><br>
+18 like Physics and 10 like both.<br><br>
 
-n(M ∪ P) = 25 + 18 − 10<br>
+n(M∪P)=25+18−10<br>
 = <b>33</b>
-<br><br>
-
-Therefore 33 students like at least one of the subjects.
 </div>
 
 <div class="example">
-<b>Example 2:</b><br><br>
-Using the same information, find the number who like Mathematics only.
-<br><br>
-
-Mathematics only = 25 − 10<br>
+<b>Example 2:</b><br>
+Mathematics only = 25−10<br>
 = <b>15</b>
 </div>
 
 <div class="example">
-<b>Example 3:</b><br><br>
-Find the number who like Physics only.<br><br>
-
-Physics only = 18 − 10<br>
+<b>Example 3:</b><br>
+Physics only = 18−10<br>
 = <b>8</b>
 </div>
 
 <div class="example">
-<b>Example 4:</b><br><br>
-Find the number who like neither subject.<br><br>
-
-At least one = 33<br>
-Total = 40<br>
-Neither = 40 − 33<br>
+<b>Example 4:</b><br>
+Neither = 40−33<br>
 = <b>7</b>
 </div>
 
-<h3>Summary of the Example</h3>
-
-<ul>
-<li>Mathematics only = 15</li>
-<li>Both = 10</li>
-<li>Physics only = 8</li>
-<li>Neither = 7</li>
-<li>Total = 40</li>
-</ul>
-
 <h3>Practice Questions</h3>
-
 <div class="question">
 1. In a group of 50 students, 30 study Mathematics,
 25 study Biology and 15 study both. Find the number studying at least one.
 </div>
 
-<div class="question">
-2. Using the information above, find the number studying Mathematics only.
+<div class="question">2. Find Mathematics only.</div>
+<div class="question">3. Find Biology only.</div>
+<div class="question">4. Find neither subject.</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 40<br>
+2. 15<br>
+3. 10<br>
+4. 10
+</div>
+`,
+
+/* =====================================================
+TOPIC 16
+===================================================== */
+
+"Algebraic Expressions":`
+<h2>Topic 16: Algebraic Expressions</h2>
+
+<h3>Lesson</h3>
+
+<p>
+An algebraic expression is a combination of numbers, variables and
+mathematical operations.
+</p>
+
+<p>
+Examples include:
+<b>3x + 5</b>, <b>2a − 7</b>, <b>4x² + 3x − 1</b>.
+</p>
+
+<h3>Important Terms</h3>
+
+<ul>
+<li><b>Variable:</b> A letter representing an unknown quantity.</li>
+<li><b>Coefficient:</b> The number multiplying a variable.</li>
+<li><b>Constant:</b> A number without a variable.</li>
+<li><b>Term:</b> A part of an expression separated by + or − signs.</li>
+<li><b>Like terms:</b> Terms having the same variables with the same powers.</li>
+</ul>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Identify the terms, coefficient and constant in
+5x + 7.<br><br>
+
+Terms = 5x and 7<br>
+Coefficient of x = <b>5</b><br>
+Constant = <b>7</b>
 </div>
 
-<div class="question">
-3. Find the number studying Biology only.
+<div class="example">
+<b>Example 2:</b> Simplify 3x + 5x.<br><br>
+Both are like terms.<br>
+3x + 5x = (3+5)x<br>
+= <b>8x</b>
 </div>
 
-<div class="question">
-4. Find the number studying neither subject.
+<div class="example">
+<b>Example 3:</b> Simplify 7a − 3a + 2a.<br><br>
+= (7−3+2)a<br>
+= 6a<br>
+Therefore <b>6a</b>
 </div>
 
-<div class="question">
-5. If n(A)=35, n(B)=20 and n(A∩B)=8, find n(A∪B).
+<div class="example">
+<b>Example 4:</b> Simplify 4x + 3y − 2x + 5y.<br><br>
+Collect x terms:<br>
+4x−2x = 2x<br><br>
+Collect y terms:<br>
+3y+5y = 8y<br><br>
+Answer = <b>2x + 8y</b>
 </div>
+
+<div class="example">
+<b>Example 5:</b> Evaluate 3x + 4 when x=5.<br><br>
+3(5)+4<br>
+=15+4<br>
+= <b>19</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="question">1. Simplify 4x + 7x.</div>
+<div class="question">2. Simplify 9a − 4a + 2a.</div>
+<div class="question">3. Simplify 5x + 3y − 2x + 4y.</div>
+<div class="question">4. Evaluate 2x + 7 when x=6.</div>
+<div class="question">5. Identify the coefficient of y in 8y−3.</div>
 
 <h3>Answers</h3>
 
 <div class="answer">
-1. 30 + 25 − 15 = <b>40</b><br><br>
-
-2. 30 − 15 = <b>15</b><br><br>
-
-3. 25 − 15 = <b>10</b><br><br>
-
-4. 50 − 40 = <b>10</b><br><br>
-
-5. 35 + 20 − 8 = <b>47</b>
+1. 11x<br>
+2. 7a<br>
+3. 3x + 7y<br>
+4. 19<br>
+5. 8
 </div>
+`,
+
+/* =====================================================
+TOPIC 17
+===================================================== */
+
+"Expansion of Algebraic Expressions":`
+<h2>Topic 17: Expansion of Algebraic Expressions</h2>
+
+<h3>Lesson</h3>
+
+<p>
+Expansion means removing brackets by multiplying every term inside a
+bracket by the term outside it.
+</p>
+
+<div class="formula">
+a(b+c) = ab + ac
+<br><br>
+(a+b)(c+d) = ac + ad + bc + bd
+</div>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Expand 3(x+4).<br><br>
+Multiply 3 by every term:<br>
+3×x + 3×4<br>
+= <b>3x + 12</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Expand 5(2x−3).<br><br>
+= 5×2x + 5×(−3)<br>
+= 10x−15<br>
+Therefore <b>10x−15</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Expand (x+2)(x+3).<br><br>
+x×x = x²<br>
+x×3 = 3x<br>
+2×x = 2x<br>
+2×3 = 6<br><br>
+Therefore:<br>
+x²+3x+2x+6<br>
+= <b>x²+5x+6</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b> Expand (2x+3)(x+4).<br><br>
+2x×x = 2x²<br>
+2x×4 = 8x<br>
+3×x = 3x<br>
+3×4 = 12<br><br>
+= 2x²+8x+3x+12<br>
+= <b>2x²+11x+12</b>
+</div>
+
+<div class="example">
+<b>Example 5:</b> Expand (x−5)².<br><br>
+(x−5)(x−5)<br>
+= x²−5x−5x+25<br>
+= <b>x²−10x+25</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="question">1. Expand 4(x+5).</div>
+<div class="question">2. Expand 3(2x−7).</div>
+<div class="question">3. Expand (x+4)(x+2).</div>
+<div class="question">4. Expand (x−3)(x+5).</div>
+<div class="question">5. Expand (2x+1)(x+3).</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 4x+20<br>
+2. 6x−21<br>
+3. x²+6x+8<br>
+4. x²+2x−15<br>
+5. 2x²+7x+3
+</div>
+`,
+
+/* =====================================================
+TOPIC 18
+===================================================== */
+
+"Factorization":`
+<h2>Topic 18: Factorization</h2>
+
+<h3>Lesson</h3>
+
+<p>
+Factorization is the reverse of expansion. It involves expressing an
+algebraic expression as a product of factors.
+</p>
+
+<h3>Common Factor</h3>
+
+<div class="example">
+<b>Example 1:</b> Factorize 6x + 12.<br><br>
+The highest common factor is 6.<br>
+6x + 12 = 6(x + 2)<br>
+Therefore <b>6(x+2)</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Factorize 8x² + 12x.<br><br>
+HCF = 4x<br>
+8x² ÷ 4x = 2x<br>
+12x ÷ 4x = 3<br><br>
+Answer = <b>4x(2x+3)</b>
+</div>
+
+<h3>Factorizing Quadratics</h3>
+
+<p>
+For an expression of the form:
+</p>
+
+<div class="formula">
+x² + bx + c
+</div>
+
+<p>
+Find two numbers whose product is c and whose sum is b.
+</p>
+
+<div class="example">
+<b>Example 3:</b> Factorize x² + 5x + 6.<br><br>
+We need two numbers whose product is 6 and sum is 5.<br>
+The numbers are 2 and 3.<br><br>
+Therefore:<br>
+x²+5x+6 = <b>(x+2)(x+3)</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b> Factorize x² − 7x + 12.<br><br>
+Numbers with product 12 and sum −7 are −3 and −4.<br><br>
+Therefore:<br>
+x²−7x+12 = <b>(x−3)(x−4)</b>
+</div>
+
+<div class="example">
+<b>Example 5:</b> Factorize x² − 9.<br><br>
+This is a difference of two squares:<br>
+x²−3²<br>
+= <b>(x−3)(x+3)</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="question">1. Factorize 10x+15.</div>
+<div class="question">2. Factorize 6x²+9x.</div>
+<div class="question">3. Factorize x²+7x+12.</div>
+<div class="question">4. Factorize x²−9x+20.</div>
+<div class="question">5. Factorize x²−16.</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. 5(2x+3)<br>
+2. 3x(2x+3)<br>
+3. (x+3)(x+4)<br>
+4. (x−4)(x−5)<br>
+5. (x−4)(x+4)
+</div>
+`,
+
+/* =====================================================
+TOPIC 19
+===================================================== */
+
+"Linear Equations":`
+<h2>Topic 19: Linear Equations</h2>
+
+<h3>Lesson</h3>
+
+<p>
+A linear equation is an equation in which the highest power of the
+unknown is 1.
+</p>
+
+<p>
+Examples include:
+<b>2x+5=13</b> and <b>5x−7=18</b>.
+</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Solve x+7=12.<br><br>
+Subtract 7 from both sides:<br>
+x = 12−7<br>
+Therefore <b>x=5</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Solve 3x=21.<br><br>
+Divide both sides by 3:<br>
+x = 21/3<br>
+Therefore <b>x=7</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Solve 2x+5=17.<br><br>
+2x = 17−5<br>
+2x = 12<br>
+x = 12/2<br>
+Therefore <b>x=6</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b> Solve 5x−8=27.<br><br>
+5x = 27+8<br>
+5x = 35<br>
+x = 35/5<br>
+Therefore <b>x=7</b>
+</div>
+
+<div class="example">
+<b>Example 5:</b> Solve 3(x+2)=18.<br><br>
+Divide by 3:<br>
+x+2=6<br>
+x=6−2<br>
+Therefore <b>x=4</b>
+</div>
+
+<div class="example">
+<b>Example 6:</b> Solve 2x+5=x+12.<br><br>
+Subtract x from both sides:<br>
+x+5=12<br>
+Subtract 5:<br>
+x=<b>7</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="question">1. Solve x+9=15.</div>
+<div class="question">2. Solve 4x=28.</div>
+<div class="question">3. Solve 3x+4=19.</div>
+<div class="question">4. Solve 7x−5=30.</div>
+<div class="question">5. Solve 2(x+4)=18.</div>
+<div class="question">6. Solve 5x+3=2x+18.</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. x=6<br>
+2. x=7<br>
+3. x=5<br>
+4. x=5<br>
+5. x=5<br>
+6. x=5
+</div>
+`,
+
+/* =====================================================
+TOPIC 20
+===================================================== */
+
+"Linear Inequalities":`
+<h2>Topic 20: Linear Inequalities</h2>
+
+<h3>Lesson</h3>
+
+<p>
+An inequality compares two quantities. The common inequality symbols
+are:
+</p>
+
+<div class="formula">
+&gt; means greater than<br>
+&lt; means less than<br>
+≥ means greater than or equal to<br>
+≤ means less than or equal to
+</div>
+
+<p>
+The method of solving an inequality is similar to solving an equation.
+However, when multiplying or dividing by a negative number, the
+inequality sign must be reversed.
+</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Solve x+3 &gt; 7.<br><br>
+Subtract 3 from both sides:<br>
+x &gt; 4<br>
+Therefore <b>x &gt; 4</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Solve 2x &lt; 10.<br><br>
+Divide by 2:<br>
+x &lt; 5<br>
+Therefore <b>x &lt; 5</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Solve 3x+4 ≥ 16.<br><br>
+3x ≥ 16−4<br>
+3x ≥ 12<br>
+x ≥ 4<br>
+Therefore <b>x ≥ 4</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b> Solve 5x−7 ≤ 18.<br><br>
+5x ≤ 25<br>
+x ≤ 5<br>
+Therefore <b>x ≤ 5</b>
+</div>
+
+<div class="example">
+<b>Example 5:</b> Solve −2x &gt; 8.<br><br>
+Divide both sides by −2.<br>
+Because we divide by a negative number, reverse the sign:<br>
+x &lt; −4<br>
+Therefore <b>x &lt; −4</b>
+</div>
+
+<div class="example">
+<b>Example 6:</b> Solve 2x+3 &lt; x+9.<br><br>
+Subtract x:<br>
+x+3 &lt; 9<br>
+Subtract 3:<br>
+x &lt; <b>6</b>
+</div>
+
+<h3>Practice Questions</h3>
+
+<div class="question">1. Solve x+5 &gt; 11.</div>
+<div class="question">2. Solve 3x &lt; 18.</div>
+<div class="question">3. Solve 2x+7 ≥ 15.</div>
+<div class="question">4. Solve 4x−3 ≤ 17.</div>
+<div class="question">5. Solve −3x &gt; 12.</div>
+<div class="question">6. Solve 2x+1 &lt; x+8.</div>
+
+<h3>Answers</h3>
+
+<div class="answer">
+1. x &gt; 6<br>
+2. x &lt; 6<br>
+3. x ≥ 4<br>
+4. x ≤ 5<br>
+5. x &lt; −4<br>
+6. x &lt; 7
+</div>
+
+<h3>Important Reminder</h3>
+<p>
+Whenever an inequality is multiplied or divided by a negative number,
+<b>reverse the inequality sign</b>.
+</p>
 `
 
 };
 
 
-/* ================= FUNCTIONS ================= */
+/* =====================================================
+NAVIGATION
+===================================================== */
 
 function startLearning(){
     document.getElementById("welcomeSection").classList.add("hidden");
@@ -1125,35 +1370,58 @@ function showTopics(){
 }
 
 function displayTopics(){
+
     const list = document.getElementById("topicsList");
+
     list.innerHTML = "";
 
     topics.forEach((topic,index)=>{
+
         const div = document.createElement("div");
+
         div.className = "topic";
-        div.innerHTML = (index+1) + ". " + topic;
+
+        div.innerHTML =
+            (index+1) + ". " + topic;
+
         div.onclick = function(){
             openLesson(index);
         };
+
         list.appendChild(div);
+
     });
 }
 
 function openLesson(index){
+
     const topic = topics[index];
 
-    document.getElementById("topicsSection").classList.add("hidden");
-    document.getElementById("welcomeSection").classList.add("hidden");
-    document.getElementById("lessonSection").classList.remove("hidden");
+    document.getElementById("topicsSection")
+        .classList.add("hidden");
+
+    document.getElementById("welcomeSection")
+        .classList.add("hidden");
+
+    document.getElementById("lessonSection")
+        .classList.remove("hidden");
 
     document.getElementById("lessonContent").innerHTML =
         `<div class="lesson-card">${lessons[topic]}</div>`;
+
+    window.scrollTo(0,0);
 }
 
 function showWelcome(){
-    document.getElementById("topicsSection").classList.add("hidden");
-    document.getElementById("lessonSection").classList.add("hidden");
-    document.getElementById("welcomeSection").classList.remove("hidden");
+
+    document.getElementById("topicsSection")
+        .classList.add("hidden");
+
+    document.getElementById("lessonSection")
+        .classList.add("hidden");
+
+    document.getElementById("welcomeSection")
+        .classList.remove("hidden");
 }
 
 window.onload = function(){
