@@ -11,15 +11,15 @@
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:#eef5ff;
+    background:#f2f7ff;
     color:#123;
 }
 
 header{
-    background:#0b4f9c;
+    background:#0757a6;
     color:white;
     text-align:center;
-    padding:20px 15px;
+    padding:22px 15px;
 }
 
 header h1{
@@ -28,14 +28,14 @@ header h1{
 }
 
 header p{
-    margin:8px 0 0;
+    margin:7px 0 0;
+    font-size:15px;
 }
 
 .container{
-    width:94%;
     max-width:900px;
     margin:auto;
-    padding:20px 0 40px;
+    padding:15px;
 }
 
 .welcome-card,
@@ -43,95 +43,101 @@ header p{
 .topic{
     background:white;
     border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 .welcome-card{
-    padding:30px 20px;
+    padding:25px;
     text-align:center;
-}
-
-.welcome-card h2,
-#lessonTitle{
-    color:#0b4f9c;
+    margin-top:20px;
 }
 
 button{
-    background:#0b4f9c;
-    color:white;
     border:0;
-    padding:14px 20px;
     border-radius:8px;
+    padding:12px 18px;
+    background:#0757a6;
+    color:white;
     font-size:16px;
-    margin:8px 4px;
     cursor:pointer;
+    margin:5px;
 }
 
-.backButton{
-    background:#555;
+button:hover{
+    background:#063f78;
 }
 
 .topic{
-    margin:10px 0;
     padding:16px;
-    font-size:17px;
-    font-weight:bold;
+    margin:10px 0;
     cursor:pointer;
+    color:#0757a6;
+    font-weight:bold;
 }
 
 .topic:hover{
-    background:#e5f0ff;
-}
-
-#topicsSection,
-#lessonSection{
-    display:none;
+    background:#e8f2ff;
 }
 
 .lesson-card{
-    margin:15px 0;
     padding:20px;
-    line-height:1.7;
-    font-size:16px;
+    margin-top:20px;
+}
+
+.lesson-card h2{
+    color:#0757a6;
 }
 
 .lesson-card h3{
-    color:#0b4f9c;
-    margin-top:0;
+    color:#064b8d;
+    margin-top:25px;
 }
 
 .example{
-    background:#f4f8ff;
-    border-left:5px solid #0b4f9c;
-    padding:14px;
-    margin:15px 0;
-    border-radius:6px;
-}
-
-.answer{
-    background:#f3fff5;
-    border-left:5px solid #188038;
-    padding:14px;
+    background:#eef6ff;
+    border-left:5px solid #0757a6;
+    padding:15px;
     margin:12px 0;
-    border-radius:6px;
-}
-
-.formula{
-    background:#fff8df;
-    padding:12px;
-    margin:12px 0;
-    border-radius:6px;
-    font-weight:bold;
+    border-radius:7px;
 }
 
 .question{
-    margin:14px 0;
+    background:#fff8df;
+    padding:12px;
+    margin:8px 0;
+    border-radius:7px;
 }
 
-footer{
-    text-align:center;
-    padding:20px;
-    color:#555;
+.answer{
+    background:#ecfff0;
+    border-left:5px solid #16833b;
+    padding:12px;
+    margin:8px 0;
+    border-radius:7px;
+}
+
+.formula{
+    background:#f3edff;
+    padding:14px;
+    border-radius:7px;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.hidden{
+    display:none;
+}
+
+.back{
+    background:#555;
+}
+
+ul,ol{
+    line-height:1.7;
+}
+
+p{
+    line-height:1.7;
 }
 </style>
 </head>
@@ -139,124 +145,39 @@ footer{
 <body>
 
 <header>
-<h1>SSS Mathematics</h1>
-<p>Learn • Practise • Understand • Excel</p>
+    <h1>SSS MATHEMATICS</h1>
+    <p>Complete Mathematics Learning App</p>
 </header>
 
 <div class="container">
 
-<section id="welcomeSection">
-
-<div class="welcome-card">
-
-<h2>Welcome to SSS Mathematics</h2>
-
-<p>
-Welcome to the SSS Mathematics Learning Application.
-</p>
-
-<p>
-Study mathematics topic by topic with detailed lessons,
-worked examples, practice questions and answers.
-</p>
-
-<p>
-📘 Lessons<br>
-✏️ Worked Examples<br>
-📝 Practice Questions<br>
-✅ Answers
-</p>
-
-<button onclick="startLearning()">
-Start Learning
-</button>
-
-</div>
-
+<section id="welcomeSection" class="welcome-card">
+    <h2>Welcome to SSS Mathematics</h2>
+    <p>
+        Learn Mathematics topic by topic with detailed lessons,
+        worked examples, practice questions and answers.
+    </p>
+    <button onclick="startLearning()">START LEARNING</button>
 </section>
 
-
-<section id="topicsSection">
-
-<h2 style="text-align:center;color:#0b4f9c;">
-SSS Mathematics Topics
-</h2>
-
-<div id="topicsList"></div>
-
-<button class="backButton" onclick="showWelcome()">
-← Back to Welcome
-</button>
-
+<section id="topicsSection" class="hidden">
+    <div class="welcome-card">
+        <h2>Select a Topic</h2>
+        <p>Topics 1–15</p>
+    </div>
+    <div id="topicsList"></div>
 </section>
 
-
-<section id="lessonSection">
-
-<button class="backButton" onclick="showTopics()">
-← Back to Topics
-</button>
-
-<h2 id="lessonTitle"></h2>
-
-
-<div class="lesson-card">
-
-<h3>📘 Lesson</h3>
-
-<div id="lessonText"></div>
-
-</div>
-
-
-<div class="lesson-card">
-
-<h3>✏️ Worked Examples</h3>
-
-<div id="exampleText"></div>
-
-</div>
-
-
-<div class="lesson-card">
-
-<h3>📝 Practice Questions</h3>
-
-<div id="practiceText"></div>
-
-</div>
-
-
-<div class="lesson-card">
-
-<h3>✅ Answers</h3>
-
-<div id="answerText"></div>
-
-</div>
-
-
-<button class="backButton" onclick="showTopics()">
-← Back to Topics
-</button>
-
+<section id="lessonSection" class="hidden">
+    <div id="lessonContent"></div>
+    <button class="back" onclick="showTopics()">← Back to Topics</button>
 </section>
 
 </div>
-
-<footer>
-SSS Mathematics Learning Application
-</footer>
-
 
 <script>
 
-/* =====================================================
-   TOPICS 1 - 10
-===================================================== */
-
 const topics = [
-
 "Number Bases",
 "Fractions",
 "Decimals",
@@ -266,1679 +187,977 @@ const topics = [
 "Logarithms",
 "Laws of Logarithms",
 "Indices",
-"Laws of Indices"
-
+"Laws of Indices",
+"Surds",
+"Simplification of Surds",
+"Sets",
+"Operations on Sets",
+"Venn Diagrams"
 ];
-
-
-/* =====================================================
-   LESSONS
-===================================================== */
 
 const lessons = {
 
+/* ================= TOPIC 1 ================= */
 
-/* =====================================================
-   1. NUMBER BASES
-===================================================== */
+"Number Bases":`
+<h2>Topic 1: Number Bases</h2>
 
-"Number Bases":{
-
-lesson:`
-
+<h3>Lesson</h3>
 <p>
-A number system uses symbols and rules to represent numbers.
-The ordinary number system we use every day is the
-<b>decimal system</b>, also called base 10.
+A number base tells us how many digits are available in a number system.
+Our ordinary counting system is called the decimal system or base 10.
+It uses the digits 0 to 9.
 </p>
 
 <p>
-Base 10 uses the digits:
-</p>
-
-<p>
-0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
-</p>
-
-<p>
-In other bases, only certain digits are allowed.
-For example, base 2 uses only 0 and 1.
-</p>
-
-<p>
-The value of a digit depends on its position.
+Other important number systems include binary (base 2), ternary (base 3),
+quinary (base 5), octal (base 8) and hexadecimal (base 16).
 </p>
 
 <div class="formula">
-In base b, place values are powers of b.
+In base n, the place values are:
+n⁰, n¹, n², n³, ...
 </div>
 
-<p>
-For example:
-</p>
-
-<p>
-243<sub>5</sub>
-</p>
-
-<p>
-has place values:
-</p>
-
-<p>
-5², 5¹, 5⁰
-</p>
-
-`,
-
-examples:`
+<h3>Worked Examples</h3>
 
 <div class="example">
-
-<b>Example 1: Convert 243<sub>5</sub> to base 10.</b>
-
-<p>
-243<sub>5</sub>
-</p>
-
-<p>
-= 2(5²) + 4(5¹) + 3(5⁰)
-</p>
-
-<p>
-= 2(25) + 4(5) + 3
-</p>
-
-<p>
-= 50 + 20 + 3
-</p>
-
-<p>
-<b>= 73<sub>10</sub></b>
-</p>
-
+<b>Example 1:</b> Convert 1011₂ to base 10.<br><br>
+1011₂ = (1×2³)+(0×2²)+(1×2¹)+(1×2⁰)<br>
+= 8+0+2+1<br>
+= <b>11₁₀</b>
 </div>
-
 
 <div class="example">
-
-<b>Example 2: Convert 1011<sub>2</sub> to base 10.</b>
-
-<p>
-= 1(2³) + 0(2²) + 1(2¹) + 1(2⁰)
-</p>
-
-<p>
-= 8 + 0 + 2 + 1
-</p>
-
-<p>
-<b>= 11<sub>10</sub></b>
-</p>
-
+<b>Example 2:</b> Convert 25₁₀ to base 2.<br><br>
+25 ÷ 2 = 12 remainder 1<br>
+12 ÷ 2 = 6 remainder 0<br>
+6 ÷ 2 = 3 remainder 0<br>
+3 ÷ 2 = 1 remainder 1<br>
+1 ÷ 2 = 0 remainder 1<br><br>
+Read the remainders from bottom to top:<br>
+<b>25₁₀ = 11001₂</b>
 </div>
-
 
 <div class="example">
-
-<b>Example 3: Convert 25<sub>10</sub> to base 2.</b>
-
-<p>
-25 ÷ 2 = 12 remainder 1
-</p>
-
-<p>
-12 ÷ 2 = 6 remainder 0
-</p>
-
-<p>
-6 ÷ 2 = 3 remainder 0
-</p>
-
-<p>
-3 ÷ 2 = 1 remainder 1
-</p>
-
-<p>
-1 ÷ 2 = 0 remainder 1
-</p>
-
-<p>
-Read the remainders from bottom to top.
-</p>
-
-<p>
-<b>25<sub>10</sub> = 11001<sub>2</sub></b>
-</p>
-
+<b>Example 3:</b> Add 1011₂ and 110₂.<br><br>
+&nbsp;&nbsp;1011<br>
++&nbsp;0110<br>
+= 10001₂<br><br>
+Therefore, <b>1011₂ + 110₂ = 10001₂</b>.
 </div>
 
+<h3>Practice Questions</h3>
+<div class="question">1. Convert 1101₂ to base 10.</div>
+<div class="question">2. Convert 18₁₀ to base 2.</div>
+<div class="question">3. Convert 123₄ to base 10.</div>
+<div class="question">4. Add 101₂ + 11₂.</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 13₁₀<br>
+2. 10010₂<br>
+3. 27₁₀<br>
+4. 1000₂
+</div>
 `,
 
-practice:`
+/* ================= TOPIC 2 ================= */
 
-<div class="question"><b>1.</b> Convert 321<sub>4</sub> to base 10.</div>
+"Fractions":`
+<h2>Topic 2: Fractions</h2>
 
-<div class="question"><b>2.</b> Convert 1101<sub>2</sub> to base 10.</div>
-
-<div class="question"><b>3.</b> Convert 35<sub>10</sub> to base 2.</div>
-
-<div class="question"><b>4.</b> Convert 234<sub>5</sub> to base 10.</div>
-
-<div class="question"><b>5.</b> Convert 18<sub>10</sub> to base 3.</div>
-
-`,
-
-answers:`
-
-<div class="answer">
-<b>1.</b>
-321<sub>4</sub>
-= 3(16)+2(4)+1
-= 48+8+1
-= <b>57<sub>10</sub></b>
-</div>
-
-<div class="answer">
-<b>2.</b>
-1101<sub>2</sub>
-= 8+4+0+1
-= <b>13<sub>10</sub></b>
-</div>
-
-<div class="answer">
-<b>3.</b>
-35<sub>10</sub>
-= <b>100011<sub>2</sub></b>
-</div>
-
-<div class="answer">
-<b>4.</b>
-234<sub>5</sub>
-= 2(25)+3(5)+4
-= 50+15+4
-= <b>69<sub>10</sub></b>
-</div>
-
-<div class="answer">
-<b>5.</b>
-18<sub>10</sub>
-= <b>200<sub>3</sub></b>
-</div>
-
-`
-
-},
-
-
-/* =====================================================
-   2. FRACTIONS
-===================================================== */
-
-"Fractions":{
-
-lesson:`
-
+<h3>Lesson</h3>
 <p>
-A fraction represents a part of a whole.
-</p>
-
-<p>
-The upper number is called the <b>numerator</b>, while the lower
-number is called the <b>denominator</b>.
-</p>
-
-<p>
-For example, in 3/5:
-</p>
-
-<p>
-3 is the numerator and 5 is the denominator.
-</p>
-
-<p>
-Fractions can be proper, improper or mixed numbers.
+A fraction represents part of a whole. The top number is the numerator
+and the bottom number is the denominator.
 </p>
 
 <div class="formula">
-To add or subtract fractions, use a common denominator.
+Fraction = Numerator / Denominator
 </div>
 
-<div class="formula">
-To divide fractions, multiply by the reciprocal of the divisor.
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Add 2/3 + 1/6.<br><br>
+LCM of 3 and 6 = 6.<br>
+2/3 = 4/6<br>
+Therefore:<br>
+4/6 + 1/6 = <b>5/6</b>
 </div>
 
+<div class="example">
+<b>Example 2:</b> Subtract 5/6 − 1/4.<br><br>
+LCM = 12.<br>
+5/6 = 10/12<br>
+1/4 = 3/12<br>
+10/12 − 3/12 = <b>7/12</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Multiply 3/5 × 10/9.<br><br>
+(3×10)/(5×9) = 30/45<br>
+= <b>2/3</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b> Divide 3/4 by 2/5.<br><br>
+3/4 ÷ 2/5 = 3/4 × 5/2<br>
+= 15/8<br>
+= <b>1 7/8</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. 1/2 + 1/4</div>
+<div class="question">2. 7/8 − 1/4</div>
+<div class="question">3. 2/3 × 9/4</div>
+<div class="question">4. 5/6 ÷ 10/9</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 3/4<br>
+2. 5/8<br>
+3. 3/2 = 1 1/2<br>
+4. 3/4
+</div>
 `,
 
-examples:`
+/* ================= TOPIC 3 ================= */
+
+"Decimals":`
+<h2>Topic 3: Decimals</h2>
+
+<h3>Lesson</h3>
+<p>
+Decimals are numbers expressed using a decimal point. The digits after
+the decimal point represent tenths, hundredths, thousandths and so on.
+</p>
+
+<h3>Worked Examples</h3>
 
 <div class="example">
-
-<b>Example 1: Simplify 18/24.</b>
-
-<p>
-HCF of 18 and 24 = 6.
-</p>
-
-<p>
-18 ÷ 6 = 3
-</p>
-
-<p>
-24 ÷ 6 = 4
-</p>
-
-<p>
-Therefore:
-</p>
-
-<p>
-<b>18/24 = 3/4</b>
-</p>
-
+<b>Example 1:</b> Add 12.45 + 3.7.<br><br>
+12.45<br>
++3.70<br>
+= <b>16.15</b>
 </div>
-
 
 <div class="example">
-
-<b>Example 2: Find 2/3 + 1/4.</b>
-
-<p>
-LCM of 3 and 4 = 12.
-</p>
-
-<p>
-2/3 = 8/12
-</p>
-
-<p>
-1/4 = 3/12
-</p>
-
-<p>
-Therefore:
-</p>
-
-<p>
-8/12 + 3/12 = <b>11/12</b>
-</p>
-
+<b>Example 2:</b> Multiply 2.4 × 0.5.<br><br>
+24 × 5 = 120.<br>
+There are two decimal places altogether.<br>
+Therefore = <b>1.20 = 1.2</b>
 </div>
-
 
 <div class="example">
-
-<b>Example 3: Find 5/6 − 1/4.</b>
-
-<p>
-LCM = 12.
-</p>
-
-<p>
-5/6 = 10/12
-</p>
-
-<p>
-1/4 = 3/12
-</p>
-
-<p>
-10/12 − 3/12
-= <b>7/12</b>
-</p>
-
+<b>Example 3:</b> Divide 6.4 by 0.8.<br><br>
+Multiply both numbers by 10:<br>
+64 ÷ 8 = <b>8</b>
 </div>
 
+<h3>Practice Questions</h3>
+<div class="question">1. 4.25 + 2.7</div>
+<div class="question">2. 9.6 − 3.85</div>
+<div class="question">3. 1.2 × 0.4</div>
+<div class="question">4. 7.5 ÷ 0.5</div>
 
-<div class="example">
-
-<b>Example 4: Find 3/5 × 10/9.</b>
-
-<p>
-= 30/45
-</p>
-
-<p>
-Divide by 15:
-</p>
-
-<p>
-<b>= 2/3</b>
-</p>
-
+<h3>Answers</h3>
+<div class="answer">
+1. 6.95<br>
+2. 5.75<br>
+3. 0.48<br>
+4. 15
 </div>
-
-
-<div class="example">
-
-<b>Example 5: Find 3/4 ÷ 2/5.</b>
-
-<p>
-Take the reciprocal of 2/5:
-</p>
-
-<p>
-5/2
-</p>
-
-<p>
-Therefore:
-</p>
-
-<p>
-3/4 × 5/2
-= 15/8
-</p>
-
-<p>
-<b>= 1 7/8</b>
-</p>
-
-</div>
-
 `,
 
-practice:`
+/* ================= TOPIC 4 ================= */
 
-<div class="question"><b>1.</b> Simplify 20/30.</div>
+"Approximation":`
+<h2>Topic 4: Approximation</h2>
 
-<div class="question"><b>2.</b> Find 1/2 + 1/3.</div>
-
-<div class="question"><b>3.</b> Find 5/8 − 1/4.</div>
-
-<div class="question"><b>4.</b> Find 2/3 × 9/10.</div>
-
-<div class="question"><b>5.</b> Find 4/5 ÷ 2/3.</div>
-
-`,
-
-answers:`
-
-<div class="answer">
-<b>1.</b>
-20/30 = <b>2/3</b>
-</div>
-
-<div class="answer">
-<b>2.</b>
-1/2 + 1/3
-= 3/6 + 2/6
-= <b>5/6</b>
-</div>
-
-<div class="answer">
-<b>3.</b>
-5/8 − 1/4
-= 5/8 − 2/8
-= <b>3/8</b>
-</div>
-
-<div class="answer">
-<b>4.</b>
-2/3 × 9/10
-= 18/30
-= <b>3/5</b>
-</div>
-
-<div class="answer">
-<b>5.</b>
-4/5 ÷ 2/3
-= 4/5 × 3/2
-= 12/10
-= <b>6/5 = 1 1/5</b>
-</div>
-
-`
-
-},
-
-
-/* =====================================================
-   3. DECIMALS
-===================================================== */
-
-"Decimals":{
-
-lesson:`
-
+<h3>Lesson</h3>
 <p>
-Decimals are another way of representing fractions and parts of
-a whole.
+Approximation means giving a number in a simpler form while keeping it
+close to its original value.
 </p>
 
 <p>
-The first digit after the decimal point represents tenths.
-The second represents hundredths and the third represents
-thousandths.
+Common forms are rounding to the nearest whole number, decimal place
+and significant figure.
+</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Round 47.63 to the nearest whole number.<br><br>
+The decimal digit is 6. Since 6 ≥ 5, increase 47 by 1.<br>
+Answer = <b>48</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Round 3.746 to 2 decimal places.<br><br>
+The first two decimal places are 74.<br>
+The next digit is 6, so 74 becomes 75.<br>
+Answer = <b>3.75</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Round 0.006784 to 2 significant figures.<br><br>
+The first two significant figures are 6 and 7.<br>
+The next digit is 8, so 67 becomes 68.<br>
+Answer = <b>0.0068</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Round 83.7 to the nearest whole number.</div>
+<div class="question">2. Round 12.468 to 2 decimal places.</div>
+<div class="question">3. Round 4567 to 2 significant figures.</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 84<br>
+2. 12.47<br>
+3. 4600
+</div>
+`,
+
+/* ================= TOPIC 5 ================= */
+
+"Estimation":`
+<h2>Topic 5: Estimation</h2>
+
+<h3>Lesson</h3>
+<p>
+Estimation involves replacing numbers by convenient approximate values
+so that calculations can be done quickly.
+</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Estimate 49.8 × 20.2.<br><br>
+49.8 ≈ 50<br>
+20.2 ≈ 20<br>
+Therefore:<br>
+50 × 20 = <b>1000</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Estimate 398 ÷ 19.7.<br><br>
+398 ≈ 400<br>
+19.7 ≈ 20<br>
+400 ÷ 20 = <b>20</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Estimate 19.7 + 31.2 + 48.9.<br><br>
+≈ 20 + 30 + 50<br>
+= <b>100</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Estimate 61.2 × 9.8.</div>
+<div class="question">2. Estimate 503 ÷ 25.1.</div>
+<div class="question">3. Estimate 18.9 + 42.1 + 39.2.</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 600<br>
+2. 20<br>
+3. 100
+</div>
+`,
+
+/* ================= TOPIC 6 ================= */
+
+"Standard Form":`
+<h2>Topic 6: Standard Form</h2>
+
+<h3>Lesson</h3>
+<p>
+Standard form expresses a number as:
 </p>
 
 <div class="formula">
-0.1 = 1/10
+a × 10ⁿ, where 1 ≤ a &lt; 10
 </div>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Write 450000 in standard form.<br><br>
+Move the decimal point 5 places left:<br>
+450000 = <b>4.5 × 10⁵</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Write 0.00072 in standard form.<br><br>
+Move the decimal point 4 places right:<br>
+0.00072 = <b>7.2 × 10⁻⁴</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Calculate (3 × 10⁴)(2 × 10³).<br><br>
+= 6 × 10⁷<br>
+Answer = <b>6 × 10⁷</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Express 72000 in standard form.</div>
+<div class="question">2. Express 0.0056 in standard form.</div>
+<div class="question">3. Calculate (4×10³)(5×10²).</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 7.2 × 10⁴<br>
+2. 5.6 × 10⁻³<br>
+3. 2 × 10⁶
+</div>
+`,
+
+/* ================= TOPIC 7 ================= */
+
+"Logarithms":`
+<h2>Topic 7: Logarithms</h2>
+
+<h3>Lesson</h3>
+<p>
+A logarithm is another way of expressing an index.
+</p>
 
 <div class="formula">
-0.01 = 1/100
+If aˣ = N, then logₐN = x
 </div>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Evaluate log₂8.<br><br>
+2³ = 8<br>
+Therefore log₂8 = <b>3</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Evaluate log₁₀1000.<br><br>
+10³ = 1000<br>
+Therefore log₁₀1000 = <b>3</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Solve log₂x = 5.<br><br>
+Convert to index form:<br>
+x = 2⁵<br>
+x = <b>32</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Find log₂16.</div>
+<div class="question">2. Find log₁₀100.</div>
+<div class="question">3. Solve log₃x = 4.</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 4<br>
+2. 2<br>
+3. x = 81
+</div>
+`,
+
+/* ================= TOPIC 8 ================= */
+
+"Laws of Logarithms":`
+<h2>Topic 8: Laws of Logarithms</h2>
+
+<h3>Lesson</h3>
 
 <div class="formula">
-0.001 = 1/1000
+logₐ(MN) = logₐM + logₐN
+<br><br>
+logₐ(M/N) = logₐM − logₐN
+<br><br>
+logₐ(Mⁿ) = n logₐM
 </div>
 
-<p>
-Decimals can be added, subtracted, multiplied and divided.
-</p>
+<h3>Worked Examples</h3>
 
+<div class="example">
+<b>Example 1:</b><br>
+log₂8 + log₂4<br><br>
+= log₂(8×4)<br>
+= log₂32<br>
+= <b>5</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+log₃27 − log₃9<br><br>
+= log₃(27/9)<br>
+= log₃3<br>
+= <b>1</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b><br>
+2log₁₀5 = log₁₀(5²)<br>
+= log₁₀25
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. log₂4 + log₂8</div>
+<div class="question">2. log₅25 − log₅5</div>
+<div class="question">3. 3log₂4</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 5<br>
+2. 1<br>
+3. 6
+</div>
 `,
 
-examples:`
+/* ================= TOPIC 9 ================= */
+
+"Indices":`
+<h2>Topic 9: Indices</h2>
+
+<h3>Lesson</h3>
+<p>
+An index shows how many times a number is multiplied by itself.
+</p>
+
+<h3>Worked Examples</h3>
 
 <div class="example">
-
-<b>Example 1: Convert 0.75 to a fraction.</b>
-
-<p>
-0.75 = 75/100
-</p>
-
-<p>
-Divide by 25:
-</p>
-
-<p>
-75 ÷ 25 = 3
-</p>
-
-<p>
-100 ÷ 25 = 4
-</p>
-
-<p>
-<b>0.75 = 3/4</b>
-</p>
-
+<b>Example 1:</b> Evaluate 2⁵.<br><br>
+2×2×2×2×2 = <b>32</b>
 </div>
-
 
 <div class="example">
-
-<b>Example 2: Calculate 12.45 + 3.7.</b>
-
-<p>
-Write 3.7 as 3.70.
-</p>
-
-<p>
-12.45 + 3.70 = <b>16.15</b>
-</p>
-
+<b>Example 2:</b> Solve 3ˣ = 81.<br><br>
+81 = 3⁴<br>
+Therefore x = <b>4</b>
 </div>
-
 
 <div class="example">
-
-<b>Example 3: Calculate 2.5 × 0.4.</b>
-
-<p>
-25 × 4 = 100.
-</p>
-
-<p>
-There are two decimal places altogether.
-</p>
-
-<p>
-Therefore:
-</p>
-
-<p>
-<b>2.5 × 0.4 = 1</b>
-</p>
-
+<b>Example 3:</b> Solve 2ˣ = 16.<br><br>
+16 = 2⁴<br>
+Therefore x = <b>4</b>
 </div>
 
+<h3>Practice Questions</h3>
+<div class="question">1. Evaluate 5³.</div>
+<div class="question">2. Solve 2ˣ = 32.</div>
+<div class="question">3. Solve 5ˣ = 125.</div>
 
-<div class="example">
-
-<b>Example 4: Calculate 6.4 ÷ 0.8.</b>
-
-<p>
-Multiply both numbers by 10:
-</p>
-
-<p>
-6.4 ÷ 0.8
-= 64 ÷ 8
-</p>
-
-<p>
-<b>= 8</b>
-</p>
-
+<h3>Answers</h3>
+<div class="answer">
+1. 125<br>
+2. x = 5<br>
+3. x = 3
 </div>
-
 `,
 
-practice:`
+/* ================= TOPIC 10 ================= */
 
-<div class="question"><b>1.</b> Convert 0.6 to a fraction.</div>
+"Laws of Indices":`
+<h2>Topic 10: Laws of Indices</h2>
 
-<div class="question"><b>2.</b> Calculate 4.25 + 3.6.</div>
+<h3>Lesson</h3>
 
-<div class="question"><b>3.</b> Calculate 10.5 − 2.75.</div>
+<div class="formula">
+aᵐ × aⁿ = aᵐ⁺ⁿ
+<br><br>
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ
+<br><br>
+(aᵐ)ⁿ = aᵐⁿ
+<br><br>
+a⁰ = 1
+<br><br>
+a⁻ⁿ = 1/aⁿ
+</div>
 
-<div class="question"><b>4.</b> Calculate 2.4 × 0.5.</div>
+<h3>Worked Examples</h3>
 
-<div class="question"><b>5.</b> Calculate 8.4 ÷ 0.7.</div>
+<div class="example">
+<b>Example 1:</b> Simplify 2³ × 2⁴.<br><br>
+= 2³⁺⁴<br>
+= 2⁷<br>
+= <b>128</b>
+</div>
 
-<div class="question"><b>6.</b> Convert 3/4 to a decimal.</div>
+<div class="example">
+<b>Example 2:</b> Simplify 5⁷ ÷ 5³.<br><br>
+= 5⁷⁻³<br>
+= 5⁴<br>
+= <b>625</b>
+</div>
 
+<div class="example">
+<b>Example 3:</b> Simplify (3²)³.<br><br>
+= 3⁶<br>
+= <b>729</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Simplify 4² × 4³.</div>
+<div class="question">2. Simplify 7⁶ ÷ 7².</div>
+<div class="question">3. Simplify (2³)².</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 4⁵ = 1024<br>
+2. 7⁴ = 2401<br>
+3. 2⁶ = 64
+</div>
 `,
 
-answers:`
+/* ================= TOPIC 11 ================= */
 
-<div class="answer">
-<b>1.</b>
-0.6 = 6/10 = <b>3/5</b>
-</div>
+"Surds":`
+<h2>Topic 11: Surds</h2>
 
-<div class="answer">
-<b>2.</b>
-4.25 + 3.60 = <b>7.85</b>
-</div>
-
-<div class="answer">
-<b>3.</b>
-10.50 − 2.75 = <b>7.75</b>
-</div>
-
-<div class="answer">
-<b>4.</b>
-2.4 × 0.5 = <b>1.2</b>
-</div>
-
-<div class="answer">
-<b>5.</b>
-8.4 ÷ 0.7 = <b>12</b>
-</div>
-
-<div class="answer">
-<b>6.</b>
-3/4 = <b>0.75</b>
-</div>
-
-`
-
-},
-
-
-/* =====================================================
-   4. APPROXIMATION
-===================================================== */
-
-"Approximation":{
-
-lesson:`
-
+<h3>Lesson</h3>
 <p>
-Approximation means finding a value that is close to the exact
-value of a number.
+A surd is an irrational root which cannot be simplified to a whole
+number or terminating decimal.
+Examples include √2, √3 and √5.
 </p>
 
 <p>
-Numbers may be approximated to:
+Surds are useful because exact values can be retained instead of using
+rounded decimal answers.
 </p>
 
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Is √2 a surd?<br><br>
+√2 cannot be expressed exactly as a rational number.<br>
+Therefore <b>√2 is a surd.</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Simplify √50.<br><br>
+50 = 25 × 2<br>
+√50 = √25 × √2<br>
+= 5√2<br>
+Therefore <b>√50 = 5√2</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Simplify √12.<br><br>
+12 = 4 × 3<br>
+√12 = √4 × √3<br>
+= <b>2√3</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b> Simplify 3√2 + 5√2.<br><br>
+They are like surds.<br>
+= (3+5)√2<br>
+= <b>8√2</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Simplify √18.</div>
+<div class="question">2. Simplify √75.</div>
+<div class="question">3. Simplify 4√3 + 2√3.</div>
+<div class="question">4. Simplify 7√5 − 3√5.</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 3√2<br>
+2. 5√3<br>
+3. 6√3<br>
+4. 4√5
+</div>
+`,
+
+/* ================= TOPIC 12 ================= */
+
+"Simplification of Surds":`
+<h2>Topic 12: Simplification of Surds</h2>
+
+<h3>Lesson</h3>
+<p>
+To simplify a surd, factor the number inside the square root and look
+for the largest perfect-square factor.
+</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b> Simplify √72.<br><br>
+72 = 36 × 2<br>
+√72 = √36 × √2<br>
+= <b>6√2</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b> Simplify √108.<br><br>
+108 = 36 × 3<br>
+√108 = 6√3<br>
+Therefore <b>√108 = 6√3</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b> Simplify √8 + √18.<br><br>
+√8 = 2√2<br>
+√18 = 3√2<br>
+Therefore:<br>
+2√2 + 3√2 = <b>5√2</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b> Rationalize 1/√3.<br><br>
+Multiply numerator and denominator by √3:<br>
+(1×√3)/(√3×√3)<br>
+= <b>√3/3</b>
+</div>
+
+<div class="example">
+<b>Example 5:</b> Simplify √2 × √8.<br><br>
+= √16<br>
+= <b>4</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Simplify √48.</div>
+<div class="question">2. Simplify √200.</div>
+<div class="question">3. Simplify √12 + √27.</div>
+<div class="question">4. Rationalize 1/√5.</div>
+<div class="question">5. Simplify √3 × √12.</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. 4√3<br>
+2. 10√2<br>
+3. 5√3<br>
+4. √5/5<br>
+5. 6
+</div>
+`,
+
+/* ================= TOPIC 13 ================= */
+
+"Sets":`
+<h2>Topic 13: Sets</h2>
+
+<h3>Lesson</h3>
+<p>
+A set is a well-defined collection of objects. The objects in a set are
+called elements or members.
+</p>
+
+<p>
+Sets are usually represented using capital letters such as A, B and C.
+</p>
+
+<div class="formula">
+Example: A = {2,4,6,8,10}
+</div>
+
+<p>
+Here, 2, 4, 6, 8 and 10 are members of set A.
+</p>
+
+<h3>Types of Sets</h3>
 <ul>
-<li>nearest whole number</li>
-<li>nearest tenth</li>
-<li>nearest hundredth</li>
-<li>nearest thousand</li>
-<li>significant figures</li>
+<li><b>Empty set:</b> A set containing no element.</li>
+<li><b>Finite set:</b> A set with a limited number of elements.</li>
+<li><b>Infinite set:</b> A set that continues indefinitely.</li>
+<li><b>Universal set:</b> The set containing all objects under consideration.</li>
+<li><b>Subset:</b> A set whose elements are all contained in another set.</li>
 </ul>
 
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+A = {1,2,3,4,5}.<br>
+Is 3 a member of A?<br><br>
+Yes. Therefore <b>3 ∈ A</b>.
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+A = {1,2,3} and B = {1,2,3,4,5}.<br><br>
+Every element of A is in B.<br>
+Therefore <b>A is a subset of B</b>.
+</div>
+
+<div class="example">
+<b>Example 3:</b><br>
+Let U = {1,2,3,4,5,6,7,8,9,10}.<br>
+A = {2,4,6,8,10}.<br><br>
+The complement of A is:<br>
+A' = <b>{1,3,5,7,9}</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">1. Write the set of even numbers less than 10.</div>
+<div class="question">2. If A={1,2,3}, is 4 ∈ A?</div>
+<div class="question">3. If U={1,2,3,4,5} and A={2,4}, find A'. </div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. {2,4,6,8}<br>
+2. No<br>
+3. {1,3,5}
+</div>
+`,
+
+/* ================= TOPIC 14 ================= */
+
+"Operations on Sets":`
+<h2>Topic 14: Operations on Sets</h2>
+
+<h3>Lesson</h3>
+
+<p>
+The main operations on sets are union, intersection, difference and
+complement.
+</p>
+
 <div class="formula">
-If the next digit is 5 or greater, increase the required digit by 1.
+A ∪ B = elements in A or B or both
+<br><br>
+A ∩ B = elements common to A and B
 </div>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<b>Example 1:</b><br>
+A = {1,2,3,4}<br>
+B = {3,4,5,6}<br><br>
+
+A ∪ B = <b>{1,2,3,4,5,6}</b><br>
+A ∩ B = <b>{3,4}</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b><br>
+A = {2,4,6,8}<br>
+B = {2,3,5,7}<br><br>
+
+A ∩ B = <b>{2}</b>
+</div>
+
+<div class="example">
+<b>Example 3:</b><br>
+Using the same sets:<br><br>
+A − B = elements in A but not B.<br>
+Therefore:<br>
+A − B = <b>{4,6,8}</b>
+</div>
+
+<div class="example">
+<b>Example 4:</b><br>
+U = {1,2,3,4,5,6,7,8,9,10}<br>
+A = {2,4,6,8,10}<br><br>
+
+A' = <b>{1,3,5,7,9}</b>
+</div>
+
+<h3>Cardinality</h3>
+<p>
+The number of elements in a set is called its cardinality.
+It is written as n(A).
+</p>
+
+<div class="example">
+If A = {2,4,6,8,10}, then:<br>
+n(A) = <b>5</b>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="question">
+1. A={1,2,3,4}, B={3,4,5,6}. Find A∪B.
+</div>
+<div class="question">
+2. Find A∩B for the sets above.
+</div>
+<div class="question">
+3. Find A−B.
+</div>
+<div class="question">
+4. Find n({2,4,6,8,10,12}).
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+1. {1,2,3,4,5,6}<br>
+2. {3,4}<br>
+3. {1,2}<br>
+4. 6
+</div>
+`,
+
+/* ================= TOPIC 15 ================= */
+
+"Venn Diagrams":`
+<h2>Topic 15: Venn Diagrams</h2>
+
+<h3>Lesson</h3>
+
+<p>
+A Venn diagram is a diagram used to represent sets and relationships
+between sets.
+</p>
+
+<p>
+A rectangle normally represents the universal set while circles
+represent individual sets.
+</p>
 
 <div class="formula">
-If the next digit is less than 5, leave the required digit unchanged.
+n(A ∪ B) = n(A) + n(B) − n(A ∩ B)
 </div>
 
-`,
-
-examples:`
+<h3>Worked Examples</h3>
 
 <div class="example">
+<b>Example 1:</b><br><br>
+In a class of 40 students, 25 like Mathematics,
+18 like Physics and 10 like both subjects.
+Find the number who like at least one subject.
+<br><br>
 
-<b>Example 1: Round 7.368 to 2 decimal places.</b>
+n(M ∪ P) = 25 + 18 − 10<br>
+= <b>33</b>
+<br><br>
 
-<p>
-The second decimal digit is 6.
-</p>
-
-<p>
-The next digit is 8.
-</p>
-
-<p>
-8 is greater than 5, so 6 becomes 7.
-</p>
-
-<p>
-<b>Answer = 7.37</b>
-</p>
-
+Therefore 33 students like at least one of the subjects.
 </div>
-
 
 <div class="example">
+<b>Example 2:</b><br><br>
+Using the same information, find the number who like Mathematics only.
+<br><br>
 
-<b>Example 2: Round 45.274 to 1 decimal place.</b>
-
-<p>
-The first decimal digit is 2.
-</p>
-
-<p>
-The next digit is 7.
-</p>
-
-<p>
-Therefore 2 becomes 3.
-</p>
-
-<p>
-<b>Answer = 45.3</b>
-</p>
-
+Mathematics only = 25 − 10<br>
+= <b>15</b>
 </div>
-
 
 <div class="example">
+<b>Example 3:</b><br><br>
+Find the number who like Physics only.<br><br>
 
-<b>Example 3: Round 5832 to the nearest hundred.</b>
-
-<p>
-The hundreds digit is 8.
-</p>
-
-<p>
-The next digit is 3.
-</p>
-
-<p>
-3 is less than 5.
-</p>
-
-<p>
-<b>Answer = 5800</b>
-</p>
-
+Physics only = 18 − 10<br>
+= <b>8</b>
 </div>
-
 
 <div class="example">
+<b>Example 4:</b><br><br>
+Find the number who like neither subject.<br><br>
 
-<b>Example 4: Round 0.006784 to 2 significant figures.</b>
-
-<p>
-The first two significant digits are 6 and 7.
-</p>
-
-<p>
-The next digit is 8.
-</p>
-
-<p>
-Therefore 7 becomes 8.
-</p>
-
-<p>
-<b>Answer = 0.0068</b>
-</p>
-
+At least one = 33<br>
+Total = 40<br>
+Neither = 40 − 33<br>
+= <b>7</b>
 </div>
 
-`,
+<h3>Summary of the Example</h3>
 
-practice:`
+<ul>
+<li>Mathematics only = 15</li>
+<li>Both = 10</li>
+<li>Physics only = 8</li>
+<li>Neither = 7</li>
+<li>Total = 40</li>
+</ul>
 
-<div class="question"><b>1.</b> Round 8.764 to 2 decimal places.</div>
+<h3>Practice Questions</h3>
 
-<div class="question"><b>2.</b> Round 15.638 to 1 decimal place.</div>
+<div class="question">
+1. In a group of 50 students, 30 study Mathematics,
+25 study Biology and 15 study both. Find the number studying at least one.
+</div>
 
-<div class="question"><b>3.</b> Round 4927 to the nearest hundred.</div>
+<div class="question">
+2. Using the information above, find the number studying Mathematics only.
+</div>
 
-<div class="question"><b>4.</b> Round 63841 to the nearest thousand.</div>
+<div class="question">
+3. Find the number studying Biology only.
+</div>
 
-<div class="question"><b>5.</b> Round 0.004763 to 2 significant figures.</div>
+<div class="question">
+4. Find the number studying neither subject.
+</div>
 
-<div class="question"><b>6.</b> Round 999.6 to the nearest whole number.</div>
+<div class="question">
+5. If n(A)=35, n(B)=20 and n(A∩B)=8, find n(A∪B).
+</div>
 
-`,
+<h3>Answers</h3>
 
-answers:`
+<div class="answer">
+1. 30 + 25 − 15 = <b>40</b><br><br>
 
-<div class="answer"><b>1.</b> <b>8.76</b></div>
+2. 30 − 15 = <b>15</b><br><br>
 
-<div class="answer"><b>2.</b> <b>15.6</b></div>
+3. 25 − 15 = <b>10</b><br><br>
 
-<div class="answer"><b>3.</b> <b>4900</b></div>
+4. 50 − 40 = <b>10</b><br><br>
 
-<div class="answer"><b>4.</b> <b>64000</b></div>
-
-<div class="answer"><b>5.</b> <b>0.0048</b></div>
-
-<div class="answer"><b>6.</b> <b>1000</b></div>
-
+5. 35 + 20 − 8 = <b>47</b>
+</div>
 `
-
-},
-
-
-/* =====================================================
-   5. ESTIMATION
-===================================================== */
-
-"Estimation":{
-
-lesson:`
-
-<p>
-Estimation is the process of obtaining an approximate answer by
-rounding numbers before performing a calculation.
-</p>
-
-<p>
-Estimation is useful for checking whether a calculated answer is
-reasonable.
-</p>
-
-<div class="formula">
-Round the numbers first, then perform the calculation.
-</div>
-
-<p>
-For example, 48 is approximately 50 and 21 is approximately 20.
-</p>
-
-`,
-
-examples:`
-
-<div class="example">
-
-<b>Example 1: Estimate 48 × 21.</b>
-
-<p>
-48 ≈ 50
-</p>
-
-<p>
-21 ≈ 20
-</p>
-
-<p>
-Therefore:
-</p>
-
-<p>
-50 × 20 = <b>1000</b>
-</p>
-
-</div>
-
-
-<div class="example">
-
-<b>Example 2: Estimate 397 + 204.</b>
-
-<p>
-397 ≈ 400
-</p>
-
-<p>
-204 ≈ 200
-</p>
-
-<p>
-400 + 200 = <b>600</b>
-</p>
-
-</div>
-
-
-<div class="example">
-
-<b>Example 3: Estimate 798 ÷ 19.</b>
-
-<p>
-798 ≈ 800
-</p>
-
-<p>
-19 ≈ 20
-</p>
-
-<p>
-800 ÷ 20 = <b>40</b>
-</p>
-
-</div>
-
-
-<div class="example">
-
-<b>Example 4: Check whether 29 × 41 = 1189 is reasonable.</b>
-
-<p>
-29 ≈ 30
-</p>
-
-<p>
-41 ≈ 40
-</p>
-
-<p>
-30 × 40 = 1200
-</p>
-
-<p>
-1189 is close to 1200.
-</p>
-
-<p>
-Therefore the answer is <b>reasonable</b>.
-</p>
-
-</div>
-
-`,
-
-practice:`
-
-<div class="question"><b>1.</b> Estimate 49 × 19.</div>
-
-<div class="question"><b>2.</b> Estimate 203 + 398.</div>
-
-<div class="question"><b>3.</b> Estimate 602 − 197.</div>
-
-<div class="question"><b>4.</b> Estimate 799 ÷ 20.</div>
-
-<div class="question"><b>5.</b> Estimate 51 × 29.</div>
-
-<div class="question"><b>6.</b> Estimate 9.8 × 4.1.</div>
-
-`,
-
-answers:`
-
-<div class="answer">
-<b>1.</b>
-50 × 20 = <b>1000</b>
-</div>
-
-<div class="answer">
-<b>2.</b>
-200 + 400 = <b>600</b>
-</div>
-
-<div class="answer">
-<b>3.</b>
-600 − 200 = <b>400</b>
-</div>
-
-<div class="answer">
-<b>4.</b>
-800 ÷ 20 = <b>40</b>
-</div>
-
-<div class="answer">
-<b>5.</b>
-50 × 30 = <b>1500</b>
-</div>
-
-<div class="answer">
-<b>6.</b>
-10 × 4 = <b>40</b>
-</div>
-
-`
-
-},
-
-
-/* =====================================================
-   6. STANDARD FORM
-===================================================== */
-
-"Standard Form":{
-
-lesson:`
-
-<p>
-Standard form is used to write very large and very small numbers
-in a convenient form.
-</p>
-
-<div class="formula">
-a × 10<sup>n</sup>, where 1 ≤ a &lt; 10.
-</div>
-
-<p>
-For large numbers, n is positive.
-For small numbers, n is negative.
-</p>
-
-`,
-
-examples:`
-
-<div class="example">
-<b>Example 1: Write 56,000 in standard form.</b>
-<p>Move the decimal point 4 places left:</p>
-<p>56,000 → 5.6</p>
-<p><b>56,000 = 5.6 × 10<sup>4</sup></b></p>
-</div>
-
-<div class="example">
-<b>Example 2: Write 0.00072 in standard form.</b>
-<p>Move the decimal point 4 places right:</p>
-<p><b>0.00072 = 7.2 × 10<sup>−4</sup></b></p>
-</div>
-
-<div class="example">
-<b>Example 3: Calculate (3 × 10<sup>4</sup>)(2 × 10<sup>3</sup>).</b>
-<p>3 × 2 = 6</p>
-<p>4 + 3 = 7</p>
-<p><b>= 6 × 10<sup>7</sup></b></p>
-</div>
-
-<div class="example">
-<b>Example 4: Calculate (8 × 10<sup>6</sup>) ÷ (2 × 10<sup>2</sup>).</b>
-<p>8 ÷ 2 = 4</p>
-<p>6 − 2 = 4</p>
-<p><b>= 4 × 10<sup>4</sup></b></p>
-</div>
-
-`,
-
-practice:`
-
-<div class="question"><b>1.</b> Express 34,000 in standard form.</div>
-<div class="question"><b>2.</b> Express 0.0056 in standard form.</div>
-<div class="question"><b>3.</b> Calculate (4 × 10<sup>3</sup>)(5 × 10<sup>2</sup>).</div>
-<div class="question"><b>4.</b> Calculate (9 × 10<sup>7</sup>) ÷ (3 × 10<sup>2</sup>).</div>
-
-`,
-
-answers:`
-
-<div class="answer">
-<b>1.</b>
-<b>3.4 × 10<sup>4</sup></b>
-</div>
-
-<div class="answer">
-<b>2.</b>
-<b>5.6 × 10<sup>−3</sup></b>
-</div>
-
-<div class="answer">
-<b>3.</b>
-20 × 10<sup>5</sup>
-= <b>2 × 10<sup>6</sup></b>
-</div>
-
-<div class="answer">
-<b>4.</b>
-3 × 10<sup>5</sup>
-= <b>3 × 10<sup>5</sup></b>
-</div>
-
-`
-
-},
-
-
-/* =====================================================
-   7. LOGARITHMS
-===================================================== */
-
-"Logarithms":{
-
-lesson:`
-
-<p>
-A logarithm is another way of writing an index.
-</p>
-
-<div class="formula">
-If a<sup>x</sup> = N, then log<sub>a</sub>N = x.
-</div>
-
-<p>
-For example:
-</p>
-
-<p>
-2<sup>3</sup> = 8
-</p>
-
-<p>
-Therefore:
-</p>
-
-<p>
-<b>log<sub>2</sub>8 = 3</b>
-</p>
-
-<p>
-Common logarithms use base 10.
-</p>
-
-`,
-
-examples:`
-
-<div class="example">
-<b>Example 1: Evaluate log<sub>2</sub>16.</b>
-<p>2<sup>4</sup> = 16.</p>
-<p><b>log<sub>2</sub>16 = 4</b></p>
-</div>
-
-<div class="example">
-<b>Example 2: Evaluate log<sub>3</sub>81.</b>
-<p>3<sup>4</sup> = 81.</p>
-<p><b>log<sub>3</sub>81 = 4</b></p>
-</div>
-
-<div class="example">
-<b>Example 3: Solve log<sub>5</sub>x = 3.</b>
-<p>Convert to exponential form:</p>
-<p>x = 5<sup>3</sup></p>
-<p><b>x = 125</b></p>
-</div>
-
-<div class="example">
-<b>Example 4: Solve log<sub>2</sub>x = 5.</b>
-<p>x = 2<sup>5</sup></p>
-<p><b>x = 32</b></p>
-</div>
-
-`,
-
-practice:`
-
-<div class="question"><b>1.</b> Evaluate log<sub>2</sub>32.</div>
-<div class="question"><b>2.</b> Evaluate log<sub>3</sub>27.</div>
-<div class="question"><b>3.</b> Evaluate log 1000.</div>
-<div class="question"><b>4.</b> Solve log<sub>4</sub>x = 3.</div>
-<div class="question"><b>5.</b> If 2<sup>x</sup> = 64, find x.</div>
-
-`,
-
-answers:`
-
-<div class="answer"><b>1.</b> <b>5</b></div>
-<div class="answer"><b>2.</b> <b>3</b></div>
-<div class="answer"><b>3.</b> <b>3</b></div>
-<div class="answer"><b>4.</b> x = 4³ = <b>64</b></div>
-<div class="answer"><b>5.</b> x = <b>6</b></div>
-
-`
-
-},
-
-
-/* =====================================================
-   8. LAWS OF LOGARITHMS
-===================================================== */
-
-"Laws of Logarithms":{
-
-lesson:`
-
-<p>
-The laws of logarithms help us simplify expressions involving
-multiplication, division and powers.
-</p>
-
-<div class="formula">
-log<sub>a</sub>(MN)
-=
-log<sub>a</sub>M + log<sub>a</sub>N
-</div>
-
-<div class="formula">
-log<sub>a</sub>(M/N)
-=
-log<sub>a</sub>M − log<sub>a</sub>N
-</div>
-
-<div class="formula">
-log<sub>a</sub>(M<sup>n</sup>)
-=
-n log<sub>a</sub>M
-</div>
-
-`,
-
-examples:`
-
-<div class="example">
-<b>Example 1: Simplify log 2 + log 5.</b>
-<p>= log(2 × 5)</p>
-<p>= log 10</p>
-<p><b>= 1</b></p>
-</div>
-
-<div class="example">
-<b>Example 2: Simplify log 100 − log 10.</b>
-<p>= log(100 ÷ 10)</p>
-<p>= log 10</p>
-<p><b>= 1</b></p>
-</div>
-
-<div class="example">
-<b>Example 3: Express 3 log 2 as one logarithm.</b>
-<p>= log(2³)</p>
-<p>= <b>log 8</b></p>
-</div>
-
-<div class="example">
-<b>Example 4: Solve log x + log 2 = 1.</b>
-<p>log(2x) = 1</p>
-<p>Therefore:</p>
-<p>2x = 10</p>
-<p><b>x = 5</b></p>
-</div>
-
-`,
-
-practice:`
-
-<div class="question"><b>1.</b> Simplify log 4 + log 5.</div>
-<div class="question"><b>2.</b> Simplify log 1000 − log 10.</div>
-<div class="question"><b>3.</b> Express 2 log 3 as one logarithm.</div>
-<div class="question"><b>4.</b> Solve log x + log 5 = 2.</div>
-<div class="question"><b>5.</b> Solve log x − log 2 = 1.</div>
-
-`,
-
-answers:`
-
-<div class="answer">
-<b>1.</b>
-log(20)
-= <b>log 20</b>
-</div>
-
-<div class="answer">
-<b>2.</b>
-log(100)
-= <b>2</b>
-</div>
-
-<div class="answer">
-<b>3.</b>
-log(3²)
-= <b>log 9</b>
-</div>
-
-<div class="answer">
-<b>4.</b>
-log(5x)=2
-<br>
-5x=100
-<br>
-<b>x=20</b>
-</div>
-
-<div class="answer">
-<b>5.</b>
-log(x/2)=1
-<br>
-x/2=10
-<br>
-<b>x=20</b>
-</div>
-
-`
-
-},
-
-
-/* =====================================================
-   9. INDICES
-===================================================== */
-
-"Indices":{
-
-lesson:`
-
-<p>
-An index or exponent tells us how many times a number or
-quantity is multiplied by itself.
-</p>
-
-<p>
-For example:</p>
-
-<p>
-2<sup>4</sup>
-=
-2 × 2 × 2 × 2
-=
-16
-</p>
-
-<div class="formula">
-a<sup>m</sup> × a<sup>n</sup>
-=
-a<sup>m+n</sup>
-</div>
-
-<div class="formula">
-a<sup>m</sup> ÷ a<sup>n</sup>
-=
-a<sup>m−n</sup>
-</div>
-
-<div class="formula">
-(a<sup>m</sup>)<sup>n</sup>
-=
-a<sup>mn</sup>
-</div>
-
-<div class="formula">
-a<sup>0</sup> = 1
-</div>
-
-<div class="formula">
-a<sup>−n</sup> = 1/a<sup>n</sup>
-</div>
-
-`,
-
-examples:`
-
-<div class="example">
-<b>Example 1: Simplify 2³ × 2⁴.</b>
-<p>= 2<sup>3+4</sup></p>
-<p>= 2<sup>7</sup></p>
-<p><b>= 128</b></p>
-</div>
-
-<div class="example">
-<b>Example 2: Simplify 5⁶ ÷ 5².</b>
-<p>= 5<sup>6−2</sup></p>
-<p>= 5⁴</p>
-<p><b>= 625</b></p>
-</div>
-
-<div class="example">
-<b>Example 3: Simplify (3²)⁴.</b>
-<p>= 3<sup>2×4</sup></p>
-<p>= 3⁸</p>
-<p><b>= 6561</b></p>
-</div>
-
-<div class="example">
-<b>Example 4: Simplify 2<sup>−3</sup>.</b>
-<p>= 1/2³</p>
-<p><b>= 1/8</b></p>
-</div>
-
-<div class="example">
-<b>Example 5: Solve 2<sup>x</sup> = 32.</b>
-<p>32 = 2⁵</p>
-<p>Therefore:</p>
-<p>2<sup>x</sup> = 2⁵</p>
-<p><b>x = 5</b></p>
-</div>
-
-`,
-
-practice:`
-
-<div class="question"><b>1.</b> Simplify 3² × 3⁵.</div>
-<div class="question"><b>2.</b> Simplify 7⁶ ÷ 7².</div>
-<div class="question"><b>3.</b> Simplify (2³)².</div>
-<div class="question"><b>4.</b> Evaluate 5⁰.</div>
-<div class="question"><b>5.</b> Express 3⁻² as a fraction.</div>
-<div class="question"><b>6.</b> Solve 3ˣ = 81.</div>
-
-`,
-
-answers:`
-
-<div class="answer">
-<b>1.</b>
-3⁷
-= <b>2187</b>
-</div>
-
-<div class="answer">
-<b>2.</b>
-7⁴
-= <b>2401</b>
-</div>
-
-<div class="answer">
-<b>3.</b>
-2⁶
-= <b>64</b>
-</div>
-
-<div class="answer">
-<b>4.</b>
-<b>1</b>
-</div>
-
-<div class="answer">
-<b>5.</b>
-3⁻² = 1/3² = <b>1/9</b>
-</div>
-
-<div class="answer">
-<b>6.</b>
-81 = 3⁴
-<br>
-Therefore <b>x = 4</b>.
-</div>
-
-`
-
-},
-
-
-/* =====================================================
-   10. LAWS OF INDICES
-===================================================== */
-
-"Laws of Indices":{
-
-lesson:`
-
-<p>
-The laws of indices are rules used to simplify expressions
-involving powers.
-</p>
-
-<div class="formula">
-a<sup>m</sup>a<sup>n</sup>
-=
-a<sup>m+n</sup>
-</div>
-
-<div class="formula">
-a<sup>m</sup>/a<sup>n</sup>
-=
-a<sup>m−n</sup>
-</div>
-
-<div class="formula">
-(a<sup>m</sup>)<sup>n</sup>
-=
-a<sup>mn</sup>
-</div>
-
-<div class="formula">
-(ab)<sup>n</sup>
-=
-a<sup>n</sup>b<sup>n</sup>
-</div>
-
-<div class="formula">
-a<sup>−n</sup>
-=
-1/a<sup>n</sup>
-</div>
-
-<p>
-These laws can also be used to solve indicial equations.
-</p>
-
-`,
-
-examples:`
-
-<div class="example">
-<b>Example 1: Simplify x⁴ × x⁷.</b>
-<p>= x<sup>4+7</sup></p>
-<p><b>= x¹¹</b></p>
-</div>
-
-<div class="example">
-<b>Example 2: Simplify y⁹/y⁴.</b>
-<p>= y<sup>9−4</sup></p>
-<p><b>= y⁵</b></p>
-</div>
-
-<div class="example">
-<b>Example 3: Simplify (a³)⁵.</b>
-<p>= a<sup>3×5</sup></p>
-<p><b>= a¹⁵</b></p>
-</div>
-
-<div class="example">
-<b>Example 4: Simplify (2x)³.</b>
-<p>= 2³x³</p>
-<p><b>= 8x³</b></p>
-</div>
-
-<div class="example">
-<b>Example 5: Solve 5<sup>x+1</sup> = 125.</b>
-
-<p>
-125 = 5³
-</p>
-
-<p>
-Therefore:
-</p>
-
-<p>
-5<sup>x+1</sup> = 5³
-</p>
-
-<p>
-x + 1 = 3
-</p>
-
-<p>
-<b>x = 2</b>
-</p>
-
-</div>
-
-`,
-
-practice:`
-
-<div class="question"><b>1.</b> Simplify x⁵ × x³.</div>
-<div class="question"><b>2.</b> Simplify a¹⁰/a⁶.</div>
-<div class="question"><b>3.</b> Simplify (p²)⁴.</div>
-<div class="question"><b>4.</b> Simplify (3x)².</div>
-<div class="question"><b>5.</b> Simplify m⁰.</div>
-<div class="question"><b>6.</b> Simplify z⁻³.</div>
-<div class="question"><b>7.</b> Solve 2<sup>x+1</sup> = 16.</div>
-<div class="question"><b>8.</b> Solve 3<sup>2x</sup> = 81.</div>
-
-`,
-
-answers:`
-
-<div class="answer">
-<b>1.</b>
-x⁸
-</div>
-
-<div class="answer">
-<b>2.</b>
-a⁴
-</div>
-
-<div class="answer">
-<b>3.</b>
-p⁸
-</div>
-
-<div class="answer">
-<b>4.</b>
-(3x)² = 9x²
-</div>
-
-<div class="answer">
-<b>5.</b>
-m⁰ = <b>1</b>
-</div>
-
-<div class="answer">
-<b>6.</b>
-z⁻³ = <b>1/z³</b>
-</div>
-
-<div class="answer">
-<b>7.</b>
-16 = 2⁴
-<br>
-x + 1 = 4
-<br>
-<b>x = 3</b>
-</div>
-
-<div class="answer">
-<b>8.</b>
-81 = 3⁴
-<br>
-2x = 4
-<br>
-<b>x = 2</b>
-</div>
-
-`
-
-}
 
 };
 
 
-/* =====================================================
-   FUNCTIONS
-===================================================== */
+/* ================= FUNCTIONS ================= */
 
 function startLearning(){
-
-    document.getElementById("welcomeSection").style.display="none";
-
-    document.getElementById("lessonSection").style.display="none";
-
-    document.getElementById("topicsSection").style.display="block";
-
-    displayTopics();
-
+    document.getElementById("welcomeSection").classList.add("hidden");
+    showTopics();
 }
-
-
-function showWelcome(){
-
-    document.getElementById("topicsSection").style.display="none";
-
-    document.getElementById("lessonSection").style.display="none";
-
-    document.getElementById("welcomeSection").style.display="block";
-
-}
-
 
 function showTopics(){
-
-    document.getElementById("welcomeSection").style.display="none";
-
-    document.getElementById("lessonSection").style.display="none";
-
-    document.getElementById("topicsSection").style.display="block";
-
+    document.getElementById("welcomeSection").classList.add("hidden");
+    document.getElementById("lessonSection").classList.add("hidden");
+    document.getElementById("topicsSection").classList.remove("hidden");
+    displayTopics();
 }
-
 
 function displayTopics(){
+    const list = document.getElementById("topicsList");
+    list.innerHTML = "";
 
-    const list=document.getElementById("topicsList");
-
-    list.innerHTML="";
-
-    topics.forEach(function(topic,index){
-
-        const div=document.createElement("div");
-
-        div.className="topic";
-
-        div.textContent=
-            "Topic "+(index+1)+": "+topic;
-
-        div.onclick=function(){
-
+    topics.forEach((topic,index)=>{
+        const div = document.createElement("div");
+        div.className = "topic";
+        div.innerHTML = (index+1) + ". " + topic;
+        div.onclick = function(){
             openLesson(index);
-
         };
-
         list.appendChild(div);
-
     });
-
 }
-
 
 function openLesson(index){
+    const topic = topics[index];
 
-    const topic=topics[index];
+    document.getElementById("topicsSection").classList.add("hidden");
+    document.getElementById("welcomeSection").classList.add("hidden");
+    document.getElementById("lessonSection").classList.remove("hidden");
 
-    document.getElementById("welcomeSection").style.display="none";
-
-    document.getElementById("topicsSection").style.display="none";
-
-    document.getElementById("lessonSection").style.display="block";
-
-    document.getElementById("lessonTitle").textContent=
-        "Topic "+(index+1)+": "+topic;
-
-    const content=lessons[topic];
-
-    if(content){
-
-        document.getElementById("lessonText").innerHTML=
-            content.lesson;
-
-        document.getElementById("exampleText").innerHTML=
-            content.examples;
-
-        document.getElementById("practiceText").innerHTML=
-            content.practice;
-
-        document.getElementById("answerText").innerHTML=
-            content.answers;
-
-    }
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
+    document.getElementById("lessonContent").innerHTML =
+        `<div class="lesson-card">${lessons[topic]}</div>`;
 }
 
+function showWelcome(){
+    document.getElementById("topicsSection").classList.add("hidden");
+    document.getElementById("lessonSection").classList.add("hidden");
+    document.getElementById("welcomeSection").classList.remove("hidden");
+}
 
-window.onload=function(){
-
-    document.getElementById("welcomeSection").style.display="block";
-
-    document.getElementById("topicsSection").style.display="none";
-
-    document.getElementById("lessonSection").style.display="none";
-
+window.onload = function(){
+    showWelcome();
 };
 
 </script>
