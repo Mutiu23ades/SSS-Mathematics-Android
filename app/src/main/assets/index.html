@@ -1,1978 +1,313 @@
-/* =========================================================
-   TOPIC 26
-========================================================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SSS Mathematics</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f2f7ff;
+    color:#123;
+    line-height:1.6;
+}
+
+header{
+    background:#0757a6;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    margin:5px 0 0;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:15px;
+}
+
+.welcome-card,
+.lesson-card,
+.topic{
+    background:white;
+    border-radius:14px;
+    box-shadow:0 2px 8px #0002;
+}
+
+.welcome-card{
+    padding:30px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.topic{
+    padding:16px;
+    margin:10px 0;
+    cursor:pointer;
+    border-left:5px solid #0757a6;
+}
+
+.topic:hover{
+    background:#eaf3ff;
+}
+
+.lesson-card{
+    padding:20px;
+    margin-top:15px;
+}
+
+.lesson-card h2{
+    color:#0757a6;
+}
+
+.lesson-card h3{
+    color:#0757a6;
+    margin-top:25px;
+}
+
+.example{
+    background:#eef6ff;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+}
+
+.practice{
+    background:#f8fbff;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+    border-left:4px solid #0757a6;
+}
+
+.answer{
+    background:#edf9ed;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+    border-left:4px solid green;
+}
 
-lessons["Completing the Square"] = `
-<h2>Topic 26: Completing the Square</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Completing the square is a method of rewriting a quadratic expression
-in the form of a perfect square plus or minus a constant.
-</p>
-
-<div class="formula">
-x² + bx + c = (x + b/2)² − (b/2)² + c
-</div>
-
-<h3>Worked Example 1</h3>
-
-<div class="example">
-Complete the square:
-<br><br>
-x² + 6x + 5
-<br><br>
-
-Half of 6 is 3:
-<br>
-= (x+3)² − 9 + 5
-<br>
-= <strong>(x+3)² − 4</strong>.
-</div>
-
-<h3>Worked Example 2</h3>
-
-<div class="example">
-Solve:
-<br><br>
-x² + 4x − 5 = 0
-<br><br>
-
-x² + 4x = 5
-<br>
-x² + 4x + 4 = 9
-<br>
-(x+2)² = 9
-<br><br>
-
-x+2 = ±3
-<br>
-Therefore:
-<br>
-<strong>x=1 or x=−5</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Complete the square: x²+8x+3.</div>
-<div class="question">2. Complete the square: x²−10x+7.</div>
-<div class="question">3. Solve x²+6x−7=0 by completing the square.</div>
-<div class="question">4. Solve x²−4x−5=0 by completing the square.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. (x+4)²−13</div>
-<div class="answer">2. (x−5)²−18</div>
-<div class="answer">3. x=1 or −7</div>
-<div class="answer">4. x=5 or −1</div>
-`;
-
-
-/* =========================================================
-   TOPIC 27
-========================================================= */
-
-lessons["Nature of Roots"] = `
-<h2>Topic 27: Nature of Roots</h2>
-
-<h3>Lesson</h3>
-
-<p>
-For a quadratic equation:
-</p>
-
-<div class="formula">
-ax² + bx + c = 0
-</div>
-
-<p>
-the discriminant is:
-</p>
-
-<div class="formula">
-D = b² − 4ac
-</div>
-
-<p>
-The value of the discriminant tells us the nature of the roots.
-</p>
-
-<ul>
-<li><strong>D &gt; 0:</strong> two distinct real roots.</li>
-<li><strong>D = 0:</strong> two equal real roots.</li>
-<li><strong>D &lt; 0:</strong> no real roots.</li>
-</ul>
-
-<h3>Worked Example 1</h3>
-
-<div class="example">
-Determine the nature of the roots of:
-<br><br>
-x²−5x+6=0.
-<br><br>
-
-a=1, b=−5, c=6
-<br>
-D=(−5)²−4(1)(6)
-<br>
-=25−24
-<br>
-=1.
-<br><br>
-
-Since D&gt;0, the equation has:
-<br>
-<strong>two distinct real roots.</strong>
-</div>
-
-<h3>Worked Example 2</h3>
-
-<div class="example">
-Determine the nature of the roots of:
-<br><br>
-x²+4x+4=0.
-<br><br>
-
-D=4²−4(1)(4)
-<br>
-=16−16
-<br>
-=0.
-<br><br>
-
-Therefore the equation has:
-<br>
-<strong>two equal real roots.</strong>
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find the discriminant of x²+3x+2=0.</div>
-<div class="question">2. State the nature of the roots of x²+6x+9=0.</div>
-<div class="question">3. State the nature of the roots of x²+2x+5=0.</div>
-<div class="question">4. Determine the nature of the roots of 2x²−5x+2=0.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. D=1; two distinct real roots.</div>
-<div class="answer">2. D=0; two equal real roots.</div>
-<div class="answer">3. D=−16; no real roots.</div>
-<div class="answer">4. D=9; two distinct real roots.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 28
-========================================================= */
-
-lessons["Sequence"] = `
-<h2>Topic 28: Sequence</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A sequence is an ordered list of numbers that follows a particular rule
-or pattern.
-</p>
-
-<div class="example">
-2, 4, 6, 8, 10, ...
-<br><br>
-This sequence increases by 2 each time.
-</div>
-
-<h3>Terms of a Sequence</h3>
-
-<p>
-The first term is written as a₁, the second as a₂, and the nth term
-as aₙ.
-</p>
-
-<h3>Finding the nth Term</h3>
-
-<div class="example">
-Consider:
-<br><br>
-3, 6, 9, 12, 15, ...
-<br><br>
-
-The terms are multiples of 3.
-<br>
-Therefore:
-<br>
-<strong>aₙ = 3n</strong>.
-<br><br>
-
-The 10th term is:
-<br>
-a₁₀=3(10)=<strong>30</strong>.
-</div>
-
-<h3>Another Example</h3>
-
-<div class="example">
-Find the next two terms:
-<br>
-5, 9, 13, 17, ...
-<br><br>
-
-The common difference is 4.
-<br>
-Therefore the next terms are:
-<br>
-<strong>21 and 25.</strong>
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find the next two terms: 4, 8, 12, 16, ...</div>
-<div class="question">2. Find the next two terms: 20, 17, 14, 11, ...</div>
-<div class="question">3. Find the nth term of 2,4,6,8,...</div>
-<div class="question">4. Find the 15th term of the sequence 3,6,9,...</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 20, 24</div>
-<div class="answer">2. 8, 5</div>
-<div class="answer">3. 2n</div>
-<div class="answer">4. 45</div>
-`;
-
-
-/* =========================================================
-   TOPIC 29
-========================================================= */
-
-lessons["Arithmetic Progression"] = `
-<h2>Topic 29: Arithmetic Progression</h2>
-
-<h3>Lesson</h3>
-
-<p>
-An arithmetic progression (AP) is a sequence in which the difference
-between consecutive terms is constant.
-</p>
-
-<div class="formula">
-a, a+d, a+2d, a+3d, ...
-</div>
-
-<p>
-where <strong>a</strong> is the first term and <strong>d</strong> is the
-common difference.
-</p>
-
-<div class="formula">
-Tₙ = a + (n−1)d
-</div>
-
-<h3>Worked Example 1</h3>
-
-<div class="example">
-Find the 20th term of:
-<br><br>
-5, 8, 11, 14, ...
-<br><br>
-
-a=5
-<br>
-d=3
-<br>
-n=20
-<br><br>
-
-T₂₀=5+(20−1)3
-<br>
-=5+57
-<br>
-=<strong>62</strong>.
-</div>
-
-<h3>Finding the Common Difference</h3>
-
-<div class="example">
-For:
-<br>
-12, 17, 22, 27, ...
-<br><br>
-
-d=17−12=<strong>5</strong>.
-</div>
-
-<h3>Sum of an AP</h3>
-
-<div class="formula">
-Sₙ = n/2 [2a + (n−1)d]
-</div>
-
-<div class="example">
-Find the sum of the first 10 terms of:
-<br>
-2,5,8,11,...
-<br><br>
-
-a=2, d=3, n=10
-<br>
-S₁₀=10/2[4+27]
-<br>
-=5×31
-<br>
-=<strong>155</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find the 12th term of 4,7,10,...</div>
-<div class="question">2. Find the common difference of 20,16,12,8,...</div>
-<div class="question">3. Find the 25th term of 3,8,13,...</div>
-<div class="question">4. Find the sum of the first 8 terms of 2,5,8,...</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 37</div>
-<div class="answer">2. −4</div>
-<div class="answer">3. 123</div>
-<div class="answer">4. 100</div>
-`;
-
-
-/* =========================================================
-   TOPIC 30
-========================================================= */
-
-lessons["Geometric Progression"] = `
-<h2>Topic 30: Geometric Progression</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A geometric progression (GP) is a sequence in which each term is obtained
-by multiplying the preceding term by a constant number called the
-common ratio.
-</p>
-
-<div class="formula">
-a, ar, ar², ar³, ...
-</div>
-
-<p>
-The nth term is:
-</p>
-
-<div class="formula">
-Tₙ = ar<sup>n−1</sup>
-</div>
-
-<h3>Worked Example 1</h3>
-
-<div class="example">
-Find the 6th term of:
-<br><br>
-2, 6, 18, 54, ...
-<br><br>
-
-a=2
-<br>
-r=3
-<br>
-n=6
-<br><br>
-
-T₆=2(3)<sup>5</sup>
-<br>
-=2×243
-<br>
-=<strong>486</strong>.
-</div>
-
-<h3>Sum of a GP</h3>
-
-<div class="formula">
-Sₙ = a(r<sup>n</sup>−1)/(r−1)
-</div>
-
-<p>
-This form applies when r ≠ 1.
-</p>
-
-<div class="example">
-Find the sum of:
-<br>
-3+6+12+24.
-<br><br>
-
-a=3, r=2, n=4
-<br>
-S₄=3(2⁴−1)/(2−1)
-<br>
-=3(15)
-<br>
-=<strong>45</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find the common ratio of 5,15,45,...</div>
-<div class="question">2. Find the 5th term of 2,4,8,...</div>
-<div class="question">3. Find the 6th term of 3,9,27,...</div>
-<div class="question">4. Find the sum of 2+4+8+16.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 3</div>
-<div class="answer">2. 32</div>
-<div class="answer">3. 729</div>
-<div class="answer">4. 30</div>
-`;
-
-
-/* =========================================================
-   TOPIC 31
-========================================================= */
-
-lessons["Sum of Series"] = `
-<h2>Topic 31: Sum of Series</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A series is formed when the terms of a sequence are added together.
-</p>
-
-<h3>Arithmetic Series</h3>
-
-<div class="formula">
-Sₙ = n/2 [2a + (n−1)d]
-</div>
-
-<div class="example">
-Find:
-<br><br>
-2+5+8+11+14.
-<br><br>
-
-a=2, d=3, n=5
-<br>
-S₅=5/2[4+12]
-<br>
-=5/2×16
-<br>
-=<strong>40</strong>.
-</div>
-
-<h3>Geometric Series</h3>
-
-<div class="formula">
-Sₙ = a(r<sup>n</sup>−1)/(r−1)
-</div>
-
-<div class="example">
-Find:
-<br>
-4+8+16+32.
-<br><br>
-
-a=4, r=2, n=4
-<br>
-S₄=4(16−1)/(1)
-<br>
-=<strong>60</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find the sum of 3+6+9+12+15.</div>
-<div class="question">2. Find the sum of the first 10 terms of 2,4,6,...</div>
-<div class="question">3. Find the sum 5+10+20+40.</div>
-<div class="question">4. Find the sum of 1+3+5+7+9.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 45</div>
-<div class="answer">2. 110</div>
-<div class="answer">3. 75</div>
-<div class="answer">4. 25</div>
-`;
-
-
-/* =========================================================
-   TOPIC 32
-========================================================= */
-
-lessons["Binomial Expansion"] = `
-<h2>Topic 32: Binomial Expansion</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A binomial is an algebraic expression containing two terms.
-Examples include x+2 and a−b.
-</p>
-
-<div class="formula">
-(a+b)² = a² + 2ab + b²
-</div>
-
-<div class="formula">
-(a−b)² = a² − 2ab + b²
-</div>
-
-<div class="formula">
-(a+b)³ = a³ + 3a²b + 3ab² + b³
-</div>
-
-<h3>Worked Example 1</h3>
-
-<div class="example">
-Expand:
-<br><br>
-(x+3)²
-<br><br>
-
-= x²+2(x)(3)+3²
-<br>
-=<strong>x²+6x+9</strong>.
-</div>
-
-<h3>Worked Example 2</h3>
-
-<div class="example">
-Expand:
-<br><br>
-(x−2)³
-<br><br>
-
-= x³−3x²(2)+3x(4)−8
-<br>
-=<strong>x³−6x²+12x−8</strong>.
-</div>
-
-<h3>Pascal's Triangle</h3>
-
-<p>
-Pascal's triangle provides the coefficients used in binomial expansion.
-The first rows are:
-</p>
-
-<div class="formula">
-1<br>
-1 1<br>
-1 2 1<br>
-1 3 3 1<br>
-1 4 6 4 1
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Expand (x+5)².</div>
-<div class="question">2. Expand (x−4)².</div>
-<div class="question">3. Expand (x+2)³.</div>
-<div class="question">4. Expand (2x+1)².</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. x²+10x+25</div>
-<div class="answer">2. x²−8x+16</div>
-<div class="answer">3. x³+6x²+12x+8</div>
-<div class="answer">4. 4x²+4x+1</div>
-`;
-
-
-/* =========================================================
-   TOPIC 33
-========================================================= */
-
-lessons["Partial Fractions"] = `
-<h2>Topic 33: Partial Fractions</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Partial fractions involve expressing a rational algebraic expression
-as the sum of simpler fractions.
-</p>
-
-<h3>Distinct Linear Factors</h3>
-
-<div class="example">
-Express:
-<br><br>
-5/[(x+1)(x+2)]
-<br><br>
-
-Let:
-<br>
-5/[(x+1)(x+2)]
-= A/(x+1) + B/(x+2).
-<br><br>
-
-Multiply through:
-<br>
-5=A(x+2)+B(x+1).
-<br><br>
-
-Put x=−1:
-<br>
-5=B
-<br>
-so B=5.
-<br><br>
-
-Put x=−2:
-<br>
-5=−A
-<br>
-so A=−5.
-<br><br>
-
-Therefore:
-<br>
-<strong>−5/(x+1) + 5/(x+2)</strong>.
-</div>
-
-<h3>Repeated Factors</h3>
-
-<p>
-For repeated factors, separate fractions are required for each power
-of the factor.
-</p>
-
-<div class="formula">
-A/(x−a) + B/(x−a)²
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. Express 3/[(x+1)(x+3)] in partial fractions.
-</div>
-
-<div class="question">
-2. Express 4/[(x−1)(x+2)] in partial fractions.
-</div>
-
-<div class="question">
-3. Express 5/[(x+2)(x+5)] in partial fractions.
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">
-1. 3/2(x+1) − 3/2(x+3)
-</div>
-
-<div class="answer">
-2. 4/3(x−1) − 4/3(x+2)
-</div>
-
-<div class="answer">
-3. 5/3(x+2) − 5/3(x+5)
-</div>
-`;
-
-
-/* =========================================================
-   TOPIC 34
-========================================================= */
-
-lessons["Binary Operations"] = `
-<h2>Topic 34: Binary Operations</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A binary operation combines two elements of a set to produce another
-element.
-</p>
-
-<p>
-A binary operation may be represented by a symbol such as:
-</p>
-
-<div class="formula">
-a * b
-</div>
-
-<h3>Worked Example</h3>
-
-<div class="example">
-Suppose:
-<br><br>
-a*b = a+b+ab.
-<br><br>
-
-Find 2*3.
-<br><br>
-
-2*3=2+3+(2×3)
-<br>
-=5+6
-<br>
-=<strong>11</strong>.
-</div>
-
-<h3>Closure</h3>
-
-<p>
-An operation is closed on a set if performing the operation on any two
-members of the set always produces a member of the same set.
-</p>
-
-<h3>Commutative Property</h3>
-
-<div class="formula">
-a*b = b*a
-</div>
-
-<h3>Associative Property</h3>
-
-<div class="formula">
-(a*b)*c = a*(b*c)
-</div>
-
-<h3>Identity Element</h3>
-
-<p>
-An identity element leaves another element unchanged when the operation
-is performed.
-</p>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. If a*b=a+b, find 5*7.
-</div>
-
-<div class="question">
-2. If a*b=a+b+ab, find 2*4.
-</div>
-
-<div class="question">
-3. For ordinary addition, what is the identity element?
-</div>
-
-<div class="question">
-4. Is ordinary multiplication commutative?
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 12</div>
-<div class="answer">2. 14</div>
-<div class="answer">3. 0</div>
-<div class="answer">4. Yes</div>
-`;
-
-
-/* =========================================================
-   TOPIC 35
-========================================================= */
-
-lessons["Modular Arithmetic"] = `
-<h2>Topic 35: Modular Arithmetic</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Modular arithmetic deals with remainders after division.
-</p>
-
-<div class="formula">
-a mod n = remainder when a is divided by n.
-</div>
-
-<div class="example">
-17 mod 5 = <strong>2</strong>
-<br><br>
-because 17 = 5(3)+2.
-</div>
-
-<h3>Congruence</h3>
-
-<div class="formula">
-a ≡ b (mod n)
-</div>
-
-<p>
-This means that a and b have the same remainder when divided by n.
-</p>
-
-<div class="example">
-17 ≡ 2 (mod 5)
-</div>
-
-<h3>Addition</h3>
-
-<div class="example">
-8+9 = 17
-<br>
-17 mod 5 = 2
-<br><br>
-Therefore:
-<br>
-8+9 ≡ <strong>2 (mod 5)</strong>.
-</div>
-
-<h3>Multiplication</h3>
-
-<div class="example">
-7×8=56
-<br>
-56 mod 6 = 2
-<br><br>
-Therefore:
-<br>
-7×8 ≡ <strong>2 (mod 6)</strong>.
-</div>
-
-<h3>Applications</h3>
-
-<p>
-Modular arithmetic is useful in clocks, calendars, computer science,
-cryptography and repeated cycles.
-</p>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find 23 mod 5.</div>
-<div class="question">2. Find 41 mod 7.</div>
-<div class="question">3. Find 8+11 mod 6.</div>
-<div class="question">4. Find 7×9 mod 5.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 3</div>
-<div class="answer">2. 6</div>
-<div class="answer">3. 1</div>
-<div class="answer">4. 3</div>
-`;
-
-
-/* =========================================================
-   TOPIC 36
-========================================================= */
-
-lessons["Matrices"] = `
-<h2>Topic 36: Matrices</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A matrix is a rectangular arrangement of numbers or other mathematical
-objects in rows and columns.
-</p>
-
-<div class="example">
-A =
-[ 2  3 ]
-[ 4  5 ]
-</div>
-
-<p>
-The matrix above has 2 rows and 2 columns, so its order is:
-</p>
-
-<div class="formula">
-2 × 2
-</div>
-
-<h3>Elements of a Matrix</h3>
-
-<p>
-An element is identified by its row and column position.
-For example, a₂₁ means the element in row 2, column 1.
-</p>
-
-<div class="example">
-For:
-<br><br>
-A =
-[ 3  5 ]
-[ 7  9 ]
-<br><br>
-
-a₂₁ = <strong>7</strong>.
-</div>
-
-<h3>Types of Matrices</h3>
-
-<ul>
-<li>Row matrix</li>
-<li>Column matrix</li>
-<li>Square matrix</li>
-<li>Zero matrix</li>
-<li>Identity matrix</li>
-</ul>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. State the order of [1 2 3; 4 5 6].
-</div>
-
-<div class="question">
-2. Find a₂₁ in [2 4; 6 8].
-</div>
-
-<div class="question">
-3. What is a square matrix?
-</div>
-
-<div class="question">
-4. State the order of a matrix having 3 rows and 4 columns.
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 2×3</div>
-<div class="answer">2. 6</div>
-<div class="answer">3. A matrix with equal numbers of rows and columns.</div>
-<div class="answer">4. 3×4</div>
-`;
-
-
-/* =========================================================
-   TOPIC 37
-========================================================= */
-
-lessons["Addition and Subtraction of Matrices"] = `
-<h2>Topic 37: Addition and Subtraction of Matrices</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Matrices can only be added or subtracted when they have the same order.
-Corresponding elements are then added or subtracted.
-</p>
-
-<div class="example">
-A =
-[ 2  4 ]
-[ 1  3 ]
-<br><br>
-
-B =
-[ 5  1 ]
-[ 2  6 ]
-<br><br>
-
-A+B =
-[ 7  5 ]
-[ 3  9 ].
-</div>
-
-<h3>Subtraction</h3>
-
-<div class="example">
-A−B =
-[−3  3]
-[−1 −3].
-</div>
-
-<h3>Worked Example</h3>
-
-<div class="example">
-If:
-<br>
-A=[3 5; 2 4]
-<br>
-B=[1 2; 4 1]
-<br><br>
-
-A+B=[4 7; 6 5].
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. Add [1 2;3 4] and [5 6;7 8].
-</div>
-
-<div class="question">
-2. Subtract [2 4;6 8] from [10 12;14 16].
-</div>
-
-<div class="question">
-3. Can a 2×2 matrix be added to a 2×3 matrix?
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. [6 8;10 12]</div>
-<div class="answer">2. [8 8;8 8]</div>
-<div class="answer">3. No.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 38
-========================================================= */
-
-lessons["Multiplication of Matrices"] = `
-<h2>Topic 38: Multiplication of Matrices</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Matrix multiplication is performed by multiplying rows of the first
-matrix by columns of the second matrix.
-</p>
-
-<p>
-If A is m×n and B is n×p, then AB is possible and has order m×p.
-</p>
-
-<div class="example">
-Let:
-<br><br>
-A =
-[1 2]
-[3 4]
-<br><br>
-
-B =
-[5 6]
-[7 8]
-<br><br>
-
-AB:
-<br>
-First element = 1(5)+2(7)=19
-<br>
-Second = 1(6)+2(8)=22
-<br>
-Third = 3(5)+4(7)=43
-<br>
-Fourth = 3(6)+4(8)=50
-<br><br>
-
-AB =
-[19 22]
-[43 50].
-</div>
-
-<h3>Important Note</h3>
-
-<p>
-Matrix multiplication is generally not commutative:
-</p>
-
-<div class="formula">
-AB ≠ BA
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. Multiply [1 2;3 4] by [2 0;1 2].
-</div>
-
-<div class="question">
-2. Can a 2×3 matrix be multiplied by a 3×2 matrix?
-</div>
-
-<div class="question">
-3. What is the order of the product of a 2×3 matrix and a 3×4 matrix?
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. [4 4;10 8]</div>
-<div class="answer">2. Yes.</div>
-<div class="answer">3. 2×4</div>
-`;
-
-
-/* =========================================================
-   TOPIC 39
-========================================================= */
-
-lessons["Determinants"] = `
-<h2>Topic 39: Determinants</h2>
-
-<h3>Lesson</h3>
-
-<p>
-The determinant is a numerical value associated with a square matrix.
-For a 2×2 matrix:
-</p>
-
-<div class="formula">
-A = [a b; c d]
-<br><br>
-det(A) = ad − bc
-</div>
-
-<h3>Worked Example 1</h3>
-
-<div class="example">
-Find the determinant of:
-<br><br>
-
-[ 3  4 ]
-[ 2  5 ]
-<br><br>
-
-det = (3×5) − (4×2)
-<br>
-=15−8
-<br>
-=<strong>7</strong>.
-</div>
-
-<h3>Worked Example 2</h3>
-
-<div class="example">
-Find the determinant of:
-<br><br>
-
-[ 6  2 ]
-[ 3  1 ]
-<br><br>
-
-det=(6×1)−(2×3)
-<br>
-=6−6
-<br>
-=<strong>0</strong>.
-</div>
-
-<p>
-A determinant of zero is important because such a matrix does not have
-an ordinary inverse.
-</p>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. Find det[2 3;1 4].
-</div>
-
-<div class="question">
-2. Find det[5 1;2 3].
-</div>
-
-<div class="question">
-3. Find det[4 2;6 3].
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 5</div>
-<div class="answer">2. 13</div>
-<div class="answer">3. 0</div>
-`;
-
-
-/* =========================================================
-   TOPIC 40
-========================================================= */
-
-lessons["Inverse of a Matrix"] = `
-<h2>Topic 40: Inverse of a Matrix</h2>
-
-<h3>Lesson</h3>
-
-<p>
-The inverse of a matrix A is written as A⁻¹.
-For a 2×2 matrix:
-</p>
-
-<div class="formula">
-A = [a b; c d]
-<br><br>
-
-A⁻¹ = 1/(ad−bc) [d −b; −c a]
-</div>
-
-<p>
-The determinant must not be zero.
-</p>
-
-<h3>Worked Example</h3>
-
-<div class="example">
-Find the inverse of:
-<br><br>
-
-A =
-[2 1]
-[1 1]
-<br><br>
-
-First find the determinant:
-<br>
-det(A)=(2×1)−(1×1)=1.
-<br><br>
-
-Therefore:
-<br>
-
-A⁻¹ =
-[1 −1]
-[−1 2].
-</div>
-
-<h3>Checking an Inverse</h3>
-
-<p>
-A matrix multiplied by its inverse gives the identity matrix:
-</p>
-
-<div class="formula">
-AA⁻¹ = I
-</div>
-
-<h3>When an Inverse Does Not Exist</h3>
-
-<p>
-If the determinant is zero, the matrix has no ordinary inverse.
-</p>
-
-<div class="example">
-A=[2 4;1 2]
-<br><br>
-
-det(A)=2(2)−4(1)=0.
-<br><br>
-
-Therefore A has <strong>no inverse</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. Find the determinant of [3 1;2 1].
-</div>
-
-<div class="question">
-2. Find the inverse of [2 1;1 1].
-</div>
-
-<div class="question">
-3. Does [1 2;2 4] have an inverse?
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 1</div>
-<div class="answer">2. [1 −1;−1 2]</div>
-<div class="answer">3. No, because its determinant is 0.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 41
-========================================================= */
-
-lessons["Identity Matrix"] = `
-<h2>Topic 41: Identity Matrix</h2>
-
-<h3>Lesson</h3>
-
-<p>
-An identity matrix is a square matrix with 1s on the main diagonal
-and 0s everywhere else.
-</p>
-
-<div class="formula">
-I₂ =
-[1 0]
-[0 1]
-</div>
-
-<p>
-For a 3×3 identity matrix:
-</p>
-
-<div class="formula">
-I₃ =
-[1 0 0]
-[0 1 0]
-[0 0 1]
-</div>
-
-<h3>Important Property</h3>
-
-<div class="formula">
-AI = IA = A
-</div>
-
-<p>
-The identity matrix plays a role similar to the number 1 in ordinary
-multiplication.
-</p>
-
-<div class="example">
-A =
-[2 3]
-[4 5]
-<br><br>
-
-AI =
-[2 3]
-[4 5]
-<br>
-=A.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Write the 2×2 identity matrix.</div>
-<div class="question">2. Write the 3×3 identity matrix.</div>
-<div class="question">3. What is I₂A?</div>
-<div class="question">4. What are the diagonal entries of an identity matrix?</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. [1 0;0 1]</div>
-<div class="answer">2. [1 0 0;0 1 0;0 0 1]</div>
-<div class="answer">3. A</div>
-<div class="answer">4. All are 1.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 42
-========================================================= */
-
-lessons["Transformation"] = `
-<h2>Topic 42: Transformation</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A transformation changes the position, size or orientation of a shape.
-</p>
-
-<p>
-Common transformations include:
-</p>
-
-<ul>
-<li>Translation</li>
-<li>Reflection</li>
-<li>Rotation</li>
-<li>Enlargement</li>
-</ul>
-
-<h3>Coordinates</h3>
-
-<p>
-Transformations can be represented using coordinates and matrices.
-</p>
-
-<div class="example">
-The point P(2,3) translated 4 units to the right becomes:
-<br><br>
-<strong>P'(6,3)</strong>.
-</div>
-
-<h3>Transformation Matrix</h3>
-
-<p>
-A point can be represented as a column matrix:
-</p>
-
-<div class="formula">
-[x;y]
-</div>
-
-<p>
-A transformation matrix can then be multiplied by the coordinate matrix
-to obtain the image.
-</p>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Name four common transformations.</div>
-<div class="question">2. What happens to size during a translation?</div>
-<div class="question">3. What transformation changes orientation?</div>
-<div class="question">4. What transformation can change the size of an object?</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. Translation, reflection, rotation and enlargement.</div>
-<div class="answer">2. The size remains unchanged.</div>
-<div class="answer">3. Reflection or rotation can change orientation.</div>
-<div class="answer">4. Enlargement.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 43
-========================================================= */
-
-lessons["Translation"] = `
-<h2>Topic 43: Translation</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A translation moves every point of a shape the same distance in the
-same direction.
-</p>
-
-<div class="formula">
-Translation vector = [a;b]
-</div>
-
-<p>
-The point (x,y) becomes:
-</p>
-
-<div class="formula">
-(x+a, y+b)
-</div>
-
-<div class="example">
-<strong>Example:</strong>
-<br><br>
-
-Translate P(2,3) by:
-<br>
-[4;−2].
-<br><br>
-
-P'=(2+4,3−2)
-<br>
-=<strong>(6,1)</strong>.
-</div>
-
-<h3>Translation of a Shape</h3>
-
-<div class="example">
-If A(1,2), B(3,2), C(2,4) are translated by [2,3]:
-<br><br>
-
-A'=(3,5)
-<br>
-B'=(5,5)
-<br>
-C'=(4,7).
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Translate (2,4) by [3,1].</div>
-<div class="question">2. Translate (−1,5) by [4,−2].</div>
-<div class="question">3. Translate (3,−2) by [−5,4].</div>
-<div class="question">4. State whether translation changes size.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. (5,5)</div>
-<div class="answer">2. (3,3)</div>
-<div class="answer">3. (−2,2)</div>
-<div class="answer">4. No.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 44
-========================================================= */
-
-lessons["Reflection"] = `
-<h2>Topic 44: Reflection</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Reflection produces a mirror image of a shape in a line called the
-mirror line or line of reflection.
-</p>
-
-<h3>Reflection in the x-axis</h3>
-
-<div class="formula">
-(x,y) → (x,−y)
-</div>
-
-<div class="example">
-P(3,4) reflected in the x-axis:
-<br>
-<strong>P'(3,−4)</strong>.
-</div>
-
-<h3>Reflection in the y-axis</h3>
-
-<div class="formula">
-(x,y) → (−x,y)
-</div>
-
-<div class="example">
-P(3,4) reflected in the y-axis:
-<br>
-<strong>P'(−3,4)</strong>.
-</div>
-
-<h3>Reflection in y=x</h3>
-
-<div class="formula">
-(x,y) → (y,x)
-</div>
-
-<div class="example">
-P(2,5) reflected in y=x:
-<br>
-<strong>P'(5,2)</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Reflect (4,3) in the x-axis.</div>
-<div class="question">2. Reflect (4,3) in the y-axis.</div>
-<div class="question">3. Reflect (2,7) in y=x.</div>
-<div class="question">4. What is the mirror line called?</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. (4,−3)</div>
-<div class="answer">2. (−4,3)</div>
-<div class="answer">3. (7,2)</div>
-<div class="answer">4. Line of reflection.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 45
-========================================================= */
-
-lessons["Rotation"] = `
-<h2>Topic 45: Rotation</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Rotation turns a shape through a specified angle about a fixed point
-called the centre of rotation.
-</p>
-
-<p>
-Common rotations about the origin include 90°, 180° and 270°.
-</p>
-
-<h3>90° Anticlockwise</h3>
-
-<div class="formula">
-(x,y) → (−y,x)
-</div>
-
-<div class="example">
-P(2,3) rotated 90° anticlockwise about the origin:
-<br>
-P'=(−3,2).
-</div>
-
-<h3>180° Rotation</h3>
-
-<div class="formula">
-(x,y) → (−x,−y)
-</div>
-
-<div class="example">
-P(2,3) rotated 180°:
-<br>
-<strong>P'(−2,−3)</strong>.
-</div>
-
-<h3>270° Anticlockwise</h3>
-
-<div class="formula">
-(x,y) → (y,−x)
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Rotate (3,2) by 90° anticlockwise.</div>
-<div class="question">2. Rotate (4,1) by 180°.</div>
-<div class="question">3. Rotate (2,5) by 270° anticlockwise.</div>
-<div class="question">4. What is the fixed point called?</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. (−2,3)</div>
-<div class="answer">2. (−4,−1)</div>
-<div class="answer">3. (5,−2)</div>
-<div class="answer">4. Centre of rotation.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 46
-========================================================= */
-
-lessons["Enlargement"] = `
-<h2>Topic 46: Enlargement</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Enlargement changes the size of a shape while preserving its shape.
-The amount of enlargement is determined by the scale factor.
-</p>
-
-<div class="formula">
-Scale factor = image length / object length
-</div>
-
-<h3>Positive Scale Factor</h3>
-
-<div class="example">
-A point P(2,3) is enlarged from the origin by scale factor 2.
-<br><br>
-
-P'=(2×2,3×2)
-<br>
-=<strong>(4,6)</strong>.
-</div>
-
-<h3>Fractional Scale Factor</h3>
-
-<div class="example">
-P(8,6) is enlarged from the origin by scale factor 1/2.
-<br><br>
-
-P'=(4,3).
-</div>
-
-<h3>Negative Scale Factor</h3>
-
-<p>
-A negative scale factor places the image on the opposite side of the
-centre of enlargement.
-</p>
-
-<div class="example">
-P(2,3) with scale factor −2:
-<br>
-<strong>P'(−4,−6)</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Enlarge (2,4) by scale factor 3 from the origin.</div>
-<div class="question">2. Enlarge (8,6) by scale factor 1/2.</div>
-<div class="question">3. Enlarge (3,2) by scale factor −1.</div>
-<div class="question">4. Does enlargement always preserve angles?</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. (6,12)</div>
-<div class="answer">2. (4,3)</div>
-<div class="answer">3. (−3,−2)</div>
-<div class="answer">4. Yes.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 47
-========================================================= */
-
-lessons["Combined Transformations"] = `
-<h2>Topic 47: Combined Transformations</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A combined transformation occurs when more than one transformation
-is applied to a shape.
-</p>
-
-<p>
-The order in which transformations are performed is important.
-</p>
-
-<div class="example">
-<strong>Example:</strong>
-<br><br>
-
-Point P(2,1).
-<br><br>
-
-First reflect in the x-axis:
-<br>
-P'=(2,−1).
-<br><br>
-
-Then translate by [3,2]:
-<br>
-P''=(5,1).
-<br><br>
-
-Final image:
-<strong>(5,1)</strong>.
-</div>
-
-<h3>Matrix Representation</h3>
-
-<p>
-Transformations such as rotations, reflections and enlargements can
-be represented using matrices.
-</p>
-
-<h3>Important Point</h3>
-
-<p>
-Doing transformation A followed by transformation B may give a
-different result from doing B followed by A.
-</p>
-
-<h3>Practice Questions</h3>
-
-<div class="question">
-1. Translate (2,3) by [1,2], then reflect the result in the x-axis.
-</div>
-
-<div class="question">
-2. Reflect (3,4) in the y-axis, then translate by [2,1].
-</div>
-
-<div class="question">
-3. Why is order important in combined transformations?
-</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. (3,−5)</div>
-<div class="answer">2. (−1,5)</div>
-<div class="answer">3. Because changing the order can produce a different final image.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 48
-========================================================= */
-
-lessons["Plane Geometry"] = `
-<h2>Topic 48: Plane Geometry</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Plane geometry deals with figures and shapes on a flat surface.
-</p>
-
-<p>
-Important figures include points, lines, angles, triangles,
-quadrilaterals and circles.
-</p>
-
-<h3>Basic Terms</h3>
-
-<ul>
-<li><strong>Point:</strong> an exact position.</li>
-<li><strong>Line:</strong> a straight path extending indefinitely.</li>
-<li><strong>Line segment:</strong> part of a line with two endpoints.</li>
-<li><strong>Ray:</strong> a line beginning at one endpoint and extending indefinitely.</li>
-</ul>
-
-<h3>Angles</h3>
-
-<p>
-Angles are measured in degrees.
-</p>
-
-<ul>
-<li>Acute angle: less than 90°.</li>
-<li>Right angle: 90°.</li>
-<li>Obtuse angle: between 90° and 180°.</li>
-<li>Straight angle: 180°.</li>
-<li>Reflex angle: greater than 180° but less than 360°.</li>
-</ul>
-
-<h3>Polygon</h3>
-
-<p>
-A polygon is a closed plane figure made from straight line segments.
-</p>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. What is a right angle?</div>
-<div class="question">2. Define a line segment.</div>
-<div class="question">3. What is an obtuse angle?</div>
-<div class="question">4. What is a polygon?</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. An angle of 90°.</div>
-<div class="answer">2. Part of a line with two endpoints.</div>
-<div class="answer">3. An angle greater than 90° but less than 180°.</div>
-<div class="answer">4. A closed figure made from straight line segments.</div>
-`;
-
-
-/* =========================================================
-   TOPIC 49
-========================================================= */
-
-lessons["Angles and Lines"] = `
-<h2>Topic 49: Angles and Lines</h2>
-
-<h3>Lesson</h3>
-
-<p>
-Lines can be parallel, perpendicular or intersecting.
-Angles are formed when lines meet.
-</p>
-
-<h3>Angles on a Straight Line</h3>
-
-<div class="formula">
-Angles on a straight line = 180°
-</div>
-
-<div class="example">
-If one angle is 65°:
-<br>
-the adjacent angle is:
-<br>
-180°−65°
-<br>
-=<strong>115°</strong>.
-</div>
-
-<h3>Angles at a Point</h3>
-
-<div class="formula">
-Angles at a point = 360°
-</div>
-
-<h3>Parallel Lines</h3>
-
-<p>
-When a transversal crosses parallel lines:
-</p>
-
-<ul>
-<li>Corresponding angles are equal.</li>
-<li>Alternate angles are equal.</li>
-<li>Co-interior angles sum to 180°.</li>
-</ul>
-
-<div class="example">
-If an alternate angle is 72°, the corresponding alternate angle is:
-<br>
-<strong>72°</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find the supplement of 68°.</div>
-<div class="question">2. Find the angle around a point if three angles are 80°, 120° and 70°.</div>
-<div class="question">3. If alternate angles are equal and one is 55°, find the other.</div>
-<div class="question">4. Find the co-interior angle of 110°.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 112°</div>
-<div class="answer">2. 90°</div>
-<div class="answer">3. 55°</div>
-<div class="answer">4. 70°</div>
-`;
-
-
-/* =========================================================
-   TOPIC 50
-========================================================= */
-
-lessons["Triangles"] = `
-<h2>Topic 50: Triangles</h2>
-
-<h3>Lesson</h3>
-
-<p>
-A triangle is a three-sided polygon.
-</p>
-
-<div class="formula">
-Sum of angles in a triangle = 180°
-</div>
-
-<h3>Types by Sides</h3>
-
-<ul>
-<li><strong>Equilateral:</strong> three equal sides.</li>
-<li><strong>Isosceles:</strong> two equal sides.</li>
-<li><strong>Scalene:</strong> all sides different.</li>
-</ul>
-
-<h3>Types by Angles</h3>
-
-<ul>
-<li>Acute triangle</li>
-<li>Right-angled triangle</li>
-<li>Obtuse triangle</li>
-</ul>
-
-<h3>Worked Example</h3>
-
-<div class="example">
-A triangle has angles 50° and 65°.
-Find the third angle.
-<br><br>
-
-Third angle = 180°−50°−65°
-<br>
-=<strong>65°</strong>.
-</div>
-
-<h3>Area of a Triangle</h3>
-
-<div class="formula">
-Area = 1/2 × base × height
-</div>
-
-<div class="example">
-A triangle has base 12 cm and height 7 cm.
-<br><br>
-
-Area = 1/2×12×7
-<br>
-=<strong>42 cm²</strong>.
-</div>
-
-<h3>Pythagoras' Theorem</h3>
-
-<div class="formula">
-a²+b²=c²
-</div>
-
-<p>
-For a right-angled triangle, c is the hypotenuse.
-</p>
-
-<div class="example">
-If the shorter sides are 3 cm and 4 cm:
-<br><br>
-
-c²=3²+4²
-<br>
-=9+16
-<br>
-=25
-<br>
-c=<strong>5 cm</strong>.
-</div>
-
-<h3>Practice Questions</h3>
-
-<div class="question">1. Find the third angle of a triangle with angles 45° and 75°.</div>
-<div class="question">2. Find the area of a triangle with base 10 cm and height 8 cm.</div>
-<div class="question">3. Find the hypotenuse when the other sides are 6 cm and 8 cm.</div>
-<div class="question">4. Name a triangle with two equal sides.</div>
-
-<h3>Answers</h3>
-
-<div class="answer">1. 60°</div>
-<div class="answer">2. 40 cm²</div>
-<div class="answer">3. 10 cm</div>
-<div class="answer">4. Isosceles triangle.</div>
-`;
-
-
-/* =========================================================
-   END OF TOPICS 26–50
-========================================================= */
+button{
+    border:0;
+    border-radius:10px;
+    padding:13px 20px;
+    background:#0757a6;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#064985;
+}
+
+.back{
+    background:#555;
+    margin-top:20px;
+}
+
+.hidden{
+    display:none;
+}
+
+.number{
+    font-weight:bold;
+    color:#0757a6;
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SSS MATHEMATICS</h1>
+    <p>Complete Mathematics Learning App — Topics 1–115</p>
+</header>
+
+<div class="container">
+
+<section id="welcomeSection">
+    <div class="welcome-card">
+        <h2>Welcome to SSS Mathematics</h2>
+
+        <p>
+            Learn Mathematics through detailed lessons,
+            worked examples, practice questions and answers.
+        </p>
+
+        <button onclick="startLearning()">
+            START LEARNING
+        </button>
+    </div>
+</section>
+
+<section id="topicsSection" class="hidden">
+
+    <h2>Mathematics Topics</h2>
+
+    <div id="topicsList"></div>
+
+</section>
+
+<section id="lessonSection" class="hidden">
+
+    <div id="lessonContent" class="lesson-card"></div>
+
+    <button class="back" onclick="showTopics()">
+        ← Back to Topics
+    </button>
+
+</section>
+
+</div>
+
+<div class="footer">
+    <p>SSS Mathematics Learning App</p>
+    <p>Topics 1–115</p>
+</div>
+
+<script>
+
+const topics = [
+
+"Number Bases",
+"Fractions",
+"Decimals",
+"Approximation",
+"Estimation",
+"Standard Form",
+"Logarithms",
+"Laws of Logarithms",
+"Indices",
+"Laws of Indices",
+"Surds",
+"Simplification of Surds",
+"Sets",
+"Operations on Sets",
+"Venn Diagrams",
+"Algebraic Expressions",
+"Expansion of Algebraic Expressions",
+"Factorization",
+"Linear Equations",
+"Linear Inequalities",
+"Change of Subject of Formula",
+"Simultaneous Linear Equations",
+"Simultaneous Equations Involving Quadratics",
+"Quadratic Equations",
+"Quadratic Formula",
+"Completing the Square",
+"Nature of Roots",
+"Sequence",
+"Arithmetic Progression",
+"Geometric Progression",
+"Sum of Series",
+"Binomial Expansion",
+"Partial Fractions",
+"Binary Operations",
+"Modular Arithmetic",
+"Matrices",
+"Addition and Subtraction of Matrices",
+"Multiplication of Matrices",
+"Determinants",
+"Inverse of a Matrix",
+"Identity Matrix",
+"Transformation",
+"Translation",
+"Reflection",
+"Rotation",
+"Enlargement",
+"Combined Transformations",
+"Plane Geometry",
+"Angles and Lines",
+"Triangles",
+"Quadrilaterals",
+"Polygons",
+"Circles",
+"Circle Theorems",
+"Mensuration of Plane Shapes",
+"Perimeter and Area",
+"Mensuration of Solids",
+"Surface Area of Solids",
+"Volume of Solids",
+"Coordinate Geometry",
+"Straight Lines",
+"Graphs of Linear Equations",
+"Gradient of a Straight Line",
+"Distance Between Two Points",
+"Variation",
+"Direct Variation",
+"Inverse Variation",
+"Joint Variation",
+"Partial Variation",
+"Trigonometry",
+"Trigonometric Ratios",
+"Special Angles",
+"Trigonometric Identities",
+"Sine Rule",
+"Cosine Rule",
+"Bearings",
+"Distances",
+"Statistics",
+"Collection and Presentation of Data",
+"Frequency Distribution",
+"Histogram",
+"Frequency Polygon",
+"Ogive",
+"Measures of Central Tendency",
+"Mean",
+"Median",
+"Mode",
+"Measures of Dispersion",
+"Range",
+"Variance",
+"Standard Deviation",
+"Probability",
+"Experimental Probability",
+"Theoretical Probability",
+"Permutation",
+"Combination",
+"Probability of Combined Events",
+"Introduction to Calculus",
+"Functions",
+"Domain and Range",
+"Composite Functions",
+"Inverse Functions",
+"Limits",
+"Differentiation",
+"Differentiation from First Principles",
+"Rules of Differentiation",
+"Applications of Differentiation",
+"Maximum and Minimum Values",
+"Rates of Change",
+"Integration",
+"Indefinite Integration",
+"Definite Integration",
+"Area Under a Curve",
+"Differential Equations",
+"Numerical Methods"
+
+];
+
+const lessons = {};
