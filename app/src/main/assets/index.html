@@ -1,492 +1,525 @@
-lessons["Standard Deviation"] = `
-<h2>91. Standard Deviation</h2>
+Continue directly after Topic 100. Paste this as Topics 101–110:
+lessons["Composite Functions"] = `
+<h2>101. Composite Functions</h2>
 
 <h3>Lesson</h3>
-<p>Standard deviation is a measure of how widely data values are spread around the mean.</p>
+<p>A composite function is formed when one function is applied to another function.</p>
 
-<p>It is the positive square root of the variance.</p>
+<p>It is written as:</p>
+<p><b>(fg)(x) = f(g(x))</b></p>
 
-<p><b>Standard deviation = √Variance</b></p>
-
-<p>A small standard deviation means the values are close to the mean. A large standard deviation means the values are more widely spread.</p>
+<p>This means that g(x) is found first, then the result is substituted into f.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> Find the standard deviation of 2, 4 and 6.</p>
-<p>Mean = (2 + 4 + 6)/3 = 4</p>
-<p>Squared deviations = 4, 0, 4</p>
-<p>Variance = 8/3</p>
-<p>Standard deviation = √(8/3)</p>
-<p><b>≈ 1.63</b></p>
+<p><b>Example 1:</b> If f(x) = 2x + 1 and g(x) = x + 3, find f(g(x)).</p>
+<p>f(g(x)) = 2(x + 3) + 1</p>
+<p>= 2x + 6 + 1</p>
+<p><b>= 2x + 7</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> If the variance of a data set is 25, find its standard deviation.</p>
-<p>Standard deviation = √25</p>
-<p><b>= 5</b></p>
+<p><b>Example 2:</b> If f(x) = x² and g(x) = x + 2, find f(g(3)).</p>
+<p>g(3) = 3 + 2 = 5</p>
+<p>f(5) = 5² = 25</p>
+<p><b>Answer = 25</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>If variance is 36, find the standard deviation.</li>
-<li>If variance is 49, find the standard deviation.</li>
-<li>What does a small standard deviation indicate?</li>
+<li>If f(x) = 3x + 2 and g(x) = x + 1, find f(g(x)).</li>
+<li>If f(x) = x² and g(x) = x - 2, find f(g(5)).</li>
+<li>If f(x) = 2x and g(x) = x + 4, find f(g(3)).</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>6</li>
-<li>7</li>
-<li>The values are closely grouped around the mean.</li>
+<li>3x + 5</li>
+<li>9</li>
+<li>14</li>
 </ol>
 </div>
 `;
 
-lessons["Probability"] = `
-<h2>92. Probability</h2>
+lessons["Inverse Functions"] = `
+<h2>102. Inverse Functions</h2>
 
 <h3>Lesson</h3>
-<p>Probability measures how likely an event is to occur.</p>
+<p>The inverse of a function reverses the operation of the original function.</p>
 
-<p>The probability of an event E is:</p>
+<p>The inverse of f(x) is written as <b>f⁻¹(x)</b>.</p>
 
-<p><b>P(E) = Number of favourable outcomes / Total number of possible outcomes</b></p>
-
-<p>Probability lies between 0 and 1.</p>
-
-<ul>
-<li>P(E) = 0 means impossible.</li>
-<li>P(E) = 1 means certain.</li>
-<li>Values between 0 and 1 represent different levels of likelihood.</li>
-</ul>
-
-<p>The complement of an event is:</p>
-<p><b>P(E') = 1 - P(E)</b></p>
+<p>To find an inverse:</p>
+<ol>
+<li>Write y = f(x).</li>
+<li>Interchange x and y.</li>
+<li>Make y the subject.</li>
+<li>Replace y with f⁻¹(x).</li>
+</ol>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> A fair die is thrown. Find the probability of obtaining a 4.</p>
-<p>Favourable outcomes = 1</p>
-<p>Total outcomes = 6</p>
-<p>P(4) = 1/6</p>
-<p><b>Answer = 1/6</b></p>
+<p><b>Example 1:</b> Find the inverse of f(x) = 2x + 3.</p>
+<p>y = 2x + 3</p>
+<p>Interchange x and y:</p>
+<p>x = 2y + 3</p>
+<p>x - 3 = 2y</p>
+<p>y = (x - 3)/2</p>
+<p><b>f⁻¹(x) = (x - 3)/2</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> A bag contains 3 red balls and 7 blue balls. Find the probability of selecting a red ball.</p>
-<p>Total balls = 10</p>
-<p>Red balls = 3</p>
-<p>P(red) = 3/10</p>
-<p><b>= 0.3</b></p>
+<p><b>Example 2:</b> Find the inverse of f(x) = 5x - 1.</p>
+<p>y = 5x - 1</p>
+<p>x = 5y - 1</p>
+<p>x + 1 = 5y</p>
+<p><b>f⁻¹(x) = (x + 1)/5</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Find the probability of obtaining a head when a fair coin is tossed.</li>
-<li>A die is thrown. Find P(6).</li>
-<li>If P(A) = 0.4, find P(A').</li>
+<li>Find the inverse of f(x) = 3x + 2.</li>
+<li>Find the inverse of f(x) = 4x - 5.</li>
+<li>Find the inverse of f(x) = x + 7.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>1/2</li>
-<li>1/6</li>
-<li>0.6</li>
+<li>f⁻¹(x) = (x - 2)/3</li>
+<li>f⁻¹(x) = (x + 5)/4</li>
+<li>f⁻¹(x) = x - 7</li>
 </ol>
 </div>
 `;
 
-lessons["Experimental Probability"] = `
-<h2>93. Experimental Probability</h2>
+lessons["Limits"] = `
+<h2>103. Limits</h2>
 
 <h3>Lesson</h3>
-<p>Experimental probability is based on the results obtained from an actual experiment or observation.</p>
+<p>A limit describes the value that a function approaches as the input approaches a particular value.</p>
 
-<p>The formula is:</p>
+<p>It is written as:</p>
 
-<p><b>Experimental probability = Number of times event occurs / Number of trials</b></p>
+<p><b>lim f(x) as x → a</b></p>
 
-<p>As the number of trials becomes large, experimental probability may become closer to theoretical probability.</p>
+<p>Limits are important in calculus because they provide the foundation for differentiation and continuity.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> A coin is tossed 50 times and heads occur 28 times. Find the experimental probability of heads.</p>
-<p>P(heads) = 28/50</p>
-<p><b>= 0.56</b></p>
+<p><b>Example 1:</b> Find lim(x + 3) as x → 2.</p>
+<p>Substitute x = 2:</p>
+<p>2 + 3 = <b>5</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> A die is rolled 100 times and a 6 occurs 18 times.</p>
-<p>Experimental probability of 6 = 18/100</p>
-<p><b>= 0.18</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>A coin is tossed 80 times and heads occur 44 times. Find the experimental probability of heads.</li>
-<li>A die is thrown 60 times and 5 occurs 12 times. Find the experimental probability.</li>
-<li>State the formula for experimental probability.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>0.55</li>
-<li>0.20</li>
-<li>Number of times event occurs / Number of trials.</li>
-</ol>
-</div>
-`;
-
-lessons["Theoretical Probability"] = `
-<h2>94. Theoretical Probability</h2>
-
-<h3>Lesson</h3>
-<p>Theoretical probability is calculated using equally likely possible outcomes without carrying out an actual experiment.</p>
-
-<p>The formula is:</p>
-
-<p><b>P(E) = Favourable outcomes / Total equally likely outcomes</b></p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Find the probability of obtaining an even number when a fair die is thrown.</p>
-<p>Even outcomes = 2, 4, 6</p>
-<p>Favourable outcomes = 3</p>
-<p>Total outcomes = 6</p>
-<p>P(even) = 3/6</p>
-<p><b>= 1/2</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> A bag contains 5 green balls and 3 yellow balls. Find the probability of selecting a yellow ball.</p>
-<p>Total = 8</p>
-<p>Yellow = 3</p>
-<p>P(yellow) = <b>3/8</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Find the probability of obtaining an odd number on a fair die.</li>
-<li>A bag contains 4 red and 6 white balls. Find P(red).</li>
-<li>Find the probability of obtaining a number greater than 4 on a die.</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>1/2</li>
-<li>2/5</li>
-<li>1/3</li>
-</ol>
-</div>
-`;
-
-lessons["Permutation"] = `
-<h2>95. Permutation</h2>
-
-<h3>Lesson</h3>
-<p>A permutation is an arrangement of objects where the order is important.</p>
-
-<p>Factorial notation is written as <b>n!</b>.</p>
-
-<p>For example:</p>
-<p>5! = 5 × 4 × 3 × 2 × 1 = 120</p>
-
-<p>The number of permutations of n objects taken r at a time is:</p>
-
-<p><b>nPr = n!/(n-r)!</b></p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Find 5P2.</p>
-<p>5P2 = 5!/(5-2)!</p>
-<p>= 5!/3!</p>
-<p>= 5 × 4</p>
-<p><b>= 20</b></p>
-</div>
-
-<div class="example">
-<p><b>Example 2:</b> In how many ways can 4 different books be arranged?</p>
-<p>Number of arrangements = 4!</p>
-<p>= 4 × 3 × 2 × 1</p>
-<p><b>= 24</b></p>
-</div>
-
-<h3>Practice Questions</h3>
-<div class="practice">
-<ol>
-<li>Find 6P2.</li>
-<li>Find 7P3.</li>
-<li>In how many ways can 5 students stand in a line?</li>
-</ol>
-</div>
-
-<h3>Answers</h3>
-<div class="answer">
-<ol>
-<li>30</li>
-<li>210</li>
-<li>120</li>
-</ol>
-</div>
-`;
-
-lessons["Combination"] = `
-<h2>96. Combination</h2>
-
-<h3>Lesson</h3>
-<p>A combination is a selection of objects where order does not matter.</p>
-
-<p>The number of combinations of n objects taken r at a time is:</p>
-
-<p><b>nCr = n!/[r!(n-r)!]</b></p>
-
-<p>Combinations are used when selecting groups, committees or teams.</p>
-
-<h3>Worked Examples</h3>
-
-<div class="example">
-<p><b>Example 1:</b> Find 5C2.</p>
-<p>5C2 = 5!/(2!3!)</p>
-<p>= (5×4)/(2×1)</p>
+<p><b>Example 2:</b> Find lim(x² + 1) as x → 3.</p>
+<p>= 3² + 1</p>
+<p>= 9 + 1</p>
 <p><b>= 10</b></p>
 </div>
 
-<div class="example">
-<p><b>Example 2:</b> A committee of 3 students is selected from 8 students. How many committees are possible?</p>
-<p>8C3 = 8!/(3!5!)</p>
-<p>= (8×7×6)/(3×2×1)</p>
-<p><b>= 56</b></p>
-</div>
-
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>Find 6C2.</li>
-<li>Find 7C3.</li>
-<li>How many ways can 4 students be selected from 10 students?</li>
+<li>Find lim(x + 5) as x → 4.</li>
+<li>Find lim(2x + 1) as x → 3.</li>
+<li>Find lim(x²) as x → 5.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>15</li>
-<li>35</li>
-<li>210</li>
+<li>9</li>
+<li>7</li>
+<li>25</li>
 </ol>
 </div>
 `;
 
-lessons["Probability of Combined Events"] = `
-<h2>97. Probability of Combined Events</h2>
+lessons["Differentiation"] = `
+<h2>104. Differentiation</h2>
 
 <h3>Lesson</h3>
-<p>Combined events involve two or more events.</p>
+<p>Differentiation is the process of finding the derivative of a function.</p>
 
-<p>For mutually exclusive events:</p>
+<p>The derivative represents the rate of change of one quantity with respect to another. For a curve, it can represent the gradient at a particular point.</p>
 
-<p><b>P(A or B) = P(A) + P(B)</b></p>
+<p>For a power of x:</p>
 
-<p>For independent events:</p>
-
-<p><b>P(A and B) = P(A) × P(B)</b></p>
-
-<p>Two events are independent when the occurrence of one does not affect the probability of the other.</p>
+<p><b>d/dx(xⁿ) = nxⁿ⁻¹</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> A die is thrown. Find the probability of obtaining 1 or 6.</p>
-<p>P(1) = 1/6</p>
-<p>P(6) = 1/6</p>
-<p>P(1 or 6) = 1/6 + 1/6</p>
-<p><b>= 1/3</b></p>
+<p><b>Example 1:</b> Differentiate y = x³.</p>
+<p>dy/dx = 3x²</p>
+<p><b>Answer = 3x²</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> A coin is tossed twice. Find the probability of obtaining two heads.</p>
-<p>P(head on first toss) = 1/2</p>
-<p>P(head on second toss) = 1/2</p>
-<p>P(two heads) = 1/2 × 1/2</p>
-<p><b>= 1/4</b></p>
+<p><b>Example 2:</b> Differentiate y = 5x² + 3x - 7.</p>
+<p>dy/dx = 10x + 3</p>
+<p><b>Answer = 10x + 3</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>A die is thrown. Find P(2 or 5).</li>
-<li>A coin is tossed twice. Find P(two tails).</li>
-<li>A coin is tossed twice. Find P(head then tail).</li>
+<li>Differentiate y = x⁴.</li>
+<li>Differentiate y = 3x² + 2x + 1.</li>
+<li>Differentiate y = 7x³ - 4x.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>1/3</li>
-<li>1/4</li>
-<li>1/4</li>
+<li>4x³</li>
+<li>6x + 2</li>
+<li>21x² - 4</li>
 </ol>
 </div>
 `;
 
-lessons["Introduction to Calculus"] = `
-<h2>98. Introduction to Calculus</h2>
+lessons["Differentiation from First Principles"] = `
+<h2>105. Differentiation from First Principles</h2>
 
 <h3>Lesson</h3>
-<p>Calculus is a branch of mathematics concerned mainly with change and accumulation.</p>
+<p>Differentiation from first principles uses the limit definition of the derivative.</p>
 
-<p>The two major parts of calculus are:</p>
+<p>The formula is:</p>
+
+<p><b>f'(x) = lim[h → 0] {f(x+h) - f(x)}/h</b></p>
+
+<p>This method provides the fundamental definition of differentiation.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> Differentiate f(x) = x² from first principles.</p>
+
+<p>f(x+h) = (x+h)²</p>
+<p>= x² + 2xh + h²</p>
+
+<p>Therefore:</p>
+<p>[f(x+h)-f(x)]/h</p>
+<p>= [x² + 2xh + h² - x²]/h</p>
+<p>= [2xh + h²]/h</p>
+<p>= 2x + h</p>
+
+<p>As h → 0:</p>
+<p><b>f'(x) = 2x</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Differentiate f(x) = x³ from first principles.</p>
+<p>f(x+h) = (x+h)³</p>
+<p>= x³ + 3x²h + 3xh² + h³</p>
+
+<p>Subtract x³ and divide by h:</p>
+<p>= 3x² + 3xh + h²</p>
+
+<p>As h → 0:</p>
+<p><b>f'(x) = 3x²</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Differentiate f(x) = x² from first principles.</li>
+<li>Differentiate f(x) = x³ from first principles.</li>
+<li>State the first-principles formula.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>2x</li>
+<li>3x²</li>
+<li>f'(x) = lim[h→0] [f(x+h)-f(x)]/h</li>
+</ol>
+</div>
+`;
+
+lessons["Rules of Differentiation"] = `
+<h2>106. Rules of Differentiation</h2>
+
+<h3>Lesson</h3>
+<p>Several rules make differentiation of algebraic functions easier.</p>
+
+<p><b>Power Rule:</b> d/dx(xⁿ) = nxⁿ⁻¹</p>
+
+<p><b>Constant Rule:</b> The derivative of a constant is zero.</p>
+
+<p><b>Constant Multiple Rule:</b> A constant multiplied by a function remains as a multiplier after differentiation.</p>
+
+<p><b>Sum Rule:</b> Differentiate each term separately.</p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> Differentiate y = 6x⁴.</p>
+<p>dy/dx = 6(4x³)</p>
+<p><b>= 24x³</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Differentiate y = 4x³ - 5x² + 2x - 8.</p>
+<p>dy/dx = 12x² - 10x + 2</p>
+<p><b>Answer = 12x² - 10x + 2</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Differentiate y = 8x³.</li>
+<li>Differentiate y = 5x⁴ - 2x² + 7.</li>
+<li>Differentiate y = 9x² - 4x + 6.</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>24x²</li>
+<li>20x³ - 4x</li>
+<li>18x - 4</li>
+</ol>
+</div>
+`;
+
+lessons["Applications of Differentiation"] = `
+<h2>107. Applications of Differentiation</h2>
+
+<h3>Lesson</h3>
+<p>Differentiation has many applications. It can be used to find gradients, rates of change, stationary points and maximum or minimum values.</p>
+
+<p>For a curve y = f(x), the gradient is:</p>
+
+<p><b>dy/dx</b></p>
+
+<p>At a stationary point:</p>
+
+<p><b>dy/dx = 0</b></p>
+
+<h3>Worked Examples</h3>
+
+<div class="example">
+<p><b>Example 1:</b> Find the gradient of y = x² + 3x at x = 2.</p>
+<p>dy/dx = 2x + 3</p>
+<p>At x = 2:</p>
+<p>= 2(2) + 3</p>
+<p><b>= 7</b></p>
+</div>
+
+<div class="example">
+<p><b>Example 2:</b> Find the stationary point of y = x² - 4x + 3.</p>
+<p>dy/dx = 2x - 4</p>
+<p>At a stationary point:</p>
+<p>2x - 4 = 0</p>
+<p>x = 2</p>
+
+<p>Substitute x = 2:</p>
+<p>y = 2² - 4(2) + 3</p>
+<p>= 4 - 8 + 3</p>
+<p><b>y = -1</b></p>
+
+<p>Stationary point = <b>(2,-1)</b></p>
+</div>
+
+<h3>Practice Questions</h3>
+<div class="practice">
+<ol>
+<li>Find the gradient of y = x² + 2x at x = 3.</li>
+<li>Find the stationary point of y = x² - 6x + 5.</li>
+<li>What equation is used to find stationary points?</li>
+</ol>
+</div>
+
+<h3>Answers</h3>
+<div class="answer">
+<ol>
+<li>8</li>
+<li>(3,-4)</li>
+<li>dy/dx = 0</li>
+</ol>
+</div>
+`;
+
+lessons["Maximum and Minimum Values"] = `
+<h2>108. Maximum and Minimum Values</h2>
+
+<h3>Lesson</h3>
+<p>Differentiation can be used to determine whether a stationary point is a maximum or minimum.</p>
+
+<p>First find the stationary point using:</p>
+
+<p><b>dy/dx = 0</b></p>
+
+<p>Then use the second derivative.</p>
 
 <ul>
-<li><b>Differentiation</b> — concerned with rates of change and gradients.</li>
-<li><b>Integration</b> — concerned with accumulation and areas.</li>
+<li>If d²y/dx² > 0, the point is a minimum.</li>
+<li>If d²y/dx² < 0, the point is a maximum.</li>
 </ul>
 
-<p>Calculus is useful in physics, engineering, economics, statistics and many other fields.</p>
-
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> If y = x², its gradient changes as x changes. Differentiation gives:</p>
-<p>dy/dx = 2x</p>
-<p>At x = 3:</p>
-<p>dy/dx = 2(3)</p>
-<p><b>= 6</b></p>
+<p><b>Example 1:</b> Determine the nature of the stationary point of y = x² - 4x + 1.</p>
+
+<p>dy/dx = 2x - 4</p>
+
+<p>2x - 4 = 0</p>
+<p>x = 2</p>
+
+<p>Second derivative:</p>
+<p>d²y/dx² = 2</p>
+
+<p>Since 2 > 0, the stationary point is a <b>minimum</b>.</p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Find the derivative of y = x³.</p>
-<p>Using the power rule:</p>
-<p><b>dy/dx = 3x²</b></p>
+<p><b>Example 2:</b> Determine the nature of the stationary point of y = -x² + 6x.</p>
+
+<p>dy/dx = -2x + 6</p>
+<p>-2x + 6 = 0</p>
+<p>x = 3</p>
+
+<p>d²y/dx² = -2</p>
+
+<p>Since -2 < 0, the stationary point is a <b>maximum</b>.</p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>What is differentiation used to find?</li>
-<li>What is integration commonly used to find?</li>
-<li>Differentiate y = x².</li>
+<li>If the second derivative is positive at a stationary point, what type of point is it?</li>
+<li>If the second derivative is negative, what type of point is it?</li>
+<li>Determine the nature of the stationary point of y = x² - 2x.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>Rates of change or gradients.</li>
-<li>Accumulated quantities and areas.</li>
-<li>dy/dx = 2x</li>
+<li>Minimum.</li>
+<li>Maximum.</li>
+<li>Minimum.</li>
 </ol>
 </div>
 `;
 
-lessons["Functions"] = `
-<h2>99. Functions</h2>
+lessons["Rates of Change"] = `
+<h2>109. Rates of Change</h2>
 
 <h3>Lesson</h3>
-<p>A function is a rule that assigns exactly one output to each input.</p>
+<p>The derivative measures the rate at which one quantity changes with respect to another.</p>
 
-<p>A function is often written as:</p>
+<p>If distance s is a function of time t, then:</p>
 
-<p><b>f(x) = expression</b></p>
+<p><b>Velocity = ds/dt</b></p>
 
-<p>The input is represented by x and the output is f(x).</p>
+<p>The second derivative gives acceleration:</p>
+
+<p><b>Acceleration = d²s/dt²</b></p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> If f(x) = 2x + 3, find f(4).</p>
-<p>f(4) = 2(4) + 3</p>
-<p>= 8 + 3</p>
-<p><b>= 11</b></p>
+<p><b>Example 1:</b> The distance travelled by a particle is s = t² + 3t. Find its velocity at t = 4.</p>
+
+<p>Velocity = ds/dt</p>
+<p>= 2t + 3</p>
+
+<p>At t = 4:</p>
+<p>= 2(4) + 3</p>
+<p><b>= 11 units per second</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> If f(x) = x² - 1, find f(5).</p>
-<p>f(5) = 5² - 1</p>
-<p>= 25 - 1</p>
-<p><b>= 24</b></p>
+<p><b>Example 2:</b> If s = 2t³, find the velocity.</p>
+<p>v = ds/dt</p>
+<p>= <b>6t²</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>If f(x) = 3x + 2, find f(5).</li>
-<li>If f(x) = x² + 4, find f(3).</li>
-<li>If f(x) = 5x - 1, find f(0).</li>
+<li>If s = t² + 5t, find the velocity.</li>
+<li>If s = 3t², find the velocity at t = 2.</li>
+<li>If velocity v = 6t, find acceleration.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>17</li>
-<li>13</li>
-<li>-1</li>
+<li>v = 2t + 5</li>
+<li>12 units per second</li>
+<li>6 units per second squared</li>
 </ol>
 </div>
 `;
 
-lessons["Domain and Range"] = `
-<h2>100. Domain and Range</h2>
+lessons["Integration"] = `
+<h2>110. Integration</h2>
 
 <h3>Lesson</h3>
-<p>The <b>domain</b> of a function is the set of allowed input values.</p>
+<p>Integration is the reverse process of differentiation.</p>
 
-<p>The <b>range</b> is the set of possible output values.</p>
+<p>It is used to find accumulated quantities and areas under curves.</p>
 
-<p>For example, if f(x) = x + 2 and the domain is {1,2,3}, then the range is {3,4,5}.</p>
+<p>The basic power rule for integration is:</p>
+
+<p><b>∫xⁿ dx = xⁿ⁺¹/(n+1) + C</b></p>
+
+<p>where C is the constant of integration.</p>
 
 <h3>Worked Examples</h3>
 
 <div class="example">
-<p><b>Example 1:</b> Given f(x) = x + 3 and domain {0,1,2}, find the range.</p>
-<p>f(0) = 3</p>
-<p>f(1) = 4</p>
-<p>f(2) = 5</p>
-<p><b>Range = {3,4,5}</b></p>
+<p><b>Example 1:</b> Integrate 3x².</p>
+
+<p>∫3x² dx</p>
+<p>= 3(x³/3) + C</p>
+<p><b>= x³ + C</b></p>
 </div>
 
 <div class="example">
-<p><b>Example 2:</b> Find the domain restriction for f(x) = 1/(x-2).</p>
-<p>The denominator cannot be zero.</p>
-<p>x - 2 ≠ 0</p>
-<p><b>x ≠ 2</b></p>
-<p>Therefore the domain is all real numbers except 2.</p>
+<p><b>Example 2:</b> Integrate 4x³ + 2x.</p>
+
+<p>∫(4x³ + 2x)dx</p>
+<p>= x⁴ + x² + C</p>
+<p><b>Answer = x⁴ + x² + C</b></p>
 </div>
 
 <h3>Practice Questions</h3>
 <div class="practice">
 <ol>
-<li>For f(x) = x + 1 with domain {1,2,3}, find the range.</li>
-<li>For f(x) = 2x with domain {0,1,2}, find the range.</li>
-<li>State the restriction on x for f(x) = 1/(x-5).</li>
+<li>Integrate 2x.</li>
+<li>Integrate 5x².</li>
+<li>Integrate 6x³ + 4x.</li>
 </ol>
 </div>
 
 <h3>Answers</h3>
 <div class="answer">
 <ol>
-<li>{2,3,4}</li>
-<li>{0,2,4}</li>
-<li>x ≠ 5</li>
+<li>x² + C</li>
+<li>(5/3)x³ + C</li>
+<li>(3/2)x⁴ + 2x² + C</li>
 </ol>
 </div>
 `;
