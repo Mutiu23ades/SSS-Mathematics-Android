@@ -4,137 +4,3792 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SSS Mathematics</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#eef5ff;color:#123}
-header{background:#0b4f9c;color:#fff;text-align:center;padding:20px 15px}
-header h1{margin:0;font-size:28px} header p{margin:8px 0 0}
-.container{width:94%;max-width:900px;margin:auto;padding:20px 0 40px}
-#welcomeSection{display:block;text-align:center;padding:30px 15px}
-.welcome-card,.lesson-card,.topic{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.welcome-card{padding:30px 20px} .welcome-card h2,#lessonTitle{color:#0b4f9c}
-button{background:#0b4f9c;color:#fff;border:0;padding:14px 20px;border-radius:8px;font-size:16px;margin:8px 4px}
-.backButton{background:#555}
-#topicsSection,#lessonSection{display:none}
-.topic{margin:10px 0;padding:16px;font-size:17px;font-weight:bold;cursor:pointer}
-.topic:hover{background:#e5f0ff}
-.lesson-card{margin:15px 0;padding:20px;line-height:1.7;font-size:16px}
-.lesson-card h3{color:#0b4f9c;margin-top:0}
-footer{text-align:center;padding:20px;color:#555}
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#eef5ff;
+    color:#123;
+}
+
+header{
+    background:#0b4f9c;
+    color:white;
+    text-align:center;
+    padding:22px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:29px;
+}
+
+header p{
+    margin:8px 0 0;
+    font-size:15px;
+}
+
+.container{
+    width:94%;
+    max-width:950px;
+    margin:auto;
+    padding:20px 0 50px;
+}
+
+#welcomeSection{
+    display:block;
+    text-align:center;
+    padding:25px 10px;
+}
+
+.welcome-card,
+.lesson-card,
+.topic{
+    background:white;
+    border-radius:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,.10);
+}
+
+.welcome-card{
+    padding:30px 20px;
+}
+
+.welcome-card h2,
+#lessonTitle{
+    color:#0b4f9c;
+}
+
+button{
+    background:#0b4f9c;
+    color:white;
+    border:0;
+    padding:14px 20px;
+    border-radius:8px;
+    font-size:16px;
+    margin:8px 4px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#083d78;
+}
+
+.backButton{
+    background:#555;
+}
+
+#topicsSection,
+#lessonSection{
+    display:none;
+}
+
+.topic{
+    margin:11px 0;
+    padding:17px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.topic:hover{
+    background:#e5f0ff;
+    transform:translateX(3px);
+}
+
+.lesson-card{
+    margin:16px 0;
+    padding:21px;
+    line-height:1.75;
+    font-size:16px;
+}
+
+.lesson-card h3{
+    color:#0b4f9c;
+    margin-top:0;
+}
+
+.lesson-card h4{
+    color:#1765b3;
+    margin-bottom:6px;
+}
+
+.example{
+    background:#f4f8ff;
+    border-left:4px solid #0b4f9c;
+    padding:13px;
+    margin:12px 0;
+    border-radius:5px;
+}
+
+.question{
+    margin:12px 0;
+}
+
+.answer{
+    background:#f5fff5;
+    border-left:4px solid #299438;
+    padding:10px;
+    margin:8px 0;
+    border-radius:5px;
+}
+
+.formula{
+    background:#fff8df;
+    padding:12px;
+    border-radius:7px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#555;
+}
 </style>
 </head>
+
 <body>
-<header><h1>SSS Mathematics</h1><p>Learn • Practise • Understand • Excel</p></header>
+
+<header>
+<h1>SSS Mathematics</h1>
+<p>Learn • Practise • Understand • Excel</p>
+</header>
 
 <div class="container">
+
 <section id="welcomeSection">
+
 <div class="welcome-card">
+
 <h2>Welcome to SSS Mathematics</h2>
-<p>This application contains 115 Senior Secondary School Mathematics topics.</p>
-<p>📘 Lesson<br>✏️ Worked Examples<br>📝 Practice Questions<br>✅ Answers</p>
+
+<p>
+This application contains 115 Senior Secondary School Mathematics topics.
+</p>
+
+<p>
+📘 Comprehensive Lessons<br>
+✏️ Worked Examples<br>
+📝 Practice Questions<br>
+✅ Answers
+</p>
+
 <button onclick="startLearning()">Start Learning</button>
+
 </div>
+
 </section>
+
 
 <section id="topicsSection">
-<h2 style="text-align:center;color:#0b4f9c">SSS Mathematics Topics</h2>
+
+<h2 style="text-align:center;color:#0b4f9c">
+SSS Mathematics Topics
+</h2>
+
 <div id="topicsList"></div>
-<button class="backButton" onclick="showWelcome()">← Back to Welcome</button>
+
+<button class="backButton" onclick="showWelcome()">
+← Back to Welcome
+</button>
+
 </section>
+
 
 <section id="lessonSection">
-<button class="backButton" onclick="showTopics()">← Back to Topics</button>
+
+<button class="backButton" onclick="showTopics()">
+← Back to Topics
+</button>
+
 <h2 id="lessonTitle"></h2>
-<div class="lesson-card"><h3>📘 Lesson</h3><div id="lessonText"></div></div>
-<div class="lesson-card"><h3>✏️ Worked Examples</h3><div id="exampleText"></div></div>
-<div class="lesson-card"><h3>📝 Practice Questions</h3><div id="practiceText"></div></div>
-<div class="lesson-card"><h3>✅ Answers</h3><div id="answerText"></div></div>
-<button class="backButton" onclick="showTopics()">← Back to Topics</button>
-</section>
+
+
+<div class="lesson-card">
+
+<h3>📘 Lesson</h3>
+
+<div id="lessonText"></div>
+
 </div>
 
-<footer>SSS Mathematics Learning Application</footer>
+
+<div class="lesson-card">
+
+<h3>✏️ Worked Examples</h3>
+
+<div id="exampleText"></div>
+
+</div>
+
+
+<div class="lesson-card">
+
+<h3>📝 Practice Questions</h3>
+
+<div id="practiceText"></div>
+
+</div>
+
+
+<div class="lesson-card">
+
+<h3>✅ Answers</h3>
+
+<div id="answerText"></div>
+
+</div>
+
+
+<button class="backButton" onclick="showTopics()">
+← Back to Topics
+</button>
+
+</section>
+
+</div>
+
+<footer>
+SSS Mathematics Learning Application
+</footer>
+
 
 <script>
-const topics = ["Number Bases", "Fractions", "Decimals", "Approximation", "Estimation", "Standard Form", "Logarithms", "Laws of Logarithms", "Indices", "Laws of Indices", "Surds", "Simplification of Surds", "Sets", "Operations on Sets", "Venn Diagrams", "Algebraic Expressions", "Expansion of Algebraic Expressions", "Factorization", "Linear Equations", "Linear Inequalities", "Change of Subject of Formula", "Simultaneous Linear Equations", "Simultaneous Equations Involving Quadratics", "Quadratic Equations", "Quadratic Formula", "Completing the Square", "Nature of Roots", "Sequence", "Arithmetic Progression", "Geometric Progression", "Sum of Series", "Binomial Expansion", "Partial Fractions", "Binary Operations", "Modular Arithmetic", "Matrices", "Addition and Subtraction of Matrices", "Multiplication of Matrices", "Determinants", "Inverse of a Matrix", "Identity Matrix", "Transformation", "Translation", "Reflection", "Rotation", "Enlargement", "Combined Transformations", "Plane Geometry", "Angles and Lines", "Triangles", "Quadrilaterals", "Polygons", "Circles", "Circle Theorems", "Mensuration of Plane Shapes", "Perimeter and Area", "Mensuration of Solids", "Surface Area of Solids", "Volume of Solids", "Coordinate Geometry", "Straight Lines", "Graphs of Linear Equations", "Gradient of a Straight Line", "Distance Between Two Points", "Variation", "Direct Variation", "Inverse Variation", "Joint Variation", "Partial Variation", "Trigonometry", "Trigonometric Ratios", "Special Angles", "Trigonometric Identities", "Sine Rule", "Cosine Rule", "Bearings", "Distances", "Statistics", "Collection and Presentation of Data", "Frequency Distribution", "Histogram", "Frequency Polygon", "Ogive", "Measures of Central Tendency", "Mean", "Median", "Mode", "Measures of Dispersion", "Range", "Variance", "Standard Deviation", "Probability", "Experimental Probability", "Theoretical Probability", "Permutation", "Combination", "Probability of Combined Events", "Introduction to Calculus", "Functions", "Domain and Range", "Composite Functions", "Inverse Functions", "Limits", "Differentiation", "Differentiation from First Principles", "Rules of Differentiation", "Applications of Differentiation", "Maximum and Minimum Values", "Rates of Change", "Integration", "Indefinite Integration", "Definite Integration", "Area Under a Curve", "Differential Equations", "Numerical Methods"];
+
+/* =========================================================
+   115 SSS MATHEMATICS TOPICS
+========================================================= */
+
+const topics = [
+
+"Number Bases",
+"Fractions",
+"Decimals",
+"Approximation",
+"Estimation",
+"Standard Form",
+"Logarithms",
+"Laws of Logarithms",
+"Indices",
+"Laws of Indices",
+"Surds",
+"Simplification of Surds",
+"Sets",
+"Operations on Sets",
+"Venn Diagrams",
+"Algebraic Expressions",
+"Expansion of Algebraic Expressions",
+"Factorization",
+"Linear Equations",
+"Linear Inequalities",
+"Change of Subject of Formula",
+"Simultaneous Linear Equations",
+"Simultaneous Equations Involving Quadratics",
+"Quadratic Equations",
+"Quadratic Formula",
+"Completing the Square",
+"Nature of Roots",
+"Sequence",
+"Arithmetic Progression",
+"Geometric Progression",
+"Sum of Series",
+"Binomial Expansion",
+"Partial Fractions",
+"Binary Operations",
+"Modular Arithmetic",
+"Matrices",
+"Addition and Subtraction of Matrices",
+"Multiplication of Matrices",
+"Determinants",
+"Inverse of a Matrix",
+"Identity Matrix",
+"Transformation",
+"Translation",
+"Reflection",
+"Rotation",
+"Enlargement",
+"Combined Transformations",
+"Plane Geometry",
+"Angles and Lines",
+"Triangles",
+"Quadrilaterals",
+"Polygons",
+"Circles",
+"Circle Theorems",
+"Mensuration of Plane Shapes",
+"Perimeter and Area",
+"Mensuration of Solids",
+"Surface Area of Solids",
+"Volume of Solids",
+"Coordinate Geometry",
+"Straight Lines",
+"Graphs of Linear Equations",
+"Gradient of a Straight Line",
+"Distance Between Two Points",
+"Variation",
+"Direct Variation",
+"Inverse Variation",
+"Joint Variation",
+"Partial Variation",
+"Trigonometry",
+"Trigonometric Ratios",
+"Special Angles",
+"Trigonometric Identities",
+"Sine Rule",
+"Cosine Rule",
+"Bearings",
+"Distances",
+"Statistics",
+"Collection and Presentation of Data",
+"Frequency Distribution",
+"Histogram",
+"Frequency Polygon",
+"Ogive",
+"Measures of Central Tendency",
+"Mean",
+"Median",
+"Mode",
+"Measures of Dispersion",
+"Range",
+"Variance",
+"Standard Deviation",
+"Probability",
+"Experimental Probability",
+"Theoretical Probability",
+"Permutation",
+"Combination",
+"Probability of Combined Events",
+"Introduction to Calculus",
+"Functions",
+"Domain and Range",
+"Composite Functions",
+"Inverse Functions",
+"Limits",
+"Differentiation",
+"Differentiation from First Principles",
+"Rules of Differentiation",
+"Applications of Differentiation",
+"Maximum and Minimum Values",
+"Rates of Change",
+"Integration",
+"Indefinite Integration",
+"Definite Integration",
+"Area Under a Curve",
+"Differential Equations",
+"Numerical Methods"
+
+];
+
+
+/* =========================================================
+   HELPER FUNCTIONS
+========================================================= */
 
 function startLearning(){
- document.getElementById("welcomeSection").style.display="none";
- document.getElementById("lessonSection").style.display="none";
- document.getElementById("topicsSection").style.display="block";
- displayTopics();
-}
-function showWelcome(){
- document.getElementById("topicsSection").style.display="none";
- document.getElementById("lessonSection").style.display="none";
- document.getElementById("welcomeSection").style.display="block";
-}
-function showTopics(){
- document.getElementById("welcomeSection").style.display="none";
- document.getElementById("lessonSection").style.display="none";
- document.getElementById("topicsSection").style.display="block";
-}
-function displayTopics(){
- const list=document.getElementById("topicsList");
- list.innerHTML="";
- topics.forEach((topic,index)=>{
-   const div=document.createElement("div");
-   div.className="topic";
-   div.textContent="Topic "+(index+1)+": "+topic;
-   div.onclick=()=>openLesson(index);
-   list.appendChild(div);
- });
+
+    document.getElementById("welcomeSection").style.display="none";
+
+    document.getElementById("lessonSection").style.display="none";
+
+    document.getElementById("topicsSection").style.display="block";
+
+    displayTopics();
 }
 
-function getLesson(topic){
- return `<h4>Meaning and Key Ideas</h4>
- <p><b>${topic}</b> is an important Senior Secondary School Mathematics topic. Learn its meaning, rules, formulas, properties and methods of solving problems.</p>
- <h4>Key Learning Points</h4>
- <ul><li>Understand the definitions and mathematical terms.</li>
- <li>Know the important rules and formulas.</li>
- <li>Choose the correct method for each problem.</li>
- <li>Show solutions clearly and check the final answer.</li></ul>
- <h4>How to Solve Problems</h4>
- <p>Read carefully, identify the known information, select the appropriate rule or formula, substitute correctly, simplify step by step and check your answer.</p>`;
+
+function showWelcome(){
+
+    document.getElementById("welcomeSection").style.display="block";
+
+    document.getElementById("topicsSection").style.display="none";
+
+    document.getElementById("lessonSection").style.display="none";
 }
-function getExamples(topic){
- return `<b>Example 1:</b> Identify the main idea and appropriate method for a problem involving <b>${topic}</b>.<br><br>
- <b>Solution:</b> Start from the definition, select the relevant rule and apply it step by step.<br><br>
- <b>Example 2:</b> Solve a typical examination-style question involving <b>${topic}</b>.<br><br>
- <b>Solution:</b> Organise the information, show each mathematical step and simplify the final result.`;
+
+
+function showTopics(){
+
+    document.getElementById("welcomeSection").style.display="none";
+
+    document.getElementById("topicsSection").style.display="block";
+
+    document.getElementById("lessonSection").style.display="none";
 }
-function getPractice(topic){
- return `1. Define or explain <b>${topic}</b>.<br><br>
- 2. State one important rule, property or formula used in this topic.<br><br>
- 3. Solve a basic problem involving the topic.<br><br>
- 4. Solve an intermediate problem and show all steps.<br><br>
- 5. Solve an examination-style application question involving the topic.`;
+
+
+function displayTopics(){
+
+    const list=document.getElementById("topicsList");
+
+    list.innerHTML="";
+
+    topics.forEach(function(topic,index){
+
+        const div=document.createElement("div");
+
+        div.className="topic";
+
+        div.textContent=
+            "Topic "+(index+1)+": "+topic;
+
+        div.onclick=function(){
+
+            openLesson(index);
+
+        };
+
+        list.appendChild(div);
+
+    });
 }
-function getAnswers(topic){
- return `1. Use the correct mathematical definition of <b>${topic}</b>.<br><br>
- 2. State the relevant rule, property or formula correctly.<br><br>
- 3. Apply the chosen method step by step.<br><br>
- 4. Show correct substitution and simplification.<br><br>
- 5. Present the final answer clearly with appropriate interpretation or units where necessary.`;
+
+
+/* =========================================================
+   LESSON DATABASE
+========================================================= */
+
+const lessons = {};
+
+
+/* =========================================================
+   NUMBER BASES
+========================================================= */
+
+lessons["Number Bases"] = {
+
+lesson:`
+<h4>Meaning of Number Bases</h4>
+
+<p>
+A number base tells us how many different digits are used in a
+number system. The decimal system has base 10 because it uses the
+digits 0 to 9.
+</p>
+
+<p>
+Other common bases include binary (base 2), ternary (base 3),
+quinary (base 5), octal (base 8) and hexadecimal (base 16).
+</p>
+
+<div class="formula">
+For base b, the allowed digits are 0,1,2,...,b−1.
+</div>
+
+<h4>Place Value</h4>
+
+<p>
+In base 10, the number 352 means:
+</p>
+
+<p>
+3×10² + 5×10¹ + 2×10⁰
+</p>
+
+<p>
+Therefore:
+</p>
+
+<p>
+352 = 300 + 50 + 2.
+</p>
+
+<h4>Converting Other Bases to Base 10</h4>
+
+<p>
+Multiply each digit by the corresponding power of the base and
+then add the results.
+</p>
+
+<h4>Converting Base 10 to Another Base</h4>
+
+<p>
+Repeatedly divide by the required base and read the remainders
+from bottom to top.
+</p>
+
+<h4>Binary Numbers</h4>
+
+<p>
+Binary uses only 0 and 1. The place values are powers of 2:
+1, 2, 4, 8, 16, 32, and so on.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b> Convert 1011₂ to base 10.
+
+<br><br>
+
+<b>Solution:</b>
+
+<br>
+
+1011₂ =
+1×2³ + 0×2² + 1×2¹ + 1×2⁰
+
+<br><br>
+
+= 8 + 0 + 2 + 1
+
+<br><br>
+
+<b>= 11₁₀</b>
+</div>
+
+
+<div class="example">
+<b>Example 2:</b> Convert 25₁₀ to base 2.
+
+<br><br>
+
+25 ÷ 2 = 12 remainder 1<br>
+12 ÷ 2 = 6 remainder 0<br>
+6 ÷ 2 = 3 remainder 0<br>
+3 ÷ 2 = 1 remainder 1<br>
+1 ÷ 2 = 0 remainder 1
+
+<br><br>
+
+Reading from bottom to top:
+
+<br>
+
+<b>25₁₀ = 11001₂</b>
+</div>
+`,
+
+practice:`
+
+<div class="question">
+1. Convert 1101₂ to base 10.
+</div>
+
+<div class="question">
+2. Convert 18₁₀ to base 2.
+</div>
+
+<div class="question">
+3. Convert 132₄ to base 10.
+</div>
+
+<div class="question">
+4. Convert 45₁₀ to base 5.
+</div>
+
+<div class="question">
+5. Explain the meaning of a number base.
+</div>
+`,
+
+answers:`
+
+<div class="answer">
+<b>1.</b> 1101₂ = 13₁₀
+</div>
+
+<div class="answer">
+<b>2.</b> 18₁₀ = 10010₂
+</div>
+
+<div class="answer">
+<b>3.</b> 132₄ = 1(16)+3(4)+2 = <b>22₁₀</b>
+</div>
+
+<div class="answer">
+<b>4.</b> 45₁₀ = <b>140₅</b>
+</div>
+
+<div class="answer">
+<b>5.</b> A number base specifies the number of digits and place-value
+system used to represent numbers.
+</div>
+`
+
+};
+
+
+/* =========================================================
+   FRACTIONS
+========================================================= */
+
+lessons["Fractions"] = {
+
+lesson:`
+<h4>Meaning of a Fraction</h4>
+
+<p>
+A fraction represents part of a whole. It has a numerator and a
+denominator.
+</p>
+
+<div class="formula">
+Fraction = Numerator ÷ Denominator
+</div>
+
+<p>
+The denominator must not be zero.
+</p>
+
+<h4>Types of Fractions</h4>
+
+<ul>
+<li>Proper fractions</li>
+<li>Improper fractions</li>
+<li>Mixed numbers</li>
+<li>Equivalent fractions</li>
+</ul>
+
+<h4>Adding and Subtracting Fractions</h4>
+
+<p>
+Fractions with the same denominator can be added directly.
+Fractions with different denominators must first be changed to
+equivalent fractions with a common denominator.
+</p>
+
+<h4>Multiplication</h4>
+
+<p>
+Multiply the numerators together and multiply the denominators
+together.
+</p>
+
+<h4>Division</h4>
+
+<p>
+To divide by a fraction, multiply by its reciprocal.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+1/3 + 1/6
+
+<br><br>
+
+LCM of 3 and 6 = 6.
+
+<br>
+
+1/3 = 2/6
+
+<br>
+
+Therefore:
+
+2/6 + 1/6 = <b>3/6 = 1/2</b>
+</div>
+
+
+<div class="example">
+<b>Example 2:</b>
+
+2/3 × 9/4
+
+<br><br>
+
+= 18/12
+
+<br>
+
+= <b>3/2 = 1½</b>
+</div>
+`,
+
+practice:`
+
+1. Simplify 12/18.<br><br>
+2. Calculate 2/5 + 1/10.<br><br>
+3. Calculate 3/4 − 1/8.<br><br>
+4. Calculate 2/3 × 9/10.<br><br>
+5. Calculate 5/6 ÷ 10/9.
+`,
+
+answers:`
+
+1. <b>2/3</b><br><br>
+2. <b>1/2</b><br><br>
+3. <b>5/8</b><br><br>
+4. <b>3/5</b><br><br>
+5. <b>3/4</b>
+`
+
+};
+
+
+/* =========================================================
+   DECIMALS
+========================================================= */
+
+lessons["Decimals"] = {
+
+lesson:`
+<h4>Meaning of Decimals</h4>
+
+<p>
+A decimal is another way of representing a number using a decimal
+point. Digits to the right of the decimal point represent tenths,
+hundredths, thousandths and so on.
+</p>
+
+<p>
+For example:
+</p>
+
+<div class="formula">
+0.437 = 4/10 + 3/100 + 7/1000
+</div>
+
+<h4>Adding and Subtracting Decimals</h4>
+
+<p>
+Write the decimal points directly underneath one another and then
+perform the operation.
+</p>
+
+<h4>Multiplying Decimals</h4>
+
+<p>
+Multiply as whole numbers first and then place the decimal point
+according to the total number of decimal places.
+</p>
+
+<h4>Dividing Decimals</h4>
+
+<p>
+The divisor can be changed into a whole number by moving the
+decimal point in both numbers by the same number of places.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+2.45 + 3.70 = <b>6.15</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+0.6 × 0.4
+
+<br><br>
+
+6 × 4 = 24.
+
+<br>
+
+There are two decimal places altogether.
+
+<br>
+
+Therefore:
+
+<b>0.6 × 0.4 = 0.24</b>
+</div>
+`,
+
+practice:`
+
+1. Add 4.75 and 2.38.<br><br>
+2. Subtract 3.27 from 8.50.<br><br>
+3. Calculate 0.7 × 0.8.<br><br>
+4. Calculate 4.8 ÷ 0.6.<br><br>
+5. Write 0.625 as a fraction.
+`,
+
+answers:`
+
+1. <b>7.13</b><br><br>
+2. <b>5.23</b><br><br>
+3. <b>0.56</b><br><br>
+4. <b>8</b><br><br>
+5. <b>5/8</b>
+`
+
+};
+
+
+/* =========================================================
+   APPROXIMATION
+========================================================= */
+
+lessons["Approximation"] = {
+
+lesson:`
+<h4>Meaning of Approximation</h4>
+
+<p>
+Approximation is the process of replacing an exact value with a
+nearby value that is easier to use.
+</p>
+
+<h4>Rounding Off</h4>
+
+<p>
+To round a number, look at the digit immediately after the place
+to which you are rounding.
+</p>
+
+<ul>
+<li>If the next digit is 5 or more, increase the required digit by 1.</li>
+<li>If the next digit is less than 5, leave the required digit unchanged.</li>
+</ul>
+
+<h4>Decimal Places</h4>
+
+<p>
+Decimal places count the digits after the decimal point.
+</p>
+
+<h4>Significant Figures</h4>
+
+<p>
+Significant figures begin with the first non-zero digit.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Round 7.846 to 2 decimal places.
+
+<br><br>
+
+The third decimal digit is 6, so increase 4 to 5.
+
+<br>
+
+<b>Answer = 7.85</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Round 0.004738 to 2 significant figures.
+
+<br><br>
+
+The first two significant figures are 4 and 7.
+The next digit is 3, so 7 remains unchanged.
+
+<br>
+
+<b>Answer = 0.0047</b>
+</div>
+`,
+
+practice:`
+
+1. Round 8.764 to 2 decimal places.<br><br>
+2. Round 45.673 to 1 decimal place.<br><br>
+3. Round 0.006783 to 2 significant figures.<br><br>
+4. Round 58372 to 3 significant figures.<br><br>
+5. Explain the difference between decimal places and significant figures.
+`,
+
+answers:`
+
+1. <b>8.76</b><br><br>
+2. <b>45.7</b><br><br>
+3. <b>0.0068</b><br><br>
+4. <b>58,400</b><br><br>
+5. Decimal places count digits after the decimal point, while significant figures count meaningful digits beginning with the first non-zero digit.
+`
+
+};
+
+
+/* =========================================================
+   STANDARD FORM
+========================================================= */
+
+lessons["Standard Form"] = {
+
+lesson:`
+<h4>Meaning of Standard Form</h4>
+
+<p>
+Standard form is a convenient way of writing very large or very
+small numbers.
+</p>
+
+<div class="formula">
+a × 10ⁿ, where 1 ≤ a < 10
+</div>
+
+<p>
+The value of n may be positive, zero or negative.
+</p>
+
+<h4>Large Numbers</h4>
+
+<p>
+For large numbers, the power of 10 is positive.
+</p>
+
+<h4>Small Numbers</h4>
+
+<p>
+For numbers between 0 and 1, the power of 10 is negative.
+</p>
+
+<h4>Multiplication</h4>
+
+<p>
+Multiply the numbers in front and add the powers.
+</p>
+
+<h4>Division</h4>
+
+<p>
+Divide the numbers in front and subtract the powers.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Write 4500000 in standard form.
+
+<br><br>
+
+Move the decimal point six places left.
+
+<br>
+
+<b>4.5 × 10⁶</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+(3 × 10⁴)(2 × 10³)
+
+<br><br>
+
+= 6 × 10⁷
+
+<br>
+
+<b>Answer = 6 × 10⁷</b>
+</div>
+`,
+
+practice:`
+
+1. Write 720000 in standard form.<br><br>
+2. Write 0.00056 in standard form.<br><br>
+3. Calculate (2×10³)(4×10²).<br><br>
+4. Calculate (8×10⁶) ÷ (2×10²).<br><br>
+5. Explain the condition on the coefficient in standard form.
+`,
+
+answers:`
+
+1. <b>7.2×10⁵</b><br><br>
+2. <b>5.6×10⁻⁴</b><br><br>
+3. <b>8×10⁵</b><br><br>
+4. <b>4×10⁴</b><br><br>
+5. The coefficient must be at least 1 but less than 10.
+`
+
+};
+
+
+/* =========================================================
+   LOGARITHMS
+========================================================= */
+
+lessons["Logarithms"] = {
+
+lesson:`
+<h4>Meaning of a Logarithm</h4>
+
+<p>
+A logarithm is another way of expressing an index.
+</p>
+
+<div class="formula">
+If aˣ = N, then logₐN = x
+</div>
+
+<p>
+The base a must be positive and must not equal 1, while N must
+be positive.
+</p>
+
+<h4>Common Logarithm</h4>
+
+<p>
+A logarithm to base 10 is called a common logarithm and is usually
+written simply as log.
+</p>
+
+<h4>Examples of Meaning</h4>
+
+<p>
+Since 2³ = 8:
+</p>
+
+<div class="formula">
+log₂8 = 3
+</div>
+
+<p>
+Since 10² = 100:
+</p>
+
+<div class="formula">
+log 100 = 2
+</div>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Evaluate log₂32.
+
+<br><br>
+
+2⁵ = 32.
+
+<br>
+
+Therefore:
+
+<b>log₂32 = 5</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Solve log₃x = 4.
+
+<br><br>
+
+Convert to index form:
+
+x = 3⁴
+
+<br>
+
+<b>x = 81</b>
+</div>
+`,
+
+practice:`
+
+1. Evaluate log₂16.<br><br>
+2. Evaluate log₅25.<br><br>
+3. Solve log₂x = 6.<br><br>
+4. Write 7³ = 343 in logarithmic form.<br><br>
+5. Explain the relationship between logarithms and indices.
+`,
+
+answers:`
+
+1. <b>4</b><br><br>
+2. <b>2</b><br><br>
+3. <b>x = 64</b><br><br>
+4. <b>log₇343 = 3</b><br><br>
+5. Logarithms and indices are inverse forms of the same relationship.
+`
+
+};
+
+
+/* =========================================================
+   INDICES
+========================================================= */
+
+lessons["Indices"] = {
+
+lesson:`
+<h4>Meaning of Indices</h4>
+
+<p>
+An index or exponent tells us how many times a number is multiplied
+by itself.
+</p>
+
+<div class="formula">
+aⁿ = a × a × a ... n times
+</div>
+
+<h4>Laws of Indices</h4>
+
+<div class="formula">
+aᵐ × aⁿ = aᵐ⁺ⁿ
+</div>
+
+<div class="formula">
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ
+</div>
+
+<div class="formula">
+(aᵐ)ⁿ = aᵐⁿ
+</div>
+
+<div class="formula">
+a⁰ = 1
+</div>
+
+<div class="formula">
+a⁻ⁿ = 1/aⁿ
+</div>
+
+<h4>Indicial Equations</h4>
+
+<p>
+An equation involving powers can often be solved by expressing
+both sides using the same base.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+2³ × 2⁴
+
+<br><br>
+
+= 2³⁺⁴
+
+<br>
+
+= <b>2⁷ = 128</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Solve 2ˣ = 32.
+
+<br><br>
+
+32 = 2⁵.
+
+<br>
+
+Therefore:
+
+2ˣ = 2⁵
+
+<br>
+
+<b>x = 5</b>
+</div>
+`,
+
+practice:`
+
+1. Simplify 3²×3⁴.<br><br>
+2. Simplify 5⁷÷5³.<br><br>
+3. Simplify (2³)².<br><br>
+4. Solve 3ˣ = 81.<br><br>
+5. Solve 2ˣ⁺¹ = 16.
+`,
+
+answers:`
+
+1. <b>3⁶ = 729</b><br><br>
+2. <b>5⁴ = 625</b><br><br>
+3. <b>2⁶ = 64</b><br><br>
+4. <b>x = 4</b><br><br>
+5. 16=2⁴, so x+1=4 and <b>x=3</b>.
+`
+
+};
+
+
+/* =========================================================
+   SURDS
+========================================================= */
+
+lessons["Surds"] = {
+
+lesson:`
+<h4>Meaning of a Surd</h4>
+
+<p>
+A surd is an irrational root that cannot be expressed exactly as
+a rational number.
+</p>
+
+<p>
+Examples include √2, √3 and √5.
+</p>
+
+<h4>Simplifying Surds</h4>
+
+<p>
+Look for perfect-square factors inside the radical.
+</p>
+
+<div class="formula">
+√ab = √a × √b
+</div>
+
+<h4>Adding Surds</h4>
+
+<p>
+Only like surds can be added or subtracted.
+</p>
+
+<h4>Rationalising the Denominator</h4>
+
+<p>
+A denominator containing a surd can be changed into a rational
+number by multiplying by a suitable surd or conjugate.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Simplify √50.
+
+<br><br>
+
+√50 = √(25×2)
+
+<br>
+
+= 5√2
+
+<br>
+
+<b>Answer = 5√2</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Simplify 2√3 + 5√3.
+
+<br><br>
+
+= 7√3
+
+<br>
+
+<b>Answer = 7√3</b>
+</div>
+`,
+
+practice:`
+
+1. Simplify √72.<br><br>
+2. Simplify √98.<br><br>
+3. Calculate 3√5 + 2√5.<br><br>
+4. Simplify √12 + √27.<br><br>
+5. Explain what makes a radical a surd.
+`,
+
+answers:`
+
+1. <b>6√2</b><br><br>
+2. <b>7√2</b><br><br>
+3. <b>5√5</b><br><br>
+4. <b>5√3</b><br><br>
+5. A surd is an irrational root that cannot be simplified to a rational number.
+`
+
+};
+
+
+/* =========================================================
+   SETS
+========================================================= */
+
+lessons["Sets"] = {
+
+lesson:`
+<h4>Meaning of a Set</h4>
+
+<p>
+A set is a well-defined collection of objects. The objects are
+called elements or members of the set.
+</p>
+
+<p>
+Sets are usually represented using capital letters.
+</p>
+
+<p>
+For example:
+A = {1,2,3,4}.
+</p>
+
+<h4>Types of Sets</h4>
+
+<ul>
+<li>Empty set</li>
+<li>Finite set</li>
+<li>Infinite set</li>
+<li>Universal set</li>
+<li>Subset</li>
+</ul>
+
+<h4>Set Notation</h4>
+
+<p>
+The symbol ∈ means "is an element of", while ⊂ may be used to
+represent a proper subset.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+A={2,4,6,8}.
+
+Is 4 an element of A?
+
+<br><br>
+
+Yes.
+
+<br>
+
+<b>4 ∈ A</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+If A={1,2,3} and B={1,2,3,4,5}, then every element of A belongs
+to B.
+
+<br><br>
+
+Therefore:
+
+<b>A ⊂ B</b>
+</div>
+`,
+
+practice:`
+
+1. Write the set of even numbers less than 10.<br><br>
+2. If A={1,3,5}, state whether 3∈A.<br><br>
+3. Define an empty set.<br><br>
+4. Give an example of an infinite set.<br><br>
+5. Explain what a subset is.
+`,
+
+answers:`
+
+1. <b>{2,4,6,8}</b><br><br>
+2. <b>Yes</b><br><br>
+3. A set containing no element.<br><br>
+4. The set of natural numbers is infinite.<br><br>
+5. A subset is a set whose elements are all contained in another set.
+`
+
+};
+
+
+/* =========================================================
+   QUADRATIC EQUATIONS
+========================================================= */
+
+lessons["Quadratic Equations"] = {
+
+lesson:`
+<h4>Meaning of a Quadratic Equation</h4>
+
+<p>
+A quadratic equation is an equation that can be written in the form:
+</p>
+
+<div class="formula">
+ax² + bx + c = 0, where a ≠ 0
+</div>
+
+<p>
+The highest power of the variable is 2.
+</p>
+
+<h4>Methods of Solving Quadratic Equations</h4>
+
+<ul>
+<li>Factorization</li>
+<li>Completing the square</li>
+<li>Quadratic formula</li>
+<li>Graphical method</li>
+</ul>
+
+<h4>Quadratic Formula</h4>
+
+<div class="formula">
+x = (-b ± √(b²−4ac))/(2a)
+</div>
+
+<h4>Discriminant</h4>
+
+<div class="formula">
+D = b² − 4ac
+</div>
+
+<p>
+The discriminant helps determine the nature of the roots.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Solve x²−5x+6=0.
+
+<br><br>
+
+Factorize:
+
+(x−2)(x−3)=0
+
+<br><br>
+
+Therefore:
+
+<b>x=2 or x=3</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Solve x²−9=0.
+
+<br><br>
+
+Difference of two squares:
+
+(x−3)(x+3)=0
+
+<br>
+
+Therefore:
+
+<b>x=3 or x=−3</b>
+</div>
+`,
+
+practice:`
+
+1. Solve x²−7x+12=0.<br><br>
+2. Solve x²−16=0.<br><br>
+3. Solve x²+5x+6=0.<br><br>
+4. State the quadratic formula.<br><br>
+5. Find the discriminant of x²−4x+3=0.
+`,
+
+answers:`
+
+1. <b>x=3 or x=4</b><br><br>
+2. <b>x=4 or x=−4</b><br><br>
+3. <b>x=−2 or x=−3</b><br><br>
+4. <b>x=(-b±√(b²−4ac))/(2a)</b><br><br>
+5. D=16−12=<b>4</b>.
+`
+
+};
+
+
+/* =========================================================
+   SEQUENCES
+========================================================= */
+
+lessons["Sequence"] = {
+
+lesson:`
+<h4>Meaning of a Sequence</h4>
+
+<p>
+A sequence is an ordered list of numbers following a particular
+pattern or rule.
+</p>
+
+<p>
+For example:
+</p>
+
+<div class="formula">
+2, 5, 8, 11, 14, ...
+</div>
+
+<p>
+The difference between consecutive terms is 3.
+</p>
+
+<h4>nth Term</h4>
+
+<p>
+The nth term gives a formula for finding any term in the sequence.
+</p>
+
+<h4>Arithmetic Sequence</h4>
+
+<p>
+An arithmetic sequence has a constant common difference.
+</p>
+
+<div class="formula">
+Tₙ = a + (n−1)d
+</div>
+
+<p>
+where a is the first term and d is the common difference.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Find the 10th term of:
+
+3, 7, 11, 15,...
+
+<br><br>
+
+a=3, d=4.
+
+<br>
+
+T₁₀=3+(10−1)4
+
+<br>
+
+=3+36
+
+<br>
+
+<b>=39</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Find the next three terms:
+
+5, 10, 15, 20,...
+
+<br><br>
+
+The common difference is 5.
+
+<br>
+
+<b>25, 30, 35</b>
+</div>
+`,
+
+practice:`
+
+1. Find the next two terms: 4,8,12,16,...<br><br>
+2. Find the common difference of 7,12,17,22,...<br><br>
+3. Find the 8th term of 2,5,8,...<br><br>
+4. State the nth-term formula for an arithmetic sequence.<br><br>
+5. Find the 20th term of 3,7,11,...
+`,
+
+answers:`
+
+1. <b>20,24</b><br><br>
+2. <b>5</b><br><br>
+3. <b>23</b><br><br>
+4. <b>Tₙ=a+(n−1)d</b><br><br>
+5. <b>79</b>
+`
+
+};
+
+
+/* =========================================================
+   ARITHMETIC PROGRESSION
+========================================================= */
+
+lessons["Arithmetic Progression"] = {
+
+lesson:`
+<h4>Arithmetic Progression</h4>
+
+<p>
+An arithmetic progression (AP) is a sequence in which the
+difference between consecutive terms is constant.
+</p>
+
+<div class="formula">
+Tₙ = a + (n−1)d
+</div>
+
+<p>
+where:</p>
+
+<ul>
+<li>a = first term</li>
+<li>d = common difference</li>
+<li>n = number of the term</li>
+</ul>
+
+<h4>Sum of an AP</h4>
+
+<div class="formula">
+Sₙ = n/2 [2a+(n−1)d]
+</div>
+
+<p>
+Another useful form is:
+</p>
+
+<div class="formula">
+Sₙ = n/2(a+l)
+</div>
+
+<p>
+where l is the last term.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+Find the 12th term of 5,8,11,...
+
+<br><br>
+
+a=5, d=3.
+
+<br>
+
+T₁₂=5+11(3)
+
+<br>
+
+<b>T₁₂=38</b>
+</div>
+`,
+
+practice:`
+
+1. Find the 10th term of 2,5,8,...<br><br>
+2. Find the common difference of 12,17,22,...<br><br>
+3. Find the 15th term of 4,9,14,...<br><br>
+4. Find the sum of the first 10 terms of 2,4,6,...<br><br>
+5. State the formula for the nth term.
+`,
+
+answers:`
+
+1. <b>29</b><br><br>
+2. <b>5</b><br><br>
+3. <b>74</b><br><br>
+4. <b>110</b><br><br>
+5. <b>Tₙ=a+(n−1)d</b>
+`
+
+};
+
+
+/* =========================================================
+   GEOMETRY
+========================================================= */
+
+lessons["Angles and Lines"] = {
+
+lesson:`
+<h4>Angles</h4>
+
+<p>
+An angle is formed when two lines or rays meet at a point.
+</p>
+
+<h4>Types of Angles</h4>
+
+<ul>
+<li>Acute angle: less than 90°</li>
+<li>Right angle: 90°</li>
+<li>Obtuse angle: between 90° and 180°</li>
+<li>Straight angle: 180°</li>
+<li>Reflex angle: between 180° and 360°</li>
+</ul>
+
+<h4>Angles on a Straight Line</h4>
+
+<div class="formula">
+Angles on a straight line = 180°
+</div>
+
+<h4>Angles Around a Point</h4>
+
+<div class="formula">
+Angles around a point = 360°
+</div>
+
+<h4>Parallel Lines</h4>
+
+<p>
+When a transversal cuts parallel lines, corresponding angles are
+equal and alternate angles are equal. Co-interior angles add to
+180°.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Two angles on a straight line are x and 65°.
+
+<br><br>
+
+x+65°=180°
+
+<br>
+
+x=<b>115°</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Two co-interior angles are x and 70°.
+
+<br><br>
+
+x+70°=180°
+
+<br>
+
+<b>x=110°</b>
+</div>
+`,
+
+practice:`
+
+1. Find the supplement of 48°.<br><br>
+2. Find the complement of 35°.<br><br>
+3. Two angles on a straight line are x and 72°. Find x.<br><br>
+4. Angles around a point are 80°, 120° and x. Find x.<br><br>
+5. State the relationship between alternate angles in parallel lines.
+`,
+
+answers:`
+
+1. <b>132°</b><br><br>
+2. <b>55°</b><br><br>
+3. <b>108°</b><br><br>
+4. <b>160°</b><br><br>
+5. Alternate angles are equal when the lines are parallel.
+`
+
+};
+
+
+/* =========================================================
+   TRIANGLES
+========================================================= */
+
+lessons["Triangles"] = {
+
+lesson:`
+<h4>Triangles</h4>
+
+<p>
+A triangle is a polygon with three sides and three angles.
+</p>
+
+<div class="formula">
+Sum of angles in a triangle = 180°
+</div>
+
+<h4>Types According to Sides</h4>
+
+<ul>
+<li>Equilateral</li>
+<li>Isosceles</li>
+<li>Scalene</li>
+</ul>
+
+<h4>Types According to Angles</h4>
+
+<ul>
+<li>Acute-angled</li>
+<li>Right-angled</li>
+<li>Obtuse-angled</li>
+</ul>
+
+<h4>Area of a Triangle</h4>
+
+<div class="formula">
+Area = ½ × base × height
+</div>
+
+<h4>Pythagoras' Theorem</h4>
+
+<div class="formula">
+c² = a² + b²
+</div>
+
+<p>
+This applies to right-angled triangles.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+A triangle has angles 50° and 60°. Find the third angle.
+
+<br><br>
+
+Third angle = 180−50−60
+
+<br>
+
+<b>=70°</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+A right triangle has shorter sides 3 cm and 4 cm.
+
+<br><br>
+
+c²=3²+4²
+
+<br>
+
+=9+16=25
+
+<br>
+
+c=<b>5 cm</b>
+</div>
+`,
+
+practice:`
+
+1. Find the third angle of a triangle with angles 45° and 65°.<br><br>
+2. Find the area of a triangle with base 12 cm and height 7 cm.<br><br>
+3. Find the hypotenuse of a right triangle with sides 6 cm and 8 cm.<br><br>
+4. State Pythagoras' theorem.<br><br>
+5. Define an isosceles triangle.
+`,
+
+answers:`
+
+1. <b>70°</b><br><br>
+2. <b>42 cm²</b><br><br>
+3. <b>10 cm</b><br><br>
+4. c²=a²+b².<br><br>
+5. A triangle with two equal sides and two equal opposite angles.
+`
+
+};
+
+
+/* =========================================================
+   MENSURATION
+========================================================= */
+
+lessons["Perimeter and Area"] = {
+
+lesson:`
+<h4>Perimeter</h4>
+
+<p>
+The perimeter of a plane shape is the total distance around its
+boundary.
+</p>
+
+<h4>Area</h4>
+
+<p>
+Area measures the amount of surface occupied by a plane figure.
+</p>
+
+<div class="formula">
+Rectangle: Area = length × width
+</div>
+
+<div class="formula">
+Triangle: Area = ½ × base × height
+</div>
+
+<div class="formula">
+Circle: Area = πr²
+</div>
+
+<div class="formula">
+Circle circumference = 2πr
+</div>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+Find the area of a rectangle 12 cm long and 5 cm wide.
+
+<br><br>
+
+Area=12×5
+
+<br>
+
+<b>=60 cm²</b>
+</div>
+`,
+
+practice:`
+
+1. Find the area of a rectangle 8 m by 4 m.<br><br>
+2. Find the perimeter of a square of side 6 cm.<br><br>
+3. Find the area of a triangle with base 10 cm and height 8 cm.<br><br>
+4. Find the circumference of a circle of radius 7 cm using π=22/7.<br><br>
+5. State the formula for the area of a circle.
+`,
+
+answers:`
+
+1. <b>32 m²</b><br><br>
+2. <b>24 cm</b><br><br>
+3. <b>40 cm²</b><br><br>
+4. <b>44 cm</b><br><br>
+5. <b>πr²</b>
+`
+
+};
+
+
+/* =========================================================
+   COORDINATE GEOMETRY
+========================================================= */
+
+lessons["Coordinate Geometry"] = {
+
+lesson:`
+<h4>Coordinate Geometry</h4>
+
+<p>
+Coordinate geometry combines algebra and geometry to study points,
+lines and shapes on the Cartesian plane.
+</p>
+
+<p>
+A point is written as (x,y), where x is the horizontal coordinate
+and y is the vertical coordinate.
+</p>
+
+<h4>Gradient</h4>
+
+<div class="formula">
+m = (y₂−y₁)/(x₂−x₁)
+</div>
+
+<h4>Equation of a Straight Line</h4>
+
+<div class="formula">
+y = mx + c
+</div>
+
+<p>
+m is the gradient and c is the y-intercept.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+Find the gradient of the line through (2,3) and (6,11).
+
+<br><br>
+
+m=(11−3)/(6−2)
+
+<br>
+
+=8/4
+
+<br>
+
+<b>m=2</b>
+</div>
+`,
+
+practice:`
+
+1. Find the gradient through (1,2) and (5,10).<br><br>
+2. State the equation of a line with gradient 3 and intercept 2.<br><br>
+3. Find the gradient of a horizontal line.<br><br>
+4. Find the distance between (0,0) and (3,4).<br><br>
+5. What is the y-coordinate of (5,7)?
+`,
+
+answers:`
+
+1. <b>2</b><br><br>
+2. <b>y=3x+2</b><br><br>
+3. <b>0</b><br><br>
+4. <b>5 units</b><br><br>
+5. <b>7</b>
+`
+
+};
+
+
+/* =========================================================
+   VARIATION
+========================================================= */
+
+lessons["Variation"] = {
+
+lesson:`
+<h4>Variation</h4>
+
+<p>
+Variation describes how one quantity changes in relation to another.
+</p>
+
+<p>
+The main types are direct variation, inverse variation, joint
+variation and partial variation.
+</p>
+
+<h4>Direct Variation</h4>
+
+<div class="formula">
+y ∝ x
+</div>
+
+<p>
+Therefore:</p>
+
+<div class="formula">
+y = kx
+</div>
+
+<h4>Inverse Variation</h4>
+
+<div class="formula">
+y ∝ 1/x
+</div>
+
+<p>
+Therefore:</p>
+
+<div class="formula">
+y = k/x
+</div>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+y varies directly as x. If y=12 when x=3, find y when x=5.
+
+<br><br>
+
+y=kx
+
+<br>
+
+12=3k
+
+<br>
+
+k=4
+
+<br>
+
+Therefore y=4x.
+
+<br>
+
+When x=5:
+
+<br>
+
+<b>y=20</b>
+</div>
+`,
+
+practice:`
+
+1. If y varies directly as x and y=10 when x=2, find k.<br><br>
+2. Using the previous result, find y when x=7.<br><br>
+3. Write the equation for inverse variation.<br><br>
+4. If y=k/x, what happens to y when x increases?<br><br>
+5. Define direct variation.
+`,
+
+answers:`
+
+1. <b>k=5</b><br><br>
+2. <b>y=35</b><br><br>
+3. <b>y=k/x</b><br><br>
+4. y decreases.<br><br>
+5. Direct variation occurs when one quantity is proportional to another.
+`
+
+};
+
+
+/* =========================================================
+   TRIGONOMETRY
+========================================================= */
+
+lessons["Trigonometry"] = {
+
+lesson:`
+<h4>Introduction to Trigonometry</h4>
+
+<p>
+Trigonometry is the study of relationships between the sides and
+angles of triangles.
+</p>
+
+<p>
+For a right-angled triangle, the three basic ratios are sine,
+cosine and tangent.
+</p>
+
+<div class="formula">
+sin θ = opposite/hypotenuse
+</div>
+
+<div class="formula">
+cos θ = adjacent/hypotenuse
+</div>
+
+<div class="formula">
+tan θ = opposite/adjacent
+</div>
+
+<p>
+A useful memory aid is SOH-CAH-TOA.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+In a right triangle, the opposite side is 3 cm and the hypotenuse
+is 5 cm. Find sin θ.
+
+<br><br>
+
+sin θ = opposite/hypotenuse
+
+<br>
+
+=3/5
+
+<br>
+
+<b>sin θ=0.6</b>
+</div>
+`,
+
+practice:`
+
+1. State the formula for sin θ.<br><br>
+2. State the formula for cos θ.<br><br>
+3. State the formula for tan θ.<br><br>
+4. If opposite=5 and hypotenuse=13, find sin θ.<br><br>
+5. What does SOH-CAH-TOA represent?
+`,
+
+answers:`
+
+1. <b>opposite/hypotenuse</b><br><br>
+2. <b>adjacent/hypotenuse</b><br><br>
+3. <b>opposite/adjacent</b><br><br>
+4. <b>5/13</b><br><br>
+5. It helps remember the definitions of sine, cosine and tangent.
+`
+
+};
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+lessons["Statistics"] = {
+
+lesson:`
+<h4>Meaning of Statistics</h4>
+
+<p>
+Statistics is the branch of mathematics concerned with collecting,
+organising, presenting, analysing and interpreting data.
+</p>
+
+<h4>Data</h4>
+
+<p>
+Data are facts or observations collected for a particular purpose.
+</p>
+
+<h4>Types of Data</h4>
+
+<ul>
+<li>Qualitative data</li>
+<li>Quantitative data</li>
+<li>Discrete data</li>
+<li>Continuous data</li>
+</ul>
+
+<h4>Presentation of Data</h4>
+
+<p>
+Data may be presented using tables, bar charts, pie charts,
+histograms, frequency polygons and ogives.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+The scores are 4, 6, 8, 10 and 12.
+
+<br><br>
+
+Total = 40.
+
+<br>
+
+Number of observations = 5.
+
+<br>
+
+Mean = 40/5
+
+<br>
+
+<b>=8</b>
+</div>
+`,
+
+practice:`
+
+1. Define statistics.<br><br>
+2. Find the mean of 2,4,6,8,10.<br><br>
+3. What is discrete data?<br><br>
+4. Name two methods of presenting data.<br><br>
+5. Distinguish between qualitative and quantitative data.
+`,
+
+answers:`
+
+1. Statistics is the collection, organisation, analysis and interpretation of data.<br><br>
+2. <b>6</b><br><br>
+3. Data that can be counted and usually take separate values.<br><br>
+4. Tables and charts.<br><br>
+5. Qualitative data describe qualities, while quantitative data are numerical.
+`
+
+};
+
+
+/* =========================================================
+   MEAN
+========================================================= */
+
+lessons["Mean"] = {
+
+lesson:`
+<h4>Arithmetic Mean</h4>
+
+<p>
+The mean is obtained by dividing the sum of all observations by
+the number of observations.
+</p>
+
+<div class="formula">
+Mean = Sum of observations / Number of observations
+</div>
+
+<p>
+For frequency data:</p>
+
+<div class="formula">
+Mean = Σfx / Σf
+</div>
+
+<p>
+where f is frequency and x is the observation.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+Find the mean of 4, 6, 8 and 12.
+
+<br><br>
+
+Mean=(4+6+8+12)/4
+
+<br>
+
+=30/4
+
+<br>
+
+<b>=7.5</b>
+</div>
+`,
+
+practice:`
+
+1. Find the mean of 2,4,6.<br><br>
+2. Find the mean of 5,10,15,20.<br><br>
+3. Find the sum of 4,8,12,16.<br><br>
+4. State the formula for mean.<br><br>
+5. Find the mean of 3,5,7,9,11.
+`,
+
+answers:`
+
+1. <b>4</b><br><br>
+2. <b>12.5</b><br><br>
+3. <b>40</b><br><br>
+4. <b>Mean = Σx/n</b><br><br>
+5. <b>7</b>
+`
+
+};
+
+
+/* =========================================================
+   MEDIAN
+========================================================= */
+
+lessons["Median"] = {
+
+lesson:`
+<h4>Median</h4>
+
+<p>
+The median is the middle value when data are arranged in ascending
+or descending order.
+</p>
+
+<h4>Odd Number of Observations</h4>
+
+<p>
+The middle observation is the median.
+</p>
+
+<h4>Even Number of Observations</h4>
+
+<p>
+The median is the average of the two middle observations.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+Find the median of:
+
+3, 8, 5, 10, 7.
+
+<br><br>
+
+Arrange:
+
+3,5,7,8,10
+
+<br>
+
+The middle value is 7.
+
+<br>
+
+<b>Median = 7</b>
+</div>
+`,
+
+practice:`
+
+1. Find the median of 2,4,6,8,10.<br><br>
+2. Find the median of 3,5,7,9.<br><br>
+3. Why must data be arranged before finding the median?<br><br>
+4. Find the median of 10,2,7,5,9.<br><br>
+5. Explain the median.
+`,
+
+answers:`
+
+1. <b>6</b><br><br>
+2. <b>6</b><br><br>
+3. To identify the central observation correctly.<br><br>
+4. <b>7</b><br><br>
+5. The median is the middle value in an ordered data set.
+`
+
+};
+
+
+/* =========================================================
+   MODE
+========================================================= */
+
+lessons["Mode"] = {
+
+lesson:`
+<h4>Mode</h4>
+
+<p>
+The mode is the value that occurs most frequently in a data set.
+</p>
+
+<p>
+A data set may have one mode, more than one mode, or no mode.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+Find the mode of:
+
+2, 4, 5, 4, 7, 4, 8.
+
+<br><br>
+
+The number 4 occurs three times, more than any other value.
+
+<br>
+
+<b>Mode = 4</b>
+</div>
+`,
+
+practice:`
+
+1. Find the mode of 2,3,3,4,5.<br><br>
+2. Find the mode of 1,2,2,3,3,3.<br><br>
+3. Can a data set have two modes?<br><br>
+4. Find the mode of 5,5,6,7,8.<br><br>
+5. Define mode.
+`,
+
+answers:`
+
+1. <b>3</b><br><br>
+2. <b>3</b><br><br>
+3. Yes. Such data are bimodal.<br><br>
+4. <b>5</b><br><br>
+5. The most frequently occurring value.
+`
+
+};
+
+
+/* =========================================================
+   PROBABILITY
+========================================================= */
+
+lessons["Probability"] = {
+
+lesson:`
+<h4>Meaning of Probability</h4>
+
+<p>
+Probability measures how likely an event is to occur.
+</p>
+
+<div class="formula">
+P(E)=Number of favourable outcomes / Total number of possible outcomes
+</div>
+
+<p>
+Probability is always between 0 and 1.
+</p>
+
+<div class="formula">
+0 ≤ P(E) ≤ 1
+</div>
+
+<p>
+A probability of 0 means impossible, while a probability of 1
+means certain.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+A fair die is thrown. Find the probability of getting a 4.
+
+<br><br>
+
+There is one favourable outcome and six possible outcomes.
+
+<br>
+
+P(4)=1/6
+
+<br>
+
+<b>Answer = 1/6</b>
+</div>
+`,
+
+practice:`
+
+1. What is the probability of an impossible event?<br><br>
+2. What is the probability of a certain event?<br><br>
+3. Find the probability of getting a head when a fair coin is tossed.<br><br>
+4. Find the probability of getting an even number on a fair die.<br><br>
+5. State the range of probability.
+`,
+
+answers:`
+
+1. <b>0</b><br><br>
+2. <b>1</b><br><br>
+3. <b>1/2</b><br><br>
+4. <b>1/2</b><br><br>
+5. <b>0≤P(E)≤1</b>
+`
+
+};
+
+
+/* =========================================================
+   FUNCTIONS
+========================================================= */
+
+lessons["Functions"] = {
+
+lesson:`
+<h4>Meaning of a Function</h4>
+
+<p>
+A function is a rule that assigns exactly one output to each
+allowed input.
+</p>
+
+<p>
+A function may be written as f(x).
+</p>
+
+<div class="formula">
+f(x)=2x+3
+</div>
+
+<p>
+The input x is substituted into the function to obtain the output.
+</p>
+
+<h4>Function Notation</h4>
+
+<p>
+If f(x)=2x+3, then:
+</p>
+
+<div class="formula">
+f(4)=2(4)+3=11
+</div>
+
+<h4>Domain and Range</h4>
+
+<p>
+The domain is the set of allowed input values, while the range is
+the set of corresponding output values.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example:</b>
+
+Given f(x)=3x−2, find f(5).
+
+<br><br>
+
+f(5)=3(5)−2
+
+<br>
+
+=15−2
+
+<br>
+
+<b>=13</b>
+</div>
+`,
+
+practice:`
+
+1. If f(x)=2x+1, find f(3).<br><br>
+2. If f(x)=5x−4, find f(2).<br><br>
+3. Define a function.<br><br>
+4. What is the domain?<br><br>
+5. What is the range?
+`,
+
+answers:`
+
+1. <b>7</b><br><br>
+2. <b>6</b><br><br>
+3. A rule assigning exactly one output to each allowed input.<br><br>
+4. The set of allowed inputs.<br><br>
+5. The set of resulting outputs.
+`
+
+};
+
+
+/* =========================================================
+   DIFFERENTIATION
+========================================================= */
+
+lessons["Differentiation"] = {
+
+lesson:`
+<h4>Meaning of Differentiation</h4>
+
+<p>
+Differentiation is a process in calculus used to find the rate at
+which one quantity changes with respect to another.
+</p>
+
+<p>
+It is also used to find gradients of curves.
+</p>
+
+<h4>Power Rule</h4>
+
+<div class="formula">
+If y=xⁿ, then dy/dx = nxⁿ⁻¹
+</div>
+
+<p>
+Constants differentiate to zero.
+</p>
+
+<div class="formula">
+d/dx(c)=0
+</div>
+
+<p>
+For example, if y=3x²:
+</p>
+
+<div class="formula">
+dy/dx=6x
+</div>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Differentiate:
+
+y=x³.
+
+<br><br>
+
+Using the power rule:
+
+dy/dx=3x²
+
+<br>
+
+<b>Answer = 3x²</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Differentiate:
+
+y=4x²+3x−7.
+
+<br><br>
+
+dy/dx=8x+3
+
+<br>
+
+<b>Answer = 8x+3</b>
+</div>
+`,
+
+practice:`
+
+1. Differentiate y=x².<br><br>
+2. Differentiate y=x⁴.<br><br>
+3. Differentiate y=5x³.<br><br>
+4. Differentiate y=3x²+4x+1.<br><br>
+5. What is the derivative of a constant?
+`,
+
+answers:`
+
+1. <b>2x</b><br><br>
+2. <b>4x³</b><br><br>
+3. <b>15x²</b><br><br>
+4. <b>6x+4</b><br><br>
+5. <b>0</b>
+`
+
+};
+
+
+/* =========================================================
+   INTEGRATION
+========================================================= */
+
+lessons["Integration"] = {
+
+lesson:`
+<h4>Meaning of Integration</h4>
+
+<p>
+Integration is a fundamental process in calculus. It can be used
+to find a function when its derivative is known and to calculate
+areas under curves.
+</p>
+
+<h4>Power Rule for Integration</h4>
+
+<div class="formula">
+∫xⁿ dx = xⁿ⁺¹/(n+1) + C
+</div>
+
+<p>
+where n ≠ −1 and C is the constant of integration.
+</p>
+
+<h4>Integration of a Constant Multiple</h4>
+
+<p>
+Constants can be taken outside the integral sign.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1:</b>
+
+Integrate x².
+
+<br><br>
+
+∫x²dx = x³/3 + C
+
+<br>
+
+<b>Answer = x³/3+C</b>
+</div>
+
+<div class="example">
+<b>Example 2:</b>
+
+Integrate 6x.
+
+<br><br>
+
+∫6x dx = 3x²+C
+
+<br>
+
+<b>Answer = 3x²+C</b>
+</div>
+`,
+
+practice:`
+
+1. Integrate x³.<br><br>
+2. Integrate 4x².<br><br>
+3. Integrate 5.<br><br>
+4. State the power rule of integration.<br><br>
+5. What does C represent?
+`,
+
+answers:`
+
+1. <b>x⁴/4+C</b><br><br>
+2. <b>4x³/3+C</b><br><br>
+3. <b>5x+C</b><br><br>
+4. <b>∫xⁿdx=xⁿ⁺¹/(n+1)+C</b><br><br>
+5. C is the arbitrary constant of integration.
+`
+
+};
+
+
+/* =========================================================
+   NUMERICAL METHODS
+========================================================= */
+
+lessons["Numerical Methods"] = {
+
+lesson:`
+<h4>Meaning of Numerical Methods</h4>
+
+<p>
+Numerical methods are mathematical techniques used to obtain
+approximate solutions to problems that may be difficult or
+impossible to solve exactly using ordinary algebraic methods.
+</p>
+
+<h4>Why Numerical Methods Are Used</h4>
+
+<ul>
+<li>To approximate roots of equations.</li>
+<li>To solve complicated mathematical problems.</li>
+<li>To obtain numerical answers when exact solutions are difficult.</li>
+<li>To improve an approximation through repeated calculations.</li>
+</ul>
+
+<h4>Trial and Improvement</h4>
+
+<p>
+One simple numerical method is trial and improvement. A value is
+chosen, substituted into the equation and then adjusted until a
+satisfactory approximation is obtained.
+</p>
+
+<h4>Newton-Raphson Method</h4>
+
+<div class="formula">
+xₙ₊₁ = xₙ − f(xₙ)/f'(xₙ)
+</div>
+
+<p>
+This method uses an initial approximation and repeatedly improves
+it.
+</p>
+
+<h4>Checking an Approximation</h4>
+
+<p>
+After obtaining an approximate answer, substitute it back into the
+original equation to determine how close it is to the required
+solution.
+</p>
+`,
+
+examples:`
+
+<div class="example">
+<b>Example 1: Trial and Improvement</b>
+
+Find an approximate solution of x²=20.
+
+<br><br>
+
+We know:
+
+4²=16
+
+and
+
+5²=25.
+
+Therefore the answer lies between 4 and 5.
+
+<br><br>
+
+Try x=4.5:
+
+4.5²=20.25.
+
+This is close to 20.
+
+<br>
+
+Therefore:
+
+<b>x≈4.47</b>
+
+is a better approximation.
+</div>
+
+
+<div class="example">
+<b>Example 2: Newton-Raphson Idea</b>
+
+Consider:
+
+f(x)=x²−2.
+
+<br><br>
+
+The exact positive root is √2, approximately 1.414.
+
+Starting with x₀=1.5:
+
+f(1.5)=0.25
+
+and
+
+f'(x)=2x.
+
+<br><br>
+
+Therefore:
+
+x₁=1.5−0.25/3
+
+<br>
+
+≈1.4167.
+
+Further repetitions give an even better approximation.
+
+<br>
+
+<b>x≈1.4142</b>
+</div>
+`,
+
+practice:`
+
+<div class="question">
+1. What are numerical methods?
+</div>
+
+<div class="question">
+2. Why are numerical methods useful?
+</div>
+
+<div class="question">
+3. State the Newton-Raphson formula.
+</div>
+
+<div class="question">
+4. Find an approximate value of √10 to one decimal place.
+</div>
+
+<div class="question">
+5. Explain the trial-and-improvement method.
+</div>
+`,
+
+answers:`
+
+<div class="answer">
+<b>1.</b> Numerical methods are techniques used to obtain approximate numerical solutions to mathematical problems.
+</div>
+
+<div class="answer">
+<b>2.</b> They are useful when an exact algebraic solution is difficult or unavailable.
+</div>
+
+<div class="answer">
+<b>3.</b> xₙ₊₁=xₙ−f(xₙ)/f'(xₙ).
+</div>
+
+<div class="answer">
+<b>4.</b> √10≈<b>3.2</b> to one decimal place.
+</div>
+
+<div class="answer">
+<b>5.</b> Trial and improvement involves selecting an initial value, testing it in the equation and repeatedly adjusting it until the required accuracy is reached.
+</div>
+`
+
+};
+
+
+/* =========================================================
+   TOPIC-SPECIFIC FALLBACK CONTENT
+   This is used only for topics whose full lesson has not
+   yet been entered above. It identifies the actual topic
+   instead of displaying "Numerical Methods" for everything.
+========================================================= */
+
+function createSpecificLesson(topic){
+
+    const lower=topic.toLowerCase();
+
+    if(lower.includes("matrix") || lower.includes("matrices") ||
+       lower.includes("determinant") || lower.includes("inverse matrix")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+            <p>
+            ${topic} is studied using matrix notation and operations.
+            Matrices are rectangular arrangements of numbers organised
+            in rows and columns.
+            </p>
+
+            <p>
+            When working with ${topic}, identify the order of each
+            matrix, apply the appropriate operation and check that the
+            dimensions are compatible.
+            </p>
+
+            <div class="formula">
+            A matrix of m rows and n columns has order m × n.
+            </div>
+
+            <h4>Important Ideas</h4>
+            <ul>
+            <li>Identify rows and columns correctly.</li>
+            <li>Observe the order of each matrix.</li>
+            <li>Use the correct matrix operation.</li>
+            <li>Show each calculation clearly.</li>
+            </ul>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            Let A = [1  2; 3  4].
+
+            The matrix has 2 rows and 2 columns.
+
+            Therefore its order is <b>2×2</b>.
+            </div>`,
+
+            practice:`
+            1. Define a matrix.<br><br>
+            2. What is meant by the order of a matrix?<br><br>
+            3. State one rule for ${topic}.<br><br>
+            4. Give an example of a 2×2 matrix.<br><br>
+            5. Explain why matrix dimensions must be checked before multiplication.`,
+
+            answers:`
+            1. A matrix is a rectangular arrangement of numbers in rows and columns.<br><br>
+            2. The order gives the number of rows and columns.<br><br>
+            3. Apply the appropriate matrix rule for the operation required.<br><br>
+            4. Example: [1 2; 3 4].<br><br>
+            5. Matrix multiplication is possible only when the required dimensions are compatible.`
+        };
+    }
+
+
+    if(lower.includes("circle")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+
+            <p>
+            ${topic} deals with properties of circles, their angles,
+            chords, tangents, arcs and related geometric relationships.
+            </p>
+
+            <div class="formula">
+            Circumference = 2πr
+            </div>
+
+            <div class="formula">
+            Area = πr²
+            </div>
+
+            <h4>Important Properties</h4>
+
+            <p>
+            Angles subtended by the same chord at the circumference
+            are equal. The angle in a semicircle is 90°.
+            </p>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            Find the circumference of a circle of radius 7 cm.
+
+            <br><br>
+
+            C=2πr
+
+            <br>
+
+            =2×22/7×7
+
+            <br>
+
+            <b>=44 cm</b>
+            </div>`,
+
+            practice:`
+            1. State the formula for circumference.<br><br>
+            2. State the formula for area.<br><br>
+            3. Find the circumference of radius 7 cm.<br><br>
+            4. What is the angle in a semicircle?<br><br>
+            5. State one circle theorem.`,
+
+            answers:`
+            1. <b>2πr</b><br><br>
+            2. <b>πr²</b><br><br>
+            3. <b>44 cm</b> using π=22/7.<br><br>
+            4. <b>90°</b><br><br>
+            5. Angles in the same segment are equal.`
+        };
+    }
+
+
+    if(lower.includes("trigonometric") ||
+       lower.includes("sine rule") ||
+       lower.includes("cosine rule") ||
+       lower.includes("bearing")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+
+            <p>
+            ${topic} is an important part of trigonometry. It is used
+            to calculate unknown sides and angles and to solve
+            practical problems involving distances and directions.
+            </p>
+
+            <div class="formula">
+            sin θ = opposite/hypotenuse
+            </div>
+
+            <div class="formula">
+            cos θ = adjacent/hypotenuse
+            </div>
+
+            <div class="formula">
+            tan θ = opposite/adjacent
+            </div>
+
+            <h4>Method</h4>
+
+            <p>
+            Draw or identify the triangle, label the known quantities,
+            choose the correct formula, substitute the values and
+            calculate the unknown quantity.
+            </p>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            In a right triangle, opposite=6 cm and adjacent=8 cm.
+
+            <br><br>
+
+            tan θ=6/8
+
+            <br>
+
+            tan θ=0.75
+
+            <br>
+
+            Therefore θ≈<b>36.9°</b>.
+            </div>`,
+
+            practice:`
+            1. State the three basic trigonometric ratios.<br><br>
+            2. Find sin θ when opposite=5 and hypotenuse=13.<br><br>
+            3. Find tan θ when opposite=3 and adjacent=4.<br><br>
+            4. State one use of trigonometry.<br><br>
+            5. Explain why a diagram is useful in a trigonometry problem.`,
+
+            answers:`
+            1. <b>sin, cos and tan</b>.<br><br>
+            2. <b>5/13</b>.<br><br>
+            3. <b>3/4</b>.<br><br>
+            4. It can be used to calculate unknown distances or angles.<br><br>
+            5. A diagram helps identify the sides, angles and information required.`
+        };
+    }
+
+
+    if(lower.includes("calculus") ||
+       lower.includes("limit") ||
+       lower.includes("differential") ||
+       lower.includes("integration") ||
+       lower.includes("rates of change") ||
+       lower.includes("maximum") ||
+       lower.includes("minimum")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+
+            <p>
+            ${topic} belongs to calculus, which studies change,
+            gradients, functions, areas and related mathematical
+            relationships.
+            </p>
+
+            <h4>Key Ideas</h4>
+
+            <ul>
+            <li>Understand the function involved.</li>
+            <li>Identify the required calculus operation.</li>
+            <li>Apply the appropriate rule.</li>
+            <li>Show every mathematical step.</li>
+            <li>Check the result in the original problem.</li>
+            </ul>
+
+            <div class="formula">
+            d/dx(xⁿ)=nxⁿ⁻¹
+            </div>
+
+            <div class="formula">
+            ∫xⁿdx=xⁿ⁺¹/(n+1)+C
+            </div>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            For y=x³, differentiate with respect to x.
+
+            <br><br>
+
+            dy/dx=3x².
+
+            <br>
+
+            <b>Answer = 3x²</b>
+            </div>`,
+
+            practice:`
+            1. Define ${topic}.<br><br>
+            2. State one important formula used in calculus.<br><br>
+            3. Differentiate x².<br><br>
+            4. Integrate x².<br><br>
+            5. State one practical use of calculus.`,
+
+            answers:`
+            1. ${topic} is a mathematical concept used to study change,
+            functions or related quantities.<br><br>
+            2. <b>d/dx(xⁿ)=nxⁿ⁻¹</b> is one important formula.<br><br>
+            3. <b>2x</b>.<br><br>
+            4. <b>x³/3+C</b>.<br><br>
+            5. Calculus can be used to study rates of change, motion,
+            optimisation and areas.`
+        };
+    }
+
+
+    if(lower.includes("statistics") ||
+       lower.includes("frequency") ||
+       lower.includes("histogram") ||
+       lower.includes("ogive") ||
+       lower.includes("dispersion") ||
+       lower.includes("variance") ||
+       lower.includes("standard deviation") ||
+       lower.includes("mean") ||
+       lower.includes("median") ||
+       lower.includes("mode")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+
+            <p>
+            ${topic} is part of statistics, which involves collecting,
+            organising, presenting, analysing and interpreting data.
+            </p>
+
+            <h4>Key Learning Points</h4>
+
+            <ul>
+            <li>Identify the type of data.</li>
+            <li>Organise the observations correctly.</li>
+            <li>Choose the appropriate statistical method.</li>
+            <li>Calculate carefully.</li>
+            <li>Interpret the final result.</li>
+            </ul>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            Consider the data:
+
+            2, 4, 4, 6, 9.
+
+            <br><br>
+
+            The most frequent value is 4.
+
+            <br>
+
+            Therefore the <b>mode is 4</b>.
+            </div>`,
+
+            practice:`
+            1. Define ${topic}.<br><br>
+            2. State one important formula or rule associated with the topic.<br><br>
+            3. Calculate a simple statistical value from a small data set.<br><br>
+            4. Explain how data should be organised before calculation.<br><br>
+            5. Give one practical use of statistics.`,
+
+            answers:`
+            1. ${topic} is a statistical concept used to describe,
+            analyse or present data.<br><br>
+            2. Use the appropriate statistical formula or procedure.<br><br>
+            3. Carry out the calculation carefully and state the result.<br><br>
+            4. Data should be arranged or tabulated appropriately.<br><br>
+            5. Statistics is used in education, business, science,
+            government and many other fields.`
+        };
+    }
+
+
+    if(lower.includes("probability") ||
+       lower.includes("permutation") ||
+       lower.includes("combination")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+
+            <p>
+            ${topic} deals with counting, possible arrangements,
+            selections and the likelihood of events.
+            </p>
+
+            <div class="formula">
+            P(E)=Favourable outcomes/Total outcomes
+            </div>
+
+            <div class="formula">
+            nPr = n!/(n−r)!
+            </div>
+
+            <div class="formula">
+            nCr = n!/[r!(n−r)!]
+            </div>
+
+            <h4>Important Distinction</h4>
+
+            <p>
+            In a permutation, order matters. In a combination, order
+            does not matter.
+            </p>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            Find 5C2.
+
+            <br><br>
+
+            5C2=5!/(2!3!)
+
+            <br>
+
+            =10.
+
+            <br>
+
+            <b>Answer = 10</b>
+            </div>`,
+
+            practice:`
+            1. State the probability formula.<br><br>
+            2. Calculate 5C2.<br><br>
+            3. Calculate 5P2.<br><br>
+            4. Explain the difference between permutation and combination.<br><br>
+            5. What is the probability of an impossible event?`,
+
+            answers:`
+            1. <b>P(E)=favourable outcomes/total outcomes</b>.<br><br>
+            2. <b>10</b>.<br><br>
+            3. <b>20</b>.<br><br>
+            4. Order matters in permutation but not in combination.<br><br>
+            5. <b>0</b>.`
+        };
+    }
+
+
+    if(lower.includes("equation") ||
+       lower.includes("inequality") ||
+       lower.includes("factor") ||
+       lower.includes("algebra") ||
+       lower.includes("formula")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+
+            <p>
+            ${topic} is an algebraic topic involving the use of
+            symbols, expressions, equations and mathematical rules
+            to find unknown quantities.
+            </p>
+
+            <h4>General Method</h4>
+
+            <ol>
+            <li>Read the problem carefully.</li>
+            <li>Identify the unknown quantity.</li>
+            <li>Write the mathematical expression or equation.</li>
+            <li>Simplify or rearrange correctly.</li>
+            <li>Check the answer.</li>
+            </ol>
+
+            <div class="formula">
+            Always perform the same operation on both sides of an equation.
+            </div>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            Solve:
+
+            3x+5=20.
+
+            <br><br>
+
+            3x=20−5
+
+            <br>
+
+            3x=15
+
+            <br>
+
+            <b>x=5</b>
+            </div>`,
+
+            practice:`
+            1. Define ${topic}.<br><br>
+            2. State one important algebraic rule.<br><br>
+            3. Solve 2x+4=14.<br><br>
+            4. Solve 5x−10=20.<br><br>
+            5. Explain why the answer should be checked.`,
+
+            answers:`
+            1. ${topic} is an algebraic method or concept used to
+            represent and solve mathematical relationships.<br><br>
+            2. Perform equivalent operations on both sides of an equation.<br><br>
+            3. <b>x=5</b>.<br><br>
+            4. <b>x=6</b>.<br><br>
+            5. Checking confirms that the value satisfies the original equation.`
+        };
+    }
+
+
+    if(lower.includes("transformation") ||
+       lower.includes("translation") ||
+       lower.includes("reflection") ||
+       lower.includes("rotation") ||
+       lower.includes("enlargement")){
+
+        return {
+            lesson:`
+            <h4>${topic}</h4>
+
+            <p>
+            ${topic} is a transformation of a geometric figure on the
+            coordinate plane.
+            </p>
+
+            <h4>Common Transformations</h4>
+
+            <ul>
+            <li>Translation moves a shape.</li>
+            <li>Reflection produces a mirror image.</li>
+            <li>Rotation turns a shape about a centre.</li>
+            <li>Enlargement changes its size according to a scale factor.</li>
+            </ul>
+
+            <p>
+            Coordinates should be transformed carefully and the
+            resulting image should be labelled correctly.
+            </p>`,
+
+            examples:`
+            <div class="example">
+            <b>Example:</b>
+
+            Translate the point (2,3) by the vector (4,1).
+
+            <br><br>
+
+            Add 4 to x and 1 to y.
+
+            <br>
+
+            (2+4,3+1)
+
+            <br>
+
+            <b>Image = (6,4)</b>
+            </div>`,
+
+            practice:`
+            1. Define ${topic}.<br><br>
+            2. Name four common transformations.<br><br>
+            3. Translate (1,2) by (3,4).<br><br>
+            4. What does a reflection produce?<br><br>
+            5. What does an enlargement change?`,
+
+            answers:`
+            1. ${topic} describes a geometric change in the position,
+            orientation or size of a figure.<br><br>
+            2. Translation, reflection, rotation and enlargement.<br><br>
+            3. <b>(4,6)</b>.<br><br>
+            4. A mirror image of the original figure.<br><br>
+            5. It changes the size according to a scale factor.`
+        };
+    }
+
+
+    /* General topic-specific lesson */
+
+    return {
+
+        lesson:`
+        <h4>Meaning of ${topic}</h4>
+
+        <p>
+        <b>${topic}</b> is an important topic in Senior Secondary
+        School Mathematics. It involves mathematical definitions,
+        principles, rules, procedures and applications that students
+        should understand for classroom work and examinations.
+        </p>
+
+        <h4>Objectives</h4>
+
+        <ul>
+        <li>Understand the meaning of ${topic}.</li>
+        <li>Identify important mathematical terms connected with the topic.</li>
+        <li>Apply the correct mathematical rule or formula.</li>
+        <li>Solve problems systematically.</li>
+        <li>Check and interpret answers.</li>
+        </ul>
+
+        <h4>Problem-Solving Method</h4>
+
+        <p>
+        Read the question carefully, identify the information given,
+        determine what is required, select the appropriate mathematical
+        method, substitute the known values and simplify the result.
+        </p>
+
+        <h4>Examination Tip</h4>
+
+        <p>
+        Always show your working. Do not write only the final answer.
+        Clear working makes it easier to identify mistakes and earn
+        method marks.
+        </p>
+        `,
+
+        examples:`
+        <div class="example">
+        <b>Example 1:</b>
+
+        State the main idea involved in <b>${topic}</b>.
+
+        <br><br>
+
+        <b>Solution:</b>
+
+        Begin with the definition of ${topic}, identify the relevant
+        rule or formula and apply it carefully to the information
+        given in the question.
+        </div>
+
+        <div class="example">
+        <b>Example 2:</b>
+
+        A student is given a problem involving <b>${topic}</b>.
+
+        <br><br>
+
+        <b>Solution:</b>
+
+        1. Identify the known quantities.<br>
+        2. Identify the unknown quantity.<br>
+        3. Select the appropriate mathematical method.<br>
+        4. Substitute correctly.<br>
+        5. Simplify and check the answer.
+        </div>
+        `,
+
+        practice:`
+        <div class="question">
+        <b>1.</b> Define or explain <b>${topic}</b>.
+        </div>
+
+        <div class="question">
+        <b>2.</b> State two important facts, rules or properties
+        associated with <b>${topic}</b>.
+        </div>
+
+        <div class="question">
+        <b>3.</b> Solve a basic mathematical problem involving
+        <b>${topic}</b>.
+        </div>
+
+        <div class="question">
+        <b>4.</b> Solve an intermediate problem involving
+        <b>${topic}</b> and show all your working.
+        </div>
+
+        <div class="question">
+        <b>5.</b> Give one practical or examination application of
+        <b>${topic}</b>.
+        </div>
+        `,
+
+        answers:`
+        <div class="answer">
+        <b>1.</b> ${topic} is a mathematical concept studied to
+        understand and solve problems involving its particular
+        definitions, rules and applications.
+        </div>
+
+        <div class="answer">
+        <b>2.</b> Use the definitions, properties and formulas that
+        apply specifically to ${topic}.
+        </div>
+
+        <div class="answer">
+        <b>3.</b> Identify the required method, substitute the given
+        information and simplify carefully.
+        </div>
+
+        <div class="answer">
+        <b>4.</b> Show all stages of the calculation and check the
+        final result against the original question.
+        </div>
+
+        <div class="answer">
+        <b>5.</b> ${topic} can be applied to mathematical,
+        scientific, financial, engineering or everyday problems
+        depending on the particular concept being studied.
+        </div>
+        `
+    };
 }
+
+
+/* =========================================================
+   OPEN LESSON
+========================================================= */
 
 function openLesson(index){
- const topic=topics[index];
- document.getElementById("welcomeSection").style.display="none";
- document.getElementById("topicsSection").style.display="none";
- document.getElementById("lessonSection").style.display="block";
- document.getElementById("lessonTitle").textContent="Topic "+(index+1)+": "+topic;
- document.getElementById("lessonText").innerHTML=getLesson(topic);
- document.getElementById("exampleText").innerHTML=getExamples(topic);
- document.getElementById("practiceText").innerHTML=getPractice(topic);
- document.getElementById("answerText").innerHTML=getAnswers(topic);
+
+    const topic=topics[index];
+
+    document.getElementById("welcomeSection").style.display="none";
+
+    document.getElementById("topicsSection").style.display="none";
+
+    document.getElementById("lessonSection").style.display="block";
+
+    document.getElementById("lessonTitle").textContent=
+        "Topic "+(index+1)+": "+topic;
+
+    let content=lessons[topic];
+
+    if(!content){
+
+        content=createSpecificLesson(topic);
+
+    }
+
+    document.getElementById("lessonText").innerHTML=
+        content.lesson;
+
+    document.getElementById("exampleText").innerHTML=
+        content.examples;
+
+    document.getElementById("practiceText").innerHTML=
+        content.practice;
+
+    document.getElementById("answerText").innerHTML=
+        content.answers;
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
+
+/* =========================================================
+   START PAGE
+========================================================= */
+
 window.onload=function(){
- document.getElementById("welcomeSection").style.display="block";
- document.getElementById("topicsSection").style.display="none";
- document.getElementById("lessonSection").style.display="none";
+
+    document.getElementById("welcomeSection").style.display="block";
+
+    document.getElementById("topicsSection").style.display="none";
+
+    document.getElementById("lessonSection").style.display="none";
+
 };
+
 </script>
+
 </body>
 </html>
